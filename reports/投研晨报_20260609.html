@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月9日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">年初看好黄金的那波人，现在想跑了</p>
+            <p class="header-date">2026年6月9日 · 周二 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>美股反弹≠调整结束</strong>
+                        纳指隔夜反弹约0.8%，但科技挖坑难现3月式黄金坑，海外配置建议定投为主
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏅</div>
+                    <div class="summary-text">
+                        <strong>黄金涨幅全部回吐</strong>
+                        从最高5600跌回4300，年初一致性看多者被套，进入利润兑现周期的判断验证
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌍</div>
+                    <div class="summary-text">
+                        <strong>美元叙事重塑</strong>
+                        美元找回与传统能源+未来科技的双重绑定，中长期不过分看空美元、不过分看多黄金
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>央行增持提供支撑</strong>
+                        中国央行上月增持32万盎司，黄金回到4000-4500均衡区间，此时割肉意义不大
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">海外市场：反弹与调整的 rhythm 判断</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>隔夜美股市场未延续周五暴跌走势，纳斯达克反弹约0.8%，英伟达等科技股表现尚可。韩国股市昨日两次熔断暴跌8%后，今日开盘反弹3.2%至7300-7400点附近。</p>
+
+                <p><strong>但需要明确两点：</strong></p>
+                <p>第一，美股隔夜反弹并不意味着以AI为代表的科技股调整已经结束。当前仍处于高位震荡阶段，后续波动大概率持续。</p>
+                <p>第二，<strong>本次科技股挖坑给不了像今年3月那样的黄金坑机会。</strong>3月战争冲击和去年4月中美贸易战的冲击都是突发性的、迅猛的，而当前属于预期层面的渐进式修正，调整节奏更缓和。因此，期待一次暴跌后抄底的同学需要调整预期。</p>
+
+                <div class="highlight-box">
+                    <p><strong>海外配置建议：</strong>对于海外配置较少或3月机会没赶上的同学，建议采取<strong>适当定投</strong>策略。当前处于高位，若挖坑则你已在高位买入；若判断后面不长，又可能错过。因此定投是最稳妥的方案——小挖坑小加，大挖坑大加，如果真的挖得特别快，我们再提示战术性机会。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">黄金复盘：从一致性看多到回归均衡</h3>
+                <span class="section-tag">大宗商品</span>
+            </div>
+            <div class="content">
+                <p>去年底至今年初，市场对黄金的一致性看多达到顶峰。当时的叙事非常单一："美元要完了，黄金将替代美元，一直涨"。不少同学甚至提出"股票别搞了，全搞黄金"。</p>
+
+                <p>当时投研团队极力劝阻，在实战营中明确判断：<strong>黄金已进入利润兑现周期。</strong>如今这一判断得到充分验证——黄金从最高5600（部分品牌金饰甚至到过更高）跌回4300，今年以来的涨幅已全部回吐。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间节点</th>
+                            <th>市场状态</th>
+                            <th>投研判断</th>
+                            <th>当前结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">2025年底-2026年初</td>
+                            <td>一致性看多，情绪亢奋</td>
+                            <td class="trend-down">进入利润兑现周期</td>
+                            <td>✅ 验证</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">2026年Q1</td>
+                            <td>黄金涨至5000-5600</td>
+                            <td>建议分批兑现利润</td>
+                            <td>✅ 高点区域</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">2026年6月初</td>
+                            <td>跌至4300，年初涨幅归零</td>
+                            <td>回到均衡区间，不宜低位割肉</td>
+                            <td>⏳ 观察</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="quote-block">
+                    <p>"最近来问问题的，就是那时候比较亢奋、让大家兑现利润大家不舍得卖的这些同学。现在说要不要卖？如果你之前没有兑现利润，在这个时候非要去卖掉也意义不大。虽然你拿着它、没兑现利润，导致你没有赶上原油、也没有赶上铜——这两位今年涨得都比黄金好——但这个时点你就不要再去做一个连环错的选择。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">美元与黄金的新叙事：双重绑定重塑</h3>
+                <span class="section-tag">宏观框架</span>
+            </div>
+            <div class="content">
+                <p>年初看多黄金的核心叙事是"美元衰落"。但主讲人指出，这一叙事正在发生根本性动摇——美元通过两条路径重新确立了其价值锚定：</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 传统能源绑定</h4>
+                        <ul>
+                            <li>美元重塑国际传统能源格局</li>
+                            <li>重新找回与石油的强绑定</li>
+                            <li>中东局势缓和后能源定价权稳固</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 未来产业绑定</h4>
+                        <ul>
+                            <li>AI与科技崛起重塑美元底层</li>
+                            <li>全球算力产业链以美元计价</li>
+                            <li>科技霸权支撑货币信用</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>历史镜鉴：</strong>2007年市场对原油的叙事是"不可再生资源越来越少，会一直涨"——当时原油120美元。主讲人多次强调，到现在近20年过去了，原油涨了一倍以后还没有回到120美元（仅盘中短暂触及）。<strong>永远不要相信简单单一的叙事。</strong></p>
+                </div>
+
+                <p>因此，中长期判断不应过分看空美元，也不应过分看多黄金。黄金已不再是单边上涨的资产，而是进入震荡均衡的新阶段。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">当前黄金位置：4000-4500均衡区间</h3>
+                <span class="section-tag">价格研判</span>
+            </div>
+            <div class="content">
+                <p>经过半年的风险释放，黄金目前回到了4000-4500的价格区间。这个位置属于<strong>上下两难的均衡状态</strong>：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>驱动因素</th>
+                            <th>力度评估</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">下行压力</td>
+                            <td>美元叙事重塑、美联储降息延后甚至年内不降息</td>
+                            <td class="trend-down">中等偏强</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">上行支撑</td>
+                            <td>中国央行加大增持力度（上月32万盎司）</td>
+                            <td class="trend-up">中等</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">区间判断</td>
+                            <td>4000-4500为重新均衡的价格中枢</td>
+                            <td>震荡为主</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>央行增持数据解读：</strong>中国央行自2022年11月启动黄金收储，初期每月增持约20万盎司。黄金上了4000以后，增持显著放慢至每月3-7万盎司。而在黄金下跌的最近两个月，央行反而加大了增持力度——上月增持32万盎司，显示官方认为当前价格具备配置价值。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作建议：</strong>对于年初追高、至今未兑现利润的同学，<strong>此时不宜低位割肉</strong>。连环错是投资大忌——第一步错了（高位没卖），第二步不能再错（低位割肉）。如果黄金在你的组合中占比合理，耐心持有等待区间修复；如果占比过高，可在反弹时适度减至合理仓位。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">配置策略：科技内部再平衡与老灯的价值</h3>
+                <span class="section-tag">组合管理</span>
+            </div>
+            <div class="content">
+                <p>科技主线内部也存在明显的分化：光模块（算力）和存储芯片涨幅巨大，而机器人和创新药等方向相对滞涨。主讲人强调，<strong>不需要寻找新的方向，而应在现有方向上做配置比例的动态调整。</strong></p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 科技内部再平衡</h4>
+                        <ul>
+                            <li>光和存储涨得多：可兑现部分利润</li>
+                            <li>机器人/创新药等：提升配置比例</li>
+                            <li>保持科技四大赛道总体仓位不变</li>
+                            <li>让各方向比例回归均衡</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 科技+老灯双主线</h4>
+                        <ul>
+                            <li>"左手巴菲特，右手孙正义"</li>
+                            <li>科技负责弹性，老灯负责稳健</li>
+                            <li>资金虹吸让老灯估值极具吸引力</li>
+                            <li>两头站都可以，核心是均衡</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>"市场的主线就是那个，你不需要搞创新，说这些东西没搞上我非得找一个别的板块。这一轮也是一样——科技牛、科技主线。但因为科技主线资金虹吸了传统板块很多新增或存量资金，让老灯板块出现了估值特别有吸引力的一些公司。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>本报告基于音频纪要整理，仅供内部研究参考</p>
+            <p class="disclaimer">
+                风险提示：市场有风险，投资需谨慎。本报告所载信息、意见、推测仅反映音频内容中的观点，不构成对任何人的投资建议，亦不作为买卖、认购证券或其他金融工具的邀请或保证。投资者据此操作，风险自担。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
