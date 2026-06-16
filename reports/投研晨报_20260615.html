@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月15日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+        
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(192,57,43,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+        
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .section-title { font-size: 22px; font-weight: 600; }
+        
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+        
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+        
+        .content strong { color: var(--text-primary); font-weight: 600; }
+        
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: """;
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美伊停战协议 · 指数成分股调整 · 原油止盈信号</p>
+            <p class="header-date">2026年6月15日 · 星期一 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🕊️</div>
+                    <div class="summary-text">
+                        <strong>美伊停战协议基本落定</strong>
+                        伊朗最高国家安全委员会确认停战谅解备忘录，正式签约预计19日在瑞士举行
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>全球风险资产回暖</strong>
+                        美股三大股指期货上涨，黄金反弹1.56%，白银涨3-4%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🔄</div>
+                    <div class="summary-text">
+                        <strong>指数成分股调整</strong>
+                        沪深300、中证500、深证100等指数调整，国产GPU、光模块、半导体等科技股被纳入
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⛽</div>
+                    <div class="summary-text">
+                        <strong>原油止盈窗口已过</strong>
+                        WTI原油大跌4%至81.6美元，60→120美元交易周期完成，不建议再吃鱼尾
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美伊停战协议：特朗普喊话+伊朗背书，地缘风险大幅降温</h3>
+                <span class="section-tag">地缘速递</span>
+            </div>
+            <div class="content">
+                <p>主讲人邵启心指出，美伊冲突出现明显向好趋势。特朗普宣布和平协议已经达成、霍尔木兹海峡开放；更重要的是，<strong>伊朗最高国家安全委员会也发出声明，确认伊美停战谅解备忘录已经达成</strong>。这意味着协议落定的概率"不能说百分之百，至少也是99%"，不再是特朗普单方面喊话。</p>
+                
+                <p>此外，中立国巴基斯坦总理夏巴兹也发文称美国与伊朗已达成和平协议，正式签署仪式预计将在<strong>6月19日于瑞士举行</strong>。多方的确认使得市场对中东地缘风险的担忧显著降温。</p>
+                
+                <div class="quote-block">
+                    <p>"这次不是光凭特朗普的话，因为前面已经出现过很多次这样的事；但这一次是伊朗最高国家安全委员会也发出了声明，确认停战谅解备忘录已经达成。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+                
+                <div class="highlight-box success">
+                    <p><strong>市场影响：</strong>地缘风险溢价的消退对全球资本市场都是好事，但需注意这一消息此前已被市场较充分预期，短期利好兑现后反而要警惕情绪波动。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">全球市场反应：股指期货上涨，黄金反弹，原油大跌</h3>
+                <span class="section-tag">市场研判</span>
+            </div>
+            <div class="content">
+                <p>受停战消息影响，美国三大股指期货在开盘前连续交易时段普遍上涨：</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产</th>
+                            <th>表现</th>
+                            <th>解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>道琼斯指数期货</td>
+                            <td class="trend-up">+0.54%</td>
+                            <td>传统蓝筹板块跟随风险偏好回升</td>
+                        </tr>
+                        <tr>
+                            <td>标普500期货</td>
+                            <td class="trend-up">+0.78%</td>
+                            <td>大盘科技领涨，情绪修复明显</td>
+                        </tr>
+                        <tr>
+                            <td>纳斯达克期货</td>
+                            <td class="trend-up">+0.3%</td>
+                            <td>科技股涨幅相对温和</td>
+                        </tr>
+                        <tr>
+                            <td>黄金</td>
+                            <td class="trend-up">+1.56%</td>
+                            <td>地缘缓和+超跌反弹，均衡价格获支撑</td>
+                        </tr>
+                        <tr>
+                            <td>白银</td>
+                            <td class="trend-up">+3-4%</td>
+                            <td>波动较大，仍在连续交易中震荡</td>
+                        </tr>
+                        <tr>
+                            <td>WTI原油</td>
+                            <td class="trend-down">-4% 至 81.6美元</td>
+                            <td>地缘溢价回落，交易周期进入尾声</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>原油提醒：</strong>此前实战营观点中唯一发生变化的是原油。原油从60美元涨至120美元后，交易周期已经完成，当前再吃鱼尾性价比很低。后续油价回到60美元的可能性很低，但在80-90美元区域已消化大部分配置逻辑，不建议超配。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">A股指数成分股大调整：科技股批量纳入宽基指数</h3>
+                <span class="section-tag">制度解析</span>
+            </div>
+            <div class="content">
+                <p>近期上证成指、创业板指、深证100、创业板50、沪深300、中证500等主要指数陆续调整成分股。此次调入的股票中，大量涉及<strong>国产GPU、光模块、存储芯片、半导体</strong>等科技方向，引发市场广泛关注。</p>
+                
+                <p>主讲人从三个层面剖析了本次指数调整的影响：</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>影响维度</th>
+                            <th>具体含义</th>
+                            <th>资金属性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>纯被动指数基金</td>
+                            <td>必须按指数权重配置新纳入股票</td>
+                            <td>刚性配置资金</td>
+                        </tr>
+                        <tr>
+                            <td>指数增强型基金</td>
+                            <td>选股范围在指数成分股内，调入即进入可选池</td>
+                            <td>半主动增量资金</td>
+                        </tr>
+                        <tr>
+                            <td>相关资金规模</td>
+                            <td>跟踪上述宽基指数的基金规模合计接近1万亿</td>
+                            <td> sizable 边际增量</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <p><strong>调入逻辑：</strong>将股票调入重要宽基指数，有利于吸引长期被动投资流入。指数基金必须跟踪指数成分股买入；指数增强基金也会在成分股范围内择优增配。这部分资金虽不意味着1万亿全部买入新公司，但调出股票的仓位会腾挪给调入股票，形成可观的边际增量。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">阴谋论澄清：指数调整是规则驱动，非人为高位接盘</h3>
+                <span class="section-tag">深度思考</span>
+            </div>
+            <div class="content">
+                <p>市场上有声音认为：科技股已经涨了很多，现在把它们纳入指数是"让老百姓来接盘"。主讲人明确否定了这种阴谋论，指出主要指数的调整都是<strong>规则性、机制化</strong>的，并非由某个人或机构决定哪些股票进来。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 规则驱动</h4>
+                        <ul>
+                            <li>沪深300等指数按市值加权规则定期调整</li>
+                            <li>公司市值增长到一定水平后自然纳入</li>
+                            <li>每年通常有两次定期调整窗口</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 常见误解</h4>
+                        <ul>
+                            <li>"高位纳入是为了让散户接盘"</li>
+                            <li>"指数编制机构有意为之"</li>
+                            <li>"调入当天必然暴涨"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"不是谁决定哪个股票进来，而是它本身就有规则。沪深300是市值加权的指数，这些公司市值长到一定程度之后，自然按照规则就应该调到沪深300里面去。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+                
+                <div class="highlight-box blue">
+                    <p><strong>本质理解：</strong>科技股被纳入宽基指数，是因为这些公司"最近很争气、认真学习、勇于进步"，市值排名提升到了规则阈值。这是市场自然选择的结果，而非人为高位派发。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">短期冲击与中长期定价：错峰调仓，业绩为本</h3>
+                <span class="section-tag">操作策略</span>
+            </div>
+            <div class="content">
+                <p>主讲人提醒，指数调整对市场存在短期影响，但不宜过度放大。一个重要原因是：指数基金为了降低冲击成本，往往会<strong>错峰调仓</strong>——不会全部集中在调整生效日当天完成持仓切换，而是提前10-15天或稍微延后逐步转移仓位。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间维度</th>
+                            <th>调入股票</th>
+                            <th>调出股票</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>短期</td>
+                            <td class="trend-up">获得被动/半主动资金边际增配</td>
+                            <td class="trend-down">面临一定卖出压力</td>
+                        </tr>
+                        <tr>
+                            <td>中期</td>
+                            <td colspan="2" class="highlight">资金流向取决于基本面与估值匹配度</td>
+                        </tr>
+                        <tr>
+                            <td>长期</td>
+                            <td colspan="2" class="highlight">股价仍由公司自身业绩与成长性决定</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>配置建议：</strong>对调入和调出的股票都不要过分敏感。指数调整带来的资金流动是短期扰动，中长期定价权仍在于企业盈利能力和产业趋势。关注被纳入指数但估值尚未透支的硬科技龙头，同时警惕纯粹靠事件驱动的短期炒作。</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>本报告基于音频纪要整理，仅供内部研究参考</p>
+            <p class="disclaimer">
+                风险提示：市场有风险，投资需谨慎。本报告所载信息、意见、推测仅反映音频内容中的观点，不构成对任何人的投资建议，亦不作为买卖、认购证券或其他金融工具的邀请或保证。投资者据此操作，风险自担。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
