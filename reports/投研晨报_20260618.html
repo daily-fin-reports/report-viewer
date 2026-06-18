@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月18日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+        
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+        
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(192,57,43,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+        
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .section-title { font-size: 22px; font-weight: 600; }
+        
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+        
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+        
+        .content strong { color: var(--text-primary); font-weight: 600; }
+        
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美联储鹰派转向 · 陆家嘴论坛 · 科创板扩容 · 过热板块降温</p>
+            <p class="header-date">2026年6月18日 · 星期四 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🦅</div>
+                    <div class="summary-text">
+                        <strong>沃什鹰派表述落地</strong>
+                        美联储维持利率3.5%-3.75%不变，但沃什强调改变数据依赖型决策，回归前瞻性逆周期调节框架
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🔴</div>
+                    <div class="summary-text">
+                        <strong>72家公司提示交易风险</strong>
+                        光模块、PCB、MLCC等过热方向遭窗口指导降温，管理层为热门板块踩刹车
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🚀</div>
+                    <div class="summary-text">
+                        <strong>科创板第五套标准扩容</strong>
+                        AI大模型、量子科技、人形机器人纳入科创板支持范围，中长期利好科技牛
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌏</div>
+                    <div class="summary-text">
+                        <strong>日经突破7万点新高</strong>
+                        日本超级牛市延续，美联储鹰派下全球流动性预期中性偏紧，黄金跌1.5%
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美联储6月会议：沃什鹰派表述与前瞻性框架</h3>
+                <span class="section-tag">宏观货币政策</span>
+            </div>
+            <div class="content">
+                <p>美联储6月议息会议维持联邦基金目标利率<strong>3.5%-3.75%</strong>不变，符合市场预期。但市场真正的关注点在于<strong>沃什（Warsh）对美联储改革方向及货币政策框架的前瞻性表态</strong>。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心变化：</strong>沃什明确提出要改变"数据依赖型"决策方式，回归<strong>前瞻性逆周期调节</strong>框架。这意味着美联储不再等待通胀数据验证后才行动，而是基于趋势判断提前做出政策调整。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>政策框架</th>
+                            <th>鲍威尔时期</th>
+                            <th>沃什新框架</th>
+                            <th>影响</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">决策依据</td>
+                            <td>数据依赖型（等数据出来再反应）</td>
+                            <td class="trend-up">前瞻性判断（基于趋势预判）</td>
+                            <td class="trend-up">政策节奏更主动</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">判断逻辑</td>
+                            <td>看到通胀数据后才加息/降息</td>
+                            <td class="trend-up">判断长期or短期，可控则不动</td>
+                            <td class="trend-up">减少政策反复</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">市场反应</td>
+                            <td>每次数据发布后剧烈波动</td>
+                            <td class="trend-up">市场预期更稳定</td>
+                            <td class="trend-up">降低数据敏感性</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>沃什还表示要建立自己的<strong>前瞻性数据框架</strong>，涵盖资产负债表、AI与就业、通胀等维度，而非被动等待CPI、非农就业等滞后数据。</p>
+                
+                <div class="highlight-box alert">
+                    <p><strong>点阵图信号：</strong>6月点阵图显示9位成员认为年内应加息一次，8位不变，1位降息。但<strong>沃什未参与此次点阵图</strong>，因此参考价值有限。主讲人判断：在通胀未进一步恶化的情况下，<strong>年内大概率保持不变</strong>。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"沃什认为货币政策应该回归到前瞻性的路线上——如果未来通胀进一步上升，不用等到验证性数据，基于趋势性判断就会做调整。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">全球市场反应：鹰派表述冲击与日系牛市</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>资本市场将沃什表态解读为<strong>鹰派信号</strong>——此前主流共识是年内不降息，但点阵图暗示加息可能性上升，导致资产价格短期波动。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card negative">
+                        <h4>🔴 承压资产</h4>
+                        <ul>
+                            <li>黄金：下跌1.5%-1.7%</li>
+                            <li>全球流动性敏感资产承压</li>
+                            <li>对利率预期敏感的成长股</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 强势资产</h4>
+                        <ul>
+                            <li>日经指数：突破7万点，创新高</li>
+                            <li>日本超级牛市从5万点→7万点</li>
+                            <li>美元资产吸引力提升</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box blue">
+                    <p><strong>判断：</strong>美联储这次会议之后，全球货币政策的宽松程度是<strong>中性偏紧</strong>。虽然年内加息概率不大，但降息预期被进一步打压，风险偏好边际收缩。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">陆家嘴论坛：科创板第五套标准扩容</h3>
+                <span class="section-tag">政策前瞻</span>
+            </div>
+            <div class="content">
+                <p>陆家嘴论坛是国内级别最高的资本市场年度论坛之一，每年在上海举办，中央金融监管部门主要领导均出席。本次论坛释放了一系列<strong>资本市场改革与科技支持政策</strong>。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>政策方向</th>
+                            <th>具体内容</th>
+                            <th>受益领域</th>
+                            <th>时间节奏</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">科创板第五套标准扩容</td>
+                            <td>AI大模型纳入第五套标准</td>
+                            <td class="trend-up">智谱、DeepSeek等AI公司</td>
+                            <td class="trend-up">加速IPO</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">未来产业支持</td>
+                            <td>量子科技、人形机器人核心公司上市</td>
+                            <td class="trend-up">本源量子、国仪量子等</td>
+                            <td class="trend-up">明年上半年密集上市</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">发行制度改革</td>
+                            <td>推出储价发行等制度</td>
+                            <td>IPO效率提升</td>
+                            <td>制度保障</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">打击炒作</td>
+                            <td>严打借科技炒作、操纵市场</td>
+                            <td class="trend-down">伪科技、碰瓷概念</td>
+                            <td>常态化</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>核心逻辑：</strong>在六大未来产业龙头核心公司未完全上市之前，<strong>科技牛不会结束</strong>。国家层面在用资本市场支持中国科技崛起，科技龙头在A股占比将持续提升。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"一个国家的科技牛在他的核心的未来产业的核心公司没有完全登陆资本市场的情况下就崩了，这种情况是很少见的。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">72家公司提示交易风险：热门板块降温信号</h3>
+                <span class="section-tag">风险提示</span>
+            </div>
+            <div class="content">
+                <p>论坛同一天，<strong>72家公司</strong>被提示交易风险，主要集中在光模块、PCB、MLCC等近期市场最热的方向。管理层明确以<strong>窗口指导形式为过热的板块降温</strong>。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card negative">
+                        <h4>🔴 被降温方向</h4>
+                        <ul>
+                            <li>光模块（CPO）：短期涨幅过大</li>
+                            <li>PCB：产业链过热</li>
+                            <li>MLCC：被动元件炒作</li>
+                            <li>其他短期涨幅异常的科技细分</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 政策意图</h4>
+                        <ul>
+                            <li>防止局部泡沫过度膨胀</li>
+                            <li>维护市场平稳运行</li>
+                            <li>让科技牛走得更长更稳</li>
+                            <li>打击借科技之名炒作</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>历史参照：</strong>今年1月份，商业航天板块也曾遭遇类似的窗口指导降温，之后板块经历了显著调整。当前热门板块若不站在"光里"，<strong>不要追高</strong>，追高可能面临30%左右的回调代价。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"中国科技用10年的时间期待和美国领跑或者并跑，但不是一年完成的。在10年的大周期中，仍然会遇到让你非常难受的逆潮。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资策略：中长期科技牛 vs 短期过热风险</h3>
+                <span class="section-tag">操作建议</span>
+            </div>
+            <div class="content">
+                <p>当前市场处于<strong>中长期政策利好</strong>与<strong>短期交易风险</strong>并存的阶段，投资者需要区分"科技牛"的大趋势与"热门板块"的短期过热。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>判断</th>
+                            <th>策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>光模块/CPO/PCB</td>
+                            <td class="trend-down">过热，窗口指导降温</td>
+                            <td class="trend-down">不追高，已有仓位注意风险</td>
+                        </tr>
+                        <tr>
+                            <td>AI大模型/智谱/DeepSeek</td>
+                            <td class="trend-up">科创板扩容支持</td>
+                            <td class="trend-up">关注IPO进程及产业链</td>
+                        </tr>
+                        <tr>
+                            <td>量子科技/人形机器人</td>
+                            <td class="trend-up">未来产业核心，政策开绿灯</td>
+                            <td class="trend-up">中长期布局，跟踪一级标的</td>
+                        </tr>
+                        <tr>
+                            <td>黄金</td>
+                            <td class="trend-down">鹰派预期下短期承压</td>
+                            <td class="trend-down">短期回避，等待降息预期回归</td>
+                        </tr>
+                        <tr>
+                            <td>日经/日本股市</td>
+                            <td class="trend-up">超级牛市延续，突破7万点</td>
+                            <td class="trend-up">趋势交易，关注加息节奏</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>热门板块（光模块、PCB、MLCC等）目前"热得发烫"，管理层明确降温。若追高，参考今年1月商业航天板块走势，<strong>可能面临30%左右回调</strong>。整体指数风险不大，但细分热门板块波动风险显著。</p>
+                </div>
+                
+                <div class="highlight-box success">
+                    <p><strong>中长期策略：</strong>科技牛是10年大周期，中国科技用10年追赶美国。当前政策支持六大未来产业龙头上市，在核心公司未完全登陆前，科技牛不会结束。关键是<strong>不要让自己处于过热细分板块的逆潮中</strong>。</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>本报告基于音频纪要整理，仅供内部研究参考</p>
+            <p class="disclaimer">
+                风险提示：市场有风险，投资需谨慎。本报告所载信息、意见、推测仅反映音频内容中的观点，不构成对任何人的投资建议，亦不作为买卖、认购证券或其他金融工具的邀请或保证。投资者据此操作，风险自担。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
