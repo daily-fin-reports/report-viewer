@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月23日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">券商板块大涨 · 红利资产止跌 · K型分化见顶信号</p>
+            <p class="header-date">2026年6月23日 · 星期二 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">📈</div>
+                    <div class="summary-text">
+                        <strong>券商板块集体大涨超5%</strong>
+                        以券商为代表的老灯板块出现多年未见的集体大涨，龙头券商涨幅达两位数，是K型分化到极致后的反向运动
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🔴</div>
+                    <div class="summary-text">
+                        <strong>K型分化已达极致</strong>
+                        超过1000家公司回到924之前水平，科技成牛市、其他成熊市；当最坚定的老灯持有者也开始割肉时，反转往往临近
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🟢</div>
+                    <div class="summary-text">
+                        <strong>红利资产迎来配置窗口</strong>
+                        高股息与自由现金流ETF近2-3个月大幅回调，为保守型投资者提供了替代银行理财的中长期配置机会
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>均衡配置仍是核心纪律</strong>
+                        拥抱科技、尊重老灯，不押注单一方向；科技涨时兑现利润保留本金，老灯跌时提供安全垫和补仓弹药
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">券商大涨：极致分化后的反向运动</h3>
+                <span class="section-tag">市场动态</span>
+            </div>
+            <div class="content">
+                <p>昨日A股出现明显变化，以<strong>券商为代表的"老灯"板块集体大涨</strong>，券商板块涨幅超过5%，多只龙头券商涨幅达两位数。这是多年未见的行情，其意义不在于单日涨跌，而在于它发生在当前极致K型分化的背景下。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心逻辑：</strong>任何事物走向极端后都会发生变化。正如老子所言"反者道之动"，当老灯板块被持续抛售、成为科技的血包后，最坚定的持有者也开始动摇，往往意味着阶段性反转临近。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>市场状态</th>
+                            <th>表现</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">科技股</td>
+                            <td class="trend-up">持续上涨，牛市氛围</td>
+                            <td class="trend-up">泡沫累积，需兑现利润</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">老灯/红利板块</td>
+                            <td class="trend-down">持续下跌，资金流出</td>
+                            <td class="trend-down">价值逐步显现，配置机会</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">券商板块</td>
+                            <td class="trend-up">单日大涨超5%</td>
+                            <td class="trend-up">市场情绪切换，老灯止跌信号</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">全市场</td>
+                            <td class="trend-down">1000+公司回到924前</td>
+                            <td class="trend-down">分化已达极端，难以持续</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="quote-block">
+                    <p>"当原来最坚定的一批持有老灯的人，套在白酒里面五年都坚持不住的时候，那就是最后一波对老灯的抛弃。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">K型分化的极限：科技股与老灯的撕裂</h3>
+                <span class="section-tag">策略研判</span>
+            </div>
+            <div class="content">
+                <p>当前市场的K型分化已演化为<strong>科技对其他板块的全面吸血</strong>。科技涨时其他板块不仅不涨，反而因资金搬家而下跌。这种格局在历史上多次出现，但本轮的极致程度在主讲人职业生涯中较为罕见。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 科技牛未完但需警惕</h4>
+                        <ul>
+                            <li>科技产业长期向上，国家发展战略明确</li>
+                            <li>未来产业核心公司尚未完全上市，科技牛未结束</li>
+                            <li>但短期已透支未来，板块存在泡沫</li>
+                            <li>不要试图逃顶，但要规律性地兑现利润</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 老灯已具价值底</h4>
+                        <ul>
+                            <li>1000多家公司回到924之前水平</li>
+                            <li>大量红利资产股息率升至5%-6%以上</li>
+                            <li>消费类公司开始大额分红回购注销</li>
+                            <li>情绪底与政策底逐步重合</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险警示：</strong>当身边所有人都在说"应该全搞科技"时，这个认知已经太晚。科技长期看好，不代表现在买入不会被套30%。不要在群体亢奋时把仓位推向极端。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"科技的长牛没有结束，科技产业的发展刚刚方兴未艾，但不代表着你现在买了科技，他不可以套你30%。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">红利止跌：保守型投资者的配置窗口</h3>
+                <span class="section-tag">资产配置</span>
+            </div>
+            <div class="content">
+                <p>近2-3个月，红利类资产和自由现金流ETF因资金持续流向科技而出现较大幅度回调。对于中长期（3-5年）投资者而言，这反而提供了较好的配置窗口。红利资产的本质是<strong>跌的时候价值更高</strong>——股息率上升，安全边际增厚。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产类型</th>
+                            <th>当前状态</th>
+                            <th>适合投资者</th>
+                            <th>配置策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">高股息红利ETF</td>
+                            <td class="trend-up">回调后股息率5%-6%+</td>
+                            <td>保守型、长期持有者</td>
+                            <td class="trend-up">替代银行理财，左侧布局</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">自由现金流ETF</td>
+                            <td class="trend-up">近2-3个月大幅回调</td>
+                            <td>追求稳健现金流者</td>
+                            <td class="trend-up">作为组合安全垫</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">券商板块</td>
+                            <td class="trend-up">单日大涨，情绪修复</td>
+                            <td>风险偏好较高者</td>
+                            <td class="trend-down">不宜追高，关注持续性</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">科技股</td>
+                            <td class="trend-down">泡沫累积，波动加大</td>
+                            <td>能承受高波动者</td>
+                            <td class="trend-down">兑现利润，保留底仓</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>配置纪律：</strong>红利类资产适合"买了之后中间不看了"的投资者。以3-5年维度看，股息率5%-6%的优质公司很难持续跌在买入价以下，但短期再跌10%完全可能。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"红利股是跌的时候价值更高。现在到了一个红利股投资的很好的配置机会，用红利类资产替代你原来买的那些银行破理财。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">科技仓位管理：兑现利润，保留本金</h3>
+                <span class="section-tag">操作建议</span>
+            </div>
+            <div class="content">
+                <p>科技股短期涨幅较大，部分投资者出现"涨得浑身难受"的心态。主讲人反复强调：科技长期看好，但<strong>必须执行"兑现利润、保留本金"</strong>的纪律。不要试图做神，不要以为自己能精准逃顶。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 正确做法</h4>
+                        <ul>
+                            <li>科技涨出来的利润，拿出一部分落袋或转配老灯</li>
+                            <li>保留科技底仓，继续参与产业长期趋势</li>
+                            <li>用科技利润去补跌得多的老灯仓位</li>
+                            <li>承认自己赚钱是因为市场好，不是神</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 错误做法</h4>
+                        <ul>
+                            <li>科技涨了三天就全卖掉，试图精准逃顶</li>
+                            <li>把老灯全割了All In科技</li>
+                            <li>涨得难受、跌得也难受，频繁操作</li>
+                            <li>用炒概念的公司冒充科技价值投资</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box blue">
+                    <p><strong>操作示例：</strong>假设你有1000万在科技上，涨出100万利润。可以把这100万拿出来花掉、存起来，或者转移到下跌的老灯资产上。剩下的1000万继续留在科技里，不要清光。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"你有1000万在科技上，涨出来100万，把这100万拿出去花了，或者拿出去存起来，或者老灯跌了，你把这100万放在老灯上。剩下1000万继续在里面玩。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">市场微观信号：高管减持与回购注销</h3>
+                <span class="section-tag">产业观察</span>
+            </div>
+            <div class="content">
+                <p>从近期公告中可以观察到两个相反的信号：<strong>科技公司高管持续减持</strong>，而<strong>消费类公司开始大额回购注销</strong>。这从侧面说明：科技板块短期情绪过热，而老灯板块已逐步具备价值底。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>信号</th>
+                            <th>代表行为</th>
+                            <th>板块含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">科技股高管减持</td>
+                            <td>科技公司高管、大基金持续减持</td>
+                            <td class="trend-down">短期估值偏高，内部人兑现</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">消费股回购注销</td>
+                            <td>海天味业等公布数十亿回购注销计划</td>
+                            <td class="trend-up">价值底出现，管理层认为股价被低估</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>结论：</strong>这两个信号共同指向同一个判断——科技短期偏贵、老灯逐步见底。但这不是说要把科技全换成老灯，而是在均衡配置框架下，利用科技的利润去优化组合结构。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">投资策略：花期不同，均衡盛放</h3>
+                <span class="section-tag">心态与纪律</span>
+            </div>
+            <div class="content">
+                <p>资产配置的核心在于承认<strong>每朵花的花期不同，但挑选过的花最终都会盛开</strong>。均衡配置不是齐涨齐跌，而是在不同资产间获得收益的同时，降低整体波动，让持有体验更好。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心纪律：</strong>均衡配置、拥抱科技、尊重老灯。科技负责弹性，老灯负责稳健。科技贡献利润时，有弹药去补下跌的仓；老灯企稳时，又为组合提供安全垫。</p>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card neutral">
+                        <h4>🟡 对科技投资者</h4>
+                        <ul>
+                            <li>不要频繁猜顶，但要规律兑现利润</li>
+                            <li>保留本金，不要把浮盈全部还回去</li>
+                            <li>承认赚钱主要靠市场，保持敬畏</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 对老灯投资者</h4>
+                        <ul>
+                            <li>不要在最低点割肉换科技</li>
+                            <li>红利资产跌下来价值更高</li>
+                            <li>以3-5年维度看待配置价值</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"均衡配置不是齐涨齐跌。你看着科技好的时候，老灯也在做贡献；科技差的时候，三天给你跌15%，你是不是还能扛得住？"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年6月23日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
