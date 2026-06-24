@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月24日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">全球科技大跌 · 韩国股指暴跌近10% · 日韩配置再平衡</p>
+            <p class="header-date">2026年6月24日 · 星期三 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>全球科技资产大跌</strong>
+                        韩国KOSPI暴跌近10%，日经跌超2000点，美光、纳斯达克隔夜跌超2%，年内涨幅过高后的正常回调
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏛️</div>
+                    <div class="summary-text">
+                        <strong>韩国拟对未实现收益征税</strong>
+                        韩国国会讨论将股票和房地产浮盈纳入综合征税，成为市场暴跌导火索；2300万人民币市值以下原本免资本利得税
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>此跌非3月式黄金坑</strong>
+                        主讲人评估目前回调尚未跌出像3月份那样的美日韩抄底机会，保持标配即可，不宜全仓杀入
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🌸</div>
+                    <div class="summary-text">
+                        <strong>花期不同，动态再平衡</strong>
+                        科技涨时兑现利润转配老灯，老灯跌时补仓；均衡配置不是一动不动，而是通过微调让强势板块利润落袋、弱势板块逆势加仓
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">全球市场巨震：韩国暴跌10%，科技股领跌</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>昨日全球市场出现剧烈波动，<strong>韩国KOSPI指数暴跌接近10%</strong>，日经指数重挫超过2000点，晚间美光科技、纳斯达克指数均下跌超过2%。这是今年以来科技资产涨幅过高、过快后的一次集中释放。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心逻辑：</strong>经济学有句话叫"繁荣是萧条的原因"，在股市里同样适用——涨得多就是下跌的原因。韩国科技股、美股科技股年内涨幅巨大，回调属于正常现象。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>市场/资产</th>
+                            <th>昨日表现</th>
+                            <th>年内背景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">韩国KOSPI</td>
+                            <td class="trend-down">暴跌近10%</td>
+                            <td class="trend-up">3月5000点涨至4月8000点</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">日经指数</td>
+                            <td class="trend-down">跌超2000点</td>
+                            <td class="trend-up">此前创历史新高逼近7万点</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">美光科技</td>
+                            <td class="trend-down">跌超2%</td>
+                            <td class="trend-up">存储芯片年内涨幅巨大</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">纳斯达克</td>
+                            <td class="trend-down">跌超2%</td>
+                            <td class="trend-up">AI科技牛市持续数月</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="quote-block">
+                    <p>"经济学有句话叫繁荣是萧条的原因，换句话说涨得多就是下跌的原因。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">韩国暴跌导火索：股票浮盈拟纳入综合征税</h3>
+                <span class="section-tag">政策风险</span>
+            </div>
+            <div class="content">
+                <p>韩国股市此次暴跌的直接导火索是：<strong>韩国国会讨论将股票和房地产的未实现收益（浮盈）纳入个人综合征税</strong>。这意味着即便投资者没有卖出股票，账面上的浮盈也可能需要缴税。</p>
+                
+                <div class="highlight-box blue">
+                    <p><strong>现行政策：</strong>韩国原本的资本利得税规定，持股市值<strong>50亿韩元以下</strong>（约合人民币2300万元）的投资者无需缴纳资本利得税；50亿韩元以上按累计税率缴纳6%-45%的资本利得税。中国投资者目前炒股不征收资本利得税，在这方面具有天然优势。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>税种</th>
+                            <th>现行规则</th>
+                            <th>拟议变化</th>
+                            <th>影响</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">资本利得税</td>
+                            <td>卖出时缴纳；50亿韩元市值以下免征</td>
+                            <td>可能维持，但计税基础调整</td>
+                            <td class="trend-down">高市值投资者税负增加</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">综合征税（拟新增）</td>
+                            <td>股票浮盈不计入</td>
+                            <td>股票和房地产浮盈纳入综合征税</td>
+                            <td class="trend-down">未卖出也要缴税，压制风险偏好</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>判断：</strong>税收政策是导火索，但不是根本原因。即便没有这条消息，年内涨幅过大的韩股和科技股也会出现回调。真正决定后续走势的仍是估值水平和盈利支撑。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"这个消息一出，韩国股市应声下跌。作为一个导火索，影响还是有点大的。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">日韩配置策略：标配为主，不追跌抄底</h3>
+                <span class="section-tag">海外配置</span>
+            </div>
+            <div class="content">
+                <p>对于美日韩市场，主讲人反复强调要区分<strong>战略底仓</strong>与<strong>战术加仓</strong>。3月份提示的加仓机会（韩国5000点）早已兑现，4月份韩国回到8000点时已完成利润兑现。当前回调虽然剧烈，但尚未跌出类似3月份的舒适买点。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 应该做的</h4>
+                        <ul>
+                            <li>保持美日韩标准配置，不空仓</li>
+                            <li>此前没有配置的同学，可小仓位打底仓</li>
+                            <li>等待进一步回调至舒适位置再考虑加仓</li>
+                            <li>利用波动做再平衡，而非追涨杀跌</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 不应该做的</h4>
+                        <ul>
+                            <li>看到大跌就全仓抄底日韩</li>
+                            <li>幻想这次会复制3月份黄金坑</li>
+                            <li>因为恐慌全部卖出海外资产</li>
+                            <li>把短期波动当成趋势反转</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box success">
+                    <p><strong>核心纪律：</strong>对于已经完成利润兑现的美日韩仓位，现在保持标配即可。如果没有底仓，可以开始建立小仓位，但不要期待一次跌到最佳位置。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"我们期待这次能出现像3月份那样的美日韩抄底机会，但我目前评估这个可能性还不大。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">科技仓位管理：兑现利润纪律再强调</h3>
+                <span class="section-tag">操作建议</span>
+            </div>
+            <div class="content">
+                <p>此次全球科技大跌，再次验证了前几日反复强调的纪律：<strong>兑现利润、保留本金</strong>。科技板块长期牛市未结束，但短期泡沫明显，任何政策、情绪、估值的边际变化都可能引发剧烈波动。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>情景</th>
+                            <th>正确应对</th>
+                            <th>错误应对</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">科技大涨时</td>
+                            <td class="trend-up">分批兑现利润，转出部分本金</td>
+                            <td class="trend-down">越涨越兴奋，满仓加杠杆</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">科技大跌时</td>
+                            <td class="trend-up">检查仓位上限，有余粮则补仓</td>
+                            <td class="trend-down">恐慌割肉，或全仓抄底</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">老灯大涨时</td>
+                            <td class="trend-up">让利润奔跑，但不过度追高</td>
+                            <td class="trend-down">认为风格彻底切换，追入高位</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">老灯大跌时</td>
+                            <td class="trend-up">用科技利润逢低补仓，维持均衡</td>
+                            <td class="trend-down">绝望割肉，换仓已大涨的科技</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>创业板、科创板中很多公司单日跌15%是很自然的事情。如果你无法承受这种波动，就不应全仓科技；如果你承受不了老灯长期不涨，也不应全仓老灯。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"你买了三个科技公司，三家公司一天都跌15%，这种情况是很有可能的。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">均衡配置的艺术：动态再平衡而非一动不动</h3>
+                <span class="section-tag">资产配置</span>
+            </div>
+            <div class="content">
+                <p>均衡配置不是买入后不动，而是在科技和老灯之间做<strong>动态再平衡</strong>。当科技涨了一倍、老灯跌到400万时，应该把科技的利润拿出一部分，补到老灯上，让两边回到均衡比例。这样当风格切换时，组合才能在两边都受益。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>再平衡示例：</strong>初始1000万，科技500万、老灯500万。科技涨一倍变1000万，老灯跌到400万。此时将科技利润中的一部分（如100万）转出，补到老灯使其回到500万。这样既享受了科技上涨，又在老灯上逆势加仓。</p>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card neutral">
+                        <h4>🟡 科技花期时</h4>
+                        <ul>
+                            <li>科技仓位自然变高</li>
+                            <li>兑现部分利润落袋为安</li>
+                            <li>将利润转入下跌的老灯</li>
+                            <li>保持科技底仓继续参与</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 老灯花期时</h4>
+                        <ul>
+                            <li>老灯仓位因补仓变重</li>
+                            <li>享受反弹带来的收益</li>
+                            <li>再平衡时转回科技</li>
+                            <li>每朵花盛开时都有仓位</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"均衡配置不是代表你的组合不做调整。科技涨了一倍，你该往外拿利润；老灯跌了，你用利润补回去。这样每只花期不同的花你都有仓位。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">黄金跌破4000：晚间直播进一步交流</h3>
+                <span class="section-tag">其他观察</span>
+            </div>
+            <div class="content">
+                <p>除股债和科技资产外，<strong>黄金价格已跌回接近4000美元/盎司</strong>。从之前"涨过5000没买怎么办"到现在"5000没忍住买了怎么办"，市场情绪再次出现反转。主讲人将在晚间直播中进一步交流黄金及市场波动相关问题。</p>
+                
+                <div class="highlight-box blue">
+                    <p><strong>提示：</strong>周三晚间直播将围绕近期市场大幅波动、黄金回调、资产配置等问题进行互动答疑，适合近期对组合波动感到困惑的投资者参加。</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年6月24日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
