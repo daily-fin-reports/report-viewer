@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月25日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美元指数创一年新高 · 美光发布炸裂年报 · 存储景气延续</p>
+            <p class="header-date">2026年6月25日 · 星期四 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">💵</div>
+                    <div class="summary-text">
+                        <strong>美元指数创一年新高</strong>
+                        美元指数盘中触及101.8，较1月底低点95已上涨约6%；美元信用重塑通过传统能源绑定与AI核心资产两条主线推进
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>黄金跌破4000美元</strong>
+                        现货黄金与伦敦金盘中跌破4000美元，铜等有色金属跟随回调；若美元与大宗商品继续过度反应，反而提供配置窗口
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">💾</div>
+                    <div class="summary-text">
+                        <strong>美光财报大超预期</strong>
+                        单季度营收414亿美元、净利润228.4亿美元；存储需求至2027年大幅增长，新产能2028年后才集中释放
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🌏</div>
+                    <div class="summary-text">
+                        <strong>日韩股市大涨带动情绪</strong>
+                        美光盘后涨15%，韩国市场涨5%，日经大涨2%重回7万点；对A股风险偏好也有支撑作用
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美元指数创一年新高：美元信用重塑的两条主线</h3>
+                <span class="section-tag">宏观汇率</span>
+            </div>
+            <div class="content">
+                <p>昨日美元指数盘中触及<strong>101.8</strong>，创下近一年新高。自今年1月底2月初的低点95以来，美元指数已累计上涨约<strong>6%</strong>。回顾这几个月的市场叙事，1月至2月市场主流逻辑是"美元信用要崩"，全球央行抛售美元、增持黄金，黄金一度如日中天；彼时提示黄金应兑现利润、美元中长期贬值叙事经不起推敲。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>美元在重塑自身信用的过程中，同时做两件事：一是重新与传统能源（石油）绑定，二是通过大力发展AI让美元与新时代核心资产挂钩。这两件事对美元形成了实实在在的正向支撑。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间/事件</th>
+                            <th>市场叙事</th>
+                            <th>实际结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">1-2月</td>
+                            <td>美元信用崩溃，黄金登顶</td>
+                            <td class="trend-up">美元自95反弹，黄金回落</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">3-5月</td>
+                            <td>人民币贬值预期升温，投行看升至6.5</td>
+                            <td class="trend-up">美元/人民币维持6.8-7区间震荡</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">6月下旬</td>
+                            <td>美元指数创一年新高至101.8</td>
+                            <td class="trend-up">能源安全+AI资产双重支撑</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="quote-block">
+                    <p>"如果你在1月和2月能有一个比较理性的对美元和黄金的判断，就不至于挂在黄金的高点，也不至于过度看空美元。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">加息预期 vs 现实：年内不降息，但加息概率也不高</h3>
+                <span class="section-tag">美联储</span>
+            </div>
+            <div class="content">
+                <p>近期美元、黄金与大宗商品的波动，背后反映的是市场在重新定价"美元年内加息"这件事。但当前对加息的反应已经出现一定<strong>矫枉过正</strong>的迹象。从基本面看，年内更可能的情形是：<strong>美联储不降息，将高利率延续到明年</strong>；在通胀没有出现异常变化的情况下，贸然加息的概率并不高。</p>
+                
+                <div class="highlight-box blue">
+                    <p><strong>通胀观察：</strong>油价已回落至约70美元/桶，未来两个月很可能看到美国CPI或核心PCE的高点。因此，年内加息缺乏充足的逻辑支撑，当前市场对加息的定价有点过度。</p>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 更可能的基准情形</h4>
+                        <ul>
+                            <li>年内不降息，高利率延续</li>
+                            <li>通胀不出现意外，则不会贸然加息</li>
+                            <li>美元强势有基本面支撑，但不会无限度上涨</li>
+                            <li>大宗商品回调提供布局机会</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 需要警惕的过度反应</h4>
+                        <ul>
+                            <li>市场已部分price in年内加息</li>
+                            <li>美元若继续过度强势，将压制黄金与铜</li>
+                            <li>情绪从"美元崩溃"快速切换到"美元永远强"</li>
+                            <li>追高美元、杀跌黄金容易再次买高卖低</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"现在对美元的加息判断有点矫枉过正，就像1月份对美元贬值的风险反应过度一样。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">黄金跌破4000、铜回调：是风险还是机会？</h3>
+                <span class="section-tag">大宗商品</span>
+            </div>
+            <div class="content">
+                <p>美元走强直接冲击黄金与有色金属。昨日<strong>现货黄金与伦敦金盘中均跌破4000美元/盎司</strong>，以铜为代表的有色金属也出现不同程度下跌。但铜的金融属性显著弱于黄金，工业用途更强，因此受美元强势的影响相对较小。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产</th>
+                            <th>昨日表现</th>
+                            <th>金融属性</th>
+                            <th>配置含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">黄金</td>
+                            <td class="trend-down">跌破4000美元</td>
+                            <td>强</td>
+                            <td class="trend-up">若再飘一飘，回到相对均衡位置</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">铜</td>
+                            <td class="trend-down">跟随回调</td>
+                            <td>弱于黄金</td>
+                            <td class="trend-up">前期没配置者可关注配置机会</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">原油</td>
+                            <td>约70美元/桶</td>
+                            <td>地缘+供需</td>
+            <td class="neutral">支撑通胀见顶逻辑</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>机会判断：</strong>如果美元继续过度强势，同时大宗商品和有色金属进一步下跌，对投资者反而是机会。对原本没有黄金配置的人，当前位置趋于均衡；对没有铜配置的人，下跌提供了布局窗口。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"你原来一点都没有黄金，现在黄金再飘一飘，差不多也到了一个相对比较均衡的位置；铜如果进一步下跌，也是配置机会。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">美光炸裂年报：单季净利228亿美元，存储景气延续至2027</h3>
+                <span class="section-tag">产业财报</span>
+            </div>
+            <div class="content">
+                <p>昨日美股最受关注的财报来自美光科技。业绩堪称惊艳：<strong>单季度营收414亿美元</strong>，远超市场预期的300多亿美元；<strong>当季净利润228.4亿美元</strong>，折合人民币约2000亿元。作为参照，三星与海力士当前全年利润约在1.2万亿人民币级别，单季约3000亿人民币；而创业板与科创板全部公司2025年合计利润仅约2000多亿人民币。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>利润体量对比：</strong>美光一个季度净利润约2000亿人民币，接近创业板+科创板全部公司一年的利润总和，也快要超过部分传统大型银行。这再次说明，科技龙头的盈利能力已与A股大量公司不在一个量级。</p>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>美光（单季）</th>
+                            <th>三星/海力士（单季估算）</th>
+                            <th>创业板+科创板（2025全年）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">利润规模</td>
+                            <td class="trend-up">约2000亿人民币</td>
+                            <td>约3000亿人民币</td>
+                            <td class="trend-down">约2000多亿人民币</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">年化水平</td>
+                            <td>约7800-8000亿人民币</td>
+                            <td>约1.2万亿人民币</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">核心驱动</td>
+                            <td>存储价格+AI需求</td>
+                            <td>存储价格+AI需求</td>
+                            <td>多元行业，整体偏弱</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>市场对美光财报更关心的是其对存储芯片未来的展望：</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 乐观的供给端</h4>
+                        <ul>
+                            <li>存储价格拐点尚未看到，供需仍偏紧</li>
+                            <li>2027年之前需求大幅增长的判断不变</li>
+                            <li>新扩产产能集中释放要到2028年中以后</li>
+                            <li>美光已与下游战略客户签订5年以上长单</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 需要注意的节奏</h4>
+                        <ul>
+                            <li>2027年业绩大概率好于2026年</li>
+                            <li>但股价与业绩表现并非完全同步</li>
+                            <li>若2028年存储价格出现大波动，股价会提前反映</li>
+                            <li>2027年股价未必还能复制2026年的强势</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"美光跟下游战略客户都已经签了5年以上的订单，大家都在预防性采购；2027年业绩肯定比2026年更好，但股价是不是还能像2026年一样好，这不好说。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">市场联动：美光盘后大涨15%，日韩股市强劲反弹</h3>
+                <span class="section-tag">全球联动</span>
+            </div>
+            <div class="content">
+                <p>美光财报发布后，盘后股价大涨约<strong>15%</strong>；在录音时，韩国股市已开盘并大涨约<strong>5%</strong>，日经指数大涨约<strong>2%</strong>，重新站上7万点。这与前一日全球科技股大跌形成鲜明对比，说明市场情绪对利好财报反应迅速，短期波动虽大，但产业趋势未改。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>市场/资产</th>
+                            <th>表现</th>
+                            <th>驱动因素</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">美光科技（盘后）</td>
+                            <td class="trend-up">涨约15%</td>
+                            <td>财报大超预期，存储景气延续</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">韩国KOSPI</td>
+                            <td class="trend-up">涨约5%</td>
+                            <td>存储芯片情绪修复，前日超跌反弹</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">日经指数</td>
+                            <td class="trend-up">大涨约2%</td>
+                            <td>重回7万点以上，风险偏好回升</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">A股（预期）</td>
+                            <td class="neutral">有支撑</td>
+                            <td>海外情绪回暖，科技产业链受益</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box blue">
+                    <p><strong>对A股的影响：</strong>海外科技龙头财报强劲、日韩股市反弹，对国内半导体、存储产业链及整体风险偏好都有支撑作用。但需要注意，A股存储相关公司的业绩与股价节奏并不完全跟随美光，需区分真实业绩与情绪交易。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">投资启示：建立认知框架，拒绝人云亦云</h3>
+                <span class="section-tag">操作建议</span>
+            </div>
+            <div class="content">
+                <p>无论是年初的"美元崩溃、黄金永涨"，还是近期的"美元持续加息"，市场都在从一个极端摇摆到另一个极端。普通投资者最大的损失往往不是来自市场本身，而是来自<strong>买在高点、卖在低点</strong>的从众行为。建立正确的认知框架，比追逐短期叙事更重要。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 应该做的</h4>
+                        <ul>
+                            <li>对美元、汇率、黄金形成独立判断框架</li>
+                            <li>黄金回到均衡位置后，按配置比例持有</li>
+                            <li>铜等有色金属下跌时，关注长期布局机会</li>
+                            <li>存储产业链景气延续，但注意业绩与股价节奏错配</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 不应该做的</h4>
+                        <ul>
+                            <li>听到"美元信用崩"就全仓黄金</li>
+                            <li>看到美元新高就追美元、砍黄金</li>
+                            <li>根据投行短期目标价（如6.5）盲目换汇</li>
+                            <li>把美光单季高利润简单线性外推为股价永远涨</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>核心纪律：</strong>无论是美元、黄金还是存储芯片，都要区分叙事与基本面。市场常常在叙事最极端时给出最差的价格；独立思考、建立框架，才能避免在高点买入、在低点卖出。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>"普通人需要建立起来一个正确的认知框架，而不是人云亦云。买在高点、卖在低点，这个东西对你有很强的损失。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年6月25日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
