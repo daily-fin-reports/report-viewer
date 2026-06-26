@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月26日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">中国新能源体系建设十五五规划 · 40亿千瓦装机 · 风光主体地位</p>
+            <p class="header-date">2026年6月26日 · 星期五 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚡</div>
+                    <div class="summary-text">
+                        <strong>十五五新型能源体系规划发布</strong>
+                        国家发改委、国家能源局6月25日印发新型能源体系建设“十五五”规划，明确能源领域未来5-10年发展蓝图
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🌿</div>
+                    <div class="summary-text">
+                        <strong>2030年核心目标</strong>
+                        非化石能源消费比重达25%；风电和太阳能发电装机比重超50%；非化石能源发电量比重达50%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏭</div>
+                    <div class="summary-text">
+                        <strong>电力系统强调互补互济与安全韧性</strong>
+                        风光波动性倒逼电网补强，可控核聚变等新型电源对电网提出更高要求
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📊</div>
+                    <div class="summary-text">
+                        <strong>40亿千瓦装机背后的中国底气</strong>
+                        截至5月底全国发电装机40亿千瓦，相当于美、欧、印、日、俄之和；每新增10亿千瓦耗时从8年缩短至2年
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">政策落地：十五五新型能源体系建设规划发布</h3>
+                <span class="section-tag">政策解读</span>
+            </div>
+            <div class="content">
+                <p>6月25日，国家发改委与国家能源局联合印发<strong>《新型能源体系建设“十五五”规划》</strong>。该规划属于国家层面“十五五”总体规划在能源领域的专项细化，决定了未来5年甚至10年中国新能源体系的建设方向与具体目标。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>规划定位：</strong>“十五五”规划先出台国家层面的纲要，再由各部委出台子规划。新型能源体系建设规划即是能源领域的子规划，具有承上启下的作用，是后续产业政策、投资布局、项目审批的重要依据。</p>
+                </div>
+                
+                <p>同日，国家能源局与国家发展改革委还召开了新闻发布会，进一步解读规划内容与配套数据。投资者可重点关注发布会中对装机目标、电网投资、市场化改革等细节的表述。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">2030年目标：清洁低碳、安全高效的新型能源体系</h3>
+                <span class="section-tag">核心目标</span>
+            </div>
+            <div class="content">
+                <p>规划提出，到<strong>2030年初步建成清洁低碳、安全高效的新型能源体系</strong>，并给出了一系列量化目标。其中最核心的指标可分为三类：能源生产能力、装机结构、发电量结构。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>目标维度</th>
+                            <th>2030年目标</th>
+                            <th>投资含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">能源综合生产能力</td>
+                            <td>达到58亿吨标准煤</td>
+                            <td class="trend-up">保障能源安全，稳住传统能源基本盘</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">非化石能源消费比重</td>
+                            <td>达到25%</td>
+                            <td class="trend-up">新能源消费持续扩张</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">风电+太阳能装机比重</td>
+                            <td>超过50%，成为装机主体</td>
+                            <td class="trend-up">风光产业链长期受益</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">非化石能源发电量比重</td>
+                            <td>达到50%，成为电量主体</td>
+                            <td class="trend-up">水电、核电、风光共同发力</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box blue">
+                    <p><strong>区分“装机主体”与“电量主体”：</strong>装机主体指新增发电产能中风光占比超过一半；电量主体指实际发电量中非化石能源（含水电、核电、风光）占比超过一半。前者看产能结构，后者看实际产出，不能混为一谈。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“到2030年，总体发电量中非化石能源占据一半以上；总体装机上，风加光超过50%占主导地位。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">电力系统：互补互济与安全韧性是关键词</h3>
+                <span class="section-tag">电网投资</span>
+            </div>
+            <div class="content">
+                <p>中国区域资源禀赋差异巨大，部分地区缺电、部分地区存在“弃风弃光”。规划特别强调<strong>电力系统互补互济与安全韧性</strong>全面提升。风光发电具有强波动性——有风有光时发电量大，无风无光时断崖式下降，这对电网的调节能力、储能配套、跨区域输送能力提出更高要求。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 补强方向</h4>
+                        <ul>
+                            <li>跨区域输电通道与特高压建设</li>
+                            <li>储能、抽水蓄能、灵活性电源</li>
+                            <li>智能电网与数字化调度</li>
+                            <li>火电、核电等基荷电源配套</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 新增变量</h4>
+                        <ul>
+                            <li>可控核聚变等新型电源逐步落地</li>
+                            <li>对电网稳定性要求进一步提高</li>
+                            <li>电力电子装备需求增加</li>
+                            <li>系统成本与安全冗余需同步提升</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>新能源占比提升越快，电网韧性要求越高。仅看装机增长而忽视电网消纳能力，容易高估短期盈利兑现速度。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">中国电力底气：40亿千瓦装机全球领先</h3>
+                <span class="section-tag">数据亮点</span>
+            </div>
+            <div class="content">
+                <p>国家能源局同日发布数据：截至2026年5月底，我国累计发电装机容量达到<strong>40亿千瓦</strong>，稳居全球第一。这个数字相当于美国、欧盟、印度、日本、俄罗斯发电装机容量之和。没有数据支撑，很难直观理解中国电力工业的体量优势。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间节点</th>
+                            <th>发电装机容量</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">2011年</td>
+                            <td>10亿千瓦</td>
+                            <td>当时已认为规模很大</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">2019年</td>
+                            <td>突破20亿千瓦</td>
+                            <td>8年翻倍</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">2024年</td>
+                            <td>突破30亿千瓦</td>
+                            <td>增速加快</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">2026年5月</td>
+                            <td>突破40亿千瓦</td>
+                            <td class="trend-up">每新增10亿千瓦耗时从8年缩短至2年</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>投资启示：</strong>“AI的尽头是电力”这一叙事在美国成立，因为美国电网老旧、电力紧缺；但在中国，电网基础设施全球领先，电力板块整体表现与美国逻辑不同。投资中国电力股不能简单照搬美国叙事，而应看数据、看结构性机会。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“截至5月底我们累计发电装机容量是40亿千瓦，相当于美国加欧盟加印度加日本加俄罗斯。做投资要有基本的数据素养，不能只看口号。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">AI算力基建：新一轮“电力房地产”式投资</h3>
+                <span class="section-tag">产业映射</span>
+            </div>
+            <div class="content">
+                <p>规划将AI算力基础设施建设与新能源体系联系在一起。算力基础设施被形象地称为新一轮“电力房地产”——它不是简单的用电量增长，而是承载AI token、安放“AI灵魂”的底层设施。与过去传统地产投资不同，这一轮的核心是电力、算力、数据中心的协同布局。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 中国优势</h4>
+                        <ul>
+                            <li>电网建设与电力装机容量全球领先</li>
+                            <li>电力设备、变压器、逆变器制造能力强</li>
+                            <li>部分电力产能富余，可支撑算力扩张</li>
+                            <li>新能源装机增速快，绿电成本持续下降</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 中美差异</h4>
+                        <ul>
+                            <li>美国电力紧缺、电网老化，电力股受追捧</li>
+                            <li>中国电力整体充裕，板块弹性弱于美国</li>
+                            <li>不能简单用“AI尽头是电力”炒作中国电力股</li>
+                            <li>应关注结构性出口与设备机会</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <p><strong>出海逻辑：</strong>美国电力基建缺口带来了对中国电力设备、变压器等产品的进口需求。虽然中国整体电力板块弹性有限，但电力设备出海相关企业仍可能受益于美国电网建设周期。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">投资启示：风光长期受益，电网与设备更具确定性</h3>
+                <span class="section-tag">配置思路</span>
+            </div>
+            <div class="content">
+                <p>新型能源体系建设“十五五”规划为新能源产业链提供了中长期政策锚。从投资角度看，装机目标明确利好风光产业链，但更需要关注实现目标所必需的电网补强、储能配套、电力设备等环节。同时，中国电力工业的体量优势决定了不能简单复制美国的电力股叙事。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>逻辑</th>
+                            <th>关注要点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">风电、光伏</td>
+                            <td class="trend-up">2030年装机占比超50%</td>
+                            <td>关注消纳、电价、上游价格</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">电网/特高压</td>
+                            <td class="trend-up">互补互济与韧性建设刚需</td>
+                            <td>特高压、数字化、调度系统</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">储能/灵活性电源</td>
+                            <td class="trend-up">平抑风光波动</td>
+                            <td>抽水蓄能、电化学储能、火电灵活性改造</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">电力设备出海</td>
+                            <td class="trend-up">美国电网建设需求外溢</td>
+                            <td>变压器、开关设备、输配电装备</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">传统火电/核电</td>
+                            <td class="neutral">基荷与安全冗余角色</td>
+                            <td>政策定位、利用小时、电价机制</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>核心纪律：</strong>政策是长期方向，但股价节奏受估值、供需、盈利兑现影响。风光装机目标不等于短期股价一定涨，需结合产业链价格与业绩节奏综合判断。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“投资中国电力股不能人云亦云，先看看数据：40亿千瓦装机，相当于美欧印日俄之和。这是中国制造的能力和底气。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年6月26日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
