@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年6月30日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">韩国大规模半导体投资计划 · 从日本教训到产业国运</p>
+            <p class="header-date">2026年6月30日 · 星期二 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏭</div>
+                    <div class="summary-text">
+                        <strong>韩国半导体国家计划落地</strong>
+                        政府规划在韩国西南部建设四座芯片厂，投资约800万亿韩元；三星与SK海力士未来十年投资超1000万亿韩元
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>全球内存市场五年四倍</strong>
+                        预计五年内全球内存市场规模增长四倍，AI算力、边缘计算、国防等应用场景驱动存储芯片超级周期
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌏</div>
+                    <div class="summary-text">
+                        <strong>日韩对比的深层启示</strong>
+                        韩国承接日本存储产业转移并实现反超，背后是产业政策、资金支持与国民精神的综合结果
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚖️</div>
+                    <div class="summary-text">
+                        <strong>均衡配置仍是核心纪律</strong>
+                        科技长牛未结束，老灯跌出价值也应尊重；不要阵营化投资，回归商业常识本身
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">韩国发布大规模半导体投资计划</h3>
+                <span class="section-tag">产业事件</span>
+            </div>
+            <div class="content">
+                <p>韩国政府与本土龙头公司三星、SK海力士正式发布大规模半导体投资计划。该计划由政府主导、企业跟进，目标是巩固韩国在全球存储芯片领域的领先地位，并向下一代存储、边缘人工智能、国防芯片等方向延伸。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>投资主体</th>
+                            <th>投资规模</th>
+                            <th>重点领域</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">韩国政府</td>
+                            <td class="trend-up">约800万亿韩元</td>
+                            <td>韩国西南部建设4座芯片厂，新一代存储、边缘AI、国防芯片</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">三星 + SK海力士</td>
+                            <td class="trend-up">未来十年超1000万亿韩元</td>
+                            <td>DRAM、NAND、HBM等存储芯片扩产与先进制程</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">合计规模</td>
+                            <td class="trend-up">约1800万亿韩元</td>
+                            <td>举国之力强化存储芯片霸主地位</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">市场预期</td>
+                            <td class="trend-up">五年内内存市场增长四倍</td>
+                            <td>AI算力与边缘计算驱动需求爆发</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <p><strong>战略意图：</strong>三星与SK海力士合计占全球存储市场约70%份额。此次投资计划不仅是商业扩张，更是韩国在国家层面押注半导体产业、巩固“国运级”优势的战略动作。</p>
+                </div>
+                
+                <p>从投资节奏看，两家企业未来十年年均投资接近100万亿韩元级别。如此大规模的资本开支，意味着上游设备、材料、先进封装、HBM等环节将持续处于高景气状态，同时也意味着未来存储芯片供给能力将大幅提升。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">全球内存市场：五年四倍的超级周期</h3>
+                <span class="section-tag">行业趋势</span>
+            </div>
+            <div class="content">
+                <p>韩国政府与企业敢于投入如此规模的资金，核心依据是对存储芯片需求超级周期的判断。预计未来五年内，全球内存市场规模将增长四倍。这一判断并非激进，而是基于AI算力、边缘计算、国防信息化等多重需求叠加的中性预期。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 需求驱动</h4>
+                        <ul>
+                            <li>AI大模型训练与推理对HBM、高带宽DRAM需求激增</li>
+                            <li>边缘AI与端侧设备推动分布式算力部署</li>
+                            <li>国防、汽车、工业等领域芯片需求上升</li>
+                            <li>数据中心持续扩容，存储密度要求提升</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 供给影响</h4>
+                        <ul>
+                            <li>大规模扩产可能阶段性改变供需格局</li>
+                            <li>上游设备、材料、先进封装产能瓶颈仍在</li>
+                            <li>技术迭代速度决定投资回报节奏</li>
+                            <li>周期波动风险不可忽视</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box blue">
+                    <p><strong>边缘AI的定义：</strong>边缘人工智能是相对云端集中式计算而言的分布式AI部署方式，指在企业数据中心、工厂车间、终端设备侧直接运行AI模型。这种架构对低延迟、本地存储、数据安全有更高要求，将进一步拉动存储与算力芯片需求。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“预计五年内全球内存市场将增长四倍，这是一个中性预期。AI算力、边缘计算、国防等应用场景是核心驱动力。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">从日本到韩国：存储产业国运的转移</h3>
+                <span class="section-tag">历史镜鉴</span>
+            </div>
+            <div class="content">
+                <p>韩国今日的存储芯片霸主地位并非凭空而来，而是承接了日本半导体产业转移的结果。上世纪80年代末，日本在全球半导体领域最具统治力：光刻机等装备、光刻胶等材料全球领先，NEC、东芝等公司在DRAM领域占据全球80%以上份额。彼时的日本，在存储领域的地位甚至超过今日之韩国。</p>
+                
+                <p>然而，美国对日本半导体和电子产业实施打压型政策，而日本又难以与美国撕破脸。在这一背景下，大量日本存储领域的技术人才流向韩国。三星在构建自身人才团队时，许多核心力量正是从日本挖来。韩国借此承接了日本存储产业的转移，并逐步发展壮大，奠定了今日在存储芯片和消费电子领域的领先地位。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>阶段</th>
+                            <th>主导国家/地区</th>
+                            <th>关键特征</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">1980年代末</td>
+                            <td>日本</td>
+                            <td>DRAM全球份额超80%，装备材料全面领先</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">1990年代后</td>
+                            <td>韩国</td>
+                            <td>承接日本产业转移，三星、海力士崛起</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">当前</td>
+                            <td>韩国</td>
+                            <td>三星+SK海力士占全球存储市场约70%</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">并行发展</td>
+                            <td>中国台湾</td>
+                            <td>在芯片代工领域持续深耕，形成差异化优势</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box success">
+                    <p><strong>核心启示：</strong>一个国家的产业规划与全球竞争格局、地缘机缘密不可分，但更离不开主动的产业政策与资金投入。韩国当年承接日本产业转移的关键，在于有资本、有国家意志、有持续投入。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">日韩AI竞争力分化的底层文化因素</h3>
+                <span class="section-tag">深层对比</span>
+            </div>
+            <div class="content">
+                <p>同样是曾经的半导体强国，日本与韩国在AI浪潮中的响应速度却明显不同。韩国迅速加码存储与算力，日本则显得相对迟缓。这种差异不能仅用产业周期解释，深层原因还在于社会文化、国民精神状态与制度激励。</p>
+                
+                <p>日本经历“失落的三十年”，平成时代成长起来的部分青年被称为“平成废宅”——无欲无求、不结婚、不生育、不愿冒险。当社会号召“开创伟大时代、做伟大企业”时，这一群体的反应是“与我何干”。这种精神状态导致日本社会整体缺乏创新动力与创新人才基础，尽管在半导体设备和材料领域仍有老本可吃，但优势正在相对下降。</p>
+                
+                <p>韩国则长期处于极致内卷状态。韩国年轻人课业负担重、竞争压力极大，社会崇尚综合性评价体系，体育、文化、学业全面竞争。这种高压环境塑造了强烈的“动物精神”——愿意冒险、愿意拼搏、积极参与股市与投资。当AI机遇来临时，韩国社会能够快速动员资源、追逐产业风口。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 韩国特征</h4>
+                        <ul>
+                            <li>极致内卷与社会竞争</li>
+                            <li>强烈的“动物精神”与冒险意愿</li>
+                            <li>全民炒股，参与度高</li>
+                            <li>国家与企业高度协同</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 日本特征</h4>
+                        <ul>
+                            <li>平成一代低欲望倾向</li>
+                            <li>创新动力与人才基础不足</li>
+                            <li>半导体优势主要吃老本</li>
+                            <li>对AI浪潮响应相对迟缓</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“韩国理解成是中国青年人紧张状态的1.5倍。韩国年轻人的动物精神，使得他们愿意去赌、愿意去努力。这一波AI来了之后，韩国产业响应很快，日本好像没什么动静。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：均衡配置，回归商业常识</h3>
+                <span class="section-tag">配置思路</span>
+            </div>
+            <div class="content">
+                <p>从昨日国内市场与海外市场表现来看，整体氛围不错。沉寂已久的创新药、恒生科技等板块出现比较不错的上涨。这说明市场并非只有科技一条线，不同优质资产都有表现空间。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心纪律重申：</strong>均衡配置、拥抱科技、尊重老灯。不要因为老灯持续下跌且基本面未变就恐慌割肉；也不要因为科技涨得太多就彻底清仓。投资不是区分阵营，而是基于商业常识判断资产价值。</p>
+                </div>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 科技方向</h4>
+                        <ul>
+                            <li>AI算力产业链（GPU、光模块、服务器、HBM）</li>
+                            <li>存储芯片与先进封装</li>
+                            <li>边缘计算与端侧AI硬件</li>
+                            <li>半导体设备与材料国产替代</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 老灯方向</h4>
+                        <ul>
+                            <li>创新药（政策与估值双修复）</li>
+                            <li>恒生科技（估值修复与资金回流）</li>
+                            <li>基本面未恶化但被错杀的优质公司</li>
+                            <li>高股息与自由现金流资产</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>韩国大规模投资计划利好存储产业链，但需警惕扩产带来的周期波动风险。投资应回归个股基本面与估值，而非单纯追逐产业主题。同时，地缘政治、汇率波动、技术迭代均可能影响投资节奏。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“在科技牛里面，没有科技是不对的；但在科技牛里面，其他优秀的公司也应该有自己表现的空间。我们是做投资，不是区分阵营。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年6月30日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
