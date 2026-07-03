@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月3日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+        
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+        
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:last-child td { border-bottom: none; }
+        
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美国非农数据下滑 · 年内加息预期减弱 · 全球资产重新定价</p>
+            <p class="header-date">2026年7月3日 · 星期五 · 音频纪要整理</p>
+        </header>
+        
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>非农新增仅5.7万</strong>
+                        美国6月非农就业新增5.7万人，远低于市场预期11万，为4个月最低；4-5月数据累计下修7.4万
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏦</div>
+                    <div class="summary-text">
+                        <strong>年内加息预期基本消退</strong>
+                        CME定价从年内降息20bp→加息25bp→现在预期不加息不降息，货币政策预期快速修正
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💵</div>
+                    <div class="summary-text">
+                        <strong>美元指数回落</strong>
+                        美元指数跌约0.8%，从101.8降至100.8附近；黄金、比特币等利率敏感资产反弹
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚖️</div>
+                    <div class="summary-text">
+                        <strong>美股风格切换延续</strong>
+                        道琼斯创历史新高52,900点，纳斯达克回调0.8%；A股老灯有望修复，均衡配置仍是核心
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美国6月非农数据大幅下滑</h3>
+                <span class="section-tag">宏观数据</span>
+            </div>
+            <div class="content">
+                <p>美国劳工统计局公布6月非农就业数据：<strong>非农就业新增仅5.7万人</strong>，远低于市场预期的约11万人，也低于前值水平。这是过去4个月以来的最低新增就业人数，显示美国就业市场降温速度超出预期。</p>
+                
+                <p>更值得关注的还有数据修正。美国劳工统计局对4月和5月的就业数据进行了下修，<strong>两个月累计下修7.4万人</strong>。这意味着此前几个月看似强劲的就业数据，实际情况并没有那么好。数据修正往往比单月数据更能反映趋势变化——就业市场的韧性正在减弱。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>数据项</th>
+                            <th>数值</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">6月非农新增就业</td>
+                            <td class="trend-down">5.7万人</td>
+                            <td class="trend-down">远低于预期11万人</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">数据特征</td>
+                            <td class="trend-down">4个月最低</td>
+                            <td class="trend-down">就业市场明显降温</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">4-5月累计下修</td>
+                            <td class="trend-down">7.4万人</td>
+                            <td class="trend-down">前期数据被高估</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box alert">
+                    <p><strong>核心判断：</strong>非农数据大幅下滑+前值下修，意味着美国就业市场并不像前几个月数据表现得那么健壮。这为美联储货币政策转向提供了新的依据。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">美联储政策预期重新定价</h3>
+                <span class="section-tag">货币政策</span>
+            </div>
+            <div class="content">
+                <p>美联储制定货币政策时主要关注两组互相制衡的指标：一是通胀，二是就业和经济数据。通胀高则倾向紧缩，就业和经济走弱则倾向宽松或停止紧缩。6月非农数据大幅低于预期，直接削弱了年内加息的合理性。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>美联储决策框架：</strong>通胀高 → 加息；就业/经济好 → 加息或维持高利率；就业/经济差 → 不加息甚至降息。当前就业数据走弱，意味着加息概率下降。</p>
+                </div>
+                
+                <p>CME美联储观察工具显示，市场对年内货币政策的预期在快速变化：3月份预期年内降息约20个基点；上个月市场亢奋时一度预期年内加息25个基点，甚至认为9月或10月就会加息；而非农数据公布后，市场预期已调整为<strong>年内不加息、不降息</strong>。若后续数据进一步走弱，不排除重新转向降息预期。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间点</th>
+                            <th>年内政策预期</th>
+                            <th>驱动因素</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">3月</td>
+                            <td class="trend-up">降息约20bp</td>
+                            <td>经济放缓预期</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">6月上中旬</td>
+                            <td class="trend-down">加息25bp</td>
+                            <td>通胀担忧+美元走强</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">6月非农后</td>
+                            <td class="neutral">不加息不降息</td>
+                            <td>就业数据大幅下滑</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">全球资产反应：美元、黄金、比特币</h3>
+                <span class="section-tag">市场反应</span>
+            </div>
+            <div class="content">
+                <p>非农数据公布后，全球资产重新定价。由于加息预期减弱，利率敏感型资产普遍反弹，而美元指数承压回落。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 受益资产</h4>
+                        <ul>
+                            <li>黄金：利率压制减弱，价格反弹</li>
+                            <li>比特币、以太坊：流动性预期改善</li>
+                            <li>成长股：高利率预期缓和</li>
+                            <li>非美货币：美元回落带来喘息</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 承压资产</h4>
+                        <ul>
+                            <li>美元指数：跌约0.8%</li>
+                            <li>美元从101.8高点回落至100.8-100.9</li>
+                            <li>美元现金及短债：吸引力相对下降</li>
+                            <li>美股科技股：纳斯达克回调约0.8%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box blue">
+                    <p><strong>逻辑链条：</strong>非农走弱 → 加息预期下降 → 美元走弱、利率预期下行 → 黄金与加密货币反弹。这是典型的“坏数据即是好消息”的短期交易逻辑，前提是市场相信美联储会因此暂停紧缩。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“黄金中间一个重要的压制因素就是美元的利率情况。加息预期减弱，黄金等利率敏感资产自然反弹。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">人民币汇率：核心区间6.8-7</h3>
+                <span class="section-tag">汇率研判</span>
+            </div>
+            <div class="content">
+                <p>年初人民币一度接近或突破6.8时，判断今年人民币兑美元的核心波动区间在6.8-7之间。即便中间美联储降息节奏预期发生变化、甚至出现加息预期，人民币也未大幅偏离这一区间。当前美元从101.8回落至100.8附近，人民币升值空间依然有限。</p>
+                
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>今年中美息差收窄空间有限，美联储降息空间不大，因此人民币汇率不会有大幅波动。6.8-7是核心区间，不必对短期美元起落过度反应。</p>
+                </div>
+                
+                <p>回顾去年，市场一度预期人民币破8或破7.5，随后在美元降息环境下又全面翻多至6.5。这种极端预期的摆动最终被证明都是过度反应。今年人民币走势相对平稳，印证了年初对汇率区间的判断。</p>
+                
+                <div class="quote-block">
+                    <p>“6.8到7就是今年的核心波动区间。中美息差收窄空间不大，人民币汇率不会有太大波动空间。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">股市风格与配置启示</h3>
+                <span class="section-tag">配置思路</span>
+            </div>
+            <div class="content">
+                <p>非农数据公布后，美股出现明显的风格切换：道琼斯指数收盘创下52,900点的历史新高，而纳斯达克指数下跌约0.8%。这相当于美国市场的“老灯”板块走强，科技股阶段性休整。</p>
+                
+                <p>海外配置方面，韩国市场再次出现剧烈波动，单日跌幅达14%并触发熔断。判断：除非韩国市场跌出类似今年3月的黄金坑机会，否则保持美日韩+香港的基本均衡配置即可，不需要因为短期大跌就加仓。</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 美国市场</h4>
+                        <ul>
+                            <li>道琼斯创历史新高，老灯板块走强</li>
+                            <li>纳斯达克温和回调，科技股休整</li>
+                            <li>风格切换有利于均衡配置者</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 A股市场</h4>
+                        <ul>
+                            <li>上半年科技大涨、老灯大跌的极端分化</li>
+                            <li>6月已提示存储和光模块短期风险</li>
+                            <li>风格纠正在进行，但需要时间</li>
+                            <li>老灯占比高者下半年有望修复</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-box success">
+                    <p><strong>配置纪律：</strong>任何时刻都不建议全面清仓科技或全面清仓老灯。在均衡配置的前提下，如果上半年老灯占比较高或表现落后，下半年有修复机会。保持耐心，让组合在不同风格中都能受益。</p>
+                </div>
+                
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>非农数据只是单月数据，美联储政策仍取决于通胀、就业、经济增长等多维度数据。市场预期的快速摆动可能带来短期波动，投资者应避免追涨杀跌。</p>
+                </div>
+                
+                <div class="quote-block">
+                    <p>“美国是新灯大涨、老灯小涨；中国是科技大涨、老灯狂跌。这与中国市场新增资金不足有关，资金只能往赚钱效应最强的地方集中。但极端分化之后，风格会逐步纠正。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月3日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
