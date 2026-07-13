@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月13日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">长征火箭海上网系回收成功 · 商业航天进入可复用时代</p>
+            <p class="header-date">2026年7月13日 · 星期一 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🚀</div>
+                    <div class="summary-text">
+                        <strong>国家队海上网系回收成功</strong>
+                        长征火箭实现海上网络回收，标志着中国可复用火箭技术取得关键突破，为低成本高频发射奠定基础
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🛰️</div>
+                    <div class="summary-text">
+                        <strong>太空资源博弈升级</strong>
+                        卫星互联网已成大国博弈新战场，近地轨道资源稀缺且不可再生，战略价值从中长期看十分突出
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💰</div>
+                    <div class="summary-text">
+                        <strong>可回收是降本核心</strong>
+                        回收复用可将单发火箭成本下降约30%-50%，是从“一次性消耗”走向“太空快递”的必由之路
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚠️</div>
+                    <div class="summary-text">
+                        <strong>产业化仍处早期验证</strong>
+                        回收成功只是第一步，回收后能否快速复用才是终局考验，未来半年将进入密集发射验证期
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">里程碑事件：海上网络回收成功</h3>
+                <span class="section-tag">事件驱动</span>
+            </div>
+            <div class="content">
+                <p>近日，中国长征系列火箭成功实现<strong>海上网络回收</strong>，这是国家队在可复用火箭领域的一次里程碑式突破。与陆地回收相比，海上回收对落点精度、姿态控制、结构强度均提出更高要求；而“网络回收”方案通过在回收平台张设柔性网系，允许火箭在一两米误差范围内落网，兼具<strong>高容错率</strong>与<strong>低成本维护</strong>优势。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>回收路线</th>
+                            <th>代表方案</th>
+                            <th>核心特点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">地面机械臂夹取</td>
+                            <td>SpaceX 筷子夹</td>
+                            <td>精度要求极高，成功后维护状态好，适合高频复用</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">海上悬停落水</td>
+                            <td>蓝色起源</td>
+                            <td>在海上悬停后落入水中，打捞冲洗后复用，容错率中等</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">海上网络回收</td>
+                            <td>中国长征系列</td>
+                            <td>网系吸收落点偏差，结构损伤小，兼顾经济性与安全性</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box blue">
+                    <p><strong>核心判断：</strong>回收成功只是“从0到1”，真正标志技术成熟的是回收后能否低成本、快速地再次发射。按照计划，回收的火箭将在约半年后再次执行发射任务，届时复用可靠性将得到关键验证。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">战略定位：太空资源与大国博弈</h3>
+                <span class="section-tag">政策与战略</span>
+            </div>
+            <div class="content">
+                <p>商业航天受到高度重视，本质上源于<strong>中美在太空资源上的战略博弈</strong>。现代战争正进一步向智能化、无人化演进，无人机与卫星网络的结合使远程精确打击、战场态势感知和指挥通信高度依赖天基基础设施。一旦卫星网络遭受干扰或误导，整个作战体系可能失效。因此，空间网络竞争已成为大国博弈的重要战场。</p>
+
+                <p>在六大未来产业中，<strong>卫星互联网被提升到未来支柱产业的地位</strong>。中短期内，由于地面基站覆盖完善，普通消费者对卫星通信的感知有限，应用场景主要局限于海洋、偏远地区等信号盲区；但从中长期看，其战略价值极为突出，是保障国家安全、参与全球空间治理的关键抓手。</p>
+
+                <div class="highlight-box">
+                    <p><strong>关键逻辑：</strong>近地轨道资源相对紧缺，轨道高度越低、可用资源越少。抢占轨道需要同时具备“足够多的卫星”和“足够便宜的火箭”，二者缺一不可。这决定了商业航天发展的两条主线：卫星批量制造与火箭回收复用。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">技术路线：做大火箭与可回收并行</h3>
+                <span class="section-tag">产业分析</span>
+            </div>
+            <div class="content">
+                <p>火箭生意的本质是“太空快递”，决定快递成本的核心变量有两个：<strong>火箭运力</strong>与<strong>能否复用</strong>。固体火箭类似“火柴”，点燃后不可回收，但可靠性较强，早期小型固体火箭一次只能将一两吨载荷送入轨道；而以液氧甲烷/液氧煤油为动力的大型液体火箭则朝向“万吨轮”演进，运载能力从数吨跃升至百吨量级。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>降本路径</th>
+                            <th>具体表现</th>
+                            <th>影响</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">提升运力</td>
+                            <td>火箭推力、载重持续增大，发动机数量从单台增至几十台</td>
+                            <td>单位发射成本随规模摊薄</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">回收复用</td>
+                            <td>一级火箭占整箭成本约40%-50%，回收后检修再用</td>
+                            <td>单次发射成本可下降30%-50%</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">规模制造</td>
+                            <td>火箭与卫星产能扩张，类似新能源车的“群狼战术”</td>
+                            <td>产业链快速降本，发射频次提升</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>成本曲线的差距十分显著：国内早期固体火箭单公斤发射成本约<strong>五万元人民币</strong>；SpaceX目前已降至<strong>两万元以下</strong>，并规划未来降至<strong>几十美元每公斤</strong>。只有当发射成本接近普通物流水平时，月球基地、太空算力中心、太空采矿等远景才能真正具备经济可行性。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>火箭领域门槛高于新能源车，发射审批、试验周期和安全要求更为严格，不会呈现无序内卷；但这也意味着技术迭代和产能爬坡需要更长时间，短期业绩兑现存在不确定性。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">产业催化：科创板标准与密集验证</h3>
+                <span class="section-tag">资本市场</span>
+            </div>
+            <div class="content">
+                <p>资本市场对可回收路线给予了明确支持。科创板第五套上市标准明确提出：商业航天企业需采用<strong>可回收技术路线</strong>，并具备<strong>入轨成功</strong>能力；即便回收环节暂未完全成功，只要卫星成功入轨，也满足上市基本条件。这一标准从制度层面引导行业向“入轨优先、回收跟进”的务实路径发展。</p>
+
+                <p>未来半年到一年，国内将迎来可回收火箭的密集发射验证期。主要项目包括：</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 近期待验证项目</h4>
+                        <ul>
+                            <li>蓝箭航天：朱雀三号可回收火箭</li>
+                            <li>星河动力：智神星系列</li>
+                            <li>中科宇航：力箭系列可回收版本</li>
+                            <li>箭元科技：原型者火箭</li>
+                            <li>星际荣耀：可回收液体火箭</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 验证核心指标</h4>
+                        <ul>
+                            <li>入轨精度与载荷能力</li>
+                            <li>一级火箭回收成功率</li>
+                            <li>回收后检修周期与成本</li>
+                            <li>复飞间隔能否缩短至20-30天</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>积极信号：</strong>国家队与民营企业在可回收路线上同步推进，技术路线多元（海上网系、陆地垂直着陆、海上悬停等），有利于分散试错成本，加速找到适合中国工业体系的低成本方案。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：从0到1的主题机会与风险</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>商业航天正从主题概念走向产业化验证阶段。长征火箭海上网络回收成功、科创板标准明确、下半年密集发射排期，共同构成行业“从0到1”的催化窗口。但需清醒认识到，当前多数环节仍处于研发投入期，短期业绩弹性有限，投资节奏应以事件驱动和产业链映射为主，避免过度追高。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 可关注方向</h4>
+                        <ul>
+                            <li>火箭总体与发动机（液体发动机、推力室、涡轮泵）</li>
+                            <li>卫星制造与载荷（相控阵天线、星载计算机）</li>
+                            <li>地面设备与测控（测控站、终端天线）</li>
+                            <li>可回收配套（着陆腿、栅格翼、热防护、柔性网系）</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 需谨慎方向</h4>
+                        <ul>
+                            <li>纯概念炒作、无实际订单或技术储备的标的</li>
+                            <li>短期无法兑现业绩、估值透支严重的零部件企业</li>
+                            <li>受国际技术封锁和供应链波动影响的环节</li>
+                            <li>对单一发射事件过度定价的短线交易</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>“商业航天的本质是太空快递，谁能让火箭更便宜、更频繁地把东西送上天，谁就能在未来的太空资源竞争中占据主动。回收成功只是开始，复用才是终点。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>火箭发射具有高风险属性，单次失败可能对板块情绪造成较大冲击；技术迭代、政策审批、国际竞争以及资本市场估值波动，都可能影响相关标的的表现。建议以均衡配置、逢低布局的方式参与，不宜单一方向过度押注。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月13日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
