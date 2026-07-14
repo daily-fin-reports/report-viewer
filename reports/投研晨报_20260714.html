@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月14日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">地缘冲突升级油价大涨 · SK海力士暴跌引发全球存储板块踩踏</p>
+            <p class="header-date">2026年7月14日 · 星期二 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🌍</div>
+                    <div class="summary-text">
+                        <strong>地缘冲突升级推升油价</strong>
+                        中东局势升温叠加航道收费传闻，原油大涨10%重回70美元，黄金盘中跌破4000美元，加息预期再起
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>SK海力士暴跌引发杠杆踩踏</strong>
+                        SK海力士大跌15%，约30万杠杆账户被强制平仓，韩国综指暴跌9%，从高点的9300点跌至6800点
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💰</div>
+                    <div class="summary-text">
+                        <strong>老灯方向可逆向布局</strong>
+                        高股息、景气反转及低估值高增长板块经历连续下跌后，当前出现较好的逆向出手窗口
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">💻</div>
+                    <div class="summary-text">
+                        <strong>科技调整尚未结束但需紧盯</strong>
+                        光模块/存储自7月1日提示风险后跌幅约40%，现阶段可开始关注，但不宜重仓抄底
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">全球大跌：地缘冲突与油价暴涨</h3>
+                <span class="section-tag">宏观事件</span>
+            </div>
+            <div class="content">
+                <p>周一全球市场经历剧烈波动。中东局势进一步升级，市场传闻美国将对部分航道通行的船只收取<strong>20%费用</strong>，直接推升原油与避险情绪。国际油价单日大涨约<strong>10%</strong>，重回每桶70美元上方；COMEX黄金盘中跌破<strong>4000美元</strong>关口。</p>
+
+                <p>油价快速反弹改变了市场对美联储货币政策的预期。此前油价回落阶段，市场一度降低年内加息预期；但伴随地缘风险重燃，投资者重新开始押注美联储年内加息。利率预期上行对美股、大宗商品以及新兴市场均形成压制。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产</th>
+                            <th>表现</th>
+                            <th>驱动逻辑</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">原油</td>
+                            <td class="trend-up">大涨约 10%</td>
+                            <td>地缘冲突升级、航道收费传闻</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">黄金</td>
+                            <td class="trend-down">盘中跌破 4000 美元</td>
+                            <td>加息预期升温压制贵金属</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">纳斯达克</td>
+                            <td class="trend-down">下跌约 1.5%</td>
+                            <td>科技股估值受利率预期影响</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">韩国综指</td>
+                            <td class="trend-down">暴跌 9%</td>
+                            <td>存储龙头暴跌引发杠杆踩踏</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>地缘冲突具有高度不确定性，油价与黄金短期波动可能继续放大。美联储政策预期摇摆将加大全球风险资产的波动率，投资者需控制仓位、避免追高。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">SK海力士与韩国市场：杠杆踩踏的警示</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>全球存储板块成为周一风暴眼。SK海力士在美国上市的存托凭证市值约<strong>1.22万亿美元</strong>，按今年盈利预期估算，动态市盈率已降至<strong>8-10倍</strong>，处于较低水平。然而，低估值并未阻止股价大跌，单日跌幅约<strong>15%</strong>，并拖累韩国市场及美股存储板块（美光、闪迪等）同步下挫。</p>
+
+                <p>韩国市场的问题核心在于<strong>高杠杆</strong>。韩国本地约有<strong>120万个杠杆账户</strong>投资相关标的，此外还有不少投资者通过香港等地上市的2倍做多SK海力士ETF加杠杆。SK海力士单日下跌15%，意味着2倍做多ETF跌幅接近30%，直接触发约<strong>30万账户强制平仓</strong>，形成交易踩踏。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card negative">
+                        <h4>🔴 韩国市场压力</h4>
+                        <ul>
+                            <li>韩国综指暴跌 9%，收盘约 6800 点</li>
+                            <li>较高点 9300 点累计回调约 27%</li>
+                            <li>约 30 万杠杆账户被强制平仓</li>
+                            <li>政府明确意图降低市场整体杠杆率</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 后续机会观察</h4>
+                        <ul>
+                            <li>快速去杠杆后可能出现类似 3 月的超跌反弹机会</li>
+                            <li>需等待杠杆清理充分、市场情绪企稳</li>
+                            <li>SK 海力士估值已处于历史偏低区间</li>
+                            <li>韩国股市与楼市联动密切，需防范系统性风险</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box blue">
+                    <p><strong>核心判断：</strong>任何市场在短期热钱与杠杆资金暴炒之后，都会面临大幅震荡的风险。韩国市场从前期高点快速回落，本质上是高杠杆交易的反噬，而非基本面突然恶化。若后续杠杆进一步出清，可能出现较好的逆向布局窗口。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">美股与A股：科技板块承压</h3>
+                <span class="section-tag">市场影响</span>
+            </div>
+            <div class="content">
+                <p>受SK海力士恐慌情绪及地缘冲突影响，美股半导体板块跌幅居前。费城半导体指数下跌接近<strong>5%</strong>，英伟达、英特尔、美光等龙头普遍大跌。不过，从成熟度与韧性来看，美股在主要发达市场中仍相对稳健，纳斯达克整体跌幅约1.5%，明显小于韩国等新兴市场。</p>
+
+                <p>A股市场周一出现恐慌性普跌，科技与“老灯”（传统板块）联动下跌。对于前期热门的<strong>光模块与存储</strong>方向，7月初已明确提示过短期风险；截至当前，部分头部存储公司自高点回调幅度约<strong>40%</strong>，调整速度和幅度均超出预期。在大趋势中，这类高波动板块往往需要承受30%-50%的回撤，但本轮回撤在约15个交易日内完成，节奏非常快。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>市场/板块</th>
+                            <th>跌幅</th>
+                            <th>判断</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">费城半导体指数</td>
+                            <td class="trend-down">接近 -5%</td>
+                            <td>存储恐慌传导，短期波动加大</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">纳斯达克</td>
+                            <td class="trend-down">约 -1.5%</td>
+                            <td>相对 resilient，仍处成熟调整</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">A股光模块/存储</td>
+                            <td class="trend-down">自 7 月初约 -40%</td>
+                            <td>风险快速释放，但尚未到重仓时点</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">A股传统板块</td>
+                            <td class="trend-down">连续下跌后加速</td>
+                            <td>部分方向出现逆向布局机会</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>结构观察：</strong>科技板块此轮调整启动较晚，因此结束时间也可能滞后于传统板块。当前可对光模块、存储等方向保持密切关注，但不必急于重仓抄底；真正企稳需要看到杠杆出清、情绪降温和资金面改善。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">投资启示：老灯可逆向布局，科技仍需等待</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>当前市场处于情绪低点，但不同方向的应对策略应有所区分。对于经历连续下跌、基本面已经出现拐点的传统方向，恐慌性下跌反而提供了较好的逆向布局窗口；而对于仍处于去杠杆初期的科技方向，则需要更多耐心。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 可逐步出手的方向</h4>
+                        <ul>
+                            <li>高股息红利：头部券商、保险等 PB 跌破 1，业绩具备韧性</li>
+                            <li>景气反转：电力、煤炭、猪肉等基本面已见拐点</li>
+                            <li>低估值高增长：非银金融等估值处于低位</li>
+                            <li>前提：此前未超配，现在可逆向分批加仓</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 仍需谨慎的方向</h4>
+                        <ul>
+                            <li>高杠杆催化的海外存储/韩国相关标的</li>
+                            <li>短期跌幅虽大但情绪尚未企稳的光模块/存储</li>
+                            <li>基本面未反转、纯题材炒作的“老灯”</li>
+                            <li>受地缘冲突和油价波动影响较大的上游资源博弈</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>“7月初不应该对存储上头，因为每天都在涨；现在则是在老灯连续下跌后又一轮加速下跌时，需要鼓起勇气的时候。逆向布局的关键，是区分景气真正反转的方向和基本面已经走坏的品种。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>地缘冲突、美联储政策预期、杠杆资金平仓、汇率波动等因素可能继续放大市场波动。投资者应根据自身仓位和承受能力差异化应对，避免在恐慌中盲目割肉，也避免在情绪反转前过度重仓单一方向。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月14日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
