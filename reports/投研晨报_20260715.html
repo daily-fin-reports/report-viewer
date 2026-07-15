@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月15日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">国家队重返增持 · SK海力士大涨27%与长鑫启动申购</p>
+            <p class="header-date">2026年7月15日 · 星期三 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏛️</div>
+                    <div class="summary-text">
+                        <strong>国家队重返增持</strong>
+                        昨日ETF净申购接近500亿，类平准基金从4-5月的减持转为买入，释放明确的维稳信号
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>A股盘中惊天逆转</strong>
+                        在国家队增持与海外存储企稳的双重推动下，老灯与科技板块实现盘中逆转
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">💾</div>
+                    <div class="summary-text">
+                        <strong>SK海力士大涨27%与长鑫申购</strong>
+                        美股海力士ADR单日暴涨27%，长鑫明日启动科创板申购，存储产业链情绪显著修复
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚠️</div>
+                    <div class="summary-text">
+                        <strong>中报预披露显K型分化</strong>
+                        光模块、券商、有色景气向上，航空与汽车整车仍承压，业绩预期比绝对增速更重要
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">A股惊天逆转：国家队重返增持</h3>
+                <span class="section-tag">国内市场</span>
+            </div>
+            <div class="content">
+                <p>昨日A股早盘延续前一日跌势，但下午出现明显逆转。核心触发因素在于<strong>国家队资金重回增持</strong>：此前国家队重点持仓的几只宽基ETF出现大额净申购，单日ETF净申购规模接近<strong>500亿元人民币</strong>，释放出强烈的维稳信号。</p>
+
+                <p>值得注意的是，今年上半年尤其是4-5月，类平准基金（如汇金、中证金融等）曾在A股市场较大规模减持。彼时科技板块涨幅较大、市场信心恢复，维稳必要性下降，相关资金选择兑现收益。然而，随着近期市场回调，许多前期增持的重点标的（如保险、券商等）估值回落至净资产以下，国家队重新开始买入。这一“从卖到买”的转变，对短期市场情绪形成重要支撑。</p>
+
+                <div class="highlight-box blue">
+                    <p><strong>核心判断：</strong>国家队的动向是重要的资金面信号，但不宜将其简单理解为“牛市托底”。更合理的解读是：在市场快速下跌、核心蓝筹估值偏低的阶段，长期资金开始逆向布局，为市场提供流动性缓冲。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">海外存储：SK海力士暴涨与韩国市场企稳</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>经过前两个交易日的暴跌（分别下跌15%和9%），SK海力士在美国上市的存托凭证昨日出现<strong>27%</strong>的强劲反弹。与此同时，韩国股市在前一日暴跌9%后，尾盘也接近收复失地。海外存储情绪的快速修复，对A股相关板块形成正面映射。</p>
+
+                <p>SK海力士选择在美国上市的核心原因之一是<strong>美国市场给予更高估值</strong>。经过昨日大涨后，其在美交易的ADR较韩国本土股价溢价约<strong>50%</strong>。美国作为全球化资金集中地，能够为存储龙头提供更充裕的流动性和更高的估值容忍度，这也解释了为何韩国本土市场的剧烈波动未必完全决定其全球定价。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>标的/市场</th>
+                            <th>近期表现</th>
+                            <th>关键逻辑</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">SK海力士 ADR</td>
+                            <td class="trend-up">单日 +27%</td>
+                            <td>超跌反弹 + 美国高估值溢价</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">韩国综指</td>
+                            <td class="trend-up">从 -9% 拉回接近平盘</td>
+                            <td>杠杆踩踏后情绪修复</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">A股存储/光模块</td>
+                            <td>受海外映射支撑</td>
+                            <td>产业趋势未变，短期跟随情绪波动</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>观察要点：</strong>存储板块短期波动主要由杠杆资金和情绪驱动，但中长期产业景气（AI算力需求、存储涨价）并未逆转。后续需关注韩国市场杠杆出清进度以及SK海力士能否持续稳住反弹。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">长鑫启动申购：科创板重磅IPO</h3>
+                <span class="section-tag">IPO催化</span>
+            </div>
+            <div class="content">
+                <p>国内存储龙头<strong>长鑫</strong>将于7月16日启动科创板申购，发行价约<strong>8元</strong>，对应市值约<strong>5000亿元</strong>。作为科创板重量级IPO，长鑫上市备受关注。判断其上市后的合理定位，需要区分“申购”与“二级市场买入”两个动作：</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 申购策略</h4>
+                        <ul>
+                            <li>具备科创板资格和市值的投资者建议参与申购</li>
+                            <li>发行价对应市值约 5000 亿，存在较大的一级市场折价空间</li>
+                            <li>上市后预期市值或在 2-3 万亿区间</li>
+                            <li>若上市首日定价明显低于预期，二级市场也可能出现机会</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 二级市场策略</h4>
+                        <ul>
+                            <li>若上市后被过度炒作至 3 万亿以上，短期宜观望</li>
+                            <li>若定价相对合理，可视为存储产业链的稀缺配置标的</li>
+                            <li>关注其对科创板流动性及半导体板块的情绪带动</li>
+                            <li>避免在上市初期情绪化追高</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>新股申购存在中签率和上市后破发风险；二级市场追高中签获利盘可能面临较大回撤。投资者应根据自身风险偏好和科创板权限理性参与。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">中报预披露：K型分化下的行业景气</h3>
+                <span class="section-tag">业绩前瞻</span>
+            </div>
+            <div class="content">
+                <p>随着中报业绩预告密集披露，行业景气度呈现明显的K型分化。判断业绩公告对股价的影响，核心不在于绝对增速，而在于<strong>增速是否超出市场预期</strong>。一只预期已满的“优等生”考出148分可能下跌，而一只预期较低的“差等生”考出80分反而可能上涨。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>代表公司/数据</th>
+                            <th>趋势判断</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">光模块</td>
+                            <td>中际旭创 H1 净利润预增 7701%-914%</td>
+                            <td class="trend-up">AI 算力需求持续爆发，基本面强劲</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">电子布/玻纤</td>
+                            <td>中国巨石 H1 净利润预增 65%-85%</td>
+                            <td class="trend-up">下游需求回暖，价格修复</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">存储模组</td>
+                            <td>德明利 H1 净利润 5.7-6.5 亿（去年同期亏损）</td>
+                            <td class="trend-up">存储涨价带动扭亏为盈</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">封测</td>
+                            <td>长电科技 H1 净利润预增 63%-102%</td>
+                            <td class="trend-up">景气回升，稼动率改善</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">券商</td>
+                            <td>中信、华泰、广发 H1 净利润预增 50%-85%</td>
+                            <td class="trend-up">A股活跃度提升，低估值高增长</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">保险</td>
+                            <td>中国人寿 H1 业绩大幅增长</td>
+                            <td class="trend-up">权益市场回暖 + 股权投资项目上市</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">有色/钨</td>
+                            <td>厦门钨业 H1 净利润预增 120%</td>
+                            <td class="trend-up">供需紧张，价格上行</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">航空</td>
+                            <td>南方航空预亏 34.7-39 亿，东航预亏 18-24 亿</td>
+                            <td class="trend-down">行业复苏缓慢，盈利压力仍大</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">汽车整车</td>
+                            <td>长城、长安 H1 净利润同比下降约 60%</td>
+                            <td class="trend-down">国内竞争白热化，价格战侵蚀利润</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>积极信号：</strong>光模块、券商、保险、有色、封测、存储模组等方向的中报预告印证基本面拐点或景气延续；这些方向多数估值仍处于合理或偏低区间，具备持续修复的基础。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：把握国家队维稳与业绩修复的共振</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>当前市场处于情绪修复与基本面验证的交汇点。国家队增持提供短期流动性支撑，海外存储企稳缓解科技板块恐慌情绪，长鑫申购强化半导体主题热度，而中报业绩预告则帮助识别真正景气向上的方向。操作上建议以“业绩修复”为主线，区分预期差和纯题材。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 可关注方向</h4>
+                        <ul>
+                            <li>中报业绩超预期且估值合理的方向：券商、保险、光模块、封测</li>
+                            <li>景气反转明确的传统行业：电力、煤炭、猪肉、有色</li>
+                            <li>受益于长鑫上市的存储产业链情绪修复</li>
+                            <li>国家队重点增持的低估值蓝筹</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 需谨慎方向</h4>
+                        <ul>
+                            <li>短期被过度炒作、业绩无法支撑估值的新股/次新股</li>
+                            <li>中报业绩仍承压且没有改善迹象的航空、汽车整车</li>
+                            <li>受海外高杠杆波动影响较大的存储博弈</li>
+                            <li>单纯蹭主题但无订单和利润兑现的标的</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>“市场短期是投票机，长期是称重机。国家队增持可以改变短期情绪，但只有基本面真正改善的方向，才能在中报季之后继续走出来。重点看业绩预期差，而不是业绩绝对数字。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>国家队增持不意味着市场立即反转，海外地缘冲突、美联储政策、韩国市场杠杆出清等因素仍可能反复。建议保持均衡配置，对业绩兑现度高的方向逢低布局，避免追涨短期热点。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月15日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
