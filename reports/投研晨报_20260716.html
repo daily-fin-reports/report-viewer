@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月16日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">创新药上游的“猴行情” · 实验猴涨价背后的产业逻辑</p>
+            <p class="header-date">2026年7月16日 · 星期四 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚖️</div>
+                    <div class="summary-text">
+                        <strong>均衡配置意义凸显</strong>
+                        “拥抱科技，尊重老灯”在7月以来市场轮动中验证其价值，单一押注科技的方向波动明显加大
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🐵</div>
+                    <div class="summary-text">
+                        <strong>实验猴成创新药上游热点</strong>
+                        实验猴单价从2018年的1.4万涨至当前约18万，3-5年繁育周期导致供给高度刚性
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>昭衍新药业绩暴增源于囤猴升值</strong>
+                        上半年营收增长0%-10%，净利润预增800%-1377%，主因持有约1万只实验猴涨价
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚠️</div>
+                    <div class="summary-text">
+                        <strong>猴板块空间有限</strong>
+                        属于短中期主题，弹性不及光模块，需警惕猴价波动及情绪退潮风险
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">市场风格：从科技独舞到均衡配置</h3>
+                <span class="section-tag">市场风格</span>
+            </div>
+            <div class="content">
+                <p>近期市场风格出现明显轮动。今年以来反复强调的<strong>“拥抱科技，尊重老灯”</strong>，在7月以来的调整中体现出配置价值：若仓位过度集中在新一代信息技术等成长方向，前几个月的浮盈可能在传统行业回调中被快速侵蚀；而保持科技与传统板块均衡配置的组合，近期体验明显更稳。</p>
+
+                <p>在“老灯”方向中，当前可重点关注两类：一是<strong>景气反转型</strong>，如创新药、电力等基本面已见拐点的行业；二是<strong>高增长低估值型</strong>，如券商板块上半年净利润增速普遍在50%以上，但市盈率多数低于10倍，部分甚至跌破净资产。这些方向在前期的市场忽视中，反而提供了较好的配置窗口。</p>
+
+                <div class="highlight-box blue">
+                    <p><strong>核心判断：</strong>市场不会永远只涨一个方向。均衡配置的本质不是放弃科技，而是在科技之外保留与宏观经济、利率环境、产业周期相关性不同的资产，以降低组合波动。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">实验猴：创新药研发不可或缺的“原材料”</h3>
+                <span class="section-tag">产业分析</span>
+            </div>
+            <div class="content">
+                <p>随着创新药板块热度回升，其上游的<strong>实验动物</strong>环节受到市场关注。在药物安全性评价中，实验猴与实验鼠是最常用的两种动物模型。其中，实验猴因基因组与人类相似度超过<strong>98%</strong>，成为抗体药物、ADC、核酸药物、细胞治疗、基因治疗等大分子药物临床前安全性评价的核心工具。</p>
+
+                <p>可以理解为：CRO企业是“饭店”，提供药物安全性评估服务；而实验猴和实验鼠则是“调料”和“食材”，是完成服务过程中不可或缺的原材料。饭店生意好不好，不仅影响服务收入，也会带动原材料价格；反过来，若原材料价格暴涨，持有大量库存的饭店也会出现账面利润大增。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 实验猴的优势</h4>
+                        <ul>
+                            <li>与人类基因相似度超过 98%</li>
+                            <li>适用于大分子药物安全性评价</li>
+                            <li>是 ADC、GLP-1、细胞/基因治疗等热门方向的关键模型</li>
+                            <li>临床前评价环节难以完全用鼠替代</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 实验鼠的定位</h4>
+                        <ul>
+                            <li>成本远低于实验猴（数千元 vs 十几万元）</li>
+                            <li>适用于部分小分子和早期筛选</li>
+                            <li>可替代性较强，供给弹性大</li>
+                            <li>无法完全替代猴在大分子评价中的作用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">昭衍新药业绩拆解：主营业务未赚，囤猴升值</h3>
+                <span class="section-tag">业绩解析</span>
+            </div>
+            <div class="content">
+                <p>昭衍新药作为国内药物安全性评价外包龙头，其最新半年度业绩预告极具代表性：上半年营业收入同比增长仅<strong>0%-10%</strong>，但归母净利润预增高达<strong>800%-1377%</strong>，相当于在营收几乎不变的情况下，利润增长约10倍。</p>
+
+                <p>拆解后发现，这种“增收不增利反转”并非来自主营业务爆发，而是来自其持有的实验猴资产升值。公司持有约<strong>1万只实验猴</strong>，近三个月实验猴单价上涨约<strong>50%</strong>（从约13万元/只涨至约19万元/只），仅此一项便带来可观账面收益。换言之，这家“饭店”做饭的业务没赚钱，但囤积的“调料”涨价了。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>数据</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">营业收入增速</td>
+                            <td>0% - 10%</td>
+                            <td>主营 CRO 业务并未显著扩张</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">净利润预增</td>
+                            <td class="trend-up">800% - 1377%</td>
+                            <td>主要由实验猴资产公允价值变动贡献</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">持有实验猴数量</td>
+                            <td>约 1 万只</td>
+                            <td>构成核心存货/生物资产</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">实验猴单价涨幅</td>
+                            <td class="trend-up">近 3 个月约 +50%</td>
+                            <td>从约 13 万/只涨至约 19 万/只</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>生物资产公允价值变动带来的利润具有周期性和价格波动风险。实验猴价格下跌时，相关公司的利润也会同步承压，不能简单按当期利润线性外推。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">供需缺口：为什么猴价能涨十倍？</h3>
+                <span class="section-tag">供需分析</span>
+            </div>
+            <div class="content">
+                <p>实验猴价格从2018年的约<strong>1.4万元/只</strong>涨至当前的约<strong>18万元/只</strong>，涨幅超过10倍。核心原因在于供给高度刚性，而需求快速扩张。</p>
+
+                <p><strong>需求端：</strong>创新药研发已进入景气上行期，国内创新药企研发投入增加；同时，中国创新药海外授权（BD）交易增多，ADC、GLP-1、细胞与基因治疗等热门管线对实验猴的需求量显著上升。</p>
+
+                <p><strong>供给端：</strong>实验猴从出生到达到实验标准需要<strong>3-5年</strong>，远长于实验鼠或猪的培育周期。当需求突然增加时，供给无法快速跟上。预计2026-2028年实验猴供需缺口约在<strong>1.5万至2万只</strong>。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 涨价支撑因素</h4>
+                        <ul>
+                            <li>创新药研发投入增加，猴需求上升</li>
+                            <li>大分子药物管线（ADC、CGT）必须用猴</li>
+                            <li>实验猴繁育周期长，供给短期难放量</li>
+                            <li>2026-2028 年预计缺口 1.5-2 万只</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 潜在压制因素</h4>
+                        <ul>
+                            <li>猴价已处高位，继续上涨空间有限</li>
+                            <li>部分实验可用鼠或类器官替代</li>
+                            <li>创新药融资环境若收紧，需求会回落</li>
+                            <li>生物资产重估利润不可持续</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>核心观察：</strong>实验猴涨价本质上是创新药景气周期向上游原材料的传导。与上一轮光模块行情相比，猴板块的产业空间、价格弹性和持续性都相对有限，更偏向主题轮动中的结构性机会。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：理解主题轮动，控制预期</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>实验猴板块的突然活跃，是资金从高位科技方向向创新药及其上游扩散的结果。理解这类机会，重点不在于追热点，而在于识别其背后的产业逻辑、空间上限和风险边界。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 可关注方向</h4>
+                        <ul>
+                            <li>拥有实验猴库存的 CRO/安全性评价企业</li>
+                            <li>实验动物繁育与模型小鼠龙头企业</li>
+                            <li>创新药产业链中真正受益研发提速的环节</li>
+                            <li>基本面拐点明确、估值仍低的创新药标的</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 需谨慎方向</h4>
+                        <ul>
+                            <li>纯蹭“猴概念”、无实际猴资源或订单的标的</li>
+                            <li>预期实验猴价格持续暴涨、线性外推利润的标的</li>
+                            <li>在高位追涨主题资金可能快速撤离</li>
+                            <li>忽视主营业务质地、只看生物资产重估的公司</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>“原来是站在光里，现在是像猴一样站在那里。市场永远在轮动，每一个热点背后都有产业逻辑，但不是每一个热点都能复制光模块的弹性。理解它、适度参与，比盲目追涨更重要。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>实验猴板块属于短中期主题机会，价格波动和情绪退潮风险较大。投资者应保持均衡配置，对科技、老灯、创新药上游等方向合理分配仓位，避免单一主题过度押注。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月16日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
