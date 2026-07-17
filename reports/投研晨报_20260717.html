@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月17日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">世界人工智能大会召开 · 中国推动全球AI治理新体系</p>
+            <p class="header-date">2026年7月17日 · 星期五 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🤖</div>
+                    <div class="summary-text">
+                        <strong>世界人工智能大会规格提升</strong>
+                        2026世界人工智能大会在上海召开，最高领导人出席，释放AI国家战略升级的强烈信号
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌐</div>
+                    <div class="summary-text">
+                        <strong>全球AI治理体系重构</strong>
+                        世界人工智能合作组织协议签署，总部设于上海，是中国参与并塑造新世代全球治理结构的重要抓手
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>科技调整尚未结束</strong>
+                        存储等科技方向自7月1日提示风险以来头部公司跌约40%，但调整时间仍不充分，宜继续等待
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>全球老灯方向苏醒</strong>
+                        中美市场资金明显向传统行业切换，低估值、高股息和景气反转的老灯方向开始修复
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">世界人工智能大会：规格升级与产业风向标</h3>
+                <span class="section-tag">事件驱动</span>
+            </div>
+            <div class="content">
+                <p>2026世界人工智能大会（WAIC）今日在上海召开。作为国际AI行业盛会，本届大会规格进一步提升，国家最高领导人出席并致辞，标志着人工智能在中国国家战略中的地位继续抬升。从2022年至今，WAIC不仅见证了AI从 pre-AIGC 时代到生成式AI全面爆发的演进，也成为企业发布新品、项目路演、资本对接的重要平台。</p>
+
+                <p>大会每年设置超过<strong>150场分论坛</strong>，涵盖大模型、具身智能、AI for Science、智能终端、自动驾驶、AI治理等多个前沿方向。头部企业通常选择在大会期间发布最新产品与应用，因此WAIC既是政策风向标的观察窗口，也是产业链技术迭代和商业化进展的集中展示。</p>
+
+                <div class="highlight-box blue">
+                    <p><strong>核心判断：</strong>最高规格参与意味着AI已被视为重塑国家竞争力、参与全球治理的核心领域。大会不仅是产业展示平台，更是中国对外输出AI发展理念、争取国际规则话语权的重要舞台。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">世界人工智能合作组织：治理新抓手</h3>
+                <span class="section-tag">国际治理</span>
+            </div>
+            <div class="content">
+                <p>本届大会期间举行<strong>世界人工智能合作组织协议签署仪式</strong>。该组织定位为独立的政府间国际组织，总部设于中国上海，首批参与方包括俄罗斯、哈萨克斯坦、巴基斯坦等与中国关系较为紧密的国家。其宗旨是促进人工智能国际合作与全球治理，确保AI朝着有益、安全、公平、健康、有序的方向发展。</p>
+
+                <p>这一组织的成立释放出重要信号：人工智能已发展到对全球社会结构和治理体系产生深远影响的阶段，中国正主动参与并塑造新的国际治理架构。在美国持续“退群”、弱化原有全球治理体系的背景下，中国通过AI、商业航天等未来产业，构建属于自己的产业与治理生态，吸纳更多合作伙伴。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>美国动向</th>
+                            <th>中国动向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">全球治理</td>
+                            <td class="trend-down">弱化旧有国际组织，要求盟友承担更多成本</td>
+                            <td class="trend-up">牵头成立AI、航天等新领域合作组织</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">技术体系</td>
+                            <td>掌握芯片、大模型等底层生态</td>
+                            <td>加速构建自主可控的AI与卫星互联网体系</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">盟友结构</td>
+                            <td>传统盟友体系出现裂痕</td>
+                            <td>吸纳周边友好国家进入新治理框架</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>战略意义：</strong>未来全球可能形成两套并行的技术-治理体系。掌握AI底座和天基网络的国家，才能在国际竞争中有独立话语权；否则只能选边站队。中国推动世界人工智能合作组织，正是在为这种“新冷战”格局提前布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">AI自主可控：为何必须掌握核心能力</h3>
+                <span class="section-tag">产业战略</span>
+            </div>
+            <div class="content">
+                <p>人工智能与商业航天被提升到同等战略高度，原因在于二者都是未来经济社会运行的“基座”。如果一个国家的核心模型、算力底座、数据体系全部掌握在他人手中，在极端情况下将失去独立决策能力。这与商业航天逻辑类似：若天上没有自己的卫星网络，无人机、无人艇等智能装备一旦被切断信号，作战能力将大幅削弱。</p>
+
+                <p>当前全球范围内，只有<strong>中国和美国</strong>具备构建相对完整AI底座和天基网络的能力。其他国家在大模型、芯片、卫星互联网等核心环节上依赖进口，未来大概率需要在两大体系之间选择站位。因此，发展自主可控的AI能力，不仅是产业竞争问题，更是国家安全与全球治理参与权的问题。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 自主可控受益方向</h4>
+                        <ul>
+                            <li>国产大模型与 AI 算力芯片</li>
+                            <li>AI 服务器、光模块、存储等基础设施</li>
+                            <li>行业大模型与 AI 应用落地</li>
+                            <li>数据要素与算力网络</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 外部依赖风险方向</h4>
+                        <ul>
+                            <li>高度依赖海外算力芯片的环节</li>
+                            <li>核心模型与训练框架受制于人</li>
+                            <li>数据出境与跨境合规风险</li>
+                            <li>海外市场壁垒抬升</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">市场风格：科技休整，老灯苏醒</h3>
+                <span class="section-tag">市场研判</span>
+            </div>
+            <div class="content">
+                <p>昨日A股、港股、美股、韩股同步下跌，科技股仍处于调整通道。自7月1日明确提示短期风险以来，存储等前期热门方向头部公司跌幅已达约<strong>40%</strong>。虽然调整幅度已较大，但从时间维度看，15个交易日完成如此跌幅属于快速宣泄，市场情绪和筹码结构尚未达到新的平衡，因此仍需保持耐心。</p>
+
+                <p>与此同时，全球范围内的“老灯”（传统行业）方向开始苏醒。无论是中国市场还是美国市场，资金都出现从高位成长向低估值、高股息、景气反转板块切换的迹象。这种风格轮动与AI大会所传递的“科技长期看好、短期需要消化估值”的判断并不矛盾，而是市场在不同时间维度上的再平衡。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>方向</th>
+                            <th>当前状态</th>
+                            <th>应对策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">AI/存储/光模块</td>
+                            <td class="trend-down">快速调整，时间和筹码尚未充分</td>
+                            <td>继续等待，出现明确企稳信号后再加仓</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">券商/保险/高股息</td>
+                            <td class="trend-up">基本面拐点 + 估值低位</td>
+                            <td>可逢低逆向布局</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">创新药/实验猴上游</td>
+                            <td>主题轮动，情绪升温</td>
+                            <td>适度参与，控制仓位</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：长期看AI，短期看节奏</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>世界人工智能大会的召开和合作组织的成立，再次确认AI是长期战略方向。但长期投资不等于短期追高。当前科技板块仍处于估值消化和筹码整理阶段，而老灯方向的基本面拐点与低估值提供了更好的安全边际。建议以“长期持有AI核心资产 + 短期增配老灯逆向品种”的方式应对。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 可继续关注方向</h4>
+                        <ul>
+                            <li>国产 AI 算力底座（大模型、芯片、服务器）</li>
+                            <li>低估值高股息红利（券商、保险、电力、煤炭）</li>
+                            <li>景气反转明确的老灯（猪肉、部分有色）</li>
+                            <li>创新药上游（实验猴、CRO）的主题机会</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 短期需谨慎方向</h4>
+                        <ul>
+                            <li>自 7 月初以来跌幅较大但尚未企稳的存储/光模块</li>
+                            <li>受海外高杠杆波动影响的韩国/美股科技映射</li>
+                            <li>纯题材炒作、无业绩支撑的 AI 概念股</li>
+                            <li>过度拥挤、估值透支的细分方向</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>“人工智能是未来的基座，必须掌握在自己手里；但市场不会因为战略重要就永远上涨。长期拥抱科技，短期尊重节奏，在科技休整时让老灯为组合提供缓冲，才是真正的均衡配置。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>全球地缘政治、美联储货币政策、科技板块估值消化、AI主题轮动等因素可能继续放大市场波动。投资者应坚持均衡配置，避免在情绪高点追高，也不要在恐慌中盲目割肉长期优质资产。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月17日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
