@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月20日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">国家队出手增持 · 类平准基金启动维稳 · 调整接近尾声</p>
+            <p class="header-date">2026年7月20日 · 星期一 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🛡️</div>
+                    <div class="summary-text">
+                        <strong>国家队真金白银增持</strong>
+                        中国国新动用回购增持专项再贷款及配套资金超500亿元，中国诚通累计买入央企股票资产近百亿元
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏛️</div>
+                    <div class="summary-text">
+                        <strong>类平准基金机制成形</strong>
+                        中投、中国国新、中国诚通构成准平准基金体系，市场下跌时增持回购，情绪过热时减持兑现
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>调整接近尾声</strong>
+                        前期热门方向自7月1日风险提示以来已跌40-50%，当前是该想怎么进、而不是怎么跑的时候
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🌏</div>
+                    <div class="summary-text">
+                        <strong>韩国市场酝酿机会</strong>
+                        韩股单日跌3.75%，三星海力士承压叠加市场去杠杆，未来一两周或现类似3-4月的布局窗口
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">国家队出手：600亿真金白银稳定市场</h3>
+                <span class="section-tag">事件驱动</span>
+            </div>
+            <div class="content">
+                <p>周五A股继续大幅下跌，但盘中可以清晰看到护盘资金持续涌入，这一现象已连续出现两天，其中一个交易日午后走出V型反转，核心宽基指数获得超过400亿元资金净流入。如今护盘主力正式浮出水面：<strong>中国国新</strong>宣布已动用股票回购增持专项再贷款及配套资金<strong>超过500亿元</strong>用于维护市场稳定；<strong>中国诚通</strong>同步表示，近期已累计买入央企股票资产<strong>近百亿元</strong>。两家公司均明确表态，后续将继续全力维护资本市场平稳运行。</p>
+
+                <p>同一日，证监会于7月20日召开上市公司、证券公司、基金投资机构座谈会，听取各方关于促进资本市场平稳健康发展的意见建议。国家队增持与监管座谈双管齐下，释放出清晰的维稳信号：在市场重新出现不稳定苗头时，政策层的态度已经非常明确。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>在中国资本市场，国家队的态度是最不应被忽视的变量。真金白银的增持叠加监管层的座谈会，意味着政策底已经亮牌，市场维稳进入主动干预阶段。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">类平准基金机制：跌时买、热时卖</h3>
+                <span class="section-tag">机制解读</span>
+            </div>
+            <div class="content">
+                <p>924行情之后，A股实际上建立了一套<strong>类平准基金机制</strong>：没有一个正式挂牌的"平准基金"机构，但在市场下跌过程中，总有一批被动员起来的国家队主体执行增持、回购等动作，本轮出手的正是这一体系。反过来，当市场比较乐观、情绪过热时，这套机制同样会进行减持——正如上半年所发生的那样。</p>
+
+                <p>需要理解的是，平准基金的"高抛低吸"有其内在必然性：本轮增持动用的同样是<strong>股票回购增持专项再贷款</strong>，本质上是借来的钱。既然是借款，就不可能一直持有下去，等市场情绪修复之后，减持兑现是自然动作。投资者应当把这理解为机制的正常运转，而非"国家队撤退"的利空。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>平台</th>
+                            <th>定位</th>
+                            <th>本轮动作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">中投公司</td>
+                            <td>国家级主权投资平台</td>
+                            <td>准平准基金体系的核心主体之一</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">中国国新</td>
+                            <td>国有资本运营平台，聚焦央企战新产业</td>
+                            <td class="trend-up">专项再贷款+配套资金超500亿元增持</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">中国诚通</td>
+                            <td>国有资本运营平台，聚焦央企结构调整与混改</td>
+                            <td class="trend-up">累计买入央企股票资产近百亿元</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box blue">
+                    <p><strong>机制要点：</strong>类平准基金不是单向托底，而是"下跌时增持、过热时减持"的双向稳定器。看懂这套机制的节奏，比猜测单日的市场底部更有价值。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">国新与诚通：两大国资运营平台的分工</h3>
+                <span class="section-tag">平台解析</span>
+            </div>
+            <div class="content">
+                <p>中国国新与中国诚通平时较少进入普通投资者视野，但二者都是<strong>国有资本运营</strong>的核心抓手平台，各有侧重。中国国新聚焦新兴产业方向：旗下设有国风投基金、央企战略性新兴产业专项基金，支持央企改革与科创转型；同时直接持有央企上市公司股权，开展市值管理和战略性投资，并承担"两非"（非主业、非优势产业）及低效资产的处置，服务于央企战略重组与股权整合。</p>
+
+                <p>中国诚通则更多参与央企自身的股权多元化改革，即市场熟知的"混改"。旗下拥有国有企业结构调整基金（国调基金）、混合所有制改革基金（混改基金），是<strong>国家管网集团、中国绿发、中国电气装备、鞍钢、中国物流</strong>等央企的重要股东。理解这两家平台的职能，有助于判断其增持的方向大概率集中于央企上市公司与宽基指数，而非全面撒网。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 增持资金主要流向</h4>
+                        <ul>
+                            <li>央企上市公司股权与宽基指数</li>
+                            <li>战略性新兴产业相关央企标的</li>
+                            <li>混改与结构调整受益央企</li>
+                            <li>市场稳定器作用下的核心资产</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 机制运行的边界</h4>
+                        <ul>
+                            <li>增持资金来源于专项再贷款，本质是负债</li>
+                            <li>情绪过热阶段会减持兑现，双向操作</li>
+                            <li>增持不等于市场立刻见底</li>
+                            <li>维稳目标是平稳运行，而非单边拉升</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">市场研判：调整接近尾声，该想怎么进</h3>
+                <span class="section-tag">市场研判</span>
+            </div>
+            <div class="content">
+                <p>回看本轮调整：7月1日曾明确提示短期风险，当时的重要外部信号是几十家光模块方向的公司同时停牌提示风险。彼时这些标的每天上涨8%-10%，市场对风险提示置若罔闻——很多人担心早卖一天就少赚10%。随后的15个交易日里，相关方向公司普遍跌去<strong>40%-50%</strong>，这就是无视风险提示的代价。</p>
+
+                <p>而当下，市场的情绪走到了另一个极端：跌去40%之后开始恐慌性思考"要不要割肉"。这与7月1日的贪婪在结构上完全对称。策略信号已经非常清晰——国家队出手不一定意味着精确的最低点，但<strong>现在是该思考怎么进、而不是怎么跑的时候</strong>，正如7月1日该思考怎么跑、而不是怎么进。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时点</th>
+                            <th>市场状态</th>
+                            <th>正确动作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">7月1日</td>
+                            <td class="trend-down">热门方向每天涨8-10%，停牌风险提示被无视</td>
+                            <td>思考怎么跑，而不是怎么进</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">7月20日（现在）</td>
+                            <td class="trend-up">跌去40-50%后国家队增持，政策底亮牌</td>
+                            <td>思考怎么进，而不是怎么跑</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">下半年展望</td>
+                            <td>多行业业绩修复拐点支撑</td>
+                            <td>赚钱效应好于上半年，行业表现更均衡</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>对于此前在A股缺乏配置、或一直觉得估值偏贵的投资者，当前可以开始逐步加大A股配置力度。在多个行业业绩修复拐点的支撑下，下半年的行业表现将更加均衡，对普通投资者也更加友好。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">海外机会与投资纪律：慢就是快</h3>
+                <span class="section-tag">策略思考</span>
+            </div>
+            <div class="content">
+                <p>海外方面，韩国市场今日已开盘交易，单日下跌<strong>3.75%</strong>，调整幅度尚在可接受范围。韩国是当前重点关注的市场：在美国对三星、SK海力士持续打压、叠加韩国市场自身去杠杆进程的背景下，<strong>未来一两周内出现类似今年3-4月布局机会的可能性正在加大</strong>。当然，机会也可能最终不出现，需要持续跟踪。</p>
+
+                <p>值得吸取的教训是：年初那波日本、韩国机会出现时，不少投资者因为工具没有准备好而错过；四五月份之后才进场的投资者更是完全踏空。这一次，应当<strong>提前把账户和交易工具准备好</strong>，等机会窗口出现时才能充分把握。</p>
+
+                <div class="quote-block">
+                    <p>"在股市里记住一条：慢就是快，欲速则不达。想亏钱最快的方法，就是琢磨怎么赚快钱。调整接近尾声时可以制定策略，但不要看到国家队增持就不顾一切冲进去——慢慢地来，不着急。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 当前可做事项</h4>
+                        <ul>
+                            <li>逐步加大 A 股配置力度，而非一次性满仓</li>
+                            <li>制定分批进场策略，保持节奏感</li>
+                            <li>提前准备好韩国市场账户与工具</li>
+                            <li>关注下半年业绩修复拐点明确的行业</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 需要避免行为</h4>
+                        <ul>
+                            <li>恐慌中割掉已跌 40-50% 的优质筹码</li>
+                            <li>看到增持消息就不顾一切重仓冲进去</li>
+                            <li>追求短期翻倍、赚快钱的心态</li>
+                            <li>忽视国家队双向操作机制的减持阶段</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>国家队增持不意味着市场立即见底，调整仍可能有反复；韩国市场的机会窗口存在不确定性。投资者应坚持分批布局、均衡配置，避免情绪化操作。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月20日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
