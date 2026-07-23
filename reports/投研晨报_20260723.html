@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月23日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">谷歌财报：云业务高增 · 资本支出上调 · AI投入的定心丸</p>
+            <p class="header-date">2026年7月23日 · 星期四 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">📊</div>
+                    <div class="summary-text">
+                        <strong>谷歌财报稳健</strong>
+                        Q2营收1198亿美元同比+24%，连续12个季度双位数增长，营业利润同比+30%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">☁️</div>
+                    <div class="summary-text">
+                        <strong>云业务大超预期</strong>
+                        谷歌云收入247.68亿美元，同比增速82%，AI投入正在转化为实实在在的商业回报
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏗️</div>
+                    <div class="summary-text">
+                        <strong>资本开支指引上调</strong>
+                        全年Capex上调至1950-2000亿美元，AI算力投入的可持续性获得定心丸
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🇰🇷</div>
+                    <div class="summary-text">
+                        <strong>韩国降杠杆扰动</strong>
+                        韩国拟将杠杆ETF杠杆率降至1.5倍，韩股盘中涨4-5%后涨幅基本抹平
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">谷歌财报总览：连续三年的双位数增长</h3>
+                <span class="section-tag">财报解读</span>
+            </div>
+            <div class="content">
+                <p>谷歌这份财报是整个华尔街关注的焦点。值得注意的是，在近期国内外知名价值投资机构的持仓榜单上，谷歌都名列前茅——这与此前市场一致把英伟达当作第一大重仓股已有所不同。背后的逻辑是：AI发展进入<strong>大模型和应用爆发阶段</strong>后，像谷歌这样同时拥有<strong>底层操作系统和搜索引擎入口</strong>的平台型公司，开始重新发挥其在入口、流量和平台方面的积累优势。</p>
+
+                <p>具体数据相当扎实：二季度实现营收<strong>1197.96亿美元</strong>，同比增长<strong>24%</strong>——一家年利润万亿人民币级别的公司仍能保持20%以上的增长，非常难得。这已是谷歌<strong>连续12个季度（整整三年）实现双位数收入增长</strong>，这也是"美股一直有人说高、却一直在涨"的基本面底色。营业利润同比增长<strong>30%</strong>至<strong>407.7亿美元</strong>，一个季度赚约2800亿人民币。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>对比维度</th>
+                            <th>体量</th>
+                            <th>参照系</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">谷歌单季营业利润</td>
+                            <td class="trend-up">约 2800 亿人民币</td>
+                            <td>一个季度的盈利</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">工商银行</td>
+                            <td>一年不到 4000 亿人民币</td>
+                            <td>A股最赚钱的公司</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">创业板+科创板</td>
+                            <td class="trend-down">2025年 2000 家公司利润合计约 3000 多亿</td>
+                            <td>≈ 谷歌一个季度</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box blue">
+                    <p><strong>差距与启示：</strong>2000家创业板、科创板公司一年的利润加总，约等于谷歌一个季度的盈利——这就是全球科技龙头的盈利密度。当然，今年创业板、科创板的利润将有大幅提升，追赶的过程正是投资的机会所在。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">AI的两个关键信号：云收入与资本开支</h3>
+                <span class="section-tag">AI产业</span>
+            </div>
+            <div class="content">
+                <p>市场关注谷歌财报中两个与AI直接相关的指标。<strong>第一是云收入</strong>：云业务是检验AI投入是否转化为商业回报的核心指标——不管是token消耗还是模型调用，最终都会体现为云服务的增长。本季度谷歌云收入<strong>247.68亿美元，高于市场预期，同比增速82%</strong>，说明谷歌在AI方面的投入正在切实转化为商业回报。相比之下，传统广告收入632.7亿美元略低于市场预期——传统业务中规中矩，与AI相关的云服务才是增长引擎。</p>
+
+                <p><strong>第二是资本开支（Capex）</strong>：谷歌在财报中将全年资本开支指引<strong>从此前的1800-1900亿美元上调至1950-2000亿美元</strong>——一家公司一年要向AI基础设施投入约1.4万亿人民币。这对整个AI算力产业链是一颗<strong>定心丸</strong>：龙头的算力投入没有放缓，反而在加码。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>本季数据</th>
+                            <th>市场预期对比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">总营收</td>
+                            <td class="trend-up">1197.96 亿美元（+24%）</td>
+                            <td>稳健</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">谷歌云收入</td>
+                            <td class="trend-up">247.68 亿美元（+82%）</td>
+                            <td class="trend-up">高于预期</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">广告收入</td>
+                            <td>632.7 亿美元</td>
+                            <td class="trend-down">略低于预期</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">全年资本开支指引</td>
+                            <td class="trend-up">上调至 1950-2000 亿美元</td>
+                            <td class="trend-up">高于此前指引</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>积极信号：</strong>云业务超预期 + 资本开支上调的组合，为"AI算力投入的可持续性"给出了正面回答。对全球算力产业链（芯片、服务器、光模块、存储）而言，需求的长期可见度进一步提升。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">双刃剑：定心丸背后的盈利质量担忧</h3>
+                <span class="section-tag">市场反应</span>
+            </div>
+            <div class="content">
+                <p>这份财报整体中规中矩：云业务和资本开支都好于预期，但市场的反应却很克制——谷歌股价昨日基本没涨没跌，收盘小幅下跌。原因在于资本开支是一把<strong>双刃剑</strong>：一面是对AI硬件产业链的支撑，另一面则是对谷歌自身未来盈利能力的担忧——每年近2000亿美元的投入，能不能收回来？</p>
+
+                <p>更深一层的担忧是<strong>现金流消耗</strong>：所有大厂都在用自己的现金流为AI军备竞赛买单，而这些现金流是过去十年慢慢攒下来的家底。投入的加码意味着静态盈利质量的稀释，市场对此保持警惕。多空因素中和之下，股价选择了原地踏步。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 好的一面</h4>
+                        <ul>
+                            <li>云业务超预期，AI投入转化为商业回报</li>
+                            <li>资本开支上调确认算力需求可持续</li>
+                            <li>平台型公司入口与流量优势重新兑现</li>
+                            <li>连续12个季度双位数收入增长的韧性</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 担心的一面</h4>
+                        <ul>
+                            <li>年投近2000亿美元能否收回存在不确定性</li>
+                            <li>大厂集体消耗过去十年攒下的现金流</li>
+                            <li>静态盈利质量被资本开支稀释</li>
+                            <li>传统广告业务仅中规中矩</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>"云业务超预期加资本开支上调，对AI算力投入的可持续性是一颗定心丸；但巨额投入也在消耗大厂的家底。市场在定心与担心之间选择了观望——这正是财报后股价原地踏步的原因。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">韩国市场：杠杆ETF降杠杆的扰动</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>昨日韩国市场上演"过山车"：上午一度上涨<strong>4-5%</strong>，但收盘基本抹去了全部涨幅。中间的重要原因是韩国正在探讨<strong>降低本土发行的杠杆ETF的杠杆率</strong>——目前三星、SK海力士都有两倍、三倍看多的杠杆ETF，韩国监管层考虑将杠杆倍数降至<strong>1.5倍</strong>。</p>
+
+                <p>从监管逻辑看，降低杠杆、防范风险有情可原；但从市场影响看，杠杆率下降相当于<strong>被动缩减资金敞口、形成资金流出</strong>，对市场构成短期压力。需要注意的是，这一政策仅针对韩国本土发行的杠杆ETF，<strong>对海外市场没有影响</strong>——例如在香港市场购买的两倍看多ETF并不受此约束。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>韩国市场的杠杆政策调整属于短期扰动，不改变存储周期与AI需求的基本面趋势；但高杠杆工具的收缩会放大波动，参与韩国市场的投资者应控制杠杆、留足安全边际。AI产业链方面，需持续跟踪大厂资本开支与实际回报之间的兑现节奏。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月23日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
