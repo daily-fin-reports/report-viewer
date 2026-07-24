@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月24日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美伊冲突加剧 · 加息预期重挫美股 · 黄金回落原油飙升</p>
+            <p class="header-date">2026年7月24日 · 星期五 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>加息预期重挫美股</strong>
+                        纳指跌2.15%，谷歌跌7%、特斯拉跌14%；存储链逆势上涨，美光+3%、SK海力士+2.56%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🛢️</div>
+                    <div class="summary-text">
+                        <strong>美伊冲突教科书式连锁反应</strong>
+                        原油单日涨逾6%至92美元，黄金跌2.4%回到4000关口，美股、美债同步承压
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏦</div>
+                    <div class="summary-text">
+                        <strong>7月29日议息会议前瞻</strong>
+                        市场预期7月加息概率30%、按兵不动70%；美债10年期收益率破4.7%，长债下跌带来中长期机会
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🔄</div>
+                    <div class="summary-text">
+                        <strong>A股回购扩圈至科技</strong>
+                        江波龙、澜起科技等科技公司加入回购行列，科创板第五套标准向量子科技、脑机接口等未来产业延伸
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">隔夜美股重挫：指数下跌，结构分化</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>隔夜美股明显走弱：<strong>纳斯达克指数下跌2.15%，道琼斯指数下跌0.97%</strong>。但指数之下的分化非常值得关注——存储链逆势走强：<strong>美光上涨3%、SK海力士上涨2.56%、闪迪上涨0.69%</strong>；而前期的大市值权重遭遇重挫：<strong>谷歌下跌7%、特斯拉大跌14%</strong>。</p>
+
+                <p>这种分化说明本轮下跌并非全面的基本面崩塌，而是宏观预期冲击下的估值再定价：对利率敏感、前期涨幅巨大的权重股承压最重，而有产业周期支撑的存储方向反而获得资金避险性回流。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产 / 标的</th>
+                            <th>隔夜表现</th>
+                            <th>解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">纳斯达克指数</td>
+                            <td class="trend-down">-2.15%</td>
+                            <td>加息预期重燃压制成长股</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">谷歌 / 特斯拉</td>
+                            <td class="trend-down">-7% / -14%</td>
+                            <td>高估值权重遭遇集中抛售</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">美光 / SK海力士 / 闪迪</td>
+                            <td class="trend-up">+3% / +2.56% / +0.69%</td>
+                            <td>存储周期支撑，逆势走强</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">COMEX黄金</td>
+                            <td class="trend-down">-2.4%（回到4000关口）</td>
+                            <td>加息预期压制金价</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">NYMEX原油</td>
+                            <td class="trend-up">+6%以上（至92美元）</td>
+                            <td>地缘冲突推高供应风险溢价</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">美伊冲突升级：教科书式的连锁反应</h3>
+                <span class="section-tag">地缘政治</span>
+            </div>
+            <div class="content">
+                <p>昨日全球市场呈现了教科书级别的地缘冲突连锁反应：<strong>美股下跌、黄金下跌、原油大涨</strong>。导火索是美伊冲突再升级，目前已到近几个月停战以来最严重的阶段。官方通报里看不出太多细节，但市场流传的一个解释可信度较高：在美伊缓和期间，霍尔木兹海峡放行了大量运油船，其中不少<strong>买家是中国、且使用人民币结算</strong>。</p>
+
+                <p>这触碰了美国的核心底线——<strong>维持美元的全球霸权地位</strong>。中国在国际贸易中的份额已达17%-18%，如果石油贸易再大规模转向人民币结算，人民币在全球的扩张将难以遏制。石油美元的根基被撬动，正是本轮冲突骤然升级的深层逻辑。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>本轮冲突的表面是地缘问题，实质是货币问题。油价的跳涨不是简单的供应扰动，而是美元体系与人民币结算博弈的市场化定价。只要这个底层矛盾没有解决，类似"美股跌+黄金跌+原油涨"的组合就可能反复出现。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">通胀二次回升担忧与7月29日议息会议</h3>
+                <span class="section-tag">宏观政策</span>
+            </div>
+            <div class="content">
+                <p>油价重涨的直接宏观后果是<strong>美国通胀二次回升的担忧</strong>。6月份美国通胀数据刚现缓和——此前原油回到70美元附近后，通胀预期明显好转，市场对年内加息的预期也在调降。但油价单日飙涨6%之后，加息预期重新抬头，而<strong>7月29日美联储议息会议</strong>近在眼前，市场担心会议上出现更鹰派的表述。</p>
+
+                <p>目前的市场定价是：<strong>7月加息概率30%，维持不动概率70%</strong>——马上加息的可能性其实不大，真正的担忧在于"年内加息"这个选项被重新摆上桌面。受此影响，<strong>美国10年期国债收益率升至4.7%以上</strong>，长期美债明显下跌。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card negative">
+                        <h4>🔴 短期承压资产</h4>
+                        <ul>
+                            <li>高估值美股（谷歌、特斯拉式权重）</li>
+                            <li>黄金（加息预期直接压制）</li>
+                            <li>美国长期国债（收益率上行）</li>
+                            <li>对利率敏感的成长板块</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 错杀中的机会</h4>
+                        <ul>
+                            <li>长期美债：下跌为中长期投资者提供空间</li>
+                            <li>存储链：产业周期独立于宏观扰动</li>
+                            <li>美国经济K型上沿：AI企业营收利润强劲</li>
+                            <li>黄金回调后的长期配置窗口</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box blue">
+                    <p><strong>机会提示：</strong>这一波美债因油价二次上涨带来的下跌，为中长期投资者提供了一定的机会和空间。美国经济的韧性仍在——AI推动的一侧欣欣向荣，企业营收和利润水平依然强劲，短期看不到巨大的经济冲击。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">A股回购新动向：科技公司开始真金白银买自己</h3>
+                <span class="section-tag">产业信号</span>
+            </div>
+            <div class="content">
+                <p>A股近期要重点关注"谁在真金白银买自己"。此前的回购增持主力是老灯公司响应号召的央企国企，而这两天出现了重要变化——<strong>科技公司开始加入回购行列</strong>：<strong>江波龙</strong>股东提议4.1-8亿元回购；<strong>澜起科技</strong>提议3-6亿元回购（此前受三星、SK海力士反向调查冲击，股价受挫，公司用回购表达对自身发展的信心）；<strong>华安证券、立讯精密</strong>等也相继提议回购。加上此前公告的佰维存储，存储板块的头部公司已基本集齐回购动作。猪企方向的温氏、牧原同样在推进回购。</p>
+
+                <p>这批回购的共同含义是：<strong>公司自身和重要股东对当前价值的认可</strong>。存储行业经历了近期的大幅下跌，养猪行业经历了好几年的下跌，行业内最了解基本面的高管与股东用真金白银投出了信任票——这类信号值得纳入中长期观察框架。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>公司</th>
+                            <th>方向</th>
+                            <th>回购动作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">江波龙</td>
+                            <td>存储模组</td>
+                            <td class="trend-up">股东提议回购 4.1-8 亿元</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">澜起科技</td>
+                            <td>存储接口芯片</td>
+                            <td class="trend-up">提议回购 3-6 亿元</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">佰维存储</td>
+                            <td>存储</td>
+                            <td class="trend-up">此前已公告回购</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">立讯精密 / 华安证券</td>
+                            <td>消费电子 / 券商</td>
+                            <td class="trend-up">提议回购</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">温氏股份 / 牧原股份</td>
+                            <td>生猪养殖</td>
+                            <td class="trend-up">回购持续推进</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>信号意义：</strong>回购名单从"响应号召的央企"扩展到"自主决策的科技龙头"，是本轮增持潮的质变。公司比任何分析师都更了解自己的价值，批量回购出现的位置，往往就是中长期值得重视的位置。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">科创板第五套标准再扩围：未来产业全覆盖</h3>
+                <span class="section-tag">政策动向</span>
+            </div>
+            <div class="content">
+                <p>政策层面也在持续释放支持信号：上海科创板正在研究将<strong>第五套上市标准</strong>进一步向<strong>量子科技、脑机接口、可控核聚变</strong>等未来产业延伸。回顾这一标准的扩围路径：最初只针对<strong>商业航天、低空经济</strong>两个领域；今年陆家嘴论坛扩充至<strong>人工智能大模型和具身智能</strong>（物理AI、世界模型，即机器人的"小脑"和"大脑"）；本次再向量子科技、脑机接口、可控核聚变等方向延伸。</p>
+
+                <p>经过这轮修正，第五套标准基本能够<strong>涵盖所有未来产业</strong>——意味着所有未来产业的优秀公司都将获得上市便利，资本市场支持未来产业发展的道路越来越宽敞。</p>
+
+                <div class="quote-block">
+                    <p>"外部是美伊冲突与加息预期的扰动，内部是科技龙头真金白银的回购和未来产业上市通道的拓宽。短期的宏观噪音改变不了产业趋势的走向——把外部波动当作观察窗口，把内部信号纳入中长期框架。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>美伊冲突走向存在高度不确定性，若油价持续攀升，通胀与加息预期将进一步压制全球风险资产；7月29日美联储议息会议前后波动可能加剧。投资者应控制仓位节奏，避免在事件窗口期追高杠杆。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月24日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
