@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月29日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">全球市场光存领跌 · 一个月换了人间 · 海力士财报炸裂 · 调整尾声不做反</p>
+            <p class="header-date">2026年7月29日 · 星期三 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🔄</div>
+                    <div class="summary-text">
+                        <strong>一个月换了人间</strong>
+                        光存从5、6月最强主线变成领跌方向，韩国指数单日-10%，三星、海力士跌超10%，两倍做多海力士ETF跌30%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>美股同样光存独跌</strong>
+                        纳指仅-0.22%、道指+1%，但美光-8.8%、闪迪-14%、海力士-9%，最亮的仔变成熄灭的光
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💥</div>
+                    <div class="summary-text">
+                        <strong>海力士财报炸裂</strong>
+                        Q2营业利润60.54万亿韩元（去年同期9.2万亿），净利润93.92万亿韩元约4300亿人民币，营业利润率76.3%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>调整尾声不做反</strong>
+                        先跌的红利、微盘已企稳反弹；光存跌幅够但需时间磨。可以做错，不能做反
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">全球市场：光存领跌，一个月换了人间</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>昨日A股整体仍是调整表现，<strong>光存方向领跌</strong>，与5、6月份的情况形成截然相反的对比。韩国市场出现<strong>指数级10%的跌幅</strong>，三星和海力士均有10%以上的下跌，在香港挂牌的南方两倍做多海力士ETF单日下跌30%。</p>
+
+                <p>美股仍然是全球对投资者最友好的市场：在血雨腥风之中，<strong>纳斯达克指数仅下跌0.22%，道琼斯指数反而上涨1%</strong>。但美股与全球的格调一致——<strong>光存独跌</strong>：美光下跌8.8%、闪迪大跌14%、海力士下跌9%。之前最亮的仔，变成了熄灭的光。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>市场 / 标的</th>
+                            <th>单日表现</th>
+                            <th>解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">韩国指数 / 三星 / 海力士</td>
+                            <td class="trend-down">-10% / 超-10%</td>
+                            <td>存储重灾区的集中宣泄</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">南方两倍做多海力士ETF</td>
+                            <td class="trend-down">-30%</td>
+                            <td>杠杆放大恐慌，杀伤最烈</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">纳斯达克 / 道琼斯</td>
+                            <td>-0.22% / <span class="trend-up">+1%</span></td>
+                            <td>美股整体韧性仍在</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">美光 / 闪迪 / 海力士（美股）</td>
+                            <td class="trend-down">-8.8% / -14% / -9%</td>
+                            <td>光存独跌，全球同步</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">复盘的纪律：可以做错，不能做反</h3>
+                <span class="section-tag">投资纪律</span>
+            </div>
+            <div class="content">
+                <p>此时最该做的是复盘两件事：<strong>7月1日、6月底风险提示出现时，你的心态是怎样的？对科技、对光存未来的判断是怎样的？</strong>短短一个月，换了人间——悟已往之不谏，知来者之可追。想回到7月1日按提示卖掉已经没有意义，真正需要思考的是：在全球光存打了五折的当下，<strong>当初坚定看好它的那些中长期逻辑还在不在</strong>。</p>
+
+                <p>如果中长期逻辑还在，就不该在打了对折、基本面没有问题的优秀公司上一刀切地砍掉——那相当于在8月1日犯了与7月1日一样愚蠢的错误：<strong>7月1日的愚蠢，是在疯狂上涨中迷失自我、没有兑现利润甚至冲了进去；8月1日不要犯反向的错误</strong>。</p>
+
+                <div class="highlight-box">
+                    <p><strong>节奏管理：</strong>如同下棋，节奏与别人不一致时要做的是"停一拍"调整节奏，而不是明知错了还一脚一脚继续往前拱——那会连环错。纪律只有一句话：<strong>可以做错，不能做反</strong>。做反在牛市里是致命的伤害。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">A股结构：调整尾声与风格再平衡</h3>
+                <span class="section-tag">市场结构</span>
+            </div>
+            <div class="content">
+                <p>A股的走向与此前的判断基本一致：<strong>光存是最大的风险释放方向</strong>。国家队救市之后，当前处于<strong>调整的尾声——但尾声不是结束</strong>。尾声的含义是：一部分板块会先止跌，先跌的先企稳。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 已企稳甚至反弹</h4>
+                        <ul>
+                            <li>老登方向：6月底前被一片看空的板块</li>
+                            <li>红利板块：从"毫无意义"到悄然走强</li>
+                            <li>微盘股、微小盘公司明显反弹</li>
+                            <li>风格再平衡正在发生</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 仍需时间磨</h4>
+                        <ul>
+                            <li>光存方向：跌幅已够，时间不够</li>
+                            <li>牛市调整不会一个月跌完、一个月涨回</li>
+                            <li>需要在时间上磨一磨</li>
+                            <li>等待筹码与情绪的重新沉淀</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box blue">
+                    <p><strong>结构判断：</strong>调整过程中会出现风格的再平衡与转变。此时重申这一判断的意义在于：不要在错误的时间再犯第二个错误，用第二个错误去弥补第一个错误。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">海力士财报：腰斩的不是基本面</h3>
+                <span class="section-tag">公司财报</span>
+            </div>
+            <div class="content">
+                <p>存储板块龙头海力士发布二季度报表，整体非常亮眼：<strong>2026年Q2营业利润60.54万亿韩元，去年同期仅9.2万亿韩元</strong>（韩元兑人民币约210:1），同比增长约6倍。虽略低于分析师预期（预期区间60-70万亿韩元，贴着下限），但这并非经营疲弱——优等生增长五六倍还被挑毛病，挑的其实是市场调整期的情绪。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>海力士 2026Q2 关键数据</th>
+                            <th>数值</th>
+                            <th>解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">营业利润</td>
+                            <td>60.54 万亿韩元</td>
+                            <td class="trend-up">去年同期9.2万亿，约6倍增长</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">营业利润率</td>
+                            <td>76.3%</td>
+                            <td class="trend-up">高于Q1的71.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">净利润</td>
+                            <td>93.92 万亿韩元</td>
+                            <td class="trend-up">约4300亿人民币，超所有预期</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">动态市盈率</td>
+                            <td>约 5 倍</td>
+                            <td>股价接近腰斩后的估值水平</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>营业利润"贴着下限"的原因是<strong>海力士加强了与战略客户的长单锁价（长协价）</strong>：Q2存储价格环比Q1大涨（DRAM涨约30%、NAND涨约50%），长协价涨幅跟不上现货，短期压低了营业利润；但长协的价值在于——<strong>未来存储价格下跌时，已锁定的长协单仍能保障利润</strong>。净利润比营业利润多出约30万亿韩元，主要来自出售铠侠（原东芝存储）股权确认的投资收益及部分存货增值。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>核心判断：</strong>如此炸裂的业绩、存储中长期趋势未变，最优秀的公司却接近腰斩、动态市盈率仅约5倍——事出反常必有妖。业绩绝不是海力士腰斩的理由。按单季4300亿人民币利润推演，全年1.2万亿的盈利预期甚至可能上修至1.4万亿以上。期待韩国市场与光存方向的进一步调整，带来光储头部公司的投资机会。</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"7月1日的错误是在疯狂中迷失，8月1日的错误是在恐慌中挥刀。一个月换了人间，换的是价格，不是逻辑——逻辑还在的公司打了对折，要做的是停一拍、调节奏，而不是用第二个错误去弥补第一个错误。可以做错，不能做反。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>光存方向调整在时间上可能尚未充分，短期波动仍然剧烈；杠杆类产品（如两倍做多ETF）在单边下跌中杀伤巨大，应严格回避；存储价格存在周期属性，长协锁价亦无法完全对冲行业景气反转风险。投资者应独立判断，控制仓位节奏。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月29日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
