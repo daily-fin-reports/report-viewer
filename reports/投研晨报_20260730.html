@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月30日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">韩国盘中暴跌12%进入收尾阶段 · 美联储按兵不动 · 年内加息预期降温</p>
+            <p class="header-date">2026年7月30日 · 星期四 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">🔴</div>
+                    <div class="summary-text">
+                        <strong>韩国盘中暴跌12%</strong>
+                        年内已熔断6-7次；官方承认贸然推出杠杆ETF，拟从2-3倍降至1.5倍；平准基金暂不救市
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏛️</div>
+                    <div class="summary-text">
+                        <strong>美联储按兵不动</strong>
+                        7月未加息符合预期；沃什强调2%通胀目标不变，拟建立多指标利率判断框架
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🟢</div>
+                    <div class="summary-text">
+                        <strong>下跌进入收尾阶段</strong>
+                        韩国午后跌幅收窄至6%以内，海力士美股率先止跌；别人的危机就是我们的机会
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌍</div>
+                    <div class="summary-text">
+                        <strong>年内加息预期降温</strong>
+                        市场定价从接近两次回落至一次出头；若油价回70美元下方，年内或不加息
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">韩国盘中暴跌12%：官方紧急会议与两点结论</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>昨日韩国市场<strong>盘中暴跌12%</strong>。韩国股市历史上约有15-16次熔断（暂停20分钟交易），<strong>仅今年就发生了6-7次</strong>。下午韩国紧急召开研究应对市场暴跌的会议，财政部等相关部门参与，但一把手并未出席表态。</p>
+
+                <p>会议上有官员明确道歉，承认<strong>不应该贸然推出杠杆型ETF</strong>。会议传出两点结论：<strong>第一，杠杆ETF大概率从2-3倍降到1.5倍左右；第二，现在还没到救市的时候</strong>——平准基金暂不需要出手，因为这些公司基本面都不错，当前局面是杠杆造成的。受此影响，韩国市场午后从跌12%<strong>收窄至跌不到6%</strong>。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>韩国市场关键信息</th>
+                            <th>内容</th>
+                            <th>解读</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">盘中最大跌幅</td>
+                            <td class="trend-down">-12%</td>
+                            <td>午后收窄至-6%以内</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">年内熔断次数</td>
+                            <td>6-7 次</td>
+                            <td>历史上总共仅15-16次</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">杠杆ETF整改</td>
+                            <td>2-3倍 → 约1.5倍</td>
+                            <td>官方承认贸然推出之失</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">平准基金</td>
+                            <td>暂不出手</td>
+                            <td>定性为杠杆问题而非基本面问题</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">杠杆的教训：四五十万户强平与"别人的危机"</h3>
+                <span class="section-tag">市场结构</span>
+            </div>
+            <div class="content">
+                <p>韩国市场暴涨暴跌的深层原因在于其投资者结构：韩国投资者赌性之重放眼东亚只有中韩两国可比，且韩国更为极端——对财富的极度渴望使得市场一旦有机会，<strong>杠杆资金便会蜂拥而入</strong>，韭菜心理的波动性比国内还厉害，最终酿成反复熔断、暴涨暴跌的市场生态。</p>
+
+                <p>杠杆出清的代价是惨烈的：<strong>韩国近期约有四五十万户融资账户被强制平仓</strong>——被强平意味着彻底出局，连翻身的机会都没有。当前韩国市场已进入本轮下跌的<strong>收尾阶段</strong>：若平准基金出手，收尾会快一些；若不出手，可能还有零星杠杆盘被强平的"擦枪走火"。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>机会提示：</strong>别人的危机就是我们的机会。韩国市场的踩踏是杠杆出清而非基本面崩塌，这两天应密切关注海外动向——若出现机遇，值得及时把握。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">美联储按兵不动：沃什的三个信号</h3>
+                <span class="section-tag">宏观政策</span>
+            </div>
+            <div class="content">
+                <p>昨夜全球市场最关注的美联储议息会议落地：<strong>7月维持利率不变</strong>，符合会前预期（会前定价为加息概率三分之一、按兵不动三分之二）。真正值得研读的是沃什的表态，释放了三个信号：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>信号</th>
+                            <th>内容</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">一、建立利率判断框架</td>
+                            <td>不再简单追踪单一数据（PCE/CPI/非农）</td>
+                            <td>转向多指标综合研判，类似"看物流、电力等多个指标"</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">二、短中长期因素搭配</td>
+                            <td>政策不随短期数据波动频繁转向</td>
+                            <td>重新评估油价传导时长、AI重塑实体经济与K型分化等新变量</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">三、鹰派通胀目标不变</td>
+                            <td>坚持 2% 通胀控制目标</td>
+                            <td class="trend-down">在缩表/不扩表上态度坚决</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box blue">
+                    <p><strong>市场定价变化：</strong>沃什讲话后，市场对年内加息的预期明显降温——从此前接近加息两次（50BP）回落至"一次出头"（约25BP左右）。若加息，时点大概率在9月或年底。需注意：市场交易者的预期并不代表美联储的真实想法，两者存在偏差。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">油价、通胀与年内加息路径</h3>
+                <span class="section-tag">趋势研判</span>
+            </div>
+            <div class="content">
+                <p>年内是否加息的关键变量仍是美伊冲突与油价。判断是：<strong>美伊冲突并没有结束</strong>——伊朗在策略上不会希望特朗普顺利拿着政绩参加中期选举；而美国陷入了类似越战的困境：想退，但想以全胜者的姿态优雅地退，难以如愿时就可能再出手试图让对方屈服。大国与小国交手，速决不成则拖延对小国有利——这决定了<strong>油价对全球通胀影响的持续性比上半年市场预期更高</strong>，成为全球主要央行利率决策的重要变量。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 情形一：冲突较快解决</h4>
+                        <ul>
+                            <li>油价重回 70 美元下方</li>
+                            <li>年内加息概率不大</li>
+                            <li>风险资产压力缓解</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 情形二：冲突持续僵持</h4>
+                        <ul>
+                            <li>油价通胀粘性超预期</li>
+                            <li>年内加一次的概率提升</li>
+                            <li>时点或在 9 月或年底</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>隔夜美股在议息会议后明显走弱：<strong>纳斯达克下跌1.7%</strong>。结构上与A股如出一辙——<strong>存储跌、科技跌、老登涨</strong>：可口可乐股价创历史新高（字面意义的历史新高），道琼斯近期持续强于纳斯达克；美光、闪迪仍有5%以上跌幅，但<strong>海力士没有继续大跌</strong>，这对今日韩国市场构成支撑。</p>
+
+                <div class="quote-block">
+                    <p>"韩国的踩踏是杠杆的出清，不是基本面的崩塌；美联储的按兵不动是框架的重构，不是方向的逆转。四五十万户强平账户提醒每一个人：市场给的机会要用本金去接，而不是用杠杆去赌。别人的危机，正是有耐心者的机会。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>韩国市场收尾阶段仍可能有杠杆强平引发的尾端波动；美伊冲突走向高度不确定，若油价再度攀升，年内加息预期将重新升温压制全球风险资产；杠杆型产品在极端行情中可能血本无归，应严格回避。投资者应独立判断，控制仓位节奏。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月30日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
