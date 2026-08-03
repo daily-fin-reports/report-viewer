@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月3日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">韩国市场历史性反弹 · 特朗普政策反复 · 地缘冲突临近尾声</p>
+            <p class="header-date">2026年8月3日 · 周一 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>韩国市场创历史性单日涨幅</strong>
+                        韩国综合指数单日上涨约17%，海外双倍做多海力士ETF涨幅接近70%，属于极端情绪修复
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🕊️</div>
+                    <div class="summary-text">
+                        <strong>特朗普对伊朗政策反复</strong>
+                        从威胁“毁灭性打击”到称“放弃打击、准备谈判”，中东冲突进入尾声阶段，市场反应趋于钝化
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚖️</div>
+                    <div class="summary-text">
+                        <strong>暴力反弹后常有短期修整</strong>
+                        历史经验显示，极端下跌后的暴力反弹通常伴随数日甚至十余日的回踩整理，中长期逻辑未变
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">💡</div>
+                    <div class="summary-text">
+                        <strong>以配置思路参与，避免追高</strong>
+                        韩国市场机会偏中长期，但单日暴涨透支部分空间，建议分批参与而非一次性押注
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">韩国市场历史性暴涨：情绪修复与空间透支</h3>
+                <span class="section-tag">亚太市场</span>
+            </div>
+            <div class="content">
+                <p>上周四晚间开始提示看多韩国市场，周五韩国综合指数单日上涨<strong>接近17%</strong>，创下历史性单日涨幅。海外跟踪的双倍做多海力士ETF单日涨幅接近<strong>70%</strong>。这种反弹力度在正常国家市场中极为罕见，从单日表现来看对后续涨幅有所透支。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>标的/市场</th>
+                            <th>单日表现</th>
+                            <th>判断</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">韩国综合指数</td>
+                            <td class="trend-up">+17%</td>
+                            <td>历史性单日涨幅</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">双倍做多海力士ETF</td>
+                            <td class="trend-up">+70%</td>
+                            <td>杠杆放大情绪修复</td>
+                        </tr>
+                        <tr>
+                            <td>历史对比：2005年上证综指</td>
+                            <td class="trend-up">+10%</td>
+                            <td>跌破1000点后暴力反弹，随后出现十余天修整</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>中长期机会尚未结束，但短期暴涨后通常会出现几天的技术性修整。这是市场运行的正常过程，不必因单日大涨而恐慌踏空，也无需急于追高。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">特朗普政策反复：地缘冲突进入尾声阶段</h3>
+                <span class="section-tag">地缘政治</span>
+            </div>
+            <div class="content">
+                <p>特朗普先是威胁对伊朗进行“毁灭性打击”，随后又称打击计划已放弃、准备谈判。这种反复表态对市场的影响出现边际递减：美股期货上涨、黄金反弹、油价盘中一度下跌7%。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 市场受益方向</h4>
+                        <ul>
+                            <li>美股期货出现显著上涨</li>
+                            <li>黄金价格反弹</li>
+                            <li>中长期通胀预期回落</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 市场承压方向</h4>
+                        <ul>
+                            <li>油价短期承压</li>
+                            <li>能源板块波动加大</li>
+                            <li>地缘不确定性反复</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>判断：</strong>中东冲突已处于尾声阶段，市场对相关言论的反应趋于透明化。即使后续仍有反复，对全球供应链和能源体系的冲击相对可控。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">参与韩国市场：美股ETF vs 韩国本地市场</h3>
+                <span class="section-tag">投资策略</span>
+            </div>
+            <div class="content">
+                <p>投资者面临两种参与方式：通过美股市场购买韩国指数ETF或核心公司ADR，还是直接在韩国市场买入本土股票。两者存在结构性差异，需要结合自身风险偏好选择。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>美股市场（ETF/ADR）</th>
+                            <th>韩国本地市场</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">定价视角</td>
+                            <td>全球化、机构化程度高</td>
+                            <td>本地情绪主导，波动更大</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">溢价/折价</td>
+                            <td>海力士ETF相对韩国本土常有30%-50%溢价</td>
+                            <td>贴近本地真实供需</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">波动性</td>
+                            <td>相对稳健，受全球资金影响</td>
+                            <td>情绪化交易更明显，波动剧烈</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">适合投资者</td>
+                            <td>偏好全球化定价、不愿研究本地账户</td>
+                            <td>能承受高波动、希望贴近本土定价</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="quote-block">
+                    <p>"同一个公司在A股和港股上市，A股一直比港股贵，从我上班开始就是这样。不要想着去套利，这是两个不同的市场。中长期来看，三星、海力士能不能持续领先，行业周期和成长逻辑有没有变坏，才是决定回报的核心。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">操作建议：中长期配置，分批参与</h3>
+                <span class="section-tag">投资纪律</span>
+            </div>
+            <div class="content">
+                <p>韩国市场的机会属于中长期判断，不是一日游行情。单日暴涨后需要保持平常心，避免两种极端情绪：一是怕踏空而追高，二是因涨幅过大而认为行情结束。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 建议做法</h4>
+                        <ul>
+                            <li>以配置思路提升海外组合中韩国相关比例</li>
+                            <li>分批参与，利用后续波动逐步建仓</li>
+                            <li>关注三星、海力士等行业龙头的中长期基本面</li>
+                            <li>将单日暴涨视为情绪修复，而非终点</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 避免做法</h4>
+                        <ul>
+                            <li>因单日暴涨一次性重仓追高</li>
+                            <li>因怕踏空而冲动买入</li>
+                            <li>用短线交易思维对待中长线机会</li>
+                            <li>忽视本地市场的高波动特征</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>暴力反弹后的短期修整是大概率事件。如果追高买入，可能在修整阶段承受较大回撤。建议保留仓位灵活性，等待更舒适的加仓位置。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>本报告基于音频纪要整理，仅供内部研究参考</p>
+            <p class="disclaimer">
+                风险提示：市场有风险，投资需谨慎。本报告所载信息、意见、推测仅反映音频内容中的观点，不构成对任何人的投资建议，亦不作为买卖、认购证券或其他金融工具的邀请或保证。投资者据此操作，风险自担。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
