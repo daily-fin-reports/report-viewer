@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年7月31日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box.blue { border-left-color: var(--blue); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">旗帜鲜明看多韩国市场 · 多头不死跌势不止 · 海外配置窗口开启</p>
+            <p class="header-date">2026年7月31日 · 星期五 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🚀</div>
+                    <div class="summary-text">
+                        <strong>旗帜鲜明看多韩国</strong>
+                        年内第三次重要机会提示；建议用海外账户配置韩国，比例可提至海外配置的1/3至1/2
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>多头不死跌势不止</strong>
+                        华尔街杠杆明星基金Leo Power爆仓被接盘，最坚定的杠杆多头出清，往往是风格见底信号
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>美股大幅反弹</strong>
+                        纳指+2.78%；闪迪+25%、美光+18%、海力士+17%、微软大涨，存储链全面暴涨
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌍</div>
+                    <div class="summary-text">
+                        <strong>韩国三大转好信号</strong>
+                        融资盘回到年初水平、杠杆ETF去杠杆近200亿美金、海力士董事长自掏300多万美金增持
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美股大反弹：杠杆明星基金爆仓与"多头不死，跌势不止"</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>隔夜美股市场出现大幅反弹：<strong>纳斯达克指数上涨2.78%</strong>，存储与科技链全面暴涨——<strong>闪迪大涨25%、美光大涨18%、海力士大涨17%</strong>，微软等公司亦大幅上涨。海力士美股挂牌后发行价140多美元，一度上涨至194美元，回落后在隔夜大涨后回到149美元附近。</p>
+
+                <p>这轮反弹中有一个标志性事件：华尔街新晋"神童型"基金经理 <strong>Leo Power</strong>（OpenAI前研究员出身，二十多岁年少成名，管理规模最高约200亿美金）<strong>基金爆仓、被他人接盘</strong>。其投资方式是用杠杆加码的形式投资AI上下游产业链，包括融资、杠杆型ETF等——过去半年到一年收益颇丰，但近期连续大幅下跌最终导致爆仓。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>隔夜美股表现</th>
+                            <th>涨跌幅</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">纳斯达克指数</td>
+                            <td class="trend-up">+2.78%</td>
+                            <td>大幅反弹</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">闪迪</td>
+                            <td class="trend-up">+25%</td>
+                            <td>存储链领涨</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">美光</td>
+                            <td class="trend-up">+18%</td>
+                            <td>存储链领涨</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">海力士（美股）</td>
+                            <td class="trend-up">+17%</td>
+                            <td>发行价140+ → 最高194 → 现约149</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Leo Power基金</td>
+                            <td class="trend-down">爆仓被接盘</td>
+                            <td>杠杆投资AI产业链，规模最高约200亿美金</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心观点：</strong>在任何一次剧烈的牛市波动中，一定会出现"殉道者"。市场有句老话——"多头不死，跌势不止"：最坚定的看多者、尤其是上了杠杆的人如果没有被打爆，下跌就不会完全结束。此类事件的出现，往往就是其所代表的风格见底之时。果不其然，当晚美股出现大幅上涨。</p>
+                </div>
+
+                <p>A股此前也有镜像案例：德明利的重要游资融资盘进入前十大流通股东，被打爆之前股价几乎每天跌停；该融资盘爆仓后，跌势方才见底。Leo Power在美国扮演了同样的角色。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">韩国市场三大转好信号：杠杆出清已近完成</h3>
+                <span class="section-tag">市场结构</span>
+            </div>
+            <div class="content">
+                <p>韩国市场在救市会议后的首个交易日<strong>低开高走后重新回落</strong>，韩国综指昨日下跌1.7%——这符合一般规律：任何市场都不会在会议后立即见底，这也是近几日持续观察而非急于出手的原因。但韩国目前已出现几个明确的好信号：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>信号</th>
+                            <th>内容</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">一、融资盘大幅回落</td>
+                            <td>普通投资者融资/贷款交易比例大幅下降，基本回到年初正常状态</td>
+                            <td>此前三个月杠杆绝对量比年初高出1-1.5倍，现已明显去化</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">二、杠杆ETF显著去杠杆</td>
+                            <td>持仓从高点去化接近200亿美金</td>
+                            <td>杠杆率基本回到今年年初水平</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">三、董事长真金白银增持</td>
+                            <td>海力士董事长自掏300多万美金增持自家股票</td>
+                            <td class="trend-up">金额不大，但态度信号明确</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>这几个信号共同说明：<strong>韩国政府主动引爆、主动去杠杆的行动已取得非常明显的效果</strong>，杠杆比例大幅降低。在此情况下，韩国市场再出现连续踩踏的可能性非常低。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>多重信号共振之下，正式旗帜鲜明地提出——韩国市场迎来非常好的配置机会。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">如何配置韩国：工具选择与比例建议</h3>
+                <span class="section-tag">投资策略</span>
+            </div>
+            <div class="content">
+                <p>国内没有直接投资韩国市场的工具，配置路径需要区分对待：</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 推荐路径：海外账户</h4>
+                        <ul>
+                            <li>港股/美股账户中投资韩国指数的ETF</li>
+                            <li>挂钩核心公司（三星、海力士）的产品</li>
+                            <li>无溢价问题，价格公允</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 谨慎路径：中韩半导体ETF</h4>
+                        <ul>
+                            <li>国内唯一含三星、海力士的品种</li>
+                            <li>溢价率高达10%-20%</li>
+                            <li>一块钱的东西卖到一块二，风险显著</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box blue">
+                    <p><strong>配置比例：</strong>海外配置一向建议美、日、韩、港均衡配置。机会出现时，可将韩国仓位提升到海外配置的<strong>三分之一到一半</strong>，即用海外配置资金的一半左右参与本次韩国机会。</p>
+                </div>
+
+                <p>这是年内<strong>第三次重要机会提示</strong>。前两次均完成闭环交易：2月份的原油（上涨约一倍）、3月份的日韩（指数层面收益50%以上）。本次机会同样值得高度关注。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">复盘年内两次风险提示：没亏钱也是赚</h3>
+                <span class="section-tag">复盘总结</span>
+            </div>
+            <div class="content">
+                <p>年内除三次机会提示外，还有两次重要风险提示，若未重视同样损失惨重：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时点</th>
+                            <th>提示类型</th>
+                            <th>结果验证</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">2月</td>
+                            <td class="trend-up">机会：原油</td>
+                            <td>上涨约一倍，完成闭环</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">3月</td>
+                            <td class="trend-up">机会：日韩</td>
+                            <td>指数收益50%以上，完成闭环</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">黄金超5000后</td>
+                            <td class="trend-down">风险：黄金短期风险</td>
+                            <td>及时回避回撤</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">7月1日</td>
+                            <td class="trend-down">风险：光、存两大板块</td>
+                            <td>此后头部光存公司接近腰斩</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">7月31日（本次）</td>
+                            <td class="trend-up">机会：韩国市场</td>
+                            <td>旗帜鲜明看多，值得重点关注</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>7月1日提示风险时，很多人不以为然——每天涨10%的时候，谁会想到风险？交易所密集发布风险提示、公司自己提示风险，依然不愿卖出，"等两天再看看"，一等就是一个月，头部光存公司基本全部腰斩。<strong>没亏钱也是赚</strong>，这两次风险提示与机会提示同等重要。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">中国市场：调整尾声不做反，别当"市场上最亮的仔"</h3>
+                <span class="section-tag">投资纪律</span>
+            </div>
+            <div class="content">
+                <p>韩国机会确立之后，很多人关心中国怎么办。判断一直很明确：<strong>国家队入场之后，就是调整的尾声</strong>——但尾声不等于入场后马上不跌。如果每次国家队一进场市场就立即反转，那市场也未免太简单；市场一定是要"打到你怀疑人生"的，尤其是光、存方向，甚至可能觉得比原来跌得还厉害。</p>
+
+                <p>这恰恰是底部的考验：之所以会在底部割肉，是因为以为抓住了一根救命稻草，结果稻草来的时候损失反而更惨重。正如7月1日不愿卖出一样——彼时彼刻，恰如此时此刻。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>纪律警示：</strong>股市里犯错误很正常，但不能做反。7月1日没有卖、8月1日实在熬不住要卖——如果劝不住，等于再抽自己一个嘴巴：这一个月里就是"市场上最亮的仔"。不要做这样的人。</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"多头不死，跌势不止。当最坚定的杠杆多头被打爆，往往就是风格见底之时。别人的危机就是我们的机会——旗帜鲜明，看多韩国。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>韩国市场仍处下跌收尾阶段，短期或有反复；海外账户投资涉及汇率、跨境额度与流动性风险；杠杆产品在极端行情中可能血本无归，应严格回避；国内中韩半导体ETF溢价率较高，追买需承担溢价回落风险。投资者应独立判断，控制仓位节奏。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年7月31日</p>
+            <p>本报告基于音频纪要整理，仅供学习交流使用</p>
+            <div class="disclaimer">
+                <p>免责声明：本内容不构成任何投资建议。市场有风险，投资需谨慎。投资者应根据自身风险承受能力独立判断，必要时咨询专业投资顾问。</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
