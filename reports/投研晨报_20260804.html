@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月4日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美日联手干预日元汇率 · 日本央行再度出手 · 汇市政策博弈加剧</p>
+            <p class="header-date">2026年8月4日 · 周二 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🤝</div>
+                    <div class="summary-text">
+                        <strong>美日联手干预日元汇率</strong>
+                        美国明确表态协助日本维护汇率稳定，日本央行的单独干预升级为美日协同行动，政策信号显著增强
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">💰</div>
+                    <div class="summary-text">
+                        <strong>干预规模或超800亿美元</strong>
+                        上周四、周五日本央行外汇干预资金据盘面估计达800-1000亿美元，超过4月底的736亿美元
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📉</div>
+                    <div class="summary-text">
+                        <strong>日元快速升值至157关口</strong>
+                        美元对日元从164附近连续三日回撤至157左右，短期贬值压力得到阶段性缓解
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>日本政策空间受制约</strong>
+                        财政刺激与军费扩张需要低利率环境，过快加息将加重财政负担，货币政策正常化进程受限
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">日元贬值背景：输入型通胀与购买力下降</h3>
+                <span class="section-tag">外汇市场</span>
+            </div>
+            <div class="content">
+                <p>近期外汇市场出现重要变化，日元启动对美元升值。在此之前，美元对日元持续贬值，年内一度接近<strong>164</strong>关口（一美元兑163.99日元）。日元长期贬值对日本经济产生多方面影响。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 正面影响</h4>
+                        <ul>
+                            <li>吸引海外游客赴日旅游、购物</li>
+                            <li>提升日本商品和服务的国际价格竞争力</li>
+                            <li>推动入境消费和相关服务业景气</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 负面压力</h4>
+                        <ul>
+                            <li>输入型通胀抬头，居民生活成本上升</li>
+                            <li>以日元计价的国际购买力下降</li>
+                            <li>进口能源、原材料及高端设备成本增加</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>日本长期低通胀甚至通缩的环境使居民对物价上涨较为敏感。输入型通胀持续上升，不仅影响民生感受，也对政策层面形成约束，成为央行出手干预的重要背景。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">日本央行两度干预：规模升级与效果分化</h3>
+                <span class="section-tag">央行政策</span>
+            </div>
+            <div class="content">
+                <p>日本央行此次干预并非首次。今年4月底至5月初，日本央行曾动用约<strong>11.73万亿日元</strong>（约合736亿美元）干预汇市。彼时日元对美元一度逼近166，干预后日元短期反弹，但随后仍呈小步贬值态势，直至近日重回164附近。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>干预规模</th>
+                            <th>效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4月底-5月初</td>
+                            <td class="highlight">约736亿美元</td>
+                            <td>短期反弹，随后日元继续贬值</td>
+                        </tr>
+                        <tr>
+                            <td>上周四、周五</td>
+                            <td class="trend-up">约800-1000亿美元（估算）</td>
+                            <td>美元兑日元从164回落至157</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>此次干预力度明显超过上一次，并且得到美国公开支持。市场层面看，美元兑日元已连续三日回撤，从164附近回落至<strong>157</strong>左右，回到相对常态化的位置。</p>
+
+                <div class="quote-block">
+                    <p>"非市场化的干预往往会受到市场阻力。即便日元短期回到155甚至151一线，相对美元的贬值压力仍然存在。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">美国伸出援手：盟友利益与贸易再平衡</h3>
+                <span class="section-tag">国际关系</span>
+            </div>
+            <div class="content">
+                <p>美国此番明确表态帮助日本维护汇率稳定，主要出于三方面考量。其一，日本是美国在亚太地区的重要盟友，汇率持续贬值可能波及盟友内部政治与经济的稳定。其二，日本是美国国债的重要海外持有方，日元或日本金融市场若出现不稳定，可能对海外投资者持有美债意愿产生影响。其三，美国当前希望推动贸易再平衡，并不希望主要贸易伙伴货币过度贬值，导致美国对日贸易逆差进一步扩大。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 美国的考量</h4>
+                        <ul>
+                            <li>维护盟友金融稳定，巩固同盟关系</li>
+                            <li>稳定海外美债持有方信心</li>
+                            <li>避免日元过度贬值扩大贸易逆差</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 日本的诉求</h4>
+                        <ul>
+                            <li>缓解输入型通胀对民生的冲击</li>
+                            <li>为货币政策争取操作空间</li>
+                            <li>稳定汇率预期，防止单边贬值</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>政策协同：</strong>美日联手干预使政策信号显著增强，短期对市场情绪的引导效果明显，日元快速升值即反映了这一协同效应。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">日本政策困境：财政扩张与货币正常化的拉锯</h3>
+                <span class="section-tag">宏观策略</span>
+            </div>
+            <div class="content">
+                <p>日本是全球最早进入加息周期的经济体之一，但加息节奏被人为抑制。原因在于，日本正在启动财政刺激计划并加大军费开支，这两项均属扩张性财政政策，需要更多、更便宜的资金支持。若在财政赤字扩张阶段过快加息，将直接加重国债利息负担。</p>
+
+                <p>换言之，日本当前正处于"需要用钱"的阶段，不希望国债利率过快上行。但不加息又会扩大日美利差，使日元持续承压。在此背景下，直接下场干预汇率成为折中选择：既不必过快收紧货币，又能阶段性稳住日元。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>政策选项</th>
+                            <th>效果</th>
+                            <th>代价</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">加息</td>
+                            <td>遏制日元贬值</td>
+                            <td>加重财政负担，抑制经济扩张</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">不加息+干预汇市</td>
+                            <td>阶段性稳定汇率</td>
+                            <td>消耗外汇储备，效果可能是暂时的</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">美日联合干预</td>
+                            <td>信号强、短期效果好</td>
+                            <td>仍受市场规律约束，需基本面配合</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">市场启示：非市场化干预的边界与长期风险</h3>
+                <span class="section-tag">投资提示</span>
+            </div>
+            <div class="content">
+                <p>从日本案例可以看出，汇率不仅是经济基本面的反映，也是政策博弈的结果。美日联手干预能够在短期内改变市场预期，但若缺乏经济基本面和货币政策趋势的配合，干预效果可能逐步递减。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>所有非市场化干预都会受到市场阻力。日元短期回升至157后，若日美利差和贸易结构未发生根本变化，日元仍可能重新面临贬值压力。投资者应关注日本央行后续货币政策信号、美国国债收益率走势以及美日贸易谈判进展。</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"一个国家即便进行结构性改革，也需要维持基本的经济增速。以美元计价的GDP长期停滞不前甚至下降，将对国际地位和居民财富产生深远影响。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
