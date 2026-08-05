@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月5日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美国大涨创新高 · 存储板块强势反弹 · 光模块禁令再起</p>
+            <p class="header-date">2026年8月5日 · 周三 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🚀</div>
+                    <div class="summary-text">
+                        <strong>美股全线大涨创新高</strong>
+                        道指站上54,085点，标普500突破7,736点，均创历史新高；纳斯达克大涨2.59%，市场受伊朗停火预期推动
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💾</div>
+                    <div class="summary-text">
+                        <strong>存储板块强势反弹</strong>
+                        SK海力士涨8.17%，闪迪涨10.84%，美光涨7.62%；HBF新标准发布巩固行业生态位
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚠️</div>
+                    <div class="summary-text">
+                        <strong>美推光模块禁令</strong>
+                        市场传闻特朗普将签署对中国高端光模块的禁止采购令，并倾向在高端AI算力服务器中使用美国核心部件
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>中美AI基础设施脱钩加速</strong>
+                        两国均在推动供应链安全可控，全球AI竞争格局向中美两大阵营分化，其他国家只能选择站队
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美股大涨：伊朗停火预期与风险偏好回升</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>隔夜美股市场全线大涨，主要指数表现亮眼。道琼斯工业指数上涨<strong>1.7%</strong>，收于<strong>54,085.88点</strong>；标普500指数上涨<strong>1.79%</strong>，收于<strong>7,736.52点</strong>，两者均创出历史新高。纳斯达克指数涨幅更大，上涨<strong>2.59%</strong>，但尚未刷新前期高点。</p>
+
+                <p>市场大涨的直接催化剂是美国财长贝森特关于伊朗停火协议的表态。其提到美国已接近与伊朗达成新的停火协议，并在开放霍尔木兹海峡方面取得明确进展。地缘风险预期的缓和显著提振了市场情绪，尤其是能源敏感板块和风险资产。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指数</th>
+                            <th>收盘点位</th>
+                            <th>涨跌幅</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>道琼斯</td>
+                            <td class="highlight">54,085.88</td>
+                            <td class="trend-up">+1.70%</td>
+                        </tr>
+                        <tr>
+                            <td>标普500</td>
+                            <td class="highlight">7,736.52</td>
+                            <td class="trend-up">+1.79%</td>
+                        </tr>
+                        <tr>
+                            <td>纳斯达克</td>
+                            <td>7,658.49</td>
+                            <td class="trend-up">+2.59%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>美国市场仍是当前全球最容易操作的主要市场之一，但参与需要海外账户和相应的渠道。对于普通投资者而言，不必过度纠结无法直接参与的资产，应聚焦于自身可配置的标的。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">存储板块领涨：HBF标准发布与行业生态位巩固</h3>
+                <span class="section-tag">半导体</span>
+            </div>
+            <div class="content">
+                <p>在美股大涨的背景下，存储板块表现尤为突出。SK海力士上涨<strong>8.17%</strong>，闪迪上涨<strong>10.84%</strong>，美光上涨<strong>7.62%</strong>。这一走势对前期持续承压的国内存储产业链而言，可能带来一定的情绪修复。</p>
+
+                <p>存储板块领涨的原因除了美股整体风险偏好回升外，还在于闪迪与SK海力士共同发布了首个<strong>HBF（High Bandwidth Flash，高带宽闪存）标准</strong>。HBM（高带宽内存）已在AI算力领域获得广泛应用，而HBF则是面向闪存领域的新一代高带宽标准。闪迪以NAND Flash为主业，SK海力士同时覆盖NAND与DRAM，两家龙头共同制定行业标准，意味着其在AI存储生态中的话语权进一步巩固。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 受益方向</h4>
+                        <ul>
+                            <li>存储模组及封测产业链情绪修复</li>
+                            <li>与SK海力士、闪迪有合作或配套的国内供应商</li>
+                            <li>AI服务器存储需求持续拉动下的HBM/HBF相关标的</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 仍需观察</h4>
+                        <ul>
+                            <li>前期跌幅较大的存储标的是否具备基本面反转支撑</li>
+                            <li>国内存储企业与海外龙头的技术代差是否收窄</li>
+                            <li>美国后续对存储产业链的出口管制动向</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>"全球存储领域正在从单纯的产能竞争，转向标准制定权和生态位竞争。谁先定义下一代接口与协议，谁就能在AI基础设施浪潮中占据更主动的位置。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">光模块禁令再起：美国推动AI供应链本土化</h3>
+                <span class="section-tag">政策风险</span>
+            </div>
+            <div class="content">
+                <p>市场传闻特朗普政府将签署一项针对中国高端光模块的禁止采购令。该禁令不仅涉及高端光模块，还可能扩展至高端AI算力服务器中的核心部件，目标是推动美国本土或以美国为主的供应链替代中国供应商。</p>
+
+                <p>从产业格局看，全球光模块前五名企业中，有四家来自中国，仅一家为美国企业。其中，中国龙头在美国市场的占有率接近<strong>25%-30%</strong>，处于较高水平。这一数据表明，美国市场对中国光模块存在较高依赖度。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>核心判断：</strong>美国遏制中国AI算力发展的趋势具有必然性，光模块作为AI算力基础设施的关键环节，成为政策博弈焦点在意料之中。但鉴于美国本土产能短期难以快速填补缺口，相关限制从出台到实际落地会有一个渐进过程。</p>
+                </div>
+
+                <p>需要进一步厘清的是，光模块本身的技术含量并不如市场想象的那么高，其核心在于光芯片等上游部件。目前光芯片主要由海外企业供应，中国企业更多承担模组集成和产能响应的角色。光模块行业过去两年的高景气，本质上源于AI需求爆发带来的供需错配，类似于疫情期间口罩的逻辑：技术成熟、供给弹性有限，但需求短期井喷。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>影响维度</th>
+                            <th>短期</th>
+                            <th>中期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">情绪面</td>
+                            <td>利空，股价承压</td>
+                            <td>逐步消化，回归业绩验证</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">营收面</td>
+                            <td>影响有限，订单仍在执行</td>
+                            <td>若禁令落地，高端出口份额可能下滑</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">供给面</td>
+                            <td>美国产能无法快速替代</td>
+                            <td>中国光模块或通过转口、代工等方式维持存在</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">中美AI脱钩：安全可控成为全球竞争主线</h3>
+                <span class="section-tag">宏观策略</span>
+            </div>
+            <div class="content">
+                <p>光模块禁令并非孤立事件，而是中美在AI领域推动供应链自主可控的延续。中国此前已提出信创战略，在操作系统、数据库、服务器、办公软件等领域推进国产替代。美国在AI算力核心硬件领域推动本土化，本质上是同一逻辑的镜像：双方都希望在新一代基础设施中降低对对方的依赖。</p>
+
+                <p>从更宏观的视角看，AI时代的全球竞争格局已高度集中。有能力独立建设新一代AI基础设施的经济体基本只有中美两国。太空、半导体、云计算、先进制造等领域均呈现中美两强并立的态势。对于其他经济体而言，缺乏自主建设能力意味着只能选择加入其中一方的阵营或体系。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card neutral">
+                        <h4>🟡 投资启示</h4>
+                        <ul>
+                            <li>中美各自供应链安全主题将持续获得政策支持</li>
+                            <li>国产替代方向（光芯片、AI服务器、操作系统）具备中长期逻辑</li>
+                            <li>海外业务占比较高的中国科技硬件企业面临估值折价压力</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 可关注方向</h4>
+                        <ul>
+                            <li>光模块上游光芯片国产替代</li>
+                            <li>AI算力服务器核心零部件本土化</li>
+                            <li>存储板块情绪修复带来的交易性机会</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">市场启示：短期情绪冲击与中期业绩验证</h3>
+                <span class="section-tag">投资提示</span>
+            </div>
+            <div class="content">
+                <p>综合来看，隔夜市场传递两条主线：一是地缘风险缓和推动美股风险偏好回升，二是中美科技博弈继续升温，光模块等AI硬件板块面临新的政策扰动。对于国内市场而言，前期跌幅较大的存储板块可能迎来阶段性情绪修复，而光模块板块短期则面临压力。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>光模块禁令短期内更多是情绪冲击，实际业绩影响将是渐进过程。参考此前英伟达芯片受限后仍通过各种渠道进入中国市场的情况，光模块高端产品也可能出现类似的转移路径。投资者应关注企业海外收入占比、产品结构以及光芯片等上游环节的国产替代进度。</p>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>中美科技政策存在高度不确定性，光模块禁令的具体范围、执行节奏和替代方案都可能影响板块走势。同时，美股创新高后短期情绪过热，也需警惕获利回吐压力。</p>
+                </div>
+
+                <div class="quote-block">
+                    <p>"中美都在做同一件事：把AI时代最关键的基础设施掌握在自己手里。这不是短期博弈，而是未来十年全球科技竞争的主线。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
