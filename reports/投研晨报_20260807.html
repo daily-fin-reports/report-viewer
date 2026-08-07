@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月7日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">宇树科技发行价确定 · A股打新策略 · 美国多晶硅限制落地</p>
+            <p class="header-date">2026年8月7日 · 周五 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🤖</div>
+                    <div class="summary-text">
+                        <strong>宇树科技发行价确定</strong>
+                        发行价150.8元，发行估值约600亿元，中一签约需75000元；上市估值有望达1000-2000亿元
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🎯</div>
+                    <div class="summary-text">
+                        <strong>A股打新中签逻辑</strong>
+                        发行规模越大、股价越低越容易中签；高价股中签率低但单签收益高
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🚀</div>
+                    <div class="summary-text">
+                        <strong>下半年新股看点</strong>
+                        壁仞科技、蓝箭航天等硬科技企业将陆续推进；8月11日蓝箭可回收验证值得关注
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚠️</div>
+                    <div class="summary-text">
+                        <strong>美国多晶硅限制落地</strong>
+                        特朗普签署行政令，对进口多晶硅设最低限价并加征15%关税，光伏产业链再承压
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">宇树科技发行价确定：高价科技股如何定价</h3>
+                <span class="section-tag">新股IPO</span>
+            </div>
+            <div class="content">
+                <p>宇树科技发行价确定为<strong>150.8元/股</strong>，对应发行估值约<strong>600亿元</strong>。按此价格计算，中一签（500股）需缴款约<strong>7.5万元</strong>。高发行价意味着早期股东从1元面值到150.8元的增值倍数较高，也符合很多从小企业成长为行业龙头的科技公司特征。</p>
+
+                <p>从估值角度看，宇树科技2025年静态市盈率约100倍（2025年净利润约5.91亿元）。但对于科技类新股，上市定价与短期静态利润关系不大，更多反映市场对其行业地位、成长空间和稀缺性的预期。按当前发行价和发行估值推算，上市后市值落在1000亿至2000亿元区间属于较合理的预期范围：市场偏冷时大概率在1000亿以上，情绪亢奋时甚至可能接近2000亿。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>数值</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>发行价</td>
+                            <td class="highlight">150.8元</td>
+                            <td>高单价科技股</td>
+                        </tr>
+                        <tr>
+                            <td>发行规模</td>
+                            <td>约60亿元</td>
+                            <td>占总股本约10%</td>
+                        </tr>
+                        <tr>
+                            <td>发行估值</td>
+                            <td>约600亿元</td>
+                            <td>2025年静态市盈率约100倍</td>
+                        </tr>
+                        <tr>
+                            <td>中一签缴款</td>
+                            <td>约7.5万元</td>
+                            <td>500股 × 150.8元</td>
+                        </tr>
+                        <tr>
+                            <td>上市后预期估值</td>
+                            <td class="trend-up">1000-2000亿元</td>
+                            <td>偏冷时1000亿以上，亢奋时或达2000亿</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>A股新股上市首日破发概率极低，参与打新几乎是稳赚策略。对宇树科技而言，参与打新的主要门槛不是破发风险，而是中签率。投资者可以积极参与，但应降低对中签的期待。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">什么样的新股容易中签：规模与价格的艺术</h3>
+                <span class="section-tag">打新策略</span>
+            </div>
+            <div class="content">
+                <p>判断一只新股是否容易中签，核心看两个变量：<strong>发行规模</strong>和<strong>发行价格</strong>。在同样的发行规模下，股价越低，分拆的签数就越多，中签概率也就越高；反之，股价越高，单签金额越大，中签概率越低，但中签后收益也更可观。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 容易中签的特征</h4>
+                        <ul>
+                            <li>发行规模大（如百亿级）</li>
+                            <li>发行价格低（如10元以下）</li>
+                            <li>分拆签数多，单签金额小</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 大肉签的特征</h4>
+                        <ul>
+                            <li>发行价格高（如100元以上）</li>
+                            <li>单签所需资金多</li>
+                            <li>上市后涨幅相同，绝对收益更高</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>以长芯与宇树对比为例：长芯发行价仅8元左右，综合考虑发行规模和股价后，其中签概率比宇树高约<strong>100-150倍</strong>。因此长芯属于"普惠型"打新，很多人有望中签；而宇树属于"大肉签"，中签率低但单签潜在收益高。</p>
+
+                <div class="quote-block">
+                    <p>"A股打新几乎是稳赚，不需要犹豫要不要打，唯一可能让你放弃的理由只是觉得中签率太低、懒得点鼠标。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">下半年硬科技新股：关注蓝箭可回收验证</h3>
+                <span class="section-tag">产业前瞻</span>
+            </div>
+            <div class="content">
+                <p>除宇树科技外，今年下半年还将陆续迎来一批硬科技新股。其中GPU领域的四小龙之一<strong>壁仞科技</strong>，以及民营航天龙头<strong>蓝箭航天</strong>备受关注。蓝箭航天计划在8月11日进行朱雀三号可回收验证，这也是中国民营火箭首次进行可回收验证。</p>
+
+                <p>蓝箭的可回收验证对其上市审批节奏具有重要意义。若验证顺利，将显著提升其在商业航天领域的竞争力和资本市场认可度。对于打新投资者而言，这类硬科技新股同样具备"必打"属性，但同样需要理性评估中签概率。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>标的</th>
+                            <th>领域</th>
+                            <th>关键节点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">宇树科技</td>
+                            <td>人形机器人</td>
+                            <td>8月10日左右打新，发行价150.8元</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">蓝箭航天</td>
+                            <td>民营火箭</td>
+                            <td>8月11日朱雀三号可回收验证</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">壁仞科技</td>
+                            <td>GPU/AI芯片</td>
+                            <td>下半年陆续推进</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">美国多晶硅限制正式落地：价格下限与额外关税</h3>
+                <span class="section-tag">政策风险</span>
+            </div>
+            <div class="content">
+                <p>特朗普正式签署行政令，依据1962年《贸易扩展法》第232条，对进口多晶硅及其衍生品采取最低价格和额外关税措施，以支持美国本土多晶硅、半导体和太阳能供应链。这与此前针对光模块的传闻不同，光模块因缺乏现成法条支撑需先立法，落地周期较长；而多晶硅可依据现有法律推进，程序更快。</p>
+
+                <p>具体措施包括：多晶硅最低限价<strong>21美元/公斤</strong>，硅片最低限价<strong>100美元/公斤</strong>，太阳能电池最低限价<strong>0.22美元/瓦</strong>，太阳能组件最低限价<strong>0.38美元/瓦</strong>；同时美国对公告附件所列多晶硅及相应衍生品加征<strong>15%</strong>的从价关税。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>产品</th>
+                            <th>美国最低限价</th>
+                            <th>当前国内参考价</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>多晶硅</td>
+                            <td class="highlight">21美元/公斤</td>
+                            <td>约35元人民币/公斤</td>
+                        </tr>
+                        <tr>
+                            <td>硅片</td>
+                            <td class="highlight">100美元/公斤</td>
+                            <td>显著低于限价</td>
+                        </tr>
+                        <tr>
+                            <td>太阳能电池</td>
+                            <td class="highlight">0.22美元/瓦</td>
+                            <td>低于限价</td>
+                        </tr>
+                        <tr>
+                            <td>太阳能组件</td>
+                            <td class="highlight">0.38美元/瓦</td>
+                            <td>低于限价</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>若国内光伏产业链产品要达到美国最低限价水平，意味着价格需大幅上涨，这在短期内难以实现。美国限制将压制中国光伏产品对美出口，但客观上也倒逼行业反内卷、提升价格和盈利能力。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">光伏产业链再审视：从碳酸锂到多晶硅的周期轮动</h3>
+                <span class="section-tag">新能源周期</span>
+            </div>
+            <div class="content">
+                <p>去年以来，碳酸锂、原油、铜等大宗商品在价格触底后均有不错表现。当前市场开始关注多晶硅是否也会迎来类似的修复机会。目前国内多晶硅期货价格约35000元人民币/吨，折合35元/公斤；而美国最低限价21美元/公斤，折合人民币约140元/公斤，两者差距巨大。</p>
+
+                <p>从产业逻辑看，美国设置高价下限和加征关税，短期对中国光伏出口不利，但长期看可能成为全球价格中枢上修的催化剂。若国内多晶硅及产业链价格能逐步向国际价格靠拢，整个光伏行业的盈利能力将大幅改善。不过，这一过程取决于国内产能出清进度、反内卷政策执行力度以及全球需求恢复情况。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 潜在利好</h4>
+                        <ul>
+                            <li>全球价格中枢上修预期</li>
+                            <li>国内反内卷政策持续推进</li>
+                            <li>产能出清后龙头盈利能力修复</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 仍需观察</h4>
+                        <ul>
+                            <li>美国市场实际出口量下降</li>
+                            <li>国内供给过剩格局未根本改变</li>
+                            <li>全球光伏装机增速是否回暖</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p>"美国给多晶硅设了高价下限，这相当于反向倒逼中国光伏企业提价。如果我们自己的产业也能从35元/公斤向更高价格中枢修复，整个光伏产业链的盈利能力将出现质变。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">市场启示：积极参与打新，理性看待产业博弈</h3>
+                <span class="section-tag">投资提示</span>
+            </div>
+            <div class="content">
+                <p>今日音频传递两条主线：一是A股硬科技新股密集上市，投资者应坚持"有打必打"的原则，同时根据自身资金和风险偏好选择配置市值；二是中美在新能源、半导体、AI等领域的产业博弈持续升级，短期对相关板块构成情绪扰动，但长期可能加速国内产业升级和价格体系重塑。</p>
+
+                <div class="highlight-box">
+                    <p><strong>操作提示：</strong>宇树科技打新可积极参与，但预期中签率较低，不宜过度期待。对于光伏板块，美国限制落地已部分被市场预期，后续需跟踪国内反内卷政策执行、产能出清进度以及多晶硅价格走势，不宜仅凭单一政策事件追涨杀跌。</p>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>新股上市后估值波动较大，若市场情绪转冷，高估值科技股可能面临回调压力。中美产业政策的具体执行力度和节奏存在不确定性，相关企业业绩兑现需要时间验证。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
