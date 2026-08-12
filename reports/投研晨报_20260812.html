@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月12日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">恒生科技指数编制规则修改 · 扩容50只 · 科技定义升级</p>
+            <p class="header-date">2026年8月12日 · 周三 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon blue">📊</div>
+                    <div class="summary-text">
+                        <strong>指数扩容</strong>
+                        恒生科技指数成分股从30只扩大至50只，覆盖面和代表性显著提升
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚙️</div>
+                    <div class="summary-text">
+                        <strong>编制方式革新</strong>
+                        40只按市值+科技主题筛选，10只按收入排名筛选，避免 purely 市值化偏差
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🤖</div>
+                    <div class="summary-text">
+                        <strong>科技定义升级</strong>
+                        人工智能提升为一级主题，新增先进硬件、机器人与自动化、全业科技等方向
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🌏</div>
+                    <div class="summary-text">
+                        <strong>港股定位</strong>
+                        香港市场聚集平台型公司、生物科技（18A/18C）及新经济企业，指数改革有助提升全球科技代表性
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">恒生科技指数：为什么要改</h3>
+                <span class="section-tag">指数改革</span>
+            </div>
+            <div class="content">
+                <p>恒生科技指数是香港市场最受关注的代表性指数之一，与恒生指数、恒生生物医药指数共同构成投资者观察港股的重要工具。然而，过去几年恒生科技指数的表现与全球主流科技指数存在一定偏差，核心原因在于其编制方式偏市值化，且对"科技"的定义偏软。</p>
+
+                <p>在原有规则下，恒生科技指数主要纳入网络、金融科技、云计算、电子商贸、数码及智能化等六大方向的市值最大30家公司。这导致指数长期被腾讯、阿里、美团、小米、京东等平台型公司主导，而半导体、机器人、人工智能基础设施等"硬科技"企业覆盖不足。市场普遍认为，这些平台型公司虽然业务庞大，但已不能完全代表前沿科技发展趋势。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心矛盾：</strong>恒生科技指数名为"科技"，但原有编制规则使其更像"港股互联网+平台经济"指数，与全球科技股（如美股半导体、AI产业链）的运行逻辑存在偏差。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">新编制规则：从30只到50只的双轨筛选</h3>
+                <span class="section-tag">编制方式</span>
+            </div>
+            <div class="content">
+                <p>此次修订后，恒生科技指数成分股从30只扩容至50只。新的筛选机制分为两部分：其中40家公司仍按市值加权方式，从符合科技主题定义的港股中选取；另外10家公司则按收入排名筛选，且这10家公司从已剔除前述40家后的候选池中产生。</p>
+
+                <p>这种双轨设计的意义在于：一方面保留市值加权带来的流动性和代表性，另一方面通过收入排名引入一批尚未进入市值前列但成长性强的科技新锐，避免 purely 市值化导致指数总是滞后于产业变化。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>修订前</th>
+                            <th>修订后</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>成分股数量</td>
+                            <td>30只</td>
+                            <td class="trend-up">50只</td>
+                        </tr>
+                        <tr>
+                            <td>筛选逻辑</td>
+                            <td>市值最大30家</td>
+                            <td>40只市值 + 10只收入排名</td>
+                        </tr>
+                        <tr>
+                            <td>覆盖范围</td>
+                            <td>互联网、金融科技、云计算等</td>
+                            <td>增加先进硬件、机器人、AI、航天卫星等</td>
+                        </tr>
+                        <tr>
+                            <td>科技属性</td>
+                            <td>偏平台型、软科技</td>
+                            <td class="trend-up">软硬结合、更偏前沿科技</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">科技定义重构：人工智能升级为一级主题</h3>
+                <span class="section-tag">行业分类</span>
+            </div>
+            <div class="content">
+                <p>此次修订最重要的变化之一，是对"科技"的定义进行了重构。修订前，人工智能仅是"智能化"子主题下的一个方向；修订后，人工智能被提升为一级主题，并细分为人工智能基础设施、人工智能平台、人工智能应用三个子方向。这一调整反映出港股指数编制对AI产业地位的认可。</p>
+
+                <p>同时，新增的主题方向包括：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>一级主题</th>
+                            <th>子主题</th>
+                            <th>覆盖领域</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">数码平台及解决方案</td>
+                            <td>网上业务、软件、电子支付等</td>
+                            <td>传统互联网与金融科技</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">人工智能</td>
+                            <td>基础设施、平台、应用</td>
+                            <td>AI算力、大模型、应用场景</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">先进硬件</td>
+                            <td>半导体元器件、智能设备、新能源储能材料</td>
+                            <td>芯片、智能硬件、储能</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">机器人与自动化</td>
+                            <td>机器人、自动驾驶、物联网、智慧生活</td>
+                            <td>人形机器人、智能汽车、物联网</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">云端</td>
+                            <td>云端解决方案、大数据、数据中心</td>
+                            <td>云计算、数据服务</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">全业科技</td>
+                            <td>航天及卫星科技、量子计算、脑机接口、合成生物学、先进材料</td>
+                            <td>未来产业、前沿科技</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="quote-block">
+                    <p>"这次改革把人工智能提到一级主题，把半导体、机器人、航天卫星等硬科技放进来，实际上是在回应市场对恒生科技指数'不够科技'的批评。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">港股市场定位：平台经济与创新经济的交汇</h3>
+                <span class="section-tag">市场结构</span>
+            </div>
+            <div class="content">
+                <p>香港市场经过这些年发展，已经形成了独特的产业结构。除了传统的房地产、金融等优势行业外，港股在两大领域尤为突出：一是平台型和新经济公司，如腾讯、阿里、美团、小米、京东等；二是生物科技企业，得益于港交所18A（支持生物科技企业上市）和18C（支持未盈利科技企业上市）条款，大量优秀生物科技和新经济企业在港股上市。</p>
+
+                <p>从全球资产配置角度看，不同市场的代表性产业各有特点：美国以科技见长，韩国以存储芯片见长，日本以五大商社为代表，欧洲以奢侈品品牌为特色，中国A股则以白酒、高端制造为代表。香港市场若要提升全球代表性，就必须让指数更准确地反映其聚集的创新型经济企业，而不是被少数平台巨头长期主导。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 改革利好</h4>
+                        <ul>
+                            <li>提升指数科技属性和全球代表性</li>
+                            <li>引入更多硬科技企业，降低对平台股依赖</li>
+                            <li>改善指数与全球科技趋势的偏离</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 仍需观察</h4>
+                        <ul>
+                            <li>新增成分股的流动性和估值水平</li>
+                            <li>市场是否认可新的科技分类标准</li>
+                            <li>指数调仓后的短期跟踪资金流动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资者如何理解指数编制规则</h3>
+                <span class="section-tag">投资提示</span>
+            </div>
+            <div class="content">
+                <p>无论是选择恒生科技、恒生300、中证500还是A500，投资者首先需要理解其指数编制规则。编制规则决定了什么样的公司会被纳入、以什么权重存在、多久调整一次。只有理解了这些，才能判断一只指数在自己看好的市场环境下能否真正受益。</p>
+
+                <p>此次恒生科技指数改革后，投资者需要注意以下几点：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>关注点</th>
+                            <th>建议</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>指数科技属性</td>
+                            <td>更偏软硬结合，AI、机器人、半导体权重提升</td>
+                        </tr>
+                        <tr>
+                            <td>成分股扩容</td>
+                            <td>50只成分股分散度提高，单一巨头影响下降</td>
+                        </tr>
+                        <tr>
+                            <td>收入排名机制</td>
+                            <td>关注高成长但市值尚未领先的新锐企业</td>
+                        </tr>
+                        <tr>
+                            <td>调仓节奏</td>
+                            <td>指数调整时会带来被动资金流入流出</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>对于长期看好港股科技板块的投资者，此次指数改革是积极信号。但短期需警惕指数调仓带来的波动，以及新增成分股若估值过高可能拉低指数弹性。建议通过ETF或指数增强方式参与，避免押注单一个股。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">市场启示：指数改革提升港股科技资产吸引力</h3>
+                <span class="section-tag">配置展望</span>
+            </div>
+            <div class="content">
+                <p>恒生科技指数编制规则的修订，本质上是香港市场主动适应全球科技产业变化的一次调整。将AI提升为一级主题、纳入先进硬件和机器人等方向，有助于让指数更好地代表港股中的科技创新力量，也能让国际投资者在配置中国科技资产时有更精准的工具。</p>
+
+                <div class="quote-block">
+                    <p>"恒生科技指数改革不是简单增加20只股票，而是重新定义了'科技'在港股中的范畴。这对指数的长期代表性是一个重要升级。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>指数编制规则修订后，成分股和权重会发生变化，可能导致短期净值波动。港股市场还受美联储利率、人民币汇率、地缘风险等多重因素影响。本报告观点基于音频内容整理，不构成具体投资建议。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
