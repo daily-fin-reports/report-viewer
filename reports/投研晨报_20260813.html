@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月13日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美国通胀回落 · 加息预期下降 · 海外市场反弹 · 中国汽车出口</p>
+            <p class="header-date">2026年8月13日 · 周四 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon green">📉</div>
+                    <div class="summary-text">
+                        <strong>美国通胀回落</strong>
+                        7月CPI同比上涨3.4%，核心CPI同比上涨2.5%，符合市场预期
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏦</div>
+                    <div class="summary-text">
+                        <strong>加息预期降温</strong>
+                        9月加息25bp概率从60%以上降至36%，维持不变概率升至六成以上
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">📈</div>
+                    <div class="summary-text">
+                        <strong>海外市场反弹</strong>
+                        道指、标普创新高，纳斯达克接近新高；日韩股市强劲反弹
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🚗</div>
+                    <div class="summary-text">
+                        <strong>中国汽车出口亮眼</strong>
+                        出口连续两月超百万辆，新能源车出口占比首次超过60%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美国7月CPI回落，加息必要性降低</h3>
+                <span class="section-tag">宏观数据</span>
+            </div>
+            <div class="content">
+                <p>美国7月CPI数据公布，同比上涨3.4%，核心CPI同比上涨2.5%，均落在市场预期范围内。这一数据相比此前受原油价格扰动较大的4月至6月出现回落，整体属于中性偏利好。</p>
+
+                <p>通胀回落降低了美联储加息的紧迫性。根据芝加哥商品交易所的美联储观察工具，市场对9月美联储会议加息25个基点的概率已经从前期的60%以上降至36%，而维持利率不变的概率则上升至六成以上。这意味着当前市场主流预期认为美联储在9月按兵不动的可能性更大。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>数据</th>
+                            <th>含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7月CPI同比</td>
+                            <td class="trend-down">3.4%</td>
+                            <td>较前几个月有所回落</td>
+                        </tr>
+                        <tr>
+                            <td>7月核心CPI同比</td>
+                            <td class="trend-down">2.5%</td>
+                            <td>去除能源食品后的通胀放缓</td>
+                        </tr>
+                        <tr>
+                            <td>9月加息25bp概率</td>
+                            <td class="trend-down">36%</td>
+                            <td>较前期60%以上明显降温</td>
+                        </tr>
+                        <tr>
+                            <td>9月维持不变概率</td>
+                            <td class="trend-up">60%以上</td>
+                            <td>成为当前主流预期</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>非农和就业数据降温、通胀数据回落，共同强化了美联储年内不加息的预期。这一环境对黄金、有色金属等利率敏感型资产整体有利。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">美联储政策立场：缩表继续，利率视经济而定</h3>
+                <span class="section-tag">政策研判</span>
+            </div>
+            <div class="content">
+                <p>从当前情况看，年内美联储再次加息的可能性较低。特朗普政府整体倾向于保持利率稳定甚至降息，以支持经济增长。而鲍威尔的政策取向与这一方向并不冲突，他更强调通过缩表来治理通胀，同时让利率根据经济增长的中长期方向做决策，避免因为短期扰动因素频繁调整利率方向。</p>
+
+                <div class="quote-block">
+                    <p>"美联储年内加息的可能性很低。鲍威尔希望通过缩表治理通胀，利率则根据经济增长的中长期趋势决策，而不是被短期扰动牵着走。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">海外市场反弹：美股创新高，日韩股市强劲回升</h3>
+                <span class="section-tag">全球市场</span>
+            </div>
+            <div class="content">
+                <p>在加息预期降温的背景下，美股三大指数表现分化但总体偏强。道琼斯指数和标普500指数已经创出历史新高，纳斯达克指数由于此前科技股调整较多，距离历史新高仅一步之遥。美国科技股在短暂调整后重回反弹轨道。</p>
+
+                <p>美股回暖带动了日韩股市强劲反弹。韩国股市在前期大跌后已经大幅回升，较最低点上涨超过10%。SK海力士作为全球存储龙头，涨幅尤为突出。此前市场恐慌性下跌时提到的韩国市场机会，目前正在得到修复验证。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 美股</h4>
+                        <ul>
+                            <li>道指、标普创历史新高</li>
+                            <li>纳斯达克接近历史新高</li>
+                            <li>科技股回暖，风险偏好修复</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>🟢 日韩股市</h4>
+                        <ul>
+                            <li>韩国股市从低点反弹超10%</li>
+                            <li>SK海力士等科技龙头大涨</li>
+                            <li>加息预期缓和带动资金回流</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>策略提示：</strong>韩国市场此前被定位为3到6个月的中长期机会，短期波动不应作为上车或下车的依据。判断投资时要回到最初买入的逻辑，关注基本面是否发生大的变化，而不是被单日涨跌左右。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">中国汽车出口：内销疲软，外需撑起增长</h3>
+                <span class="section-tag">产业数据</span>
+            </div>
+            <div class="content">
+                <p>国内汽车市场面临较大内需压力。今年1-7月，汽车产销量分别为1756.7万辆和1760.2万辆，同比均下降3.7%。7月单月产量257.3万辆，同比下降6.8%；销量258万辆，同比下降8%。</p>
+
+                <p>与外需疲软的内销形成鲜明对比的是，中国汽车出口表现亮眼。出口已连续两个月超过百万辆，并且新能源车出口占比首次超过60%。这一结构性变化表明，海外市场、尤其是新能源车的海外市场，已成为中国车企今年业绩增长的关键支撑。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>数据</th>
+                            <th>趋势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-7月汽车产量</td>
+                            <td>1756.7万辆</td>
+                            <td class="trend-down">同比 -3.7%</td>
+                        </tr>
+                        <tr>
+                            <td>1-7月汽车销量</td>
+                            <td>1760.2万辆</td>
+                            <td class="trend-down">同比 -3.7%</td>
+                        </tr>
+                        <tr>
+                            <td>7月汽车产量</td>
+                            <td>257.3万辆</td>
+                            <td class="trend-down">同比 -6.8%</td>
+                        </tr>
+                        <tr>
+                            <td>7月汽车销量</td>
+                            <td>258万辆</td>
+                            <td class="trend-down">同比 -8%</td>
+                        </tr>
+                        <tr>
+                            <td>新能源车出口占比</td>
+                            <td>首次超过60%</td>
+                            <td class="trend-up">结构性亮点</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="quote-block">
+                    <p>"今年车企如果没有海外市场，或者海外市场表现不行，整体业绩会比较差。新能源车出口占比首次超过60%，说明海外市场已成为关键增长引擎。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">内需困局：消费刺激需要新场景</h3>
+                <span class="section-tag">国内经济</span>
+            </div>
+            <div class="content">
+                <p>当前内需仍然偏弱。虽然两新政策（以旧换新）出台已经三年，对家电、汽车等大宗消费起到了一定刺激作用，但消费者不可能持续不断地更换家电和汽车。政策效果边际递减，需要开拓新的消费场景和服务性消费领域。</p>
+
+                <p>然而，消费不振的根本原因在于居民对未来收入和就业的预期偏谨慎。如果不从根本上改善收入预期和就业环境，仅靠短期补贴或刺激，效果可能有限，甚至只是提前透支未来消费。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>核心观察：</strong>内需恢复的关键不在于推出更多短期刺激，而在于改善居民对未来收入的预期。政策层面可能需要在就业、社会保障、收入分配等中长期议题上发力，才能真正提振消费信心。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">市场启示：海外修复与国内分化并存</h3>
+                <span class="section-tag">配置展望</span>
+            </div>
+            <div class="content">
+                <p>海外方面，美联储年内加息风险下降，美股和日韩股市进入修复阶段。黄金、有色金属等利率敏感型资产有望受益于利率预期缓和。对于韩国等前期跌幅较大的市场，短期反弹是风险情绪修复的体现，但中长期逻辑仍需关注企业盈利和产业政策。</p>
+
+                <p>国内方面，汽车出口和新能源车出海是结构性亮点，但内销疲弱反映出内需不足仍是主要矛盾。投资者在布局时应区分外需驱动型板块和内需依赖型板块，前者相对更具确定性，后者需等待消费信心回暖信号。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>美联储政策路径仍取决于后续就业和通胀数据，海外股市反弹存在反复可能。中国汽车出口面临贸易摩擦和海外竞争加剧风险。本报告观点基于音频内容整理，不构成具体投资建议。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
