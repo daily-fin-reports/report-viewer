@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月18日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">七月宏观经济及房地产数据概览 · 总量动能走弱 · 一线房价企稳 · 地产政策加码</p>
+            <p class="header-date">2026年8月18日 · 周二 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">📊</div>
+                    <div class="summary-text">
+                        <strong>7月宏观数据全面走弱</strong>
+                        规模以上工业增加值同比4.5%、社零0.6%，均较6月回落；城镇调查失业率5.2%为当月唯一上行指标
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>投资持续负增长</strong>
+                        1-7月固定资产投资同比-6.7%，较上半年进一步走弱；房地产开发投资-19.2%，连续4年负增长
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🏠</div>
+                    <div class="summary-text">
+                        <strong>一线房价边际企稳</strong>
+                        一线城市二手住宅环比+0.2%，上海新房同比转正+3.3%；环比上涨或持平城市增至23个
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>政策加码与操作纪律</strong>
+                        北京打响地产政策调整第一枪（五环内社保2年→1年）；韩国市场延续规律性兑现利润纪律
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">7月经济数据全景：总量回落、就业承压</h3>
+                <span class="section-tag">宏观数据</span>
+            </div>
+            <div class="content">
+                <p>7月公布的规模以上工业增加值同比增长4.5%，较6月的5.3%明显回落；社会消费品零售总额同比仅增0.6%，较6月的1.0%继续走弱。工业与消费同步降温，显示内需修复动能偏弱。</p>
+
+                <p>就业端，城镇调查失业率升至5.2%，高于6月的5.0%，成为当月唯一"上升"的宏观指标。整体来看，7月宏观经济数据呈现总量回落、结构分化的特征。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>7月读数</th>
+                            <th>6月读数</th>
+                            <th>方向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>规模以上工业增加值</td>
+                            <td>同比4.5%</td>
+                            <td>同比5.3%</td>
+                            <td class="trend-down">回落</td>
+                        </tr>
+                        <tr>
+                            <td>社会消费品零售总额</td>
+                            <td>同比0.6%</td>
+                            <td>同比1.0%</td>
+                            <td class="trend-down">回落</td>
+                        </tr>
+                        <tr>
+                            <td>城镇调查失业率</td>
+                            <td>5.2%</td>
+                            <td>5.0%</td>
+                            <td class="trend-down">上升</td>
+                        </tr>
+                        <tr>
+                            <td>固定资产投资（1-7月）</td>
+                            <td>同比-6.7%</td>
+                            <td>1-6月-6.1%</td>
+                            <td class="trend-down">走弱</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>7月总量数据全面走弱，仅失业率一项上行，反映当前实体经济仍处于主动去杠杆、内需偏弱的状态，宏观政策托底的紧迫性上升。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">固定资产投资的角色之变</h3>
+                <span class="section-tag">分析框架</span>
+            </div>
+            <div class="content">
+                <p>1-7月固定资产投资同比-6.7%，前6个月为-6.1%，降幅进一步扩大。固定资产投资已连续多个月处于负增长区间，从拉动中国经济增长的核心引擎，转变为当前最大的拖累项之一。</p>
+
+                <p>这一变化在10-20年前难以想象：2008年金融危机后，海外需求塌陷导致出口、消费同时承压，当时只能依靠投资拉动，投资对GDP增长的贡献一度超过100%。而现在环境完全不同——出口依然强劲，但房地产下行叠加基建大项目发力克制，使得固定资产投资持续走弱。</p>
+
+                <p>7月底重要会议为下半年定调"高质量托举"而非"全面托举"：不为了增速去做无效基建投资或盲目出台刺激政策，托举的方向要能真正带来经济效益。</p>
+
+                <div class="quote-block">
+                    <p>"现在和08年完全不一样，出口依然很强，但房地产下行、大项目发力克制，固定资产投资成了中国经济最大的拖累项。如果想发力，其实还有空间。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">房地产投资：持续收缩的底色</h3>
+                <span class="section-tag">地产投资</span>
+            </div>
+            <div class="content">
+                <p>1-7月房地产开发投资同比-19.2%，前6个月为-18%，7月单月降幅明显走阔。这已是房地产开发投资连续第4年负增长，开发商新开工与补库存意愿持续低迷。</p>
+
+                <p>房地产投资的持续收缩，既是过去高杠杆模式的出清，也是本轮经济下行压力的重要来源。在"高质量托举"的定调下，政策更强调托底而非强刺激，地产投资短期难有大幅反转，需以时间换空间。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>房地产开发投资连续4年负增长，是拖累固定资产投资和整体经济增速的核心变量。后续需重点跟踪销售端回暖能否向投资端传导。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">房价企稳：一线转稳、分化明显</h3>
+                <span class="section-tag">价格数据</span>
+            </div>
+            <div class="content">
+                <p>环比看，7月一线城市新建商品住宅价格由上月的上涨0.1%转为持平，上海、广州、深圳分别上涨0.2%，北京小幅回落0.3%；一线城市二手住宅价格环比上涨0.2%，上海、广州、深圳涨幅在0.2%-0.4%之间，北京基本持平。环比上涨或持平的城市共23个，比上月增加2个，一线城市价格整体稳住、守住底线。</p>
+
+                <p>同比看，一线城市新房价格同比下降1.1%，降幅较上月收窄0.2%；其中上海同比上涨3.3%，北京、广州、深圳分别下降2.3%、2.2%、2.9%。二线城市新房同比下降2.8%，三线城市下降4.2%，降幅虽有所收窄但压力仍大；二线城市二手房同比下降3.7%，依然承压。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>城市层级</th>
+                            <th>新房环比</th>
+                            <th>新房同比</th>
+                            <th>环比读数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>一线城市</td>
+                            <td class="highlight">持平</td>
+                            <td class="trend-down">-1.1%（收窄0.2%）</td>
+                            <td>沪穗深+0.2%，北京-0.3%</td>
+                        </tr>
+                        <tr>
+                            <td>上海（一线）</td>
+                            <td class="trend-up">+0.2%</td>
+                            <td class="trend-up">+3.3%</td>
+                            <td>一线中唯一同比转正</td>
+                        </tr>
+                        <tr>
+                            <td>二线城市</td>
+                            <td>—</td>
+                            <td class="trend-down">-2.8%（收窄0.3%）</td>
+                            <td>二手房同比-3.7%</td>
+                        </tr>
+                        <tr>
+                            <td>三线城市</td>
+                            <td>—</td>
+                            <td class="trend-down">-4.2%</td>
+                            <td>降幅相对最大</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 企稳方向</h4>
+                        <ul>
+                            <li>一线城市二手房环比+0.2%</li>
+                            <li>上海新房同比+3.3%</li>
+                            <li>环比上涨/持平城市增至23个</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 承压方向</h4>
+                        <ul>
+                            <li>二线新房同比-2.8%</li>
+                            <li>三线新房同比-4.2%</li>
+                            <li>二线二手房-3.7%仍明显</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">一二手分化的深层逻辑与政策展望</h3>
+                <span class="section-tag">配置展望</span>
+            </div>
+            <div class="content">
+                <p>一手房表现优于二手房，背后有两层原因：其一，中国已进入二手房销售时代，新房开发连续4年萎缩，一线城市一手住宅供给本就很少；其二，一手住宅在多数城市仍受价格管制，并非完全市场化定价，而二手房价格更能真实反映当前市场供需。</p>
+
+                <p>结构上，杭州、上海、北京、深圳等地两三千万以上的改善型、高端住宅销售火爆，重要购买力来自科技企业上市造富——公司核心管理团队及早期小股东受益于IPO，成为一线城市豪宅的新增购买力量，而这些资金通常不会流向老旧二手住宅，进一步加剧了新房与二手房的分化。</p>
+
+                <p>政策端，北京已打响地产政策调整第一枪：五环内购房社保年限由2年降至1年，五环外放开购买限制。整体力度不大、节奏克制，预计类似政策下半年会继续出台、逐步加码。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>韩国市场自看多以来持续上涨，操作纪律不变——无论任何品种，赚了10%-30%就规律性兑现部分利润、保留本金；提示的中期机会通常对应3-6个月节奏，除非出现极端快速上涨（如3月原油、4月韩日），否则无需着急，下跌时也不必恐慌。</p>
+                </div>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>本报告基于音频纪要整理，不构成投资建议。7月经济数据全面走弱，一线城市房价企稳但二三线压力仍大，需持续跟踪政策落地力度、销售向投资传导的节奏以及就业数据变化。市场有风险，投资需谨慎。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>风险提示：本报告基于公开音频资料整理，仅供研究参考，不构成投资建议。</p>
+            <p>市场有风险，投资需谨慎。报告中的观点为音频内容提炼，不代表任何机构立场。</p>
+            <p class="disclaimer">免责声明：本报告信息来源于音频纪要整理，已去除第三方身份指向与评估性表述，所有观点统一归集为"投研核心观点"。投资者应结合自身风险承受能力独立判断。</p>
+        </footer>
+    </div>
+</body>
+</html>
