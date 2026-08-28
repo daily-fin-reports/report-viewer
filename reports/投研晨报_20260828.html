@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月28日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">龙头季报看行业冷暖 · 中芯净利翻倍 · 人寿利润大增 · 万科亏损扩大 · 数据中心电力</p>
+            <p class="header-date">2026年8月28日 · 周五 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>中芯净利翻倍</strong>
+                        上半年营收386.35亿(+19.4%)，归母净利44.67亿(+94.2%)，产能约束下利润弹性高于营收
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💰</div>
+                    <div class="summary-text">
+                        <strong>人寿利润大增</strong>
+                        上半年归母净利1344.89亿(+228.6%)，牛市持续下保险投资端弹性凸显
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>万科亏损扩大</strong>
+                        上半年归母净亏149.51亿，二季度单季亏约90亿，地产寒冬仍在持续
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏭</div>
+                    <div class="summary-text">
+                        <strong>景气与转型</strong>
+                        潍柴借数据中心发电净利+36.46%，天齐净利+4925%，中国铝业+67.9%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">龙头季报全景：一张行业冷暖地图</h3>
+                <span class="section-tag">中报梳理</span>
+            </div>
+            <div class="content">
+                <p>当前正值中报密集披露阶段。选取一批具有代表性的龙头公司，可折射出当前宏观经济结构之下的行业冷暖：有的行业日子过得不错，有的已难以为继。除了市场熟知的 AI 链（光模块、存储等）业绩亮眼外，其他行业的代表公司同样分化明显。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>公司</th>
+                            <th>营收(亿元)</th>
+                            <th>营收同比</th>
+                            <th>归母净利(亿元)</th>
+                            <th>净利同比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>中芯国际</td>
+                            <td>386.35</td>
+                            <td class="trend-up">+19.4%</td>
+                            <td>44.67</td>
+                            <td class="trend-up">+94.2%</td>
+                        </tr>
+                        <tr>
+                            <td>中国人寿</td>
+                            <td>4343.07</td>
+                            <td class="trend-up">+81.5%</td>
+                            <td>1344.89</td>
+                            <td class="trend-up">+228.6%</td>
+                        </tr>
+                        <tr>
+                            <td>万科</td>
+                            <td>701.69</td>
+                            <td class="trend-down">-33.4%</td>
+                            <td class="trend-down">-149.51</td>
+                            <td class="trend-down">亏损扩大</td>
+                        </tr>
+                        <tr>
+                            <td>潍柴动力</td>
+                            <td>1231</td>
+                            <td class="trend-up">+8.85%</td>
+                            <td>77</td>
+                            <td class="trend-up">+36.46%</td>
+                        </tr>
+                        <tr>
+                            <td>天齐锂业</td>
+                            <td>122.42</td>
+                            <td class="trend-up">+153%</td>
+                            <td>42.42</td>
+                            <td class="trend-up">+4925%</td>
+                        </tr>
+                        <tr>
+                            <td>中国铝业</td>
+                            <td>1254.13</td>
+                            <td class="trend-up">+7.7%</td>
+                            <td>118.7</td>
+                            <td class="trend-up">+67.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>从这张"冷暖地图"可以看到：AI 直接相关的芯片制造（中芯国际）业绩亮眼；与股市深度挂钩的保险（中国人寿）高增长；有色与锂电（天齐锂业、中国铝业）周期回暖；传统重工中的潍柴动力凭借新业务实现加速增长；而与地产挂钩的龙头（万科）仍在寒冬中挣扎。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">中芯国际：产能约束下的利润弹性</h3>
+                <span class="section-tag">芯片制造</span>
+            </div>
+            <div class="content">
+                <p>中芯国际昨日发布2026年半年报：上半年营收386.35亿元，同比增长19.4%；归母净利润44.67亿元，同比增长94.2%，基本实现翻倍。</p>
+
+                <p>芯片制造企业有一个显著特点：即便是行业景气，营收增长也不会特别快，因为存在产能瓶颈。高端制造或芯片领域之所以"难"，就在于产能上量没有那么快，不像化工等产业可以快速扩产。在这样的约束下，公司往往体现为利润增速高于营收增速——营收温和增长，利润却大幅弹性释放。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>芯片制造的产能瓶颈决定了其"营收慢、利润快"的特征。在高景气周期中，具备产能优势与良率优势的头部制造企业，其利润弹性往往显著大于营收弹性。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">中国人寿：牛市的"放大器"</h3>
+                <span class="section-tag">保险/高股息</span>
+            </div>
+            <div class="content">
+                <p>中国人寿2026年上半年延续收入4343.07亿元，同比增长81.5%；归母净利润1344.89亿元，同比增长228.6%。作为高股息的代表，这一利润体量已接近A股最赚钱公司（年利润不到4000亿）的水平。</p>
+
+                <p>保险公司本质上是一家投资公司：负债端是给客户的承诺（如理赔义务），收益端则靠投资——固收、REITs、股票、一级市场等。许多优秀保险公司在二级市场偏保守，持有高股息类公司，并在一级市场科技类公司上有较多投资布局。因此，在二级市场向好时，保险公司的投资端或收益端表现会非常好。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>核心判断：</strong>在牛市持续的情况下，保险公司的营收与利润弹性甚至可能高于券商。保险可视为股市行情的"放大器"，其业绩与权益市场表现高度联动。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">万科：地产寒冬的龙头缩影</h3>
+                <span class="section-tag">房地产</span>
+            </div>
+            <div class="content">
+                <p>作为行业龙头的万科发布半年报：上半年营收701.69亿元，同比减少33.38%；归母净利润-149.51亿元，而去年同期亏损119.47亿元，亏损同比又扩大约340亿元。二季度营收412.41亿元，同比减少38%；二季度归母净亏损约90亿元——单季度亏损约90亿，正是当前龙头房企的真实写照。</p>
+
+                <p>在房地产投资同比接近-20%的行业环境下，龙头企业的处境尤为艰难。对地产行业而言，"活着"本身已成为一种竞争力——至少万科还在。</p>
+
+                <div class="highlight-box alert">
+                    <p><strong>风险提示：</strong>地产行业仍在出清过程中，龙头房企亏损仍在扩大。行业的寒冬并未结束，对地产链相关标的需保持谨慎，等待供需再平衡的信号。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">潍柴与有色锂电：新增长与周期复苏</h3>
+                <span class="section-tag">转型/周期</span>
+            </div>
+            <div class="content">
+                <p>潍柴动力上半年营收1231亿元，同比增长8.85%；归母净利润77亿元，同比增长36.46%，其中二季度利润增速达57.38%、环比加速。传统重工企业能实现这样的利润增速，必然做了"新事"——核心增量来自柴油发电机在数据中心的应用。其发电产品销售6.5万台，同比增长31.3%，其中数据中心发电产品上半年销量已超过2025年全年总量，并切入全球顶级数据中心与头部算力厂商供应链。</p>
+
+                <p>锂电与有色领域同样景气：天齐锂业上半年营收122.42亿元，同比增长153%；归母净利润42.42亿元，同比增长4925%，贴近其营收预增上限。中国铝业上半年营收1254.13亿元，同比增长7.7%；归母净利润118.7亿元，同比增长67.9%。</p>
+
+                <p>从"终局是电力"的视角看，既然算力扩张的终局约束是电力，顺着这条主线可以找到潍柴动力这样受益于数据中心电力需求的传统企业——虽不及部分公司利润增长230%+，但对传统企业而言，36%乃至57%的利润增速同样可观。需要强调的是，中国总体上并不缺电，只是结构上存在区域供给差异，因此更多是结构性机会而非总量机会。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 受益方向</h4>
+                        <ul>
+                            <li>AI芯片制造（产能瓶颈下的利润弹性）</li>
+                            <li>保险（股市行情的"放大器"）</li>
+                            <li>数据中心发电设备（潍柴动力等）</li>
+                            <li>锂电与有色（天齐、中国铝业）</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 承压方向</h4>
+                        <ul>
+                            <li>房地产链（龙头房企仍在亏损扩大）</li>
+                            <li>依赖地产需求的上游周期行业</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 博弈艺术</h4>
+                        <ul>
+                            <li>电力是结构性机会而非总量机会</li>
+                            <li>关注中报季最后几天的重要公告</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h3 class="section-title">投资启示：自上而下与自下而上的印证</h3>
+                <span class="section-tag">方法论</span>
+            </div>
+            <div class="content">
+                <p>当前宏观环境下，自上而下地做分析，与自下而上地先看中观、再归纳宏观规律，得到的结论会趋于一致：行业冷暖分明——AI 链、与股市挂钩的金融板块、周期回暖的有色锂电景气向上，而地产仍在寒冬。</p>
+
+                <p>龙头公司的季报数据，就是判断行业景气最直接的"温度计"。中报季接近尾声，最后几天仍有不少重要公告值得重点关注，可据此继续动态跟踪行业冷暖的变化。</p>
+
+                <div class="quote-block">
+                    <p>"自上而下与自下而上殊途同归：龙头公司季报是行业冷暖最真实的温度计。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>通过龙头季报快速定位行业景气方向——业绩高增且逻辑可持续的行业（AI制造、保险、有色锂电、数据中心电力）值得跟踪；亏损扩大且无拐点迹象的行业（地产链）保持回避。中报季尾声重点跟踪剩余重要公告。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年8月28日</p>
+            <p class="disclaimer">本报告内容基于音频纪要整理，仅供内部研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+</body>
+</html>
