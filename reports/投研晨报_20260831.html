@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年8月31日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">上市公司半年报小结 · 科创板净利+437.6% · 行业冷暖分明 · 盈利能力之问</p>
+            <p class="header-date">2026年8月31日 · 周一 · 音频纪要整理（两段合并）</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon green">📊</div>
+                    <div class="summary-text">
+                        <strong>沪市净利+17.6%</strong>
+                        沪市2318家公司营收26.22万亿(+6.3%)，净利2.82万亿(+17.6%)，扣非增速创2022年来新高
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🚀</div>
+                    <div class="summary-text">
+                        <strong>科创板净利+437.6%</strong>
+                        营收1.01万亿(+38.6%)，净利1448.87亿(+437.6%)，超过去年全年水平
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏭</div>
+                    <div class="summary-text">
+                        <strong>行业分化</strong>
+                        非银金融/电子(+124%)/有色(+83%)景气，建材(-49%)/建装(-42%)/食品饮料(-19%)承压
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚖️</div>
+                    <div class="summary-text">
+                        <strong>盈利差距</strong>
+                        全球头部科技公司单季利润≈科创板全年，赚钱能力决定股价表现
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">总量概览：沪市与科创板半年报</h3>
+                <span class="section-tag">整体数据</span>
+            </div>
+            <div class="content">
+                <p>随着8月底的到来，上市公司信息披露进入尾声。今日聚焦整体半年报情况：沪市上市公司上半年2318家公司合计实现营业收入26.22万亿元，同比增长6.3%；净利润2.82万亿元，同比增长17.6%；扣非后净利润2.69万亿元，增长17.2%，增速创2022年以来新高（部分受去年低基数影响）。</p>
+
+                <p>科创板方面，上市公司上半年合计实现营业收入1.01万亿元，同比增长38.6%；实现净利润1448.87亿元，同比增长437.6%，净利润已超过去年全年水平。36家成长型企业（原非营利、现转为盈利的企业）上半年营收同比增长29.1%，净利润缩亏62.3%，整体呈向好趋势。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>板块</th>
+                            <th>营收(万亿)</th>
+                            <th>营收同比</th>
+                            <th>净利润(亿)</th>
+                            <th>净利同比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>沪市上市公司</td>
+                            <td>26.22</td>
+                            <td class="trend-up">+6.3%</td>
+                            <td>28200</td>
+                            <td class="trend-up">+17.6%</td>
+                        </tr>
+                        <tr>
+                            <td>沪市(扣非)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>26900</td>
+                            <td class="trend-up">+17.2%</td>
+                        </tr>
+                        <tr>
+                            <td>科创板</td>
+                            <td>1.01</td>
+                            <td class="trend-up">+38.6%</td>
+                            <td>1448.87</td>
+                            <td class="trend-up">+437.6%</td>
+                        </tr>
+                        <tr>
+                            <td>成长型企业</td>
+                            <td>—</td>
+                            <td class="trend-up">+29.1%</td>
+                            <td>—</td>
+                            <td class="trend-up">缩亏62.3%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>整体看，代表中国最优秀公司的这部分企业营收与利润修复情况可圈可点，科创板在低基数下实现爆发式增长，显示结构性景气仍在延续。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">行业冷暖：二季度利润增速地图</h3>
+                <span class="section-tag">结构分化</span>
+            </div>
+            <div class="content">
+                <p>从二级市场维度看，二季度规模净利润同比增速较高的行业首当其冲是"光核储源"（光模块、核电、储能等），其中增速之王是江波龙。分一级行业看，二季度归母净利润同比增速最高的是非银金融（即除银行外的金融，包括信托、证券、保险），其次是电子（+124%）、有色金属（+83%）、基础化工（+57%）、石油石化（+58%）、电力设备（+46%）。基础化工值得关注——今年以来中国中游产业利润修复明显。石油石化方面，中石油半年利润首次突破1000亿元，全年业绩增速超过22%。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>行业</th>
+                            <th>二季度净利同比</th>
+                            <th>景气方向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>非银金融</td>
+                            <td class="highlight">最高</td>
+                            <td>资本市场回暖</td>
+                        </tr>
+                        <tr>
+                            <td>电子</td>
+                            <td class="trend-up">+124%</td>
+                            <td>AI景气拉动</td>
+                        </tr>
+                        <tr>
+                            <td>有色金属</td>
+                            <td class="trend-up">+83%</td>
+                            <td>AI/周期拉动</td>
+                        </tr>
+                        <tr>
+                            <td>石油石化</td>
+                            <td class="trend-up">+58%</td>
+                            <td>中石油破千亿</td>
+                        </tr>
+                        <tr>
+                            <td>基础化工</td>
+                            <td class="trend-up">+57%</td>
+                            <td>中游利润修复</td>
+                        </tr>
+                        <tr>
+                            <td>电力设备</td>
+                            <td class="trend-up">+46%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>建筑材料</td>
+                            <td class="trend-down">-49%</td>
+                            <td>地产链承压</td>
+                        </tr>
+                        <tr>
+                            <td>建筑装饰</td>
+                            <td class="trend-down">-42%</td>
+                            <td>地产链承压</td>
+                        </tr>
+                        <tr>
+                            <td>食品饮料</td>
+                            <td class="trend-down">-19%</td>
+                            <td>消费疲弱</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>拉垮的行业同样清晰：与地产相关的建筑材料（-49%）、建筑装饰（-42%）、以及食品饮料（-19%）等利润仍在回落。总体规律是——与AI相关、与资本市场相关的行业表现不错：非银金融的证券和保险业绩好与资本市场回暖有关，电子甚至包括有色金属都在一定程度上受AI景气拉动，电力设备亦受益。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">盈利能力之问：与全球优秀公司的差距</h3>
+                <span class="section-tag">核心问题</span>
+            </div>
+            <div class="content">
+                <p>从半年报数据中也能看出，当前A股最主要的问题仍是上市公司盈利能力与全球优秀公司相比存在很大差距。当前真正能赚钱的公司——包括美国及韩国的SK海力士、三星等AI巨头——基本都能达到单季度3000亿到4000亿的利润水平，海力士甚至可能冲向5000亿。</p>
+
+                <p>横向对比更为直观：沪市全部上市公司半年利润2.89万亿（约3万亿），全年约5-6万亿利润水平，约等于英伟达+三星海力士+苹果等三四家公司的全年水平。科创板全年利润约3000亿，而全球盈利能力排名前十的公司一个季度就能达到这一水平。换言之，全球最赚钱的十家公司，一个季度就能干出整个科创板一年的利润。</p>
+
+                <div class="quote-block">
+                    <p>"炒股票到最后，不管你是看市盈率，还是看短期业绩增速，最终都要落实到这家公司能不能赚钱。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p>如果所有产业都像光伏一样垄断了全世界资源却赚不到钱，那么这样的故事很难有持续的好表现。光模块公司能两年涨10倍，核心原因正是有很好的业绩驱动。遗憾的是，像光模块、长鑫这样具备持续增长和盈利能力的公司还是太少。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">分化逻辑：AI与资本市场驱动，地产消费承压</h3>
+                <span class="section-tag">归因分析</span>
+            </div>
+            <div class="content">
+                <p>二季度行业利润的分化，与当前宏观结构高度吻合：跟AI相关的（电子、有色、电力设备、光核储源）和跟资本市场相关的（非银金融、证券、保险）行业景气向上，这是产业景气与市场回暖双重驱动的结果。</p>
+
+                <p>而跟房地产和消费相关的行业仍然处在泥沼之中，这与大家的体感是一致的。地产链（建材、建装）利润深度负增长，消费类（食品饮料）亦承压，反映出当前经济结构转型期的真实冷暖。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 景气方向</h4>
+                        <ul>
+                            <li>非银金融（证券/保险，资本市场回暖）</li>
+                            <li>电子(+124%)、有色(+83%)、电力设备</li>
+                            <li>基础化工(+57%)、石油石化(+58%)</li>
+                            <li>光核储源（光模块增速之王）</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 承压方向</h4>
+                        <ul>
+                            <li>建筑材料(-49%)、建筑装饰(-42%)</li>
+                            <li>食品饮料(-19%)</li>
+                            <li>地产链与消费链持续承压</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">展望：政策落地与拐点预期</h3>
+                <span class="section-tag">前瞻</span>
+            </div>
+            <div class="content">
+                <p>尽管行业分化明显，但整体上代表中国最优秀公司的这部分企业的营收和利润修复情况依然可圈可点。展望今年下半年，随着宏观政策的不断优化与落地——一系列房地产政策也正在落地当中——期待更多行业能够见到自己的景气和盈利拐点，带动整体经济达到一个新的水平，而不只是AI行业一直独秀。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>半年报窗口已基本披露完毕，行业冷暖地图清晰——AI链与资本市场受益板块景气确认，地产消费链仍在磨底。后续重点关注宏观与地产政策的落地效果，捕捉盈利拐点的先行信号。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年8月31日</p>
+            <p class="disclaimer">本报告内容基于两段音频纪要整理，仅供内部研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+</body>
+</html>
