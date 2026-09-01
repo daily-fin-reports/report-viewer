@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年9月1日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">库克卸任CEO · ETF信披规则修改 · 原油大涨5% · 美联储政策脉络</p>
+            <p class="header-date">2026年9月1日 · 周二 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">🛢️</div>
+                    <div class="summary-text">
+                        <strong>原油大涨5%</strong>
+                        美伊冲突进入尾部风险阶段，原油重回90美元附近，黄金有所下跌
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏦</div>
+                    <div class="summary-text">
+                        <strong>9月加息概率低</strong>
+                        核心PCE接近2%，美联储坚持以缩表控通胀而非加息，9月加息可能性非常小
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🍎</div>
+                    <div class="summary-text">
+                        <strong>库克卸任CEO</strong>
+                        苹果15年任期股价涨23倍，产品线与软件生态全面拓展，约翰接任新掌门
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">📊</div>
+                    <div class="summary-text">
+                        <strong>ETF信披弱化</strong>
+                        不再披露前十大持有人信息，观察国家队增持减持的方式将生变
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">原油大涨与美伊冲突：尾部风险下的市场波动</h3>
+                <span class="section-tag">大宗商品</span>
+            </div>
+            <div class="content">
+                <p>隔夜原油大涨5%，黄金有所下跌，主要原因是美伊之间出现了新的冲突：美国对伊朗设施进行了轰炸袭击，伊朗进行了反制。目前美伊之间已进入"结束前的拉锯、尾部风险"阶段，原油也回到了90美元左右的水平。</p>
+
+                <p>市场关注的两方面：一是美联储在周末发布了新一轮讲话，大家关注是否涉及加息或警报线提升；二是原油——美伊冲突尚未画上完整句号，对原油与通胀未来的走势都不利。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>只要美伊之事不进一步升级、原油不重新回到100以上，整体通胀形势即可控。美伊冲突的尾部风险仍是当前大宗商品与通胀预期的关键变量。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">美联储政策脉络：缩表控通胀，加息概率极低</h3>
+                <span class="section-tag">货币政策</span>
+            </div>
+            <div class="content">
+                <p>关于美联储对通胀的表述，其态度一直未变：以缩表去控制通胀，不以加息为重点的治理通胀手段，但不排斥降息。这一思想脉络在其此前的机制课与整体经济思想分析中已有详细阐述。如果通胀特别厉害、仅靠缩表不行，那么也会加息。</p>
+
+                <p>本次讲话内容完全符合其一贯思想脉络，并再次强调将核心PCE控制在2%以内。当前美国核心PCE已非常接近2%（约2.4-2.5%），最近数据也在此附近徘徊。在此背景下，只要原油价格不失控，通胀形势可控，9月份激进加息的可能性非常非常小。</p>
+
+                <p>另一个制约因素是融资成本：美国30年期国债收益率已在5.3%以上，美国国债与高技术企业融资成本居高不下。在面临外部融资约束的情况下，继续快速激进加息的可能性变得更小而非更大。国债大跌、收益率高企之时，逻辑上应是降息而非加息。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标/变量</th>
+                            <th>当前状态</th>
+                            <th>对加息的指向</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>核心PCE</td>
+                            <td>接近2%（约2.4-2.5%）</td>
+                            <td>通胀可控，不支持激进加息</td>
+                        </tr>
+                        <tr>
+                            <td>原油价格</td>
+                            <td>90美元附近</td>
+                            <td>若不上100，通胀可控</td>
+                        </tr>
+                        <tr>
+                            <td>30年期美债收益率</td>
+                            <td>5.3%以上</td>
+                            <td>融资成本高企，制约加息</td>
+                        </tr>
+                        <tr>
+                            <td>9月加息概率</td>
+                            <td>近期一度降至35%后回升</td>
+                            <td>中长期逻辑下概率不大</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>核心判断：</strong>从中长期经济发展面临的核心矛盾来看，9月份甚至年内加息的概率都不大。美联储的治理路径仍是以缩表控通胀为主，而非加息。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">库克卸任苹果CEO：15年23倍的传奇与传承</h3>
+                <span class="section-tag">公司治理</span>
+            </div>
+            <div class="content">
+                <p>昨天蒂姆·库克卸任苹果CEO。库克在苹果任职15年，由于接手的是天才型创始人乔布斯的衣钵，起初并不被看好。但库克在任的15年间，苹果股价上涨了23倍：产品线得到进一步拓展（iPhone、Apple Watch、AirPods），单机销量与款式不断扩充，软件生态与生态体系也有长足进步。</p>
+
+                <p>若干年后回看，库克在苹果历史上是一位重要的建设者，堪称"名人堂"级人物。卸任后他并未离开苹果，而是转任非执行董事长继续行使职责。但正如巴菲特将权力传给下一任一样，交接仍会对苹果产生一些实质性的变化。</p>
+
+                <div class="quote-block">
+                    <p>"我们期待新人约翰能有很好的表现——据库克对约翰的评价，约翰是一个知道去打造什么样的产品、什么样的先进科技产品的人。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>库克任期成就</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>任期</td>
+                            <td>15年</td>
+                        </tr>
+                        <tr>
+                            <td>股价表现</td>
+                            <td class="trend-up">上涨23倍</td>
+                        </tr>
+                        <tr>
+                            <td>产品拓展</td>
+                            <td>iPhone、Apple Watch、AirPods 等全面扩充</td>
+                        </tr>
+                        <tr>
+                            <td>生态建设</td>
+                            <td>软件生态与系统生态长足进步</td>
+                        </tr>
+                        <tr>
+                            <td>卸任去向</td>
+                            <td>转任非执行董事长</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">ETF信披规则修改：观察国家队的新变化</h3>
+                <span class="section-tag">制度变化</span>
+            </div>
+            <div class="content">
+                <p>重要规则变化：ETF在新披露流程中，对前十大持有人的披露将被弱化，不再披露前十大持有人的信息。这一变化意味深长。</p>
+
+                <p>此前推断国家队增持、减持，一般是看国家队喜欢的那几只ETF的规模增减，再去看十大持有人中是否有国家队的身影。现在第二种方式已不可行——在重点ETF的前十大持有人中，将看不到相关披露。今后只能从规模变化上去推断：某只ETF规模是否近期暴增，进而推测是否与国家队相关。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>ETF信披规则的弱化，将改变市场观察国家队动向的途径——从"持有人明细"转向"规模变化推断"。投资者需适应这一新的观察框架。</p>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card neutral">
+                        <h4>🟡 观察方式转变</h4>
+                        <ul>
+                            <li>从十大持有人明细 → 转为看ETF规模变化</li>
+                            <li>重点跟踪国家队偏好ETF的份额变动</li>
+                            <li>规模暴增可能隐含国家队动向</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 事件关注</h4>
+                        <ul>
+                            <li>电商平台希音今日登陆港股市场</li>
+                            <li>GPU"四小龙"之一随缘股份9月12日开始申购</li>
+                            <li>两家明星企业值得关注</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">投资启示：政策变量与新股窗口</h3>
+                <span class="section-tag">策略</span>
+            </div>
+            <div class="content">
+                <p>综合今日信息，核心变量集中在三个层面：其一，美伊冲突的尾部风险与原油价格走向，将直接影响通胀预期与美联储政策空间；其二，美联储以缩表控通胀、9月加息概率极低的判断，为风险资产提供了相对友好的流动性环境；其三，ETF信披规则修改后，市场对国家队的观察将转向规模维度。</p>
+
+                <p>同时，新股窗口开启：电商平台希音今日登陆港股，GPU"四小龙"之一随缘股份9月12日开始申购，两家明星企业的表现值得跟踪。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>中期逻辑下加息概率不大，关注美伊冲突与原油走向作为通胀与政策的关键先行指标；适应ETF信披弱化后的国家队观察新框架；留意港股新股申购窗口。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年9月1日</p>
+            <p class="disclaimer">本报告内容基于音频纪要整理，仅供内部研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+</body>
+</html>
