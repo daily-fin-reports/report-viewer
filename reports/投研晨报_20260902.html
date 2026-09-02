@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年9月2日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">外籍股息红利征税 · 深圳半年报净利+26.88% · 基金新增盈利投资者占比披露</p>
+            <p class="header-date">2026年9月2日 · 周三 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">🏛️</div>
+                    <div class="summary-text">
+                        <strong>外籍股息红利征税</strong>
+                        外商投资企业向外籍个人支付股息红利不再免征，适用20%个税并明确代扣代缴责任
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>深圳半年报净利+26.88%</strong>
+                        营收11.4万亿(+10.82%)，净利7533.6亿(+26.88%)，营收/利润增速均跑赢A股整体
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">📊</div>
+                    <div class="summary-text">
+                        <strong>基金信披新指标</strong>
+                        中期报告新增"盈利投资者数量占比"披露，业绩好≠基民赚钱，引导理性投资
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">⚖️</div>
+                    <div class="summary-text">
+                        <strong>税收征管趋严</strong>
+                        房地产支柱受损后查缺补漏，社保纳入税务体系，外商投资"超国民待遇"被修正
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">外籍个人股息红利征税：外商投资企业优惠正式取消</h3>
+                <span class="section-tag">税收政策</span>
+            </div>
+            <div class="content">
+                <p>外籍个人从外商投资企业取得的股息红利，需要缴纳个人所得税。此前外商投资企业向外籍个人支付股息红利实行免征，本次调整后该项优惠正式取消，适用"利息、股息、红利所得"个人所得税，税率为20%。</p>
+
+                <p>政策同时明确了责任主体：外商投资企业向外籍个人支付股息红利时应当履行代扣代缴义务。即使不申报分配，支付方也有代扣代缴责任，未履行的将被追缴，责任链条清晰。</p>
+
+                <p>从政策脉络看，这与此前对境外投资收益、海外股票保单收益等纳入严格征收的措施一脉相承，叠加此条，投资领域税收征管基本"齐活"。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>股息红利个税免征优惠取消，并非新设税种，而是将既有税制中的优惠缺口堵上。外商投资企业税收上的"超国民待遇"正在被系统性修正。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">税收征管趋严：从"查缺补漏"到"一视同仁"</h3>
+                <span class="section-tag">宏观趋势</span>
+            </div>
+            <div class="content">
+                <p>税收征管加强是当前的总趋势。房地产与传统行业的税收收入下降后，原先不着急处理的"漏洞"开始被逐一堵上：社保缴费已纳入税务征管体系，征管严格程度显著提升。</p>
+
+                <p>此前外商投资企业在税收上存在超国民待遇，但在很多领域又存在"软性的中外之别"。部分企业或个人通过注册海外离岸公司、取得外籍身份来享受股息红利优惠，即所谓"假外资"，这些漏洞如今都被堵上。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>调整前</th>
+                            <th>调整后</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>外籍个人股息红利税</td>
+                            <td>外商投资企业支付免征</td>
+                            <td class="highlight">按20%征收个税</td>
+                        </tr>
+                        <tr>
+                            <td>代扣代缴责任</td>
+                            <td>不明确</td>
+                            <td class="highlight">支付方强制代扣代缴</td>
+                        </tr>
+                        <tr>
+                            <td>社保征管</td>
+                            <td>独立征管体系</td>
+                            <td class="highlight">纳入税务体系，监管更严</td>
+                        </tr>
+                        <tr>
+                            <td>"假外资"套利空间</td>
+                            <td>存在</td>
+                            <td class="highlight">漏洞堵上</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="quote-block">
+                    <p>"房地产高歌猛进的时候不差这三个瓜俩枣，现在这一块受损之后，就要想更多的查缺补漏的方法，超国民待遇要重新修正回来。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">深圳上市公司半年报：2896家向新向优</h3>
+                <span class="section-tag">市场数据</span>
+            </div>
+            <div class="content">
+                <p>8月31日上市公司半年报披露全部完成。深圳市场共2896家上市公司，上半年实现营业收入11.4万亿元，同比增长10.82%；实现净利润7533.6亿元，同比增长26.88%。</p>
+
+                <p>增速表现优于整体：营收增速跑赢A股整体水平3.73个百分点，利润增速跑赢A股整体水平8.47个百分点。深圳上市公司中"向新向优"的成分明显较多。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>数值</th>
+                            <th>同比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>上市公司数量</td>
+                            <td>2896家</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>营业收入</td>
+                            <td>11.4万亿元</td>
+                            <td class="trend-up">+10.82%</td>
+                        </tr>
+                        <tr>
+                            <td>净利润</td>
+                            <td>7533.6亿元</td>
+                            <td class="trend-up">+26.88%</td>
+                        </tr>
+                        <tr>
+                            <td>营收增速 vs A股整体</td>
+                            <td>跑赢</td>
+                            <td class="trend-up">+3.73pct</td>
+                        </tr>
+                        <tr>
+                            <td>利润增速 vs A股整体</td>
+                            <td>跑赢</td>
+                            <td class="trend-up">+8.47pct</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <p><strong>核心判断：</strong>深圳市场近3000家公司合计净利润与某全球存储龙头一家企业上半年净利润（约6800亿）大致相当。中国创新企业与科技企业的盈利能力仍有较大提升空间，"反内卷"是重要的抓手。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">盈利差距与"反内卷"：从全球一张卷说起</h3>
+                <span class="section-tag">投资逻辑</span>
+            </div>
+            <div class="content">
+                <p>近3000家深圳公司的净利润与某全球存储巨头一家企业上半年约6800亿的净利润水平相当，这一对比折射出中国科技企业盈利能力的现实差距。提升盈利能力的重要抓手是"反内卷"——不能过度内卷。</p>
+
+                <p>回顾全球化与WTO运行良好的时期，全球制造业市场几乎没有障碍，中国企业面对的是"全世界一张卷"：比拼价格、以卷取胜。而今天多元化世界保留了各国各自的比较优势，中国制造业在关税战之前的处境正在被重新审视。</p>
+
+                <div class="quote-block">
+                    <p>"如果是全世界统一高考，那其他国家的孩子可能就上不了学了。全球化时代制造业就是全世界一张卷，我们比别人都内卷，那肯定把别人都干死了。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 积极信号</h4>
+                        <ul>
+                            <li>深圳半年报营收、利润增速双双跑赢A股整体</li>
+                            <li>"向新向优"成分增多，结构优化趋势明确</li>
+                            <li>反内卷政策方向有助于改善企业盈利质量</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 现实差距</h4>
+                        <ul>
+                            <li>近3000家公司利润 ≈ 一家全球存储龙头</li>
+                            <li>科技企业盈利能力提升任重道远</li>
+                            <li>过度内卷侵蚀行业整体利润空间</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">基金信披新规：披露"盈利投资者数量占比"</h3>
+                <span class="section-tag">制度变化</span>
+            </div>
+            <div class="content">
+                <p>2026年基金中期报告要求披露一个全新指标：盈利投资者的数量占比。基金不仅需要披露业绩表现，还需要披露持有者中赚钱投资者的比例——例如过去一年买入的投资者中只有一半或30%赚到钱。</p>
+
+                <p>这一指标揭示了一个常被忽视的事实：基金业绩好与投资者赚钱比例高是两回事。典型的例子是医药主题基金：从三五年的维度看收益不错、跑赢基准，但很多投资者在高位买入（净值从5元跌至2.6元），即便基金净值增长20%，大部分持有者仍是亏损的。</p>
+
+                <p>背后的机制是：基金公司在业绩表现最好的时候加大宣传吸引申购，投资者也往往在市场高位情绪上头时追入，最终"基金赚钱、基民不赚钱"。</p>
+
+                <div class="highlight-box">
+                    <p><strong>核心判断：</strong>披露盈利投资者占比，意在推动基金公司与投资者双向理性：基金公司不应在业绩最好、市场最高点时大肆宣传，投资者也不应总在"市场三千点不信、八千点才信"。</p>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card neutral">
+                        <h4>🟡 对基金公司</h4>
+                        <ul>
+                            <li>新增"盈利投资者占比"披露义务</li>
+                            <li>业绩宣传需更克制，避免高位造势</li>
+                            <li>长期客户盈利体验纳入评价维度</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>🟡 对投资者</h4>
+                        <ul>
+                            <li>购买前可查看持有者真实赚钱比例</li>
+                            <li>避免只看短期业绩追高买入</li>
+                            <li>理性择时，底部区域更应重视</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>新指标将改变基金选择的信息维度。投资者应把"盈利投资者占比"纳入筛选依据，警惕业绩高点时的集中宣传，在市场低位更需保持理性参与，共同推动理财投资市场理性回归。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年9月2日</p>
+            <p class="disclaimer">本报告内容基于音频纪要整理，仅供内部研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+</body>
+</html>
