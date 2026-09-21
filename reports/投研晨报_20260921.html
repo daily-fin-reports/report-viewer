@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年9月21日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">中美贸易谈判启动 · 前8月商品房销售-13% · 供给断崖出清 · 一线企稳与政策定力</p>
+            <p class="header-date">2026年9月21日 · 周一 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🚀</div>
+                    <div class="summary-text">
+                        <strong>中美贸易谈判启动</strong>
+                        9月20日开启，退税后对美出口保持25%+高增蜜月期；中际旭创、宁德时代等负责人随团，总体偏利多
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌍</div>
+                    <div class="summary-text">
+                        <strong>美伊缓和信号</strong>
+                        伊朗总统赴美参加联合国会议，或推动美伊停火；与中美贸易向好叠加，对全球资本市场偏正面
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>前8月楼市数据</strong>
+                        商品房销售面积-13%、金额-13.1%（量缩价稳）；住宅开发投资-28.9%、新开工-25.5%、竣工-25.5%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">💡</div>
+                    <div class="summary-text">
+                        <strong>供给出清与判断</strong>
+                        断崖式供给收缩促进出清；一线企稳、二三线待消化，2027-28年一线新房或现结构性缺口
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">中美贸易谈判启动：退税蜜月期与重点领域博弈</h3>
+                <span class="section-tag">地缘贸易</span>
+            </div>
+            <div class="content">
+                <p>中美贸易谈判已于9月20日（本周）启动，双方对此均高度重视。此前美方判定前任政府关税战违法后，已开始向各国退还非法征收的关税（累计超过1000亿），退税之后中美贸易进入"短暂蜜月期"：<strong>自5月以来3-4个月，中国对美出口保持25%以上高增长，进口亦维持约20%左右的水平</strong>——无论源于企业抢关税稳定期红利，还是自然恢复，当前均处于较高景气状态。</p>
+
+                <p>本轮谈判团队涉及多个市场关注方向：中际旭创、宁德时代等企业负责人均在团队之中。值得注意，美方针对中国汽车、光伏等重点领域的加税尚未结束，<strong>本轮谈判在重点行业方向能否取得实质性进展是核心看点</strong>。整体判断偏利多：大概率是双方在部分领域相互放开。</p>
+
+                <div class="highlight-box success">
+                    <p><strong>核心判断：</strong>关税稳定期叠加退税红利，中美贸易短期处于蜜月状态；谈判若有实质进展，对出口链与相关龙头公司构成增量利好。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">美伊缓和信号：伊朗总统赴美出席联合国会议</h3>
+                <span class="section-tag">地缘政治</span>
+            </div>
+            <div class="content">
+                <p>本周另一地缘看点：伊朗总统到访美国参加联合国会议，市场风传其可能与美方会面。即便未直接会晤，双方借道第三方传话也将形成较好的沟通氛围，对推动美伊停火构成积极信号。</p>
+
+                <p>两件地缘事件（中美贸易环境改善 + 美伊冲突缓和）若均向好发展，在美联储加息落地之后，对全球资本市场整体构成利多支撑——地缘风险溢价回落将有利于风险资产估值修复。</p>
+
+                <div class="highlight-box">
+                    <p><strong>关注点：</strong>若美伊停火推进，油价地缘溢价回落，将同步缓解全球通胀压力与加息尾部风险，与近期"油价主导加息路径"的逻辑形成联动。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">前8月楼市：销售端量缩价稳，区域分化明显</h3>
+                <span class="section-tag">房地产 · 需求端</span>
+            </div>
+            <div class="content">
+                <p>1-8月全国商品房销售数据呈现"量缩价稳"特征：销售面积441503万平（约4.4亿平），同比-13%；销售金额4.17万亿，同比-13.1%。<strong>两个数据降幅相当，说明下降主要由销售面积驱动而非单价——销售单价降幅有限</strong>，这是本轮数据的重要特征。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标（2026年1-8月）</th>
+                            <th>累计值</th>
+                            <th>同比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>商品房销售面积</td>
+                            <td>441503万平</td>
+                            <td class="trend-down">-13.0%</td>
+                        </tr>
+                        <tr>
+                            <td>商品房销售金额</td>
+                            <td>4.17万亿</td>
+                            <td class="trend-down">-13.1%</td>
+                        </tr>
+                        <tr>
+                            <td>8月单月销售面积</td>
+                            <td>4078万平</td>
+                            <td class="trend-down">-16.0%（较7月扩大）</td>
+                        </tr>
+                        <tr>
+                            <td>8月单月销售额</td>
+                            <td>4233亿</td>
+                            <td class="trend-down">-12.8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>区域上，东中西部降幅均在11%-13%区间；<strong>东北地区降幅最大：销售面积-21.3%、销售金额-23%</strong>。三季度延续二季度放缓趋势，宏观加力不充分背景下，消费与各领域均延续放缓。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">投资与供给端：断崖式收缩促进市场出清</h3>
+                <span class="section-tag">房地产 · 供给端</span>
+            </div>
+            <div class="content">
+                <p>供给端收缩幅度远大于销售端，反映行业正在经历惨烈的新房供给收缩——这既体现市场对未来的谨慎预期，也客观上以断崖式供给下降推动市场出清、建立新的供需平衡：8月二手房销售面积已超过新房，需求端在持续消化二手房存量。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标（2026年1-8月）</th>
+                            <th>累计值</th>
+                            <th>同比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>住宅开发投资</td>
+                            <td>3.7万亿</td>
+                            <td class="trend-down">-28.88%（8月单月-32.1%）</td>
+                        </tr>
+                        <tr>
+                            <td>新开工面积</td>
+                            <td>2.18亿平</td>
+                            <td class="trend-down">-25.47%</td>
+                        </tr>
+                        <tr>
+                            <td>竣工面积</td>
+                            <td>1.4798亿平</td>
+                            <td class="trend-down">-25.5%（保交楼进度近尾声）</td>
+                        </tr>
+                        <tr>
+                            <td>商品房待售面积</td>
+                            <td>7.5亿平</td>
+                            <td class="trend-down">-1.1%（保持去库存）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>住宅开发投资同比-28.88%（接近-30%），但对比2026年2月曾达-50%的极端水平，当前降幅已有收窄。70大中城市房价：<strong>新房同比-3.29%、环比-0.17%；二手房同比-5.13%、环比-0.31%</strong>（二手房价格更真实，新房存在管制）。城市分化：二手住宅环比上涨/持平8城、下跌62城（海口、厦门、重庆、成都、贵阳、昆明、西安领跌）；新建商品住宅上涨/持平21城、下跌49城（上海、无锡、徐州、绍兴、杭州等居前），新房表现明显好于二手房。</p>
+
+                <p>政策层面，广州、深圳、北京、上海已启动新一轮刺激，但力度相对克制——保持战略定力、追求宏观高质量发展，短期内难以出现大水漫灌式政策。市场流传高盛组织会议中与会人士提及2027年四季度可能出现新房缺口（一线城市2027-28年或现供给缺口，二手房短期仍可补充）。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>🟢 供给收缩的积极面</h4>
+                        <ul>
+                            <li>断崖式供给下降推动市场出清</li>
+                            <li>二手房消化存量、以价换量</li>
+                            <li>供给收缩对房价中长期并非坏事</li>
+                            <li>一线新房供需已局部失衡，优质新房受追捧</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>🔴 仍需警惕</h4>
+                        <ul>
+                            <li>销售面积降幅8月扩大至-16%</li>
+                            <li>东北区域降幅最大（面积-21.3%）</li>
+                            <li>政策力度克制，宏观支撑有限</li>
+                            <li>股市赚钱效应弱于去年</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">判断与操作：一线企稳、二三线待消化</h3>
+                <span class="section-tag">投资启示</span>
+            </div>
+            <div class="content">
+                <p>综合当前数据，对房地产的判断与年初基本一致：<strong>一线城市房价企稳，二三四线城市仍需时间消化</strong>。中期看，明年到后年一二线城市新房供给将显著收缩至新的平衡，结构性短缺有望出现——持续4-5年的新房去杠杆、开发投资不足，已使局部（尤其一线）新房的供给与需求出现不平衡。</p>
+
+                <div class="quote-block">
+                    <p>"房地产的调整已经接近尾声的状态，但不是意味着现在就要趁机买房——刚需可以买一线，投资性住房在二三四线留一套就够了，其他趁政策有暖意时处理掉。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <div class="highlight-box success">
+                    <p><strong>操作提示：</strong>短期关注中美谈判进展、美伊局势与新一轮楼市刺激落地效果；中期看，供给出清利好具备核心城市优质土储与产品力的房企，二手房链条与改善型需求结构性受益。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年9月21日</p>
+            <p class="disclaimer">本报告内容基于音频纪要整理，仅供内部研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+</body>
+</html>
