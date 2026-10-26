@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年10月26日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">10月23日A股深V反转：沪指盘中一度下探3574.80点、失守3600点，创业板指最低2494.22点、跌超3%，收盘沪指涨0.89%报3690.48点、创业板指涨4.16%报2684.10点，全天振幅超7个百分点 · 成交1.97万亿元、放量约4310亿元，4239只上涨、913只下跌，84只涨停 · 午间中际旭创、新易盛、天孚通信、光迅科技、源杰科技五家集中公告，海外客户订单已排至2027年、部分客户给出2028年需求指引 · 宁德时代两日回购575.96万股、耗资约12.99亿元，当日涨7.8% · 本周创业板指累计跌3.18%、上证跌0.69%，日均成交15754.19亿元 · 10月23日道指跌1.23%、10年期美债收益率4.9945%、布伦特原油116.72美元涨3.13%</p>
+            <p class="header-date">2026年10月26日 · 周一 · 调整始于光存，终于光存 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon green">🔄</div>
+                    <div class="summary-text">
+                        <strong>四小时深V：从跌超3%到涨4.16%</strong>
+                        10月23日早盘沪指一度失守3600点、下探<strong>3574.80点</strong>，创业板指最低<strong>2494.22点</strong>、跌破2500点整数关口，盘中超4800只个股下跌。午后风向逆转，收盘沪指涨<strong>0.89%</strong>报3690.48点、几乎收在全日最高，创业板指涨<strong>4.16%</strong>、全天振幅超7个百分点。成交<strong>1.97万亿元</strong>、放量约4310亿元，4239只上涨、913只下跌
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">📜</div>
+                    <div class="summary-text">
+                        <strong>五份公告，把恐慌按住了</strong>
+                        午间中际旭创、新易盛、天孚通信、光迅科技、源杰科技集中公告：在手订单充足、生产经营平稳、行业需求景气未变。中际旭创口径最具体——<strong>海外主要客户订单已排至2027年，部分重点客户给出2028年需求指引</strong>；新易盛称1.6T进入持续放量，同时抛出<strong>8亿至10亿元</strong>回购方案
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📦</div>
+                    <div class="summary-text">
+                        <strong>始于光存，终于光存</strong>
+                        7月1日48家公司集中发布异常波动与风险提示公告，科技板块由此见顶；7月1日至10月22日科创50跌<strong>40.85%</strong>，存储链跌幅居首——佰维存储<strong>-67.73%</strong>、兆易创新-66.04%、江波龙-65.62%、德明利-63.84%，光模块新易盛-57.49%、中际旭创-53.49%。3个多月后，同一批公司用经营公告回应"业绩没变、股价打了四折"
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>"先卖出、等右侧"是灾难性策略</strong>
+                        周五上午割肉的人，四小时后就被证明做反。但真正的问题不在这一次对错——<strong>这套策略要求你具备判断市场左右侧的能力</strong>，而具备这种能力的人本就不需要它。涨5%不买、涨10%还不买的人，与924行情踏空、3700点说"就是不买"、最后4000多点追进来的是同一批
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">四个小时的深V：恐慌盘在哪里出清的</h3>
+                <span class="section-tag">盘面复盘 · 情绪转换</span>
+            </div>
+            <div class="content">
+                <p>10月23日这一天，A股在同一个交易时段里走完了两个方向。<strong>上午是绝望，午后是反攻</strong>，中间只隔了一份午间公告。</p>
+
+                <p>早盘三大指数低开低走，恐慌情绪在开盘一小时内快速蔓延。<strong>10时20分，上证指数下探至3574.80点</strong>，再度失守3600点；创业板指最低触及<strong>2494.22点</strong>，跌破2500点整数关口，盘中跌幅一度超过3%。全市场超过4800只个股下跌——这是一个比前一日"4999只下跌"稍好、但仍在极端区间的广度读数。</p>
+
+                <p>转折发生在午间。<strong>午后开盘后，主要指数一路走高，几乎以全日最高点收盘</strong>。上证指数最终报3690.48点、涨0.89%；深证成指报11673.83点、涨2.79%；创业板指报2684.10点、涨4.16%，<strong>全天振幅超过7个百分点</strong>；科创50涨3.04%，科创100报1546.88点、涨3.63%。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>指数</th><th>收盘</th><th>当日涨跌</th><th>本周累计</th><th>特征</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>上证指数</td><td>3690.48</td><td class="trend-up">+0.89%</td><td class="trend-down">-0.69%</td><td>盘中最低3574.80点，收盘几乎为全日最高</td></tr>
+                        <tr><td>深证成指</td><td>11673.83</td><td class="trend-up">+2.79%</td><td class="trend-down">-1.09%</td><td>成长权重集体修复</td></tr>
+                        <tr><td>创业板指</td><td>2684.10</td><td class="trend-up">+4.16%</td><td class="trend-down">-3.18%</td><td>最低2494.22点，振幅超7个百分点</td></tr>
+                        <tr><td>科创50</td><td>—</td><td class="trend-up">+3.04%</td><td>—</td><td>7月1日以来累计跌幅仍达40.85%</td></tr>
+                        <tr><td>沪深300</td><td>4105.33</td><td>—</td><td class="trend-down">-1.57%</td><td>大盘蓝筹全周弱于小盘</td></tr>
+                        <tr><td>中证500</td><td>6814.44</td><td>—</td><td class="trend-up">+0.62%</td><td>本周唯一收正的主要宽基</td></tr>
+                    </tbody>
+                </table>
+
+                <p>量能是这一天最有信息量的读数。<strong>两市成交额19732.14亿元、接近2万亿元，较前一交易日大幅放量约4310亿元</strong>。这个组合——"指数大跌后放量收高"——与缩量反弹的性质完全不同：缩量反弹意味着卖压暂时消失，放量收高意味着<strong>卖压被真实承接了</strong>。</p>
+
+                <p>行业层面呈现出极清晰的攻守切换：<strong>计算机涨4.67%、传媒涨3.78%、电力设备涨3.67%</strong>领涨，而<strong>银行跌1.30%、公用事业跌0.60%、钢铁跌0.19%</strong>是仅有的几个下跌方向。前一日被当作避风港的低位红利方向，在这一天成了提款机——这不是"资金回来了"的笼统说法，而是明确的<strong>从防御端向成长端的一次挪仓</strong>。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>放量</h4>
+                        <ul>
+                            <li>成交1.97万亿元，放量约<strong>4310亿元</strong></li>
+                            <li>创业板ETF易方达单日成交<strong>197亿元</strong>，创上市以来历史第三高</li>
+                            <li>沪深300ETF华泰柏瑞、科创50ETF华夏成交额均超150亿元</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card positive">
+                        <h4>广度</h4>
+                        <ul>
+                            <li>4239只上涨、913只下跌（另口径4526/909）</li>
+                            <li><strong>84只</strong>涨停，跌停数大幅收敛</li>
+                            <li>红盘率从上一日的约9%回升至八成以上</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>资金</h4>
+                        <ul>
+                            <li>宽基ETF<strong>连续6个交易日</strong>净流入超百亿元，累计约1679亿元</li>
+                            <li>本周股票型ETF净流入超<strong>1580亿元</strong></li>
+                            <li>两融余额24556.92亿元，仍在下降</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>但必须把本周的整体读数放在这一天前面。<strong>全周创业板指累计跌3.18%、上证指数跌0.69%、沪深300跌1.57%，日均成交15754.19亿元</strong>，31个申万一级行业中只有7个上涨。港股同期更弱，恒生指数跌4.52%、恒生科技跌5.76%。<strong>一根放量的深V阳线，改变的是短期斜率，还没有改变周线方向。</strong></p>
+
+                <div class="highlight-box">
+                    <strong>这一天的关键，不在涨幅，在时序。</strong>上午暴跌、午间公告、午后反攻——三个环节的时间关系，说明这不是自发的情绪修复，而是<strong>外部干预精确命中了恐慌的最高点</strong>。要判断反弹能走多远，必须先把这次干预的性质看清楚，这正是下面两节的内容。
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">始于光存、终于光存：五份公告为什么能翻转盘面</h3>
+                <span class="section-tag">产业逻辑 · 信号识别</span>
+            </div>
+            <div class="content">
+                <p>这一轮科技股的调整，起点非常明确。<strong>7月1日晚间，48家A股公司集中发布股票交易异常波动公告或风险提示公告</strong>，提示投资者客观理性看待六氟化钨、机器人、光模块、光纤光缆等热点。次日开始，板块见顶。</p>
+
+                <p>把这条线拉直来看：<strong>7月1日科创50盘中最高冲至2255.25点，到10月22日收于1305.87点，累计下跌40.85%</strong>。同期上证指数跌10.66%、沪深300跌18.94%、创业板指跌40.66%——科创50比上证多跌了30.19个百分点。<strong>年内涨幅被完全抹去。</strong></p>
+
+                <p>而在这40.85%里，跌幅最深的两个方向，恰好就是这轮行情的两端：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>方向</th><th>标的</th><th>7月1日—10月22日涨跌</th><th>备注</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td rowspan="4">存储</td><td>佰维存储</td><td class="trend-down">-67.73%</td><td>跌幅居硬科技赛道之首</td></tr>
+                        <tr><td>兆易创新</td><td class="trend-down">-66.04%</td><td>利基DRAM与NOR Flash</td></tr>
+                        <tr><td>江波龙</td><td class="trend-down">-65.62%</td><td>存储模组</td></tr>
+                        <tr><td>德明利</td><td class="trend-down">-63.84%</td><td>存储主控， Q3净利同比+2902.75%</td></tr>
+                        <tr><td rowspan="3">光模块</td><td>新易盛</td><td class="trend-down">-57.49%</td><td>1.6T持续放量</td></tr>
+                        <tr><td>中际旭创</td><td class="trend-down">-53.49%</td><td>海外订单排至2027年</td></tr>
+                        <tr><td>天孚通信</td><td class="trend-down">-34.81%</td><td>光器件</td></tr>
+                    </tbody>
+                </table>
+
+                <p>这个跌幅的成因，不在业绩。二季度末，主动偏股基金电子行业持仓占比约<strong>43%</strong>、通信板块约<strong>17%</strong>，两者合计接近<strong>60%</strong>，双双创出2015年以来新高。<strong>公募前十大重仓股平均跌幅达50%，600余只主动权益基金净值跌超40%</strong>——持仓过度集中，是本轮跌幅放大的结构性原因，而不是某一家公司的经营出了问题。</p>
+
+                <p>理解了这一点，10月23日午间那五份公告的分量就出来了。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>公司</th><th>公告核心内容</th><th>当日走势</th><th>成交额</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>中际旭创</td><td><strong>海外主要客户订单已排至2027年</strong>，部分重点客户给出2028年需求指引，客户订单需求强劲</td><td class="trend-up">+3.82%</td><td>279亿元</td></tr>
+                        <tr><td>新易盛</td><td>1.6T光模块进入<strong>持续放量</strong>阶段，生产经营正常；同步推出<strong>8亿至10亿元</strong>回购方案，价格上限500元/股</td><td class="trend-up">+1.16%</td><td>214亿元</td></tr>
+                        <tr><td>天孚通信</td><td>行业发展景气度较高，在手订单充足，内外部经营环境未发生重大异常变化</td><td class="trend-up">+1.93%</td><td>85亿元</td></tr>
+                        <tr><td>光迅科技</td><td>高速光互联、光传输主要产品市场需求旺盛，在手订单储备充足</td><td>—</td><td>—</td></tr>
+                        <tr><td>源杰科技</td><td>生产经营一切正常，未发生重大变化</td><td>—</td><td>—</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box success">
+                    <strong>为什么"盘中发布"本身就是一个信号。</strong>常规的业绩公告并不属于重大事项，无需在盘中披露；能够在交易时段发布的，通常是必须即时告知市场的突发事件（例如"哪个厂子出事了"）。<strong>十家八家公司选在同一个午间、用几乎同一套口径、说同一件事——这只能是有组织的行为。</strong>披露的内容反而是次要的，组织形式本身才是信息。
+                </div>
+
+                <p>效果也很清楚：<strong>中际旭创、新易盛、天孚通信三只个股当日分别从跌幅超过7%的位置快速拉升</strong>。但值得留意的是，三只龙头的最终涨幅并不突出（+3.82%、+1.16%、+1.93%），真正被修复的是整个AI硬件产业链的信心——午后光模块、电路板、覆铜板概念集体拉升，成为指数翻红的主要推动力。<strong>公告的作用不是把龙头拉起来，而是把"AI资本开支见顶"这个叙事按住了。</strong></p>
+
+                <p>同日还有一股力量：<strong>宁德时代两日合计回购575.96万股、耗资约12.99亿元，当日大涨7.8%、成交254亿元</strong>。10月22日公司与北汽集团签署百万辆换电战略合作协议，市场对其"增收不增利"的担忧得到一定缓释。<strong>权重股止跌，是指数能够翻红的前提条件。</strong></p>
+
+                <p>把这些动作连起来看，监管方维护市场的工具箱已经用到第几步，脉络相当清楚：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>步骤</th><th>动作</th><th>成本</th><th>本轮的时点</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>第一步</td><td>开会、表态、讲"中国股市好"</td><td>最低</td><td>金融街论坛年会强调"全力维护资本市场安全稳定"</td></tr>
+                        <tr><td>第二步</td><td>下场买宽基 ETF，先少买、后多买</td><td>真金白银</td><td>9月28日以来，多数交易日在<strong>14时30分后或尾盘</strong>集中买入数百亿元</td></tr>
+                        <tr><td>第三步</td><td>号召公募、保险等机构资金入市</td><td>分散到机构</td><td>10月22日晚四家头部公募各以2亿元固有资金自购</td></tr>
+                        <tr><td>第四步</td><td>央国企蓝筹与上市公司回购增持</td><td>分散到微观主体</td><td>10月291家公司回购169.48亿元；宁德时代两日12.99亿元</td></tr>
+                        <tr><td><strong>第五步</strong></td><td><strong>让公司自己出来说不差</strong></td><td>信誉背书</td><td><strong>10月23日午间，五家光通信龙头集中澄清经营与订单</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p>一个容易被忽略的细节：<strong>9月28日以来，这些资金的"上班时间"基本固定在下午两点半或尾盘</strong>。而10月23日跌得厉害，买入被提前到了上午——<strong>提前上班，但效果不彰</strong>。上午市场仍在继续大幅调整，说明<strong>市场对"国家队买入"这件事已经相当麻木</strong>：同一个动作重复一个月，边际信息量趋近于零。这也解释了为什么第五步（让公司自己说话）比继续加码买入更有效——<strong>它换了一个信息维度。</strong></p>
+
+                <div class="quote-block">
+                    这一轮科技的调整，始于光存，终于光存。7月1日是它们提示"短期涨幅太大、市盈率已经很高"；三个多月后，同样是这批公司说"我们的业绩并没有发生大的变化，但股价已经打了四折，你们为什么还在卖"。
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">验货期：光模块与存储的三季报，谁兑现谁消化</h3>
+                <span class="section-tag">财报验证 · 估值切换</span>
+            </div>
+            <div class="content">
+                <p>周末（10月25日晚间）这条链上又交出两份财报，恰好分处算力集群的"互联"与"存储"两端，可以当作这一节最干净的样本。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>指标</th><th>光迅科技（光模块）</th><th>德明利（存储）</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>前三季营收</td><td>116.83亿元，<span class="trend-up">+36.94%</span></td><td>285.55亿元，<span class="trend-up">+328.81%</span></td></tr>
+                        <tr><td>前三季归母净利</td><td>12.84亿元，<span class="trend-up">+78.65%</span></td><td>87.46亿元，<span class="trend-up">+32399.91%</span></td></tr>
+                        <tr><td>Q3 单季营收</td><td>50.73亿元，<span class="trend-up">+54.27%</span></td><td>116.45亿元，<span class="trend-up">+356.64%</span></td></tr>
+                        <tr><td>Q3 单季归母净利</td><td>7.02亿元，<span class="trend-up">+102.62%</span></td><td>27.29亿元，<span class="trend-up">+2902.75%</span></td></tr>
+                        <tr><td><strong>Q3 净利环比</strong></td><td><strong>环比 Q2 翻倍</strong></td><td><strong>环比仅约 +2%</strong></td></tr>
+                        <tr><td>单季净利率</td><td><strong>13.80%</strong>，创近14年单季新高</td><td>—</td></tr>
+                        <tr><td>存货</td><td>121.10亿元，<span class="trend-up">+110.76%</span></td><td>289.86亿元，<span class="trend-up">+310.66%</span></td></tr>
+                        <tr><td>前瞻指标</td><td>合同负债<span class="trend-up">+200.29%</span>，预付款<span class="trend-up">+818.72%</span></td><td>研发费用4.78亿元，<span class="trend-up">+171.65%</span></td></tr>
+                        <tr><td>股价位置</td><td>9月21日以来跌超34%，年内仍<span class="trend-up">+83.89%</span></td><td>9月21日起14个交易日跌超50%，较高点回落约60%</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box alert">
+                    <strong>这张表里最该被盯住的，不是323倍，是那个"+2%"。</strong>德明利前三季净利同比增长32399.91%，但<strong>Q3 净利环比 Q2 只有约2%</strong>。同比的数字由去年同期的极低基数放大而成，几乎不携带边际信息；环比才回答"这个季度比上个季度好多少"。同样的分辨要放到光迅科技上：它Q3环比翻倍、单季净利率创近14年新高——<strong>一个在加速，一个在减速，两者的同比都很漂亮。</strong>
+                </div>
+
+                <p>存储这一端的产业底色是好的，但需要把"斜率"和"方向"分开看：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>环节</th><th>2026年四季度口径</th><th>备注</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>一般型 DRAM 合约价</td><td>环比 <strong>+10%~15%</strong></td><td>计入HBM后整体 +15%~20%</td></tr>
+                        <tr><td>NAND Flash 合约价</td><td>环比 <strong>+15%~20%</strong></td><td>企业级 SSD 单项涨幅 <strong>+23%~28%</strong></td></tr>
+                        <tr><td>涨价斜率（DRAM）</td><td>Q2 约+80% → Q3 约+40% → Q4 约+20%</td><td><strong>连续三季收敛</strong></td></tr>
+                        <tr><td>供需缺口（摩根大通口径）</td><td>2026 / 2027 / 2028：<strong>20% / 19% / 15%</strong></td><td>缺口存在但逐年收窄</td></tr>
+                        <tr><td>供需缺口（高盛口径）</td><td>2027 年 DRAM 由 -2.5% 下修至 <strong>-5.9%</strong>，NAND <strong>-4.6%</strong></td><td>紧张延续至2028年</td></tr>
+                        <tr><td>三大原厂资本开支</td><td>2026年合计接近 <strong>1200亿美元</strong></td><td>三星、SK海力士、美光均创历史新高</td></tr>
+                    </tbody>
+                </table>
+
+                <p>三条容易读错的细节，需要单独说明：</p>
+
+                <p><strong>第一，"涨幅收敛"不等于"景气反转"。</strong>四季度DRAM合约价仍环比上涨10%~15%，只是从二季度的80%、三季度的40%降到了20%这个量级。<strong>价格仍在涨，只是涨得慢了</strong>——这两个判断对应完全不同的操作。</p>
+
+                <p><strong>第二，扩产不等于供给立刻上来，中间有两重时滞。</strong>新建晶圆厂从建设到稳定产出通常需要两到三年，新厂大多要到2027年下半年才能投片，明显放量要拖到2028年。更关键的是<strong>HBM的"吞噬效应"</strong>：HBM在生产中消耗的晶圆面积约为同等容量通用DRAM的三倍，到2027年HBM预计占全球DRAM晶圆总产能近30%，但<strong>在全球DRAM总供应量中只能贡献约13%的容量份额</strong>。这意味着即便投片数字看起来可观，流向通用DRAM的有效供给增量会被大幅稀释。</p>
+
+                <p><strong>第三，"谁拿到合约价、谁只有现货价"决定了利润落在哪个环节。</strong>原厂与HBM供应方直接受益于合约价上修；模组厂吃的是价格传导的时滞；接口芯片吃DDR5渗透率；封测吃先进封装产能。<strong>同一条涨价链上，四个环节的利润弹性差一个量级</strong>，用同一个"存储涨价"逻辑买全部标的，是最常见的错误。</p>
+
+                <p>国产侧的业绩验证已经落地：<strong>长鑫科技前三季度营业收入2650亿至2700亿元、同比增加超7倍，归母净利润1310亿至1325亿元、同比扭亏为盈</strong>（上年同期为-52.80亿元），公司明确将原因归于AI算力需求带动的DRAM供不应求与价格上行。同时需要记住供给端的长期变量：按TrendForce收入口径，2026年二季度三星、SK海力士、美光份额分别为<strong>39.4%、24.9%、23.3%，合计87.6%</strong>——集中度极高，但寡头格局从未让存储摆脱周期。</p>
+
+                <p>回到估值。光迅科技当前股价对应TTM市盈率约<strong>92倍</strong>、市值超千亿，前三季度经营现金流净流出18.8亿元（业务扩张期备货所致，存货与预付款同步大增可互相印证）。<strong>92倍的含义是：行情的主导变量已经从"估值扩张"切换到"业绩兑现"。</strong>同样的逻辑适用于整条链——三季度业绩预告期是"预期博弈"，10月中旬是"个股分化"，到了10月下旬披露尾声，作用变成了<strong>"催化确认"</strong>：业绩能对上的修复，对不上的继续消化。</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>已兑现</h4>
+                        <ul>
+                            <li>光模块：1.6T持续放量，海外订单排至2027年、部分客户给2028年指引</li>
+                            <li>存储：Q4合约价继续上涨，长鑫前三季扭亏为盈</li>
+                            <li>光迅Q3净利率13.80%，创近14年单季新高</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>待消化</h4>
+                        <ul>
+                            <li>德明利Q3净利环比仅+2%，增速明显放缓</li>
+                            <li>DRAM涨价斜率连续三季收敛（80%→40%→20%）</li>
+                            <li>光迅TTM约92倍、经营现金流净流出18.8亿元</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">本周三重日程：超级央行周、会议窗口、财报高峰</h3>
+                <span class="section-tag">日程 · 外部约束</span>
+            </div>
+            <div class="content">
+                <p>这一周的密度，是10月里最高的。三件事同时在走，且互相不独立。</p>
+
+                <p><strong>第一件：全球主要央行集中议息。</strong>美联储、欧洲央行、日本央行、加拿大央行、新西兰联储都将在本周公布利率决议。北京时间<strong>10月29日凌晨</strong>美联储公布结果，同日还将发布9月PCE与三季度GDP数据——<strong>决议与通胀数据撞在同一天，是本周最大的单一不确定性来源</strong>。目前市场对10月加息的定价概率只有约<strong>12%</strong>，也就是说按兵不动是基准情形，真正影响资产价格的将是会后措辞与PCE读数，而不是利率本身。</p>
+
+                <p><strong>第二件：国内进入重要会议窗口（10月26—29日）。</strong>这是本周国内最主要的政策事件。历史经验是：<strong>会议期间的政策表述会被迅速映射到"十五五"相关的产业方向上</strong>，而市场在此之前通常倾向于降低方向性仓位、等表述落地。10月23日深V之后紧接着进入这个窗口，意味着<strong>反弹的持续性在头两天很难被证实</strong>。</p>
+
+                <p><strong>第三件：财报进入最密集的一周。</strong>海外有<strong>微软、谷歌、亚马逊、英特尔</strong>，以及存储链上最关键的<strong>SK海力士（10月27日）、三星、日本铠侠</strong>——SK海力士的三季报被普遍视为存储板块的定价锚。A股这边，<strong>中际旭创、贵州茅台、天孚通信、新易盛</strong>等权重与主线公司陆续披露。</p>
+
+                <p>把11条已落地的信息摆在一起，可以看到政策的着力点相当分散，但方向一致——<strong>流动性给量、产业给方向、制度给预期</strong>：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>类别</th><th>内容</th><th>读法</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>流动性</td><td>10月26日开展<strong>7000亿元</strong>MLF操作（1年期），缩量续作约2000亿元</td><td>月末资金面有支撑，但"缩量"说明总量并未加码</td></tr>
+                        <tr><td>产业方向</td><td>《国家信息化"十五五"规划》印发，提出2030年新一代通信网全面建成、适时启动<strong>6G</strong>商用</td><td>通信与算力基础设施的中期需求锚</td></tr>
+                        <tr><td>产业方向</td><td>国办印发意见，增强AI创造就业的正效应、减缓岗位替代影响</td><td>AI政策的落点从"技术"扩展到"就业"</td></tr>
+                        <tr><td>制度</td><td>证监会就《私募投资母基金管理规定》征求意见，明确豁免计入一层投资层级、细化分散投资与负面清单</td><td>引导长期资金进场，同时压实管理人职责</td></tr>
+                        <tr><td>制度</td><td>上证指数、科创综指等编制方案<strong>10月26日起实施</strong>：新增单个样本权重不超过<strong>15%</strong>的上限；风险警示证券剔除时间提前至<em>风险警示公告日</em>次月第二个星期五的下一交易日</td><td>指数更分散、更早剔除风险标的，被动资金跟踪更"干净"</td></tr>
+                        <tr><td>财政</td><td>前三季度证券交易印花税<strong>2391亿元</strong>，同比增长<strong>65.1%</strong></td><td>成交活跃度的直接刻度，也反映前三个季度的换手强度</td></tr>
+                        <tr><td>民生</td><td>国常会研究统筹人口与经济社会发展，完善婚嫁、生育、养育、教育政策，优化家庭财税社保住房支持</td><td>中期消费与地产需求的慢变量</td></tr>
+                    </tbody>
+                </table>
+
+                <p>外部约束则明显偏紧，10月23日隔夜给出了一组典型读数：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>资产</th><th>10月23日收盘</th><th>当日</th><th>本周累计</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>道琼斯工业指数</td><td>52215.16</td><td class="trend-down">-1.23%</td><td>—</td></tr>
+                        <tr><td>标普500</td><td>7623.68</td><td class="trend-down">-0.52%</td><td>—</td></tr>
+                        <tr><td>纳斯达克指数</td><td>25955.34</td><td class="trend-down">-0.21%</td><td>—</td></tr>
+                        <tr><td>10年期美债收益率</td><td><strong>4.9945%</strong></td><td>+4.15个基点</td><td class="trend-down">-7.83个基点</td></tr>
+                        <tr><td>布伦特原油</td><td><strong>116.72 美元/桶</strong></td><td class="trend-up">+3.13%</td><td class="trend-up">+6.24%</td></tr>
+                        <tr><td>WTI 原油</td><td>103.27 美元/桶</td><td class="trend-up">+3.92%</td><td class="trend-up">+4.29%</td></tr>
+                        <tr><td>现货黄金</td><td>3996.10 美元/盎司</td><td class="trend-down">-0.71%</td><td class="trend-down">-4.07%</td></tr>
+                        <tr><td>美元指数</td><td>101.75</td><td class="trend-up">+0.13%</td><td>—</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box alert">
+                    <strong>本周最需要盯的不是美债，是油价。</strong>10年期美债本周累计回落7.83个基点至4.9945%，分母端的压力边际上是缓解的；但<strong>布伦特原油一周涨6.24%至116.72美元、逼近120美元关口</strong>，WTI单日大涨3.92%。油价这个位置，同时抬高通胀预期（压制降息空间）与制造业成本（压缩中下游毛利）——<strong>它是唯一能同时打分子端和分母端的变量。</strong>周末中东方面的消息仍在演化，美国正调整多个驻中东使馆人员规模。黄金同步跌4.07%失守4000美元，是流动性需求而非避险需求在主导，这个组合值得警惕。
+                </div>
+
+                <p>另有两项外部政策变量需要记录：<strong>美国财政部发布新版对外投资限制拟议规则</strong>，商务部回应称其歧视性扩大对华投资限制范围、中方保留采取相应措施的权利；同时美方提议将<strong>生物技术</strong>列入对外投资禁止清单。此外，美国防部公布的科研安全审查结果要求相关高校终止与1286清单内中国科研机构的合作。<strong>科技领域的限制正从"产品与设备"延伸到"投资与科研合作"</strong>，这是评估半导体设备、生物医药等方向时需要前置考虑的风险维度。</p>
+
+                <p>综合起来，对本周的合理预期是：<strong>指数在深V之后进入震荡反复、板块结构轮动、以时间换空间的阶段</strong>。外部有央行周与油价，内部有会议窗口与财报高峰，任何一方给出明确信号之前，方向性判断的胜率都不高。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">纪律：为什么"先卖出、等右侧"是一套灾难性策略</h3>
+                <span class="section-tag">行为 · 仓位管理</span>
+            </div>
+            <div class="content">
+                <p>周五上午那种氛围，值得单独记下来。当时的普遍心态不是"我看空"，而是——<strong>"我不想跟国家队做对，但我也不想短期再跌了，能不能先卖掉，等市场稳定了再回来？"</strong></p>
+
+                <p>很多人不只是这样想，而且这样做了。四个小时之后，市场用一根放量长阳给出了答案。</p>
+
+                <p>但真正需要复盘的，不是"这次割错了吗"，而是<strong>这套策略本身在逻辑上就不成立</strong>。把它的每一步摊开来看：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>步骤</th><th>策略要求你做的事</th><th>隐含的能力假设</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>卖出时点</td><td>判断"这里还会继续跌"</td><td>能识别下跌的中继与末端</td></tr>
+                        <tr><td>等待过程</td><td>判断"底部已经到了"</td><td>能识别市场低点</td></tr>
+                        <tr><td>买回时点</td><td>判断"右侧已经确认"</td><td>能区分真突破与假突破</td></tr>
+                        <tr><td><strong>合计</strong></td><td><strong>连续做对三次方向判断</strong></td><td><strong>具备稳定的择时能力</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p>问题就在最后一行。<strong>如果一个人真的具备稳定判断市场左右侧的能力，他根本不需要这套策略</strong>——他可以直接在最低点满仓、在最高点清仓。反过来说，正因为没有人具备这种能力，这套策略在实践中就会退化成"在最难受的时候卖出、在最犹豫的时候不敢买回"。</p>
+
+                <p>周五之后的具体困境是这样的：<strong>指数大涨了，你周一或周五尾盘要不要买回？</strong>多数人的回答是"我刚割了，为什么要买回"。那么再问：<strong>如果它涨了5%呢？涨10%呢？</strong>回答"那我就是不买"的人，和2024年924行情没赶上、3700点说"就是不买"、最后在4000多点追进来的是同一批人。<strong>他们每一次单独看都"短期对了"，加起来却完整错过了整段行情。</strong></p>
+
+                <div class="highlight-box">
+                    <strong>理想化的推演，带来的是灾难性的结果。</strong>"既要等国家队增持、又要等市场右侧"——这两个条件叠加起来，实际上等价于"我要在完美的时点买入"。而追求完美时点的结果，通常是<strong>在起点卖出、在终点买入</strong>。
+                </div>
+
+                <p>所以这一节给的不是方向判断，是三条可执行的行为定义：</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card positive">
+                        <h4>不预测底，只分批</h4>
+                        <ul>
+                            <li>把"买在最低点"换成"在低估区间分若干次买"</li>
+                            <li>单次买入的时点错误，不会导致整体仓位错误</li>
+                            <li>节奏比点位重要</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card neutral">
+                        <h4>不因难受而清仓</h4>
+                        <ul>
+                            <li>情绪最差的时点，通常与价格最差的时点重合</li>
+                            <li>要降的是<strong>仓位比例</strong>，不是持股信念</li>
+                            <li>留出现金应对波动，而不是清空仓位应对情绪</li>
+                        </ul>
+                    </div>
+                    <div class="impact-card negative">
+                        <h4>不在反弹初期卖出</h4>
+                        <ul>
+                            <li>"割在最低点"多数发生在反弹的前一天</li>
+                            <li>第一天的大涨最容易引发"回本就跑"</li>
+                            <li>先确认量能能否维持，再谈去留</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>具体到本周的操作建议：<strong>不做频繁交易</strong>。央行周、会议窗口、财报高峰三件事都集中在这五天，任何基于盘中情绪的加减仓，都大概率是在给波动付学费。<strong>等这些信息落地之后，再按自己此前设定的中长期策略做方向性判断</strong>——这句话听上去像是"什么都不做"，但它恰恰是本周胜率最高的一种"做"。</p>
+
+                <p>最后把这一轮的完整逻辑收一下：<strong>7月1日，48家公司提示风险，那是一个"该撤没撤"的时点；10月23日，同一批公司澄清经营，市场在最低点附近完成反转。</strong>两个方向的错误，犯的是同一个毛病——<strong>用当下的情绪，替代了事先定好的规则。</strong>而纠正这个毛病，需要的不是更准的判断，是更稳的纪律。</p>
+
+                <div class="quote-block">
+                    周五上午割肉的人，四小时后就看到了结果。但比"这次错了"更重要的是：这个动作本身不可重复——你无法既要求自己在最低点卖出，又要求自己在右侧起点买回，除非你能判断出什么是低点、什么是右侧。如果不能，那就只剩分批这一条路。
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年10月26日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
