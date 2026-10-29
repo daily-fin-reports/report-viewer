@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年10月29日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">10月28日A股放量修复：沪指涨0.91%报3681.47点、深证成指涨2.02%报11473.18点、创业板指涨3.40%报2634.76点、科创50涨2.45%报1282.93点、科创综指涨3.20%报1560.38点，成交16274亿元、放量1666亿元，4156只上涨、1237只下跌、涨停72家 · 美联储10月维持联邦基金利率3.75%—4.00%不变、10票赞成2票反对（两位委员主张加息25个基点），12月加息25个基点概率由决议前79.7%升至82.6% · 公募基金三季报前十大重仓股三进三出：药明康德、长鑫科技、沪电股份新进，兆易创新、中微公司、三环集团退出</p>
+            <p class="header-date">2026年10月29日 · 周四 · 鹰派暂停与三进三出 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">🦅</div>
+                    <div class="summary-text">
+                        <strong>"按兵不动"是暂停，不是转向</strong>
+                        美联储10月28日以<strong>10票赞成、2票反对</strong>维持联邦基金利率目标区间在<strong>3.75%—4.00%</strong>不变，两位反对者主张的是<strong>加息25个基点</strong>，不是降息。决议后芝商所口径的12月加息25个基点概率从79.7%升至<strong>82.6%</strong>，维持不变仅16.9%；明年1月累计加息25个基点概率57.0%、50个基点32.5%。9月刚完成2023年7月以来首次加息，这是一轮<strong>进行中的紧缩周期</strong>中的一次停顿
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🔄</div>
+                    <div class="summary-text">
+                        <strong>三进三出：进的不是新赛道，是产业链更上游</strong>
+                        公募基金三季度前十大重仓股新进<strong>药明康德、长鑫科技、沪电股份</strong>，退出<strong>兆易创新、中微公司、三环集团</strong>。中际旭创、新易盛仍居前两位（959.38亿元、870.78亿元），但资金在光存链内部从整机模块迁向<strong>光芯片（源杰科技升至第五）、PCB（沪电股份新进第十）、器件（天孚通信增持超80亿元、联讯仪器超50亿元）</strong>。这是同一条链上的位置切换，不是撤离
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🔍</div>
+                    <div class="summary-text">
+                        <strong>702.96亿元"减持"里，只有约99亿元是真卖出</strong>
+                        中际旭创二季度末公募持股市值1662.34亿元、三季度末959.38亿元，账面减少<strong>702.96亿元</strong>。但同期股价从1268.81元跌到807.25元、区间<strong>-36.38%</strong>，仅股价一项就吃掉约<strong>605亿元</strong>（86%）；持股数只减少1223.77万股、降幅<strong>9.34%</strong>，对应约99亿元（14%）。<strong>"减持市值"是主动调仓与股价缩水的混合数，不拆开就会把账面缩水读成清仓</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📈</div>
+                    <div class="summary-text">
+                        <strong>10月28日的大涨，归因不在美联储</strong>
+                        美联储决议在A股收盘<strong>之后</strong>才落地，当天上涨的燃料来自三处：SK海力士三季报确认存储景气（韩国综指涨6.63%、SK海力士涨近11%）、《"十五五"规划建议》全文发布（约2万字、15部分61条）、上海印发新一代智能制造行动方案带动物理AI与机器人链。10月29日开盘沪指-0.13%、创业板指<strong>-1.46%</strong>，才是市场对"鹰派暂停"的真实反应
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">美联储"按兵不动"：一张鹰派的暂停牌</h3>
+                <span class="section-tag">议息决议 · 概率定价</span>
+            </div>
+            <div class="content">
+                <p>10月28日结束的议息会议，把联邦基金利率目标区间维持在<strong>3.75%—4.00%</strong>不变。市场此前已经充分预期这个结果——决议公布前，维持不变的概率高达90.6%，加息至4.00%—4.25%的概率仅9.4%。所以真正的信息不在"维持不变"这四个字里，而在<strong>投票结构和反对方向</strong>上。</p>
+
+                <p>决议以<strong>10票赞成、2票反对</strong>通过。两位投反对票的委员——一位是美联储理事、一位是克利夫兰联储行长——主张的不是降息，而是<strong>在本次会议上把利率上调25个基点</strong>。其中那位理事此前长期被市场视为中间派。这个细节值得单独拎出来：当中间派开始投票要求加息，说明委员会内部的天平在往紧缩一侧倾斜，而不是往宽松一侧。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间窗口</th>
+                            <th>维持不变</th>
+                            <th>累计加息25个基点</th>
+                            <th>累计加息50个基点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12月会议（决议后）</td>
+                            <td class="trend-down">16.9%</td>
+                            <td class="trend-up">82.6%</td>
+                            <td class="trend-down">0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>12月会议（决议前）</td>
+                            <td class="trend-down">14.2%</td>
+                            <td class="trend-up">79.7%</td>
+                            <td class="trend-down">6.1%</td>
+                        </tr>
+                        <tr>
+                            <td>明年1月会议（决议后）</td>
+                            <td class="trend-down">10.3%</td>
+                            <td class="trend-up">57.0%</td>
+                            <td class="trend-down">32.5%</td>
+                        </tr>
+                        <tr>
+                            <td>明年1月会议（决议前）</td>
+                            <td class="trend-down">8.3%</td>
+                            <td class="trend-up">52.6%</td>
+                            <td class="trend-down">36.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>这张表最容易被读错的地方是"决议后维持不变的概率反而从14.2%升到16.9%"。看着像转鸽，其实是分母挪动：50个基点加息的概率从6.1%塌到0.5%，那部分概率回流到了"只加25个基点"和"不加息"两边。真正的方向变化是——<strong>市场把"12月加一次"当成了基准情形（82.6%），把"12月加两次"踢出了主流假设</strong>。这不是宽松，这是"紧缩节奏被确认得更清楚"。</p>
+
+                <div class="highlight-box alert">
+                    一个必须记住的时间坐标：美联储在9月刚完成<strong>2023年7月底以来首次加息</strong>（25个基点，将利率上调至3.75%—4.00%）。10月这次是加息周期中的一次停顿，不是降息周期的起点。判断"海外流动性转向"的前提尚未成立。
+                </div>
+
+                <p>为什么这次敢停？声明的措辞提供了答案：经济活动"以强劲的步伐扩张"、国内支出"具备韧性"、生产率增长有力、资本投资强劲、就业增长与劳动力保持同步、通胀"仍然高企"。整段话里没有一处提到需要放松。停下来的理由更像是"先看看9月加息的效果"——会议纪要显示多数官员预计年底前还会再加一次；而9月的通胀数据并不配合：居民消费价格涨幅创五个月新高，核心通胀升幅超出市场预期，生产者价格涨幅为四年来最高。</p>
+
+                <p>金融条件自身已经替美联储干了一部分活。10年期美债收益率长期卡在5%附近，30年期固定抵押贷款平均利率10月早些时候一度升到<strong>7.4%</strong>的三年高点，一年前这个数字还略低于6.2%。有测算认为，今年利率的大幅上行已让美国约500万户家庭失去购房能力。这构成一个自我限制机制——<strong>不需要继续加息，市场利率上行已经在收紧</strong>。但也正因为如此，"停止加息"和"开始宽松"之间的距离，比很多人想象的要远得多。</p>
+
+                <p>对A股的直接含义可以压缩成一句：<strong>分母端的压力没有解除，只是暂停了加码</strong>。这解释了10月29日开盘的分化——沪指低开0.13%、创业板指低开1.46%、科创50低开0.87%，物理AI、算力硬件、机器人跌幅居前；而隔夜纳指还是涨的（+0.27%）、费城半导体指数还涨了1.75%（30只成分股22涨8跌）。同一个决议，美股读到的是"没更坏"，A股成长股读到的是"折现率还得挂在高位"。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">公募三季报：三进三出，进的是更上游</h3>
+                <span class="section-tag">持仓结构 · 行业迁移</span>
+            </div>
+            <div class="content">
+                <p>10月27日，公募基金2026年三季报披露完毕。先看总量的三个刻度，它们决定了后面所有结构调整的底色。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指标</th>
+                            <th>2026年二季度末</th>
+                            <th>2026年三季度末</th>
+                            <th>变化</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>公募基金资产总值</td>
+                            <td>41.4万亿元</td>
+                            <td>40.7万亿元</td>
+                            <td class="trend-down">-0.7万亿元</td>
+                        </tr>
+                        <tr>
+                            <td>其中股票资产</td>
+                            <td>8.8万亿元</td>
+                            <td>7.9万亿元</td>
+                            <td class="trend-down">-0.9万亿元</td>
+                        </tr>
+                        <tr>
+                            <td>股票占资产总值比重</td>
+                            <td>21.3%</td>
+                            <td>19.3%</td>
+                            <td class="trend-down">-2.0个百分点</td>
+                        </tr>
+                        <tr>
+                            <td>债券占资产总值比重</td>
+                            <td>51.6%</td>
+                            <td>54.1%</td>
+                            <td class="trend-up">+2.5个百分点</td>
+                        </tr>
+                        <tr>
+                            <td>主动权益基金规模</td>
+                            <td>50095.71亿元</td>
+                            <td>40653.79亿元</td>
+                            <td class="trend-down">-9441.92亿元</td>
+                        </tr>
+                        <tr>
+                            <td>主动偏股基金股票仓位</td>
+                            <td>86.21%</td>
+                            <td>85.83%</td>
+                            <td class="trend-down">-0.38个百分点</td>
+                        </tr>
+                        <tr>
+                            <td>主动偏股基金A股仓位</td>
+                            <td>78%</td>
+                            <td>76%</td>
+                            <td class="trend-down">-2个百分点</td>
+                        </tr>
+                        <tr>
+                            <td>可投港股基金港股配置比例</td>
+                            <td>13.3%</td>
+                            <td>15.7%</td>
+                            <td class="trend-up">+2.4个百分点</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>主动权益规模一个月蒸发9441.92亿元，看着像大逃亡。但把它拆成两部分就完全不同了：<strong>净值下跌贡献-8829.30亿元，存续基金净赎回只有-944.48亿元</strong>。也就是说，规模缩水的<strong>93.5%</strong>是市场跌出来的，投资者真正撤走的钱不到一成。同期净赎回份额在不同口径下分别是850亿份、858亿份、931亿份，无论取哪个，都明显低于二季度的2349亿—2469亿份——<strong>跌的时候赎回压力反而减轻了</strong>，原因很朴素：净值回撤削弱了赎回意愿，也因为大部分持有人已经在亏损区，卖出的心理成本变高了。</p>
+
+                <p>另一处需要分辨的是仓位。股票仓位从86.21%降到85.83%，只降了0.38个百分点，几乎可以视为没动；但A股仓位从78%降到76%，同时港股配置从13.3%升到15.7%。<strong>这不是减仓，是换市场</strong>——同样的股票仓位，从A股挪了一部分到港股。三季度恒生科技与港股创新药的表现，解释了这2.4个百分点的去向。</p>
+
+                <h4>前十大重仓股：三进三出</h4>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>三季度末排名</th>
+                            <th>个股</th>
+                            <th>公募持有市值</th>
+                            <th>相对二季度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>中际旭创</td>
+                            <td>959.38亿元</td>
+                            <td class="trend-down">减持市值最多（702.96亿元）</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>新易盛</td>
+                            <td>870.78亿元</td>
+                            <td class="trend-down">减持超400亿元</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>药明康德</strong></td>
+                            <td>—</td>
+                            <td class="trend-up"><strong>新进</strong>，增持市值最多（209.72亿元）</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>长鑫科技</strong></td>
+                            <td>—</td>
+                            <td class="trend-up"><strong>新进</strong>，建仓8.05亿股</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>源杰科技</td>
+                            <td>—</td>
+                            <td class="trend-up">位次前移（光芯片）</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>东山精密</td>
+                            <td>—</td>
+                            <td class="trend-down">让出第三位</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>宁德时代</td>
+                            <td>—</td>
+                            <td class="trend-down">减持</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>寒武纪</td>
+                            <td>—</td>
+                            <td class="trend-down">减持</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>北方华创</td>
+                            <td>—</td>
+                            <td class="trend-down">减持</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><strong>沪电股份</strong></td>
+                            <td>—</td>
+                            <td class="trend-up"><strong>新进</strong>（PCB）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>退出前十的三只是兆易创新、中微公司、三环集团。这个组合很有意思：兆易创新是存储设计，中微公司是半导体设备，三环集团是元器件。<strong>而新进的三只是CXO龙头、存储制造龙头、PCB龙头。</strong></p>
+
+                <p>先看长鑫科技的替代关系。长鑫上市之前，公募在存储领域能买的标的基本只有兆易创新、佰维存储这一类；长鑫科技上市后，它是国内存储制造环节唯一的大体量标的，三季度被建仓<strong>8.05亿股、占其流通股比例高达17.88%</strong>，直接空降第四大重仓股，也是三季度增配规模最大的个股（期末持仓市值约396亿元）。这不是"看空兆易创新"，而是<strong>同一个行业里出现了纯度更高的工具，资金自然迁移</strong>。兆易创新三季度被减持接近400亿元，与股价下跌也高度相关（见下一节的方法论）。</p>
+
+                <p>再看光存链内部的迁移，这是本期最容易被误读的地方。中际旭创、新易盛虽然被减持市值居前两位，但链条上的其他环节在加仓：天孚通信增持超80亿元、联讯仪器超50亿元、景旺电子超50亿元，源杰科技位次升到第五、沪电股份新进第十。把这几笔放在一起看，方向很清楚——<strong>从光模块整机，往上游的光芯片、PCB、精密器件走</strong>。华创口径的数字可以佐证：通信板块持股市值占比从16.89%降到14.85%（未剔除股价），但剔除股价因素后仓位反而上升0.64个百分点。同一个板块，两种算法，两个方向。</p>
+
+                <div class="highlight-box">
+                    这正是音频里那句"从'站在光里'转向相对均衡"的量化版本。它讲的不是"公募撤离科技"，而是<strong>公募在科技内部重新分配位置</strong>：终端模块的确定性已经被充分定价、且承担最大的关税与法案风险，而上游的光芯片、PCB、器件还有国产替代与产能紧缺的增量。
+                </div>
+
+                <p>行业层面也就顺理成章了。剔除股价因素后，加仓最多的是医药生物（+0.92个百分点，配置比例升到9.34%，是TMT之外唯一处于超配状态的大类行业）、通信（+0.64）、机械设备（+0.44）、银行（+0.40）、煤炭（+0.32）；减仓最多的是电子（-2.44）、建筑材料（-0.81）、电力设备（-0.62）、有色金属（-0.44）。TMT整体仓位从历史高点的61.6%回落到53.5%，但<strong>仍是绝对重仓</strong>，电子单一行业占比36.63%、通信14.85%，两个数字都处在历史98%分位附近。</p>
+
+                <p>还有一个信号藏在集中度里：重仓前100家公司的重仓市值占比从68.2%降到62%，前50家从55.2%降到49.6%，重仓股总数量从2644只增至2794只（+150只），平均前十大集中度55.7%（-1.15个百分点）。<strong>抱团在松动，但没散。</strong>这个区别很重要——抱团瓦解通常伴随重仓股数量骤降与集中度断崖，而这里发生的是"在保持高仓位的同时把筹码摊薄一些"，属于主动降低单一标的的风险暴露，不是撤退。</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">"减持702亿"的账，只有99亿是真卖出</h3>
+                <span class="section-tag">口径拆解 · 方法论</span>
+            </div>
+            <div class="content">
+                <p>这一节是本期最需要耐心的部分。市场上所有关于"公募减持"的叙事，都建立在一个混合数字上——<strong>持仓市值的变化额</strong>。但持仓市值变化 = 股价变化 + 持股数量变化。当股价一个季度跌掉36%，这个数字的绝大部分跟"买卖"没有关系。</p>
+
+                <p>先看中际旭创。天相投顾口径下，公募持有市值从二季度末的<strong>1662.34亿元</strong>降到三季度末的<strong>959.38亿元</strong>，账面减少<strong>702.96亿元</strong>，是当季减持市值第一名。同时公开口径披露：公募在三季度减持了<strong>1223.77万股</strong>。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>拆解项</th>
+                            <th>计算</th>
+                            <th>金额</th>
+                            <th>占702.96亿元的比重</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>股价下跌因素</td>
+                            <td>1.31亿股 ×（807.25−1268.81）元</td>
+                            <td class="trend-down">约-605亿元</td>
+                            <td><strong>86%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>减持股数因素</td>
+                            <td>1223.77万股 × 807.25元</td>
+                            <td class="trend-down">约-99亿元</td>
+                            <td><strong>14%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td>—</td>
+                            <td class="trend-down">约-704亿元</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>关键的参照是股价：中际旭创2026年三季度区间跌幅<strong>-36.38%</strong>（从6月30日收盘1268.81元跌到9月30日收盘807.25元，区间振幅41.18%）。在这个跌幅下，即便公募一股不卖，持仓市值也会从1662亿自然缩到1057亿左右。实际落到959亿，中间差的约99亿，才是真正卖出的部分——<strong>对应持股数量的降幅只有9.34%</strong>。</p>
+
+                <p>换句话说：<strong>一只被市场称为"公募大幅减持"的股票，公募实际只卖了不到一成的仓位。</strong>而这9.34%的减仓，在一个季度跌36%的环境里，更像被动再平衡（单只个股占比因市值缩水而变化、触及集中度上限被迫微调），而不是主动看空。</p>
+
+                <p>反向的验证在药明康德身上。它三季度被增持市值209.72亿元，是当季增持第一名。药明康德同期股价涨<strong>34.40%</strong>（124.51元→167.34元），港股涨40.01%。同样拆开看：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>拆解项</th>
+                            <th>计算</th>
+                            <th>金额</th>
+                            <th>占209.72亿元的比重</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>股价上涨因素</td>
+                            <td>1.90亿股 ×（167.34−124.51）元</td>
+                            <td class="trend-up">约+82亿元</td>
+                            <td><strong>39%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>增持股数因素</td>
+                            <td>约7660万股 × 167.34元</td>
+                            <td class="trend-up">约+128亿元</td>
+                            <td><strong>61%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td>—</td>
+                            <td class="trend-up">约+210亿元</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>持股数量从约1.90亿股增到2.67亿股，<strong>增幅40.2%</strong>——这是真金白银的加仓，不是账面浮盈。两笔放在一起对比，结论就出来了：</p>
+
+                <div class="highlight-box success">
+                    <strong>减持的86%是股价跌出来的，增持的61%是真金白银加出来的。</strong>把这两个数字并列，才能看懂公募三季报的真实动作：它在光模块上"看起来减了很多"，实际几乎没动；在医药上是真的把仓位加了四成。市场对前者反应过度，对后者反应不足。
+                </div>
+
+                <p>新易盛是同一模式的另一个样本：公募持股数只减少<strong>122.57万股</strong>，但减持市值超过400亿元。股数降幅小到可以忽略，400亿元几乎全是股价。这提醒我们，凡看到"某某被减持N百亿"这样的说法，第一件事应该是找<strong>持股数量变化</strong>，而不是盯着市值。</p>
+
+                <p>三季报里还有一个天然的交叉验证，来自"7只老面孔全部被减持"这个现象。二、三季度均在榜的7只个股，三季度无一例外遭遇减持。这句话如果单独拿出来，会被读成"公募集体撤离核心资产"。但结合上面的拆解就能看出：<strong>三季度科技板块深度回调（创业板指单季-27.8%、科创50-30.7%），任何一只重仓股只要不追加买入，市值就必然下降，而下降的市值在统计上被记为"减持"。</strong>"全员被减持"不是一个行为，是一个算术结果。</p>
+
+                <div class="highlight-box alert">
+                    口径陷阱备忘：同一个板块可以算出两个相反的方向。通信板块"未剔除股价"的持股市值占比从16.89%降到14.85%（-2.04个百分点），看起来是减仓；"剔除股价因素"后仓位上升0.64个百分点，是加仓。两者都对，区别只在于是否把价格变动影响剥离。<strong>引用任何"仓位变动"数据前，必须先问一句：剔除股价了吗？</strong>
+                </div>
+
+                <p>这条方法论还有一层用处：它能解释为什么公募在三季度"减持了光存"却仍然重仓光存。中际旭创被1557只公募产品重仓、新易盛1189只、宁德时代1026只——这个覆盖广度说明，减持发生在<strong>存量产品的微调</strong>层面，而不是<strong>配置逻辑的推翻</strong>层面。真要推翻一个赛道，先消失的是覆盖面，不是市值。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">10月28日：修复的燃料不在华盛顿</h3>
+                <span class="section-tag">盘面归因 · 时点校准</span>
+            </div>
+            <div class="content">
+                <p>10月28日A股走出一次量价配合明确的修复。八个主要指数全线收红，成长风格全面占优：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>指数</th>
+                            <th>收盘</th>
+                            <th>涨跌幅</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>创业板指</td>
+                            <td>2634.76</td>
+                            <td class="trend-up">+3.40%</td>
+                            <td>领涨，与上证50相差3.17个百分点</td>
+                        </tr>
+                        <tr>
+                            <td>科创综指</td>
+                            <td>1560.38</td>
+                            <td class="trend-up">+3.20%</td>
+                            <td>成交约2567亿元，显著放量</td>
+                        </tr>
+                        <tr>
+                            <td>科创50</td>
+                            <td>1282.93</td>
+                            <td class="trend-up">+2.45%</td>
+                            <td>成分股成交约757亿元</td>
+                        </tr>
+                        <tr>
+                            <td>深证成指</td>
+                            <td>11473.18</td>
+                            <td class="trend-up">+2.02%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>中证500</td>
+                            <td>—</td>
+                            <td class="trend-up">+1.99%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>北证50</td>
+                            <td>—</td>
+                            <td class="trend-up">+1.63%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>上证指数</td>
+                            <td>3681.47</td>
+                            <td class="trend-up">+0.91%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>沪深300</td>
+                            <td>—</td>
+                            <td class="trend-up">+0.85%</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>上证50</td>
+                            <td>—</td>
+                            <td class="trend-up">+0.23%</td>
+                            <td>权重最弱，防御资金撤离</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>量能与宽度都支持这次修复：两市成交<strong>16274亿元</strong>，比前一日的14608亿元放量<strong>1666亿元（+11.4%）</strong>，重回1.6万亿上方；上涨4156家、下跌1237家、平盘176家，涨跌家数比3.36比1；涨停从41家增至72家，跌停从22家收窄至5家；涨跌幅中位数+1.34%、平均数+1.87%，双双高于沪指的+0.91%——<strong>赚钱效应集中在中小市值一侧</strong>。行业上123个行业有106个收红，航天装备+5.52%、半导体+4.88%（188只样本，等权）、非金属材料+4.85%、自动化设备+4.60%、医疗服务+4.22%。</p>
+
+                <p>但两处细节说明这还不是趋势：<strong>炸板率48.94%</strong>，72家涨停里有64家是首板，连板梯队只有5板1家、3板2家、2板5家——接力资金不厚，追高的容错率很低。同时资金是"避险端失血、成长端得血"的切换，不是全面加仓：白酒-2.35%、调味发酵品-1.07%、证券-0.46%、银行-0.35%，跌幅都不大。</p>
+
+                <h4>三处燃料，与美联储无关</h4>
+
+                <p><strong>第一处是存储景气的业绩确认。</strong>SK海力士三季报单季营收104.62万亿韩元、营业利润83.33万亿韩元双双刷新历史纪录，并预计供不应求持续至2030年、计划回购20万亿韩元。韩国综指当日涨<strong>6.63%</strong>报6012.44点，SK海力士涨近11%、三星电子涨超9%；日经225涨1.08%报63954.19点。A股存储链顺势修复，兆易创新涨7.77%、成交122.8亿元。</p>
+
+                <p><strong>第二处是政策文本。</strong>10月28日，《关于制定国民经济和社会发展第十五个五年规划的建议》全文发布，约2万字、15部分61条，把"建设现代化产业体系、巩固壮大实体经济根基"摆在战略任务第一条，并单设"安全发展"板块。这份文件不是新题材清单，但它给出了未来五年的需求地图，对半导体、AI算力、工业软件、商业航天这些方向构成中长期的政策底色。同日商务部披露，消费品以旧换新已带动相关品类销售额超<strong>2万亿元</strong>、惠及超2.5亿人次；三家政策性银行的新增政策性金融工具<strong>8000亿元</strong>已全部完成投放（国开3650亿、进银1200亿、农发3150亿）。</p>
+
+                <p><strong>第三处是产业催化。</strong>上海市经信委10月27日印发《上海市加快发展新一代智能制造行动方案》，明确研制推广物理AI装备，覆盖机器人、工业母机、检测装备。叠加端侧与具身智能的产业进展，机器人链成为当日绝对主线：汽车零部件11家、通用设备8家、专用设备5家涨停，合计24家，占72家涨停的三分之一。</p>
+
+                <h4>两个"隔夜"必须分清</h4>
+
+                <p>这里有一个极易混淆的时点问题，值得单独写清楚，因为它直接决定归因对不对：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>美股交易日</th>
+                            <th>对应北京时间</th>
+                            <th>主要读数</th>
+                            <th>被谁消化</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10月27日</td>
+                            <td>10月28日凌晨</td>
+                            <td>费城半导体指数+3.60%、纳指+1.18%</td>
+                            <td><strong>10月28日A股开盘的底气</strong></td>
+                        </tr>
+                        <tr>
+                            <td>10月28日</td>
+                            <td>10月29日凌晨（决议后）</td>
+                            <td>道指+0.19%、纳指+0.27%、标普+0.28%、费半+1.75%</td>
+                            <td><strong>10月29日A股开盘</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>10月28日A股收盘是15:00，美联储决议落地是北京时间10月29日凌晨2:00——<strong>决议在A股收盘之后</strong>。所以当天3.40%的创业板涨幅里，没有一分钱来自美联储。这个顺序如果搞反，就会得出"美联储按兵不动利好A股"的错误结论，而10月29日的开盘恰好否证了它：沪指低开0.13%、深成指低开0.82%、创业板指低开<strong>1.46%</strong>、科创50低开0.87%，跌幅居前的正是前一日领涨的物理AI、算力硬件、机器人。</p>
+
+                <p>隔夜美股在决议后的表现也值得对照：三大指数虽然三连涨，但大型科技股多数下跌——英伟达-1.17%、苹果-0.94%、特斯拉-0.80%、微软-0.06%，只有谷歌+1.34%、亚马逊+0.59%。真正涨的是存储：SK海力士+13.30%、闪迪+7.66%、美光+5.86%、西部数据+4.08%、希捷+4.51%。<strong>资金在同一天里卖掉"高估值成长"、买入"涨价链"，这个结构比指数涨跌更有信息量。</strong>纳斯达克中国金龙指数同日跌1.83%，也说明中概资产没有分享到这波修复。</p>
+
+                <div class="highlight-box">
+                    把三处燃料与一处否证放在一起，本期的判断就成型了：<strong>10月28日修复的是"分子端"（存储业绩、政策文本、产业催化），没有被修复的是"分母端"（12月加息概率82.6%）。</strong>所以这轮修复的性质是"跌深之后的估值修复 + 结构性景气确认"，而不是"流动性拐点驱动的全面反转"。前者需要业绩接力才能延续，后者只需要利率下行。
+                </div>
+
+                <p>还有一条容易被忽略的对照：10月28日领涨的成交额榜上，中际旭创涨<strong>10.28%</strong>（成交235.7亿元）、新易盛涨<strong>8.08%</strong>（150.9亿元）——正是公募三季报里"被减持市值最多"的两只。这个反差是整篇报告最好的注脚：<strong>减持记录描述的是过去三个月的持仓变化，股价反映的是未来现金流的折现。用前者去预测后者，方向经常是反的。</strong></p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">把两件事放在一张表里：分子在修复，分母没松动</h3>
+                <span class="section-tag">组合含义 · 观察清单</span>
+            </div>
+            <div class="content">
+                <p>这一期的两条主线看起来无关——一条在华盛顿，一条在公募的季报里。但它们其实是同一件事的两面：<strong>决定估值的那一端（利率）没有松动，决定盈利的那一端（产业景气与资金结构）在改善</strong>。这个组合决定了未来一段时间的行情形态，也决定了该做什么、不该做什么。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>维度</th>
+                            <th>当前状态</th>
+                            <th>方向</th>
+                            <th>对A股的含义</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>美联储政策利率</td>
+                            <td>3.75%—4.00%，12月加息概率82.6%</td>
+                            <td class="trend-down">收紧未止</td>
+                            <td>成长股折现率维持高位，估值扩张受限</td>
+                        </tr>
+                        <tr>
+                            <td>美债与房贷利率</td>
+                            <td>10年期卡在5%附近，30年期房贷曾达7.4%</td>
+                            <td class="trend-down">高位</td>
+                            <td>全球风险资产分母端压力持续</td>
+                        </tr>
+                        <tr>
+                            <td>油价</td>
+                            <td>WTI 102.78美元（+2.88%）、布伦特115.32美元（+1.26%）</td>
+                            <td class="trend-down">回升</td>
+                            <td>通胀预期难降，压制降息想象空间</td>
+                        </tr>
+                        <tr>
+                            <td>存储景气</td>
+                            <td>SK海力士单季营业利润率80%，供不应求至2030年</td>
+                            <td class="trend-up">确认</td>
+                            <td>分子端最硬的一块，A股映射真实</td>
+                        </tr>
+                        <tr>
+                            <td>政策文本</td>
+                            <td>"十五五"规划建议全文发布，61条</td>
+                            <td class="trend-up">落地</td>
+                            <td>提供五年需求地图，非短期催化</td>
+                        </tr>
+                        <tr>
+                            <td>公募仓位</td>
+                            <td>主动权益股票仓位85.83%，TMT仍占53.5%</td>
+                            <td class="trend-up">未撤离</td>
+                            <td>结构性再平衡，不是风格切换</td>
+                        </tr>
+                        <tr>
+                            <td>公募负债端</td>
+                            <td>三季度净赎回944亿元，仅为规模缩水的6.5%</td>
+                            <td class="trend-up">压力缓解</td>
+                            <td>没有出现"越跌越赎回"的负反馈</td>
+                        </tr>
+                        <tr>
+                            <td>市场量能</td>
+                            <td>10月28日16274亿元，放量1666亿元</td>
+                            <td class="trend-up">回升</td>
+                            <td>但需连续站稳1.5万亿上方才算有效</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>这张表里，四行红、四行绿，正好对应"分子改善、分母未松"的僵持格局。僵持格局下的行情特征是可以预期的：<strong>指数反复、结构剧烈分化、赚业绩的钱而不赚估值的钱</strong>。10月28日就是一次标准样本——指数涨了，但72家涨停里64家是首板、炸板率近五成，第二天开盘成长股又低开1.46%。</p>
+
+                <h4>三条操作纪律，对应三种常见错误</h4>
+
+                <p><strong>第一，不要用"减持市值"判断增减持。</strong>这是本期最实用的一条。看到"某只股票被公募减持702亿元"，正确的动作是去找持股数量变化，再乘以期间均价，剩下的才是真卖出。中际旭创的例子给出的比例是86%比14%——<strong>把账面缩水当成清仓，会在最便宜的位置做出最恐慌的决定</strong>。反过来，看到"增持209亿元"也要拆，药明康德的例子里有39%是股价涨出来的。</p>
+
+                <p><strong>第二，不要用"一天的大涨"确认趋势。</strong>10月28日的修复有三个扎实的支撑（业绩、政策、催化），但缺一个必要条件：分母端没有改善。判断这轮修复能否延续，只需盯两个可量化条件——<strong>成交能否连续三个交易日站在1.5万亿上方，以及领涨方向能否从"首板普涨"过渡到"有连板梯队"</strong>。10月29日开盘的表现说明，第一个条件当天就没守住。</p>
+
+                <p><strong>第三，不要把"再平衡"读成"风格切换"。</strong>公募确实加了医药（+0.92个百分点）、银行（+0.40）、煤炭（+0.32），但电子仍占36.63%、通信14.85%，双双处于历史98%分位。TMT从61.6%降到53.5%是"从极端拥挤回到非常拥挤"，不是"从成长切到价值"。据此调仓到红利的人，会发现自己买在了红利仓位从历史最低分位刚开始修复的位置——<strong>方向可能对，但赔率已经不在最优处</strong>。</p>
+
+                <div class="highlight-box success">
+                    给一个更朴素的框架：当前阶段应该问的问题不是"科技还行不行"，而是<strong>"这条产业链上，哪一段的利润还没有被充分定价"</strong>。公募三季报已经用真金白银回答了这个问题——它把仓位从光模块整机挪向光芯片、PCB、器件，同时把新增仓位给了存储制造（长鑫科技）与CXO（药明康德）。这三笔操作的共同点是：<strong>都发生在"上一轮涨得少、且业绩刚开始兑现"的位置</strong>。
+                </div>
+
+                <p>最后是日程。本周与下周的三个节点会决定僵持格局往哪边破：一是<strong>12月议息会议</strong>（当前市场给加息25个基点82.6%的概率，若通胀数据再超预期，明年1月累计加息50个基点的概率32.5%会继续上移）；二是<strong>三季报披露收官</strong>，业绩能否接力10月28日的估值修复，这一周就见分晓；三是<strong>油价</strong>——WTI重回102.78美元、布伦特115.32美元，它是唯一能同时打击分子端（成本）与分母端（通胀预期）的变量，也是上期报告就列出的核心跟踪项，本周它掉头向上了。</p>
+
+                <p>回到音频里那句判断："7月1日以来以光存为代表的科技调整已经告一段落，后面的行情更多是分化，不是单边下跌。"这个判断在10月28日得到了一次印证。但要补一句它没有说透的话：<strong>分化行情的钱，不是从"看对方向"里赚的，是从"看对位置"里赚的。</strong>同一条产业链，整机跌36%、上游涨回来，指数只涨2.45%——这就是分化的全部含义。</p>
+
+                <div class="quote-block">
+                    鹰派暂停与三进三出，说的是同一件事：钱还在场内，但它在换位置。看不清位置的人，会把换仓看成撤离，把缩水看成清仓，然后在最不该动的时候动了一次。
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年10月29日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
