@@ -309,7 +309,13 @@
             padding: 14px;
             border-bottom: 1px solid var(--border);
             color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
         }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
 
         .data-table tr:last-child td { border-bottom: none; }
 
@@ -391,15 +397,14 @@
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">01</div>
-                <div>
-                    <h2>座谈会落地了什么：扩围、降费、转长期</h2>
-                    <span class="section-tag">政策事件</span>
-                </div>
+                <div class="section-number">01</div>
+                <h3 class="section-title">座谈会落地了什么：扩围、降费、转长期</h3>
+                <span class="section-tag">政策事件</span>
             </div>
+            <div class="content">
             <p>11月2日，央行会同金融监管总局、证监会<strong>先后召开两场座谈会</strong>——一场面向证券、基金、保险公司，主题是互换便利；一场面向银行与上市公司主体，主题是股票回购增持再贷款。会议通稿的核心表述是：为维护资本市场稳定、提升市场韧性和信心，三部门将继续加强政策支持，<strong>进一步优化政策要素和实施细则，激励金融机构用好用足政策工具</strong>。</p>
             <p>落到具体动作上，是三项实质变化：</p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>工具</th><th>本次变化</th><th>指向的问题</th></tr>
                 </thead>
@@ -425,19 +430,19 @@
             <div class="highlight-box">
                 <p><strong>核心观点：</strong>政策语言从"扩大规模"转向"优化要素与实施细则"，是稳市工具箱进入精细化阶段的标志。第一阶段解决"有没有"（2024年10月创设工具），第二阶段解决"够不够"（2025年5月额度合并至8000亿），现在是第三阶段——解决"用不用"。三个阶段的市场含义完全不同：前两个阶段是脉冲式利好，第三阶段是持续性托底。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">02</div>
-                <div>
-                    <h2>互换便利：为什么它是央行与股市的第一条直连通道</h2>
-                    <span class="section-tag">政策机制</span>
-                </div>
+                <div class="section-number">02</div>
+                <h3 class="section-title">互换便利：为什么它是央行与股市的第一条直连通道</h3>
+                <span class="section-tag">政策机制</span>
             </div>
+            <div class="content">
             <p>要理解这项工具的分量，得先看清它填补了什么空白。在2024年9月之前，中国央行与资本市场之间没有一条直接的货币市场通道——买股票和从央行拿钱，这两件事在制度上没有联系。券商、基金想买股票，只能靠自有资金、客户资金或市场化融资；一旦市场动荡、融资收缩，机构的买入能力就跟着收缩，稳定市场的义务也就无从履行。</p>
             <p>互换便利补的正是这一环。符合条件的证券、基金、保险公司，可以拿<strong>债券、股票ETF、沪深300成分股</strong>等资产作抵押，从央行换入国债、央行票据等高等级流动性资产，再通过市场融资去投资股票——即所谓"以券换券"。费率非常低，机构不必动用自己的存量头寸就能完成加仓。海外也有类似安排：美联储有面向一级交易商的流动性工具，日本央行甚至在危机时期直接下场购买ETF（全球独一份）。中国这条路的特色是<strong>不直接买股票，而是给机构换流动性</strong>——既守住了央行不直接入市的边界，又把弹药送到了机构手上。</p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>批次</th><th>时间</th><th>规模</th><th>参与机构</th></tr>
                 </thead>
@@ -452,16 +457,16 @@
             <div class="highlight-box success">
                 <p><strong>操作提示：</strong>申报端的变化比额度本身更有信息量。此前两批各20家机构参与，覆盖偏窄，部分非头部券商和基金拿不到流动性支持；现在扩到31家，意味着工具从"头部试点"转向"广泛参与"。机构的行为也从"被安排"变成"主动要"——这是政策可信度的直接度量。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">03</div>
-                <div>
-                    <h2>1%的利率是一条套利线：再贷款转长期之后</h2>
-                    <span class="section-tag">政策机制</span>
-                </div>
+                <div class="section-number">03</div>
+                <h3 class="section-title">1%的利率是一条套利线：再贷款转长期之后</h3>
+                <span class="section-tag">政策机制</span>
             </div>
+            <div class="content">
             <p>再贷款利率从<strong>1.25%降到1%</strong>，同时这项政策从"阶段性安排"转为<strong>"长期制度性安排"</strong>。两件事放在一起，性质就变了：过去它是危机工具箱里的应急件，企业不敢按它做三年规划；现在它是常设制度，上市公司可以把它写进市值管理的年度预算里。</p>
             <p>1%这个数字要拆开看。对一家长期稳定分红、股息率明显高于1%的公司，大股东借钱增持就构成了一个<strong>正向套利</strong>——股息收入覆盖利息成本还有余，只要股价不出现断崖式下跌，这笔交易在数学上是赚的。对不分红但成长性强的公司，1%的资金成本也远低于任何常规融资渠道，"看好自己公司"这件事第一次可以用极低的成本表达出来。这就是政策设计者的用意：不是用行政手段逼企业回购，而是把"回购与增持"变成一道算得过来的算术题。</p>
             <p>已知的进度数据是：全市场<strong>902家上市公司披露1110单</strong>回购增持贷款公告，加上中国国新、中国诚通两家国有资本运营公司申请的增持贷款，<strong>申请额度上限累计约4400亿元</strong>；<strong>签约金额约4400亿元、累计发放量超2800亿元</strong>。对照8000亿元的额度池，整体用掉约一半——这与前述"缺的不是额度"的判断完全吻合。</p>
@@ -469,16 +474,16 @@
                 <p><strong>风险提示：</strong>会上还明确了一条执行纪律：督促已披露回购增持贷款计划的上市公司<strong>加快实施进度</strong>，已经申请贷款的公司<strong>加大回购实施力度</strong>。这句话的潜台词是——市场里存在"披露了但没执行"的案例。看公告时要区分三种状态：只披露计划、已签贷款合同、已实际买入。只有第三种才形成真实买盘。</p>
             </div>
             <p>另据市场传闻，两家国有资本运营公司各获得约1000亿元的增持贷款额度。官方通稿只确认其增持贷款已计入前述4400亿元申请额度上限，未披露单家规模，因此这一数字仍需等待正式公告验证——但它指向的方向是清楚的：<strong>国有资本运营平台正在成为再贷款的主要使用主体之一</strong>，从"央企示范"转向"平台化运作"。</p>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">04</div>
-                <div>
-                    <h2>规则还在往新股上改：超募与破发的约束</h2>
-                    <span class="section-tag">制度优化</span>
-                </div>
+                <div class="section-number">04</div>
+                <h3 class="section-title">规则还在往新股上改：超募与破发的约束</h3>
+                <span class="section-tag">制度优化</span>
             </div>
+            <div class="content">
             <p>座谈会之外，还有一批规则层面的优化正在研究中，方向都指向同一个病灶：<strong>新股定价太高</strong>。二级市场的科技股有一个结构性问题——上市时股价特别贵，定价高就意味着超募资金多，而超募资金多、发行价定得高，上市之后就越容易下跌。跌下来之后，公司缺少市值管理的工具和动力。</p>
             <div class="impact-grid">
                 <div class="impact-card positive">
@@ -507,16 +512,16 @@
                 </div>
             </div>
             <p>需要说明的是，这三条目前仍处于研究阶段，尚未见正式文件，属于方向性判断而非既成事实。但它们与再贷款利率降到1%、与"督促已披露计划加快实施"是同一套逻辑的三个侧面：<strong>把回购增持从"可选动作"变成"制度义务"</strong>，同时把使用成本降到足够低。政策的着力点已经从"给钱"移到"给规则"。</p>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">05</div>
-                <div>
-                    <h2>1000亿是多还是少：把量级放进两个坐标系</h2>
-                    <span class="section-tag">影响评估</span>
-                </div>
+                <div class="section-number">05</div>
+                <h3 class="section-title">1000亿是多还是少：把量级放进两个坐标系</h3>
+                <span class="section-tag">影响评估</span>
             </div>
+            <div class="content">
             <p>最直接的问题：1000亿元到底算多还是算少？要放在两个坐标系里看。</p>
             <p><strong>第一个坐标系是与自己的历史比。</strong>前两批分别500亿、550亿，本次单次申报超1000亿，接近前两批之和；参与机构从20家增至31家。从这个角度看，这是一次明确的放量，而且放量的原因不是额度宽松，是机构自己主动申报——需求端在改善。</p>
             <p><strong>第二个坐标系是与市场体量比。</strong>11月2日A股单日成交已经到1.78万亿元，1000亿元即便全额、即时入场，也只相当于半天多一点的成交额。这个量级不足以改变趋势，但足以改变边际——在集中抛售、买盘缺失的时点，一笔可预期的增量资金就把跌势的斜率压平了。<strong>稳市工具的价值从来不在于"托起"，而在于"接住"。</strong></p>
@@ -525,7 +530,7 @@
             </div>
             <p>除两项工具之外，增量资金还有别的来路：近期新发的一批<strong>主动管理型股票ETF</strong>（20余只）正在为市场输送数百亿元量级的资金；已披露回购增持计划的上市公司若加快执行，再贷款的动用规模还有上升空间——若上市公司申报踊跃，回购增持单项的额度使用完全可能向4500亿元量级靠近。几条通道加起来，才是"为市场带来新增力量"的完整图景。</p>
             <p>最后要说清的是这套政策真正的落点：<strong>稳住老百姓的信心</strong>。有一种流行的误解，是把保险、公募当成A股的主力，但从资金比例看，中国是一个典型的散户主导市场——散户才是主力，只不过散户是一盘散沙、还没有形成合力。政策的每一环，从降低机构融资成本到降低企业回购成本，最终都要通过"让持有股票的人不慌"来发挥作用。这也解释了为什么11月2日的市场反应是放量反弹而不是缩量企稳：<strong>信心修复的第一表现，是成交量的回归。</strong></p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>11月2日</th><th>收盘</th><th>涨跌幅</th><th>成交额</th></tr>
                 </thead>
@@ -542,6 +547,7 @@
             <div class="quote-block">
                 <p>"这次会议最值得记住的不是1000亿元，而是把再贷款的利率压到1%、把阶段性安排改成长期制度。前者是给市场一笔钱，后者是给市场一条规则——钱会被花完，规则会一直被使用。"</p>
                 <div class="quote-author">— 投研核心观点</div>
+            </div>
             </div>
         </section>
 

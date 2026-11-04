@@ -309,7 +309,13 @@
             padding: 14px;
             border-bottom: 1px solid var(--border);
             color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
         }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
 
         .data-table tr:last-child td { border-bottom: none; }
 
@@ -391,16 +397,15 @@
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">01</div>
-                <div>
-                    <h2>考题切换：从"开支意愿"到"开支能力"</h2>
-                    <span class="section-tag">财报框架</span>
-                </div>
+                <div class="section-number">01</div>
+                <h3 class="section-title">考题切换：从"开支意愿"到"开支能力"</h3>
+                <span class="section-tag">财报框架</span>
             </div>
+            <div class="content">
             <p>过去两个财报季（一季报、二季报），市场对美股"七姐妹"的关注点只有一个：AI资本开支的增长态势有没有终结。大家希望通过巨头的财报来印证自己"AI开支高增"的观点。但今年6月份以后，风向变了——不管是谷歌、亚马逊还是OpenAI背后的算力体系，都在内存越来越贵的情况下不断调增资本开支。生意的基本逻辑是：不怕把生意做大，怕的是生意一直扩大、钱一直往里投、却没有相应的回报。如果回报跟不上，后续资本开支的投入能力就会偏弱。</p>
             <p>于是市场的关注点从"资本开支的意愿"与"开支增速"两个单一维度，逐步转向<strong>资本开支造成的现金流压力</strong>：经营性现金流有没有恶化？恶化到什么程度？这直接决定了巨头后续哪怕有开支意愿，开支的天花板在哪里。</p>
             <p>本轮已披露的巨头财报（SK海力士除外）呈现高度一致的共性：<strong>收入都不错，利润被投入和一次性处置拖累，资本开支爆发式增长，自由现金流普遍大幅恶化。</strong>市场的提问由"你们真的要建这么多算力吗"变成了"你们确实想买卡、想买算力设备，但钱从哪来？会不会因为投资把家底掏空？"</p>
-            <table>
+            <table class="data-table wide">
                 <thead>
                     <tr><th>公司</th><th>营收/同比</th><th>利润端</th><th>资本开支</th><th>自由现金流</th><th>市场反应</th></tr>
                 </thead>
@@ -443,16 +448,16 @@
             <div class="highlight-box">
                 <p><strong>核心观点：</strong>同一周里，微软因资本开支"低于预期"盘后上涨，谷歌、亚马逊因资本开支"高于预期"盘后暴跌——这不是矛盾，恰恰证明市场定价的锚已经从"开支增速"移到了"现金流承受力"。开支低反而被解读为"还能付得起"，开支高反而被解读为"快要付不起"。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">02</div>
-                <div>
-                    <h2>谷歌：最好的收入表，最痛的现金流表</h2>
-                    <span class="section-tag">个股财报</span>
-                </div>
+                <div class="section-number">02</div>
+                <h3 class="section-title">谷歌：最好的收入表，最痛的现金流表</h3>
+                <span class="section-tag">个股财报</span>
             </div>
+            <div class="content">
             <p>谷歌于10月28日美股盘后发布2026年三季报。好的方面相当扎实：营收1275.8亿美元、同比增约25%，<strong>已连续13个季度保持两位数同比增长</strong>，这是美股走强最基本的支撑；单季资本开支513.6亿美元、同比增114%，略低于市场预期的557.8亿美元；公司维持全年1950亿—2050亿美元的资本开支指引，并预告2027年开支将大幅增长。谷歌云是本季最大亮点：营收307.1亿美元、<strong>同比增103%</strong>，远超市场预期的291亿美元；云业务运营利润111亿美元，运营利润率从去年同期的23.7%跃升至36.2%。</p>
             <p>不好的方面集中在三处：<strong>第一，利润不及预期。</strong>净利润264.7亿美元、同比降24.3%，当季股权投资录得86.6亿美元净亏损形成重大拖累；每股收益2.12美元，大幅落后于市场预期的2.99—3.02美元。<strong>第二，自由现金流连续第二个季度为负。</strong>三季度为-90.7亿美元，较二季度的-58.6亿缺口继续扩大，远差于市场预期的-35亿美元。<strong>第三，主业失速。</strong>搜索及相关业务营收633.5亿美元、同比仅增12%、低于预期，YouTube广告同样不及预期——市场开始认真讨论AI对搜索广告的内部蚕食。</p>
             <div class="highlight-box alert">
@@ -490,48 +495,48 @@
                 <p>"谷歌的问题是支出表的问题，不是收入表的问题。收入连续13个季度两位数增长的公司跌出上市以来最大单日跌幅，说明市场杀的不是基本面，是信心余量——而信心余量这种东西，跌出来之后才会重新有价格。"</p>
                 <div class="quote-author">— 投研核心观点</div>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">03</div>
-                <div>
-                    <h2>亚马逊：AWS创五年最快增速，钱却烧出了窟窿</h2>
-                    <span class="section-tag">个股财报</span>
-                </div>
+                <div class="section-number">03</div>
+                <h3 class="section-title">亚马逊：AWS创五年最快增速，钱却烧出了窟窿</h3>
+                <span class="section-tag">个股财报</span>
             </div>
+            <div class="content">
             <p>亚马逊于10月29日美股盘后公布2026年三季报。整体销售额2019.4亿美元、同比增12%，略低于市场预期的2022.6亿美元，基本符合预期；经营利润280.8亿美元、<strong>同比增61.5%</strong>，经营利润率升至13.9%的历史新高。业务结构上冰火两重天：<strong>AWS收入459.8亿美元、同比增39.3%</strong>，创近五年最高单季增速，公司预计2027、2028年AWS增速均将超过40%；但零售端失速——线上商店收入同比仅增2%（684.7亿美元、三年半来最低单季增速），广告收入196.4亿美元、同比增11%、低于预期，部分受Prime Day大促提前到二季度（错开7月世界杯）的影响。</p>
             <p>真正的问题在现金流。<strong>三季度单季资本开支772.6亿美元</strong>，远高于去年同期的351亿美元、也远超市场预期的587亿；过去12个月购置物业及设备净额2106.6亿美元、同比增82%。<strong>过去12个月自由现金流为-423.6亿美元</strong>，上年同期还在净流入；按单季口径自由现金流约-334.6亿美元，流出规模约为二季度的5.6倍。公司维持2026年全年2200亿美元的资本开支指引（约一个季度550亿美元的投入强度，与谷歌同一量级），并明确表示2027年将大幅增加支出。</p>
             <p>四季度指引同样偏弱：营收2400亿—2470亿美元、中值低于市场预期；经营利润285亿—335亿美元、中值310亿美元，明显低于市场预期的约331亿美元。财报公布后股价盘后一度重挫超12%、随后收窄至约7%。</p>
             <div class="highlight-box alert">
                 <p><strong>风险提示：</strong>在已披露的巨头财报中，市场普遍将亚马逊这份财报的现金流数据视为问题最大：营收、利润率创新高的同时，自由现金流的恶化幅度最大、连续为负的时间最长。TTM口径-423.6亿美元意味着AI基础设施投入正在以肉眼可见的速度消耗家底。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">04</div>
-                <div>
-                    <h2>英特尔：卖硬件的反例，输在供给端</h2>
-                    <span class="section-tag">个股财报</span>
-                </div>
+                <div class="section-number">04</div>
+                <h3 class="section-title">英特尔：卖硬件的反例，输在供给端</h3>
+                <span class="section-tag">个股财报</span>
             </div>
+            <div class="content">
             <p>与前面两家"买硬件"的公司不同，英特尔是<strong>卖硬件</strong>的一方，这份财报的成色也确实更好：三季度营收165亿美元、同比增21%，与预期基本一致；调整后每股收益52美分、高于市场预期的41美分；数据中心与AI业务营收73亿美元、<strong>同比增78%</strong>。需求端没有任何问题。</p>
             <p>但它依然跌了——<strong>盘后跌超23%</strong>，原因全在四季度指引：营收150亿—160亿美元，显著低于市场预期的约170亿美元；调整后每股收益指引25美分，远低于预期的43—45美分。指引承压有三重原因：<strong>一是10月以色列工厂爆炸事故</strong>，预计拖累四季度营收约3亿美元、压低毛利率约200个基点，影响可能延续到2027年一季度；<strong>二是内存及部分原材料短缺限制了出货</strong>；三是PC市场疲软，PC芯片业务营收同比降5%至81亿美元，公司预计疲软至少持续至2027年上半年。</p>
             <div class="highlight-box">
                 <p><strong>核心观点：</strong>存储芯片短缺和卖CPU有什么关系？关系很直接——没有存储芯片配套，CPU出货再多也组不成服务器、组不成整机。所以存储短缺不会消灭需求，只会<strong>延缓需求的交付节奏</strong>。英特尔的问题本质上是供给侧的错配，这比"自由现金流恶化"那一类需求端、能力端的质疑要好处理得多，但市场不区分时照样一起杀。</p>
             </div>
             <p>把四份财报放在一起看，一个结构性事实浮出水面：<strong>巨头资本开支没有一家放缓</strong>——这是AI浪潮仍然真实推进的印证；放缓的只是"市场愿意为这种开支强度支付的价格"。而产业链上游（存储、光芯片、PCB）的紧缺，恰恰说明钱还在往实体的算力资产里流。</p>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">05</div>
-                <div>
-                    <h2>尾声的杀伤力，与两个市场的纪律</h2>
-                    <span class="section-tag">投资策略</span>
-                </div>
+                <div class="section-number">05</div>
+                <h3 class="section-title">尾声的杀伤力，与两个市场的纪律</h3>
+                <span class="section-tag">投资策略</span>
             </div>
+            <div class="content">
             <p>A股的态度在10月26日已经说得非常明确：<strong>本轮调整始于光存、终于光存，目前进入尾声——但难过的也是尾声，尾声阶段的杀伤力是最强的。</strong>这和6月末市场暴涨最疯狂的时候是同一枚硬币的两面：很多人不是没有看见光存一个月涨了一倍，而是觉得"短期还有钱可赚，我为什么不留在里面"；现在反过来，很多人不是没有预感到国家队进场之后市场会好，而是觉得"它真的没有马上好，我痛感严重，能不能先出去歇一会"。<strong>这是犯错误的普遍形态。</strong></p>
             <p>更可怕的是错误会连锁：<strong>因为6月底没跑，所以7月初跌下来也不想跑了；因为10月底割了肉，所以10月底涨起来也没追进去。</strong>从此和市场说再见——挨打的时候都在，吃肉的时候一口没捞着。这样的时刻经历过无数次，结论始终是同一句话：<strong>含泪寻找机会，含泪播种，少关注短期波动。</strong></p>
             <div class="impact-grid">
@@ -566,6 +571,7 @@
             <div class="quote-block">
                 <p>"市场在6月末教会人追高的代价，现在正在教人割低的代价。两次学费买的是同一句话：尾声的杀伤力最强，而大多数人恰恰死在黎明的门口——不是没等到天亮，是在天亮前一小时把筹码交了出去。"</p>
                 <div class="quote-author">— 投研核心观点</div>
+            </div>
             </div>
         </section>
 

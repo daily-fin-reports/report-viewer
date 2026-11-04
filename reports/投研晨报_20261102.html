@@ -309,7 +309,13 @@
             padding: 14px;
             border-bottom: 1px solid var(--border);
             color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
         }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
 
         .data-table tr:last-child td { border-bottom: none; }
 
@@ -391,14 +397,13 @@
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">01</div>
-                <div>
-                    <h2>今天两场会：一场对银行，一场对非银</h2>
-                    <span class="section-tag">政策事件</span>
-                </div>
+                <div class="section-number">01</div>
+                <h3 class="section-title">今天两场会：一场对银行，一场对非银</h3>
+                <span class="section-tag">政策事件</span>
             </div>
+            <div class="content">
             <p>11月2日，金融管理部门在同一天开了两场会，对象和议题都不一样，需要分开看：</p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>会议</th><th>召集方</th><th>参会方</th><th>议题</th></tr>
                 </thead>
@@ -422,19 +427,19 @@
                 <p><strong>核心观点：</strong>一场会解决"愿不愿用"，一场会解决"敢不敢放"。这是政策从"创设工具"阶段进入"打通执行"阶段的标志——2024年10月是发牌照，2026年11月是修管道。修管道阶段的政策，对市场的作用方式是从"一次性脉冲"变成"持续托底"。</p>
             </div>
             <p>政策脉络也支持这个判断。该工具2024年10月18日由央行联合金融监管总局、证监会设立，创设于"924"一揽子政策的框架内，与证券、基金、保险公司互换便利（SFISF）同日推出。设立至今已经历多轮修补：贷款最长期限从1年延长到3年，匹配上市公司中长期回购增持的运作周期；自有资金出资比例从30%下调到10%，减轻企业配套压力；鼓励银行依托企业主体资质发放信用贷款、弱化抵质押约束；把国有资本运营平台纳入适用主体。这次是第五轮优化。</p>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">02</div>
-                <div>
-                    <h2>再贷款怎么变成子弹：三层利差与一道杠杆</h2>
-                    <span class="section-tag">政策机制</span>
-                </div>
+                <div class="section-number">02</div>
+                <h3 class="section-title">再贷款怎么变成子弹：三层利差与一道杠杆</h3>
+                <span class="section-tag">政策机制</span>
             </div>
+            <div class="content">
             <p>把机制拆开看，这条政策其实是一条很朴素的资金链。央行是这条链的终点，也是唯一的资金来源——它有印钞权和铸币权，是所有机构里"最有钱"的一方。银行次之，非银金融机构（券商、基金、保险资管）是链条上自有资金最紧张的一方。政策做的，是把央行最便宜的钱，顺着银行的资产负债表，导到最需要用钱去回购增持的主体手里。</p>
             <p>具体是三步：<strong>第一步</strong>，商业银行向符合条件的上市公司或主要股东发放贷款，专项用于回购和增持自家股票；<strong>第二步</strong>，银行拿着这笔贷款凭据向央行申请再贷款，央行按<strong>1.5%</strong>（创设时为1.75%）的利率把钱给银行；<strong>第三步</strong>，银行以约1.75%—2%投放给企业，赚取中间的利差。对银行来说这是一笔低风险的通道业务，对企业来说这是一笔远低于普通贷款利率的专项资金。</p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>环节</th><th>主体</th><th>利率/比例</th><th>作用</th></tr>
                 </thead>
@@ -450,16 +455,16 @@
             <div class="highlight-box success">
                 <p><strong>操作提示：</strong>判断这类政策的力度，不要只盯额度总量，要盯三个转化率：<strong>额度→签约</strong>（当前约49%）、<strong>签约→发放</strong>（当前约54%）、<strong>发放→实际回购</strong>。前两个转化率提升，是政策执行力改善的直接证据；第三个才是真正进入市场买盘的钱。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">03</div>
-                <div>
-                    <h2>8000亿只用掉不到三成：优化的靶心是"用起来"</h2>
-                    <span class="section-tag">数据洞察</span>
-                </div>
+                <div class="section-number">03</div>
+                <h3 class="section-title">8000亿只用掉不到三成：优化的靶心是"用起来"</h3>
+                <span class="section-tag">数据洞察</span>
             </div>
+            <div class="content">
             <p>把三个数字并排放，问题的形状就出来了：<strong>总额度8000亿元、签约合同超3900亿元、已发放超2100亿元。</strong>额度用掉不足三成，签约到发放又打了五折。市场不缺工具，缺的是"企业愿不愿借、银行敢不敢放"。</p>
             <p>不愿借的原因不难理解：借钱回购，最终是要还的。在市场仍在磨底、股价预期看不清的阶段，上市公司和大股东会本能地犹豫——用贷款回购，等于给自己加了一层必须偿还的杠杆，如果股价继续下行，这笔钱就从"护盘工具"变成"财务负担"。银行不敢放的原因同样清楚：回购增持贷款的风险评估缺少成熟模型，抵押品是自家股票，一旦下跌就是双向亏损，审批链条自然会拉长。</p>
             <div class="highlight-box">
@@ -467,18 +472,18 @@
             </div>
             <p>值得注意的是，这条工具在实际运行中已经有"随市场压力自动加码"的特征：2025年4月市场承压阶段，回购增持相关业务申请规模显著冲高；2026年7月市场再度波动时，国有资本运营平台加大专项再贷款运用力度，带动当月业务规模再次走高。2026年前10个月，已有300余家公司披露"增持回购贷"相关公告，按贷款金额上限计算累计约781亿元，其中单家规模最大的达到50亿元、双笔累计59亿元量级——使用主体从央企扩散到地方国企与民营企业。</p>
             <p>需求侧的配合也在同步发生。2026年下半年市场震荡期间（7月1日至10月9日上证指数累计跌近7%），全市场约470家上市公司发布增持或回购预案，拟增持与拟回购金额上限合计突破千亿元；同期一个更重要的结构变化是<strong>注销式回购占比首次超过五成</strong>——回购从"护盘工具"转向"股东回报工具"。这个转变决定了政策的性质：护盘是短期的、事件驱动的；股东回报是长期的、机制驱动的。后者对估值中枢的支撑更实在。</p>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">04</div>
-                <div>
-                    <h2>工具箱不止一件：互换便利、类平准与非银流动性</h2>
-                    <span class="section-tag">政策工具箱</span>
-                </div>
+                <div class="section-number">04</div>
+                <h3 class="section-title">工具箱不止一件：互换便利、类平准与非银流动性</h3>
+                <span class="section-tag">政策工具箱</span>
             </div>
+            <div class="content">
             <p>回购增持再贷款只是"支持资本市场的两项货币政策工具"之一。另一件是<strong>证券、基金、保险公司互换便利（SFISF）</strong>，同样创设于2024年10月：券商、基金等机构买股票或增持时自有资金不足，可以把持有的资产抵押给央行换入流动性，再继续买入——本质是给机构"续上后续的子弹"。2025年5月，这两项工具的额度实现合并、总额度提升至8000亿元，使用更加灵活。</p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr><th>工具</th><th>面向对象</th><th>解决什么</th></tr>
                 </thead>
@@ -510,16 +515,16 @@
             <div class="highlight-box alert">
                 <p><strong>风险提示：</strong>这套工具箱的效力取决于落地速度，而不是政策表态的密度。历史上多次出现"会议信号强、落地节奏慢"的窗口期，期间的指数表现往往先扬后抑。不要用"政策底"直接替代"市场底"的仓位判断。</p>
             </div>
+            </div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <div class="section-num">05</div>
-                <div>
-                    <h2>"无限子弹模式"：信号的意义与不该做的动作</h2>
-                    <span class="section-tag">投资策略</span>
-                </div>
+                <div class="section-number">05</div>
+                <h3 class="section-title">"无限子弹模式"：信号的意义与不该做的动作</h3>
+                <span class="section-tag">投资策略</span>
             </div>
+            <div class="content">
             <p>把今天的会议放回本月市场的语境里，它传递的信号可以压缩成一句话：<strong>对上市公司回购增持、对国家队与类平准资金的后续买入，政策层面愿意提供持续的资金后盾。</strong>换句话说，市场重新回到了"无限子弹"模式——这不是说央行会无限制印钱买股票，而是说在关键位置上，做空一方要面对一个<strong>弹药不受单一额度约束的对手</strong>：额度不够可以新批，工具不合适可以优化，通道堵了可以修。</p>
             <p>这个机制对市场的作用方式，与2024年9月那次有本质区别。那时是"创设工具+首次亮牌"，市场用几天时间完成了情绪修复；这次是"修管道+持续供给"，作用是让下跌的尾部变短、让恐慌的深度变浅，而不是把指数直接推上去。所以正确的预期是：<strong>底部更扎实，但过程仍然磨人。</strong></p>
             <div class="impact-grid">
@@ -554,6 +559,7 @@
             <div class="quote-block">
                 <p>"无限子弹的真正含义，不是让指数不再下跌，而是让做空的人知道：对面那个对手的弹药，不取决于它这一轮带了多少，而取决于它愿不愿意再批一次。看清这一点，就不会在政策托底的位置上，去做那个站在国家队对面的人。"</p>
                 <div class="quote-author">— 投研核心观点</div>
+            </div>
             </div>
         </section>
 
