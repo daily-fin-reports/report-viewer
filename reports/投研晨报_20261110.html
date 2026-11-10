@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月10日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">物价端：10月CPI同比上涨0.7%、涨幅比上月回落0.2个百分点，环比由上月上涨0.2%转为持平；扣除食品和能源的核心CPI同比上涨0.8%、涨幅回落0.2个百分点；1至10月平均CPI上涨0.9%。结构上汽油价格同比上涨22.4%、涨幅扩大5.8个百分点，单项影响CPI上涨约0.63个百分点，带动能源价格涨幅由7.3%扩大至9.9%；数据存储设备、平板电脑、计算机、移动电话机价格分别上涨45.4%、29.3%、23.0%、16.7%，四项合计影响CPI上涨约0.26个百分点；食品价格下降2.9%、影响CPI下降约0.49个百分点，其中鲜菜下降16.9%、猪肉下降8.6%；服务价格上涨0.7%、影响CPI上涨约0.34个百分点 · 10月PPI同比上涨5.7%、涨幅扩大0.7个百分点，环比上涨0.7%、涨幅回落0.5个百分点；工业生产者购进价格同比上涨7.9%、环比上涨1.1%；1至10月平均PPI上涨2.7%、购进价格上涨4.0%。分项看生产资料同比上涨7.4%、拉动PPI上涨约5.77个百分点，其中采掘上涨27.9%、原材料上涨11.6%、加工上涨3.5%；生活资料下降0.1%、拖累约0.03个百分点。行业上煤炭开采和洗选业上涨36.6%、石油和天然气开采业上涨35.0%、石油煤炭及其他燃料加工业上涨29.9%、化学原料和化学制品制造业上涨16.4%、有色金属冶炼和压延加工业上涨18.6%，而汽车制造业下降1.8%、医药制造业下降3.2%、电力热力生产和供应业下降3.8%、酒饮料和精制茶制造业下降5.2%；环比口径下石油天然气开采、煤炭开采、精炼石油产品、有机化学原料、煤炭加工、燃气生产供应六个能源相关行业合计影响PPI环比上涨约0.61个百分点、超过总涨幅的八成 · 海外端：11月9日美股三大指数全线大涨，道指涨2.15%报52389.75点、涨超1100点，标普500涨2.35%报7549.94点，纳指涨2.74%报25253.14点；费城半导体指数大涨6.85%，超威半导体涨13.26%、应用材料涨超11%、拉姆研究涨超10%、希捷与西部数据涨超9%、博通涨超8%、Coherent涨超16%、阿斯麦涨超6%、英特尔涨5.19%、台积电涨3.48%、美光涨6.25%、闪迪涨6%；英伟达逆势跌4.22%并创近七个月收盘新低 · 油价大幅回落，纽约12月轻质原油报86.85美元、跌4.38%，布伦特1月合约报92.57美元、跌5.85%，触发因素是美方淡化对伊朗新一轮军事打击的可能性 · 贵金属同步走强，COMEX黄金涨1.83%报4149.50美元、白银涨2.91%报53.45美元；美元指数跌0.61%至101.642，离岸人民币报6.6694；CME数据显示12月维持利率不变概率15.8%、加息25个基点概率84.2% · 11月10日A股四大指数集体高开，沪指涨0.58%、深成指涨1.51%、创业板指涨2.44%、科创综指涨2.46%，逾4800只个股上涨，CPO、AI芯片、元件、半导体领涨，中际旭创与新易盛涨超6%、天孚通信涨超5%，油气、海运、煤炭、银行调整 · 11月9日A股收盘沪指涨0.32%报3660.79点、深成指跌0.27%报11145.49点、创业板指跌0.27%报2458.56点、科创50涨0.30%报1256.96点，沪深京三市成交1.49万亿元、缩量1770亿元，超3100只个股下跌，煤炭与银行等红利板块领涨 · 亚太早盘韩国综合指数涨5.47%、触发交易所暂停程序化买盘机制，日经225涨2.85% · 生猪方面三季度末全国能繁母猪存栏3602万头、同比减少10.7%，相当于3750万头正常保有量的96%、为本轮周期以来首次低于保有量线；11月3日生猪期货主力合约收报9150元/吨创历史新低</p>
+            <p class="header-date">2026年11月10日 · 周二 · 物价的两个数字都在说同一件事 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🎯</div>
+                    <div class="summary-text">
+                        <strong>0.7% 的CPI里，有0.89个点是“借来的”</strong>
+                        汽油一项贡献0.63个百分点、存储等四类电子产品贡献0.26个百分点，两项相加0.89个百分点，<strong>比0.7%的总涨幅还高</strong>。把这两项剥掉，剩下的是-0.2%——物价不是温和上涨，是外生涨价掩盖了内需定价能力的缺失
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚙️</div>
+                    <div class="summary-text">
+                        <strong>PPI的5.7%几乎全在上游，下游一分没接到</strong>
+                        生产资料涨7.4%、拉动5.77个百分点，生活资料跌0.1%。环比口径下六个能源相关行业贡献0.61个百分点、超过总涨幅八成。<strong>购进价格涨7.9%、出厂价格涨5.7%，2.2个百分点的负剪刀差就是中游企业垫付的成本</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🌐</div>
+                    <div class="summary-text">
+                        <strong>美股“除英伟达之外普天同庆”，资金在做结构不做方向</strong>
+                        纳指涨2.74%、费半涨6.85%，英伟达却跌4.22%创七个月新低。<strong>指数从27000点只回落到25000点，而存储链个股多数腰斩、英特尔打了三四折</strong>——指数之所以扛住，是因为品类够均衡、资金有容身之处，不是因为跌得少
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🐖</div>
+                    <div class="summary-text">
+                        <strong>猪价在磨底，但“减母猪不等于减肉”</strong>
+                        能繁母猪降至3602万头、首次低于3750万头保有量线，期货主力9150元/吨创历史新低、行业连亏14个月。<strong>但前三季猪肉产量仍增3.2%、PSY每年提升约3%、冻品库存高位</strong>——产能去化已被股价提前交易，供给拐点要等明年
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">0.7%的CPI里，有0.89个点是“借来的”</h3>
+                <span class="section-tag">物价拆解</span>
+            </div>
+            <div class="content">
+                <p>10月CPI同比上涨0.7%，涨幅比上月回落0.2个百分点；环比由上月上涨0.2%转为持平。单看这两个数字，市场通行结论是“物价温和回升、但动能偏弱”。<strong>这个结论不算错，却把最重要的信息滤掉了——因为它把“谁在涨价”当成了不需要回答的问题。</strong></p>
+                <p>把贡献拆开看，答案立刻变得刺眼。<strong>汽油一项同比上涨22.4%、涨幅比上月扩大5.8个百分点，单项影响CPI上涨约0.63个百分点</strong>，带动能源价格涨幅由7.3%扩大到9.9%。另一头，<strong>数据存储设备、平板电脑、计算机、移动电话机价格分别上涨45.4%、29.3%、23.0%、16.7%，四项合计影响CPI上涨约0.26个百分点</strong>。两项相加是0.89个百分点，而这已经是全部涨幅的1.27倍。</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>分项</th><th>同比读数</th><th>对CPI同比的贡献</th><th>性质</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>汽油</td><td class="trend-up">+22.4%（涨幅扩大5.8pct）</td><td class="trend-up">约 +0.63pct</td><td>输入型，随国际油价走</td></tr>
+                        <tr><td>数据存储设备、平板、计算机、手机</td><td class="trend-up">+45.4% / +29.3% / +23.0% / +16.7%</td><td class="trend-up">合计约 +0.26pct</td><td>AI硬件，随芯片涨价走</td></tr>
+                        <tr><td>服务</td><td class="trend-up">+0.7%（涨幅回落0.1pct）</td><td class="trend-up">约 +0.34pct</td><td>内生，但主要靠假期</td></tr>
+                        <tr><td>食品</td><td class="trend-down">-2.9%（降幅扩大1.2pct）</td><td class="trend-down">约 -0.49pct</td><td>供给充裕，非需求萎缩</td></tr>
+                        <tr><td>黄金饰品</td><td class="trend-up">+4.5%（涨幅回落18.0pct）</td><td class="trend-up">约 +0.02pct</td><td>支撑正在消退（环比-5.9%）</td></tr>
+                        <tr><td><strong>CPI 合计</strong></td><td class="trend-up"><strong>+0.7%</strong></td><td>—</td><td>核心CPI +0.8%（回落0.2pct）</td></tr>
+                    </tbody>
+                </table>
+                <p>于是这道减法必须做出来：<strong>0.7% 减去汽油的0.63个百分点、再减去电子产品的0.26个百分点，剩下的是约 -0.2%。</strong>换句话说，如果10月国际油价没有大涨、如果AI没有把存储芯片价格推高到45.4%，这个月的CPI大概率是个负数。</p>
+                <p>这里有一处流传很广的算法需要纠正。盘中讨论里出现过“扣除这两项后CPI是负1.1%”的说法，<strong>那是把0.89个百分点误当成了1.8个百分点</strong>。正确结果是-0.2%，方向是对的——物价确实靠外生因素撑着，但幅度被夸大了五倍以上。这个差别不小：-0.2%意味着“贴着零轴徘徊、随时可能转负”，-1.1%则意味着“已经深度通缩、需要强力刺激”。<strong>两种读数对应的政策预期与仓位动作完全不同，不能混用。</strong></p>
+                <p>再看环比，方向更清楚。CPI环比从上月的+0.2%转为持平，其中<strong>食品环比由涨0.4%转为跌1.0%、影响CPI环比下降约0.17个百分点</strong>；服务价格由跌0.2%转为涨0.1%，靠的是国庆假期——宾馆住宿、飞机票、旅行社收费分别上涨6.5%、3.3%、2.4%，合计只拉动0.04个百分点。<strong>假期出行这么大的客流，只换来0.04个百分点，这才是内需定价能力的真实刻度。</strong></p>
+                <p>食品这一头要单独说清楚，因为它最容易被误读成“消费萎缩”。<strong>鲜菜下降16.9%、影响CPI下降约0.31个百分点，是本月最大的单项拖累。</strong>但成因是气候条件适宜、鲜菜鲜果供应充足，属供给驱动型回落；同期牛肉、羊肉分别上涨1.6%和0.8%，鸡蛋同比上涨12.3%，品类之间是分化的。<strong>供给充裕带来的降价，与需求不足带来的降价，在CPI里长得一模一样，只能靠品类结构去分辨。</strong></p>
+                <p>真正值得记住的，是<strong>AI硬件成了当下唯一“提价成功”的消费品类</strong>。存储设备涨45.4%、平板涨29.3%、计算机涨23.0%、手机涨16.7%——四个品类同时出现两位数涨幅，这在过去几年的消费电子里极少见。它说明两件事：<strong>其一，涨价的能力来自上游芯片的供给约束，不是来自终端需求的旺盛；其二，同一条产业链的价格压力，正在从工业端向消费端渗透，只不过渗透得很不均匀</strong>——买的起高配电脑的人在承担涨价，买菜的人在享受降价。</p>
+                <div class="quote-block">
+                    <p>“判断物价，先问一句：这个涨幅是谁给的？10月的答案是——汽油给了0.63个点，芯片给了0.26个点。把这两笔借来的钱还回去，账面上剩的是负0.2%。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">PPI的5.7%：上游收钱、中游垫钱、下游没需求</h3>
+                <span class="section-tag">工业价格</span>
+            </div>
+            <div class="content">
+                <p>PPI同比上涨5.7%、涨幅比上月扩大0.7个百分点，看上去是“工业品涨价加速”。但同一份数据里的环比给出了相反的信号：<strong>环比上涨0.7%、涨幅比上月回落0.5个百分点</strong>。同比在扩大、环比在收窄，这两个方向并不矛盾——<strong>同比说的是“比去年贵了多少”，环比说的是“这个月还涨不涨得动”，前者靠基数、后者靠斜率。</strong></p>
+                <p>先看结构，这是整份PPI里信息量最大的部分：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>层级</th><th>同比</th><th>环比</th><th>对PPI的贡献</th><th>含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>生产资料</td><td class="trend-up">+7.4%</td><td class="trend-up">+0.9%</td><td class="trend-up">拉动约 +5.77pct</td><td>几乎贡献了全部涨幅</td></tr>
+                        <tr><td>　采掘</td><td class="trend-up">+27.9%</td><td class="trend-up">+2.8%</td><td>—</td><td>资源端定价权最强</td></tr>
+                        <tr><td>　原材料</td><td class="trend-up">+11.6%</td><td class="trend-up">+2.0%</td><td>—</td><td>成本传导的第二站</td></tr>
+                        <tr><td>　加工</td><td class="trend-up">+3.5%</td><td class="trend-up">+0.2%</td><td>—</td><td>已经传不太动了</td></tr>
+                        <tr><td>生活资料</td><td class="trend-down">-0.1%</td><td class="trend-down">-0.1%</td><td class="trend-down">拖累约 -0.03pct</td><td>下游一分没接到</td></tr>
+                        <tr><td>购进价格</td><td class="trend-up">+7.9%</td><td class="trend-up">+1.1%</td><td>—</td><td>买进来的比卖出去的贵</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里藏着一条完整的传导链，而且每一站的力度都在衰减：<strong>采掘+27.9% → 原材料+11.6% → 加工+3.5% → 生活资料-0.1%</strong>。四个数字依次下降，说明涨价在产业链上每过一道工序就损耗一部分，走到终端消费品时已经归零。<strong>这就是“上游收钱、中游垫钱、下游没需求”的量化版本。</strong></p>
+                <p>更能说明中游处境的是那个剪刀差：<strong>购进价格同比涨7.9%，出厂价格同比涨5.7%，两者相差2.2个百分点。</strong>企业买原料的成本涨幅，快于它卖产品的售价涨幅——这2.2个百分点，就是中游制造业替上下游垫付的真金白银。它不会出现在利润表的任何一行，但会均匀地侵蚀每一家既没有资源、也没有终端定价权的公司。</p>
+                <p>行业层面，涨与跌的分界线极为干净：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>涨的一侧</th><th>同比</th><th>跌的一侧</th><th>同比</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>煤炭开采和洗选业</td><td class="trend-up">+36.6%</td><td>酒、饮料和精制茶制造业</td><td class="trend-down">-5.2%</td></tr>
+                        <tr><td>石油和天然气开采业</td><td class="trend-up">+35.0%</td><td>电力、热力生产和供应业</td><td class="trend-down">-3.8%</td></tr>
+                        <tr><td>石油、煤炭及其他燃料加工业</td><td class="trend-up">+29.9%</td><td>医药制造业</td><td class="trend-down">-3.2%</td></tr>
+                        <tr><td>有色金属冶炼和压延加工业</td><td class="trend-up">+18.6%</td><td>汽车制造业</td><td class="trend-down">-1.8%</td></tr>
+                        <tr><td>化学原料和化学制品制造业</td><td class="trend-up">+16.4%</td><td>非金属矿物制品业</td><td class="trend-down">-1.6%</td></tr>
+                        <tr><td>计算机、通信和其他电子设备制造业</td><td class="trend-up">+5.9%</td><td>食品制造业</td><td class="trend-down">-1.0%</td></tr>
+                    </tbody>
+                </table>
+                <p>涨的全是资源与能源，跌的全是消费与制造。<strong>这个分野不需要任何解读技巧，它本身就是结论：这一轮涨价是成本推动型，不是需求拉动型。</strong>如果是需求拉动，汽车、家电、食品这些离消费者最近的行业应该最先涨，而现实恰好相反。</p>
+                <p>国家统计局给出的环比归因也印证了这一点：<strong>石油天然气开采、煤炭开采、精炼石油产品、有机化学原料、煤炭加工、燃气生产供应六个行业，合计影响PPI环比上涨约0.61个百分点，超过总涨幅的八成。</strong>换句话说，10月PPI环比那0.7%里，八成以上是能源及其直接下游贡献的，剩下所有行业加起来不到两成。</p>
+                <p>有一处对照非常值得记下来。同一个月里，<strong>海外AI数据中心的电价被讨论成“压垮新兴云厂商的最后一根稻草”，而国内电力、热力生产和供应业出厂价格同比是-3.8%。</strong>同一件事——算力扩张带来的电力需求——在两个市场形成的价格方向完全相反。原因不复杂：国内的电力价格受管制、产能充裕，AI用电增量还不足以改变供需；海外的电价由市场出清，数据中心的负荷直接推高了边际价格。<strong>所以“AI耗电”这个故事，在海外是成本项，在国内目前还只是用电量项，两者的投资含义完全不同。</strong></p>
+                <p>最后一个细节：<strong>计算机、通信和其他电子设备制造业出厂价格同比上涨5.9%，且涨幅比上月扩大。</strong>这是唯一一个既在“涨的一侧”、又属于先进制造的行业。它把前面CPI里存储涨45.4%那件事，在工业端补上了另一半证据——<strong>涨价确实发生了，但它只发生在这条链上，没有扩散出去。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">海外：除英伟达之外普天同庆，说明资金在做结构不做方向</h3>
+                <span class="section-tag">海外市场</span>
+            </div>
+            <div class="content">
+                <p>11月9日的美股，是近期最干净的一次“背离实验”。三大指数全线大涨，费城半导体指数单日暴涨6.85%，而<strong>英伟达逆势下跌4.22%、创近七个月收盘新低</strong>。同一板块、同一天、方向相反，这不是噪音，是资金在明确定价某件事。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>标的</th><th>涨跌幅</th><th>收盘/点位</th><th>特征</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>道琼斯工业指数</td><td class="trend-up">+2.15%</td><td>52389.75</td><td>涨超1100点</td></tr>
+                        <tr><td>标普500</td><td class="trend-up">+2.35%</td><td>7549.94</td><td>—</td></tr>
+                        <tr><td>纳斯达克综合指数</td><td class="trend-up">+2.74%</td><td>25253.14</td><td>—</td></tr>
+                        <tr><td>费城半导体指数</td><td class="trend-up">+6.85%</td><td>—</td><td>单日最强</td></tr>
+                        <tr><td>Coherent</td><td class="trend-up">+16%</td><td>—</td><td>光通信龙头</td></tr>
+                        <tr><td>超威半导体（AMD）</td><td class="trend-up">+13.26%</td><td>—</td><td>—</td></tr>
+                        <tr><td>应用材料 / 拉姆研究</td><td class="trend-up">+11% / +10%</td><td>—</td><td>半导体设备</td></tr>
+                        <tr><td>希捷 / 西部数据</td><td class="trend-up">+9% 以上</td><td>—</td><td>存储</td></tr>
+                        <tr><td>博通 / 阿斯麦 / 闪迪</td><td class="trend-up">+8% / +6% / +6%</td><td>—</td><td>—</td></tr>
+                        <tr><td>英特尔</td><td class="trend-up">+5.19%</td><td>—</td><td>此前已深跌</td></tr>
+                        <tr><td>台积电 / 美光</td><td class="trend-up">+3.48% / +6.25%</td><td>—</td><td>—</td></tr>
+                        <tr><td><strong>英伟达</strong></td><td class="trend-down"><strong>-4.22%</strong></td><td>近七个月新低</td><td>唯一大幅下跌的权重</td></tr>
+                    </tbody>
+                </table>
+                <p>英伟达这4.22%的跌幅，直接触发点是治理层面的事件——<strong>董事会已就创始人的个人风波启动独立调查，并聘请外部法律顾问。</strong>但市场真正在定价的不止于此：它同时把“对华出货流向”的疑问、以及上周费半单周下跌12.15%所形成的脆弱筹码结构，一并压在了这只最贵的权重股上。<strong>结果就是：钱没离开半导体，只是从最贵的那一只，搬到了便宜的同类。</strong></p>
+                <p>最能说明问题的是这样一组对照：<strong>这一轮下跌里，存储链的闪迪、美光等个股多数已近腰斩，英特尔更是一度跌到只剩三四折，而纳斯达克指数从27000点附近只回落到25000点，跌幅约7%。</strong>个股的体感是崩盘，指数的体感是回调——两者差了将近一倍。<strong>这个差距不是统计误差，它解释了为什么海外资金敢于在跌完之后立刻回头买。</strong></p>
+                <p>原因可以拆成三条，缺一条都不成立。<strong>第一是品类均衡</strong>：纳指成分里有软件、有互联网、有消费电子、有半导体，光模块和存储这条链的权重不足以拖动整个指数。<strong>第二是容纳性</strong>：从热点板块撤出来的钱，在指数内部找得到替代去处，不必离场。<strong>第三才是估值</strong>：跌完之后便宜了，才谈得上“敢买”。<strong>顺序不能颠倒——先是结构救了指数，然后才是估值提供了理由。</strong></p>
+                <p>而“便宜”这件事，恰恰是当天信息里最容易搞错的一处，因为<strong>三套口径给出的结论互相矛盾</strong>：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>口径</th><th>读数</th><th>能回答什么</th><th>容易误读成什么</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>指数滚动市盈率（TTM）</td><td>纳斯达克约27.2倍、标普500约24.0倍、费半约25.1倍</td><td>指数整体的绝对估值水平</td><td>“纳指比标普贵，所以没跌够”</td></tr>
+                        <tr><td>历史分位口径</td><td>标普500约17.8倍、纳指约20.3倍、费半约13.8倍、道指约19.6倍</td><td>各自在过去20年里贵不贵</td><td>“费半13.8倍很便宜”</td></tr>
+                        <tr><td><strong>结构口径（远期）</strong></td><td><strong>标普500科技板块约17倍，低于大盘约18倍</strong></td><td>科技相对大盘是贵还是便宜</td><td>“科技股比大盘便宜”</td></tr>
+                    </tbody>
+                </table>
+                <p>三条口径里，只有第三条是真正的新闻：<strong>科技板块的远期市盈率低于标普500大盘，这是2017年以来首次出现，而2025年10月的峰值是32倍。</strong>但要小心，它说的是“科技板块 vs 大盘”，不是“纳斯达克指数 vs 标普500”。<strong>把这两件事混为一谈，就会得出“纳指比标普便宜”的错误结论——实际上按同一口径，纳指仍比标普贵出三个多市盈率点。</strong></p>
+                <p>所以正确的表述只有一句：<strong>“科技板块相对大盘便宜了，但科技指数本身并不便宜。”</strong>前半句解释了为什么资金愿意回来买半导体，后半句解释了为什么这更像一次结构再平衡，而不是一轮新行情的起点。<strong>同一个“便宜”，在两个层级上指向完全相反的操作。</strong></p>
+                <p>亚太市场把这种弹性放大得很彻底。<strong>11月10日早盘韩国综合指数涨5.47%，直接触发交易所暂停程序化买盘的机制；日经225涨2.85%。</strong>韩国两大存储厂SK海力士涨近7%、三星电子涨近5%——<strong>上周它们刚因为存储链暴跌而领跌全球，这周又因为同一件事领涨。同一个指数，一周之内在两个方向上都是“最大跌幅/最大涨幅”，这就是集中度带来的杠杆。</strong></p>
+                <p>分母端则完全没有放松。<strong>CME数据显示12月维持利率不变的概率只有15.8%、加息25个基点的概率是84.2%。</strong>更值得留意的是政策讨论的重心在移动——<strong>有地区联储方面把AI数据中心建设描述为“开始更像传统意义上的需求过热”，并提出应对过热通常需要比较激进的手段。</strong>这句话的含义是：AI投资从“提升生产率的好事”，被重新归类为“需要货币政策回应的通胀来源”。<strong>一旦这个归类成立，AI资本开支就不再只是产业问题，而变成了利率问题。</strong></p>
+                <div class="quote-block">
+                    <p>“同一天里，费半涨6.85%、英伟达跌4.22%。这不是市场自相矛盾，而是市场在说：我要这条产业链，但我不想为最贵的那张票付钱。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">两条外生线索：油价掉头，猪价磨底</h3>
+                <span class="section-tag">商品与周期</span>
+            </div>
+            <div class="content">
+                <p>前面拆CPI时得出一个结论：10月的0.7%里，0.63个百分点是汽油给的。那么这个数字能不能维持，就取决于一件与国内需求完全无关的事——国际油价。<strong>而这件事在11月9日晚上发生了变化。</strong></p>
+                <p>美方公开淡化了对伊朗发动新一轮大规模军事打击的可能性，表述是“从军事上讲，战事已经事实上结束”“我们只是维持现状”。同时，海湾方向的态度被描述为更倾向维持现状，伊朗方面则提出恢复霍尔木兹海峡与波斯湾安全的方案、并称若相关要求落实，两天内即可为地区局势创造条件。<strong>市场立刻用价格投票：纽约12月轻质原油报86.85美元、跌4.38%，布伦特1月合约报92.57美元、跌5.85%。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>品种</th><th>11月9日读数</th><th>方向</th><th>对国内物价的含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>WTI原油（12月）</td><td>86.85美元/桶</td><td class="trend-down">-4.38%</td><td>11月汽油对CPI的贡献将收窄</td></tr>
+                        <tr><td>布伦特原油（1月）</td><td>92.57美元/桶</td><td class="trend-down">-5.85%</td><td>同上，且有传导时滞</td></tr>
+                        <tr><td>COMEX黄金</td><td>4149.50美元/盎司</td><td class="trend-up">+1.83%</td><td>避险需求未退，与油价背离</td></tr>
+                        <tr><td>COMEX白银</td><td>53.45美元/盎司</td><td class="trend-up">+2.91%</td><td>工业+避险双击</td></tr>
+                        <tr><td>美元指数</td><td>101.642</td><td class="trend-down">-0.61%</td><td>分母端小幅缓和</td></tr>
+                    </tbody>
+                </table>
+                <p>这里有一处容易被忽略的矛盾，值得单独拎出来看：<strong>油价跌5%、黄金涨1.83%、白银涨2.91%，三者同时发生。</strong>如果只是地缘缓和，油价跌、黄金也该跌；如果只是避险，黄金涨、油价该涨。<strong>两个方向同时出现，说明这一轮不是单纯的“风险偏好开关”，而是“通胀预期下行 + 货币信用担忧上行”的组合。</strong>前者利好分母，后者利好贵金属——它们可以并存，而且往往会并存。</p>
+                <p>对国内的直接推论是：<strong>如果11月油价维持在回落后的水平，那么支撑10月CPI的那0.63个百分点会自动缩水，CPI同比有可能在11月重回0.5%附近甚至更低。</strong>也就是说，10月那个“看起来还行”的0.7%，很可能已经是年内的偏高点之一。<strong>这个判断比“CPI会不会破1”更有用，因为它同时给出了方向与时间。</strong></p>
+                <p>另一条外生线索是猪价，它的状态与油价正好相反——<strong>油价是刚掉头，猪价是磨了很久还没到底。</strong></p>
+                <p>先给硬数据：<strong>三季度末全国能繁母猪存栏3602万头，环比减少178万头、降幅4.71%，同比减少433万头、降幅10.7%，相当于3750万头正常保有量调控目标的96%——这是本轮猪周期以来首次低于保有量线。</strong>价格端更冷：<strong>11月3日生猪期货主力合约收报9150元/吨、单日跌4.09%，创历史新低</strong>；现货主流市场日度均价约4.47元/斤；<strong>自繁自养一头亏359元、仔猪育肥一头亏281元，行业亏损已持续14个月，创下新纪录。</strong></p>
+                <p>产能去化到这个程度，按传统框架该判定为“周期底部”。但这一次有一个结构性变量必须扣掉——<strong>“减母猪，不减肉”</strong>：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>变量</th><th>读数</th><th>对供给的影响</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>能繁母猪存栏</td><td>3602万头，同比-10.7%</td><td class="trend-up">收缩（利多猪价）</td></tr>
+                        <tr><td>PSY（每头母猪年提供断奶仔猪）</td><td>近五年年均提升约3%，规模场普遍30头以上</td><td class="trend-down">对冲母猪减量</td></tr>
+                        <tr><td>前三季生猪出栏</td><td class="trend-up">同比+1.4%</td><td class="trend-down">尚未转降</td></tr>
+                        <tr><td>前三季猪肉产量</td><td class="trend-up">同比+3.2%</td><td class="trend-down">单头产肉量提升</td></tr>
+                        <tr><td>冻品库容率</td><td>高位</td><td class="trend-down">反弹即出库，压制上方</td></tr>
+                        <tr><td>禽肉产量</td><td class="trend-up">同比+9.3%，价格基本没降</td><td class="trend-down">替代效应挤压猪肉</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表解释了最反直觉的一点：<strong>母猪少了10.7%，猪肉产量却还多了3.2%。</strong>效率提升与出栏体重抬升，把这部分缺口吃掉了大半。再加上冻品库存高位——<strong>一旦猪价反弹，屠宰企业和贸易商的冻品会立刻出库，把涨幅压回去。</strong>所以“能繁跌破保有量线”这个信号是真的，但它对应的供给收缩要打折扣。</p>
+                <p>传导时滞是另一个必须写明的约束。<strong>从能繁母猪配种到商品猪出栏约需10个月</strong>，本轮母猪去化从2025年10月启动、三季度加速，按此推算<strong>真正的出栏收缩要到2026年末至2027年初才会逐步兑现</strong>。这也解释了为什么存栏已降、猪价仍在成本线附近反复——<strong>市场现在消化的，还是此前高存栏积累的供给。</strong></p>
+                <p>而股价已经先行了。<strong>11月2日至9日，申万生猪养殖指数累计上涨8.39%，11月9日单日涨0.89%；牧原11月以来累计涨10.27%、温氏涨8.3%，天邦食品当日涨停。</strong>业绩亏、股价涨，在强周期行业里并不矛盾——<strong>股价买的不是三季报，是产能出清之后的价格弹性。</strong>但这里要标一个刻度：<strong>当前股价主要交易的是“去化预期”，不是“利润兑现”。</strong>两者的区别在于，前者靠存栏数据就能维持，后者必须等猪价真的起来。</p>
+                <p>所以对这条线索，判断应该分成两层并列表述：<strong>产能端确实已经到了历史级的去化深度，这个事实支撑“不宜再悲观”；但供给端的实际收缩被效率提升与冻品库存大幅稀释，这个事实否决“现在就能乐观”。</strong>跟踪指标只有两个，不需要看股价：<strong>能繁母猪存栏能否连续两个季度低于3600万头，以及生猪出栏量同比何时转负。</strong>在第二个指标转负之前，任何反弹都应视为库存周期内的波动，而不是新周期的开始。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">三条判断与接下来的操作：不要跟油价做对，不要替猪价抢跑</h3>
+                <span class="section-tag">操作建议</span>
+            </div>
+            <div class="content">
+                <p>把前四节收拢成一句话：<strong>这个月的物价数据，看起来是两个数字（CPI 0.7%、PPI 5.7%），实际上只讲了一件事——涨价全部来自外部，国内需求没有参与。</strong>认清这一点，接下来的动作就变得相对简单，因为外生变量的方向比内生动能更容易观察。</p>
+                <p>先给11月CPI的三情景，这是本期唯一需要给出概率的地方，因为它是唯一会在下个月被直接验证的判断：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>情景</th><th>11月CPI同比</th><th>概率</th><th>触发条件</th><th>市场含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>回落</td><td class="trend-down">0.0% 至 0.2%</td><td>35%</td><td>油价维持86美元附近、食品继续偏弱、存储涨幅不再扩大</td><td>宽松预期升温，债与红利受益</td></tr>
+                        <tr><td><strong>基准</strong></td><td><strong>0.3% 至 0.6%</strong></td><td><strong>45%</strong></td><td>油价小幅反弹但不及10月、食品降幅收窄、服务平稳</td><td>政策维持观察，指数区间震荡</td></tr>
+                        <tr><td>回升</td><td class="trend-up">0.8% 以上</td><td>20%</td><td>油价重回95美元上方、存储等AI硬件继续加速涨价</td><td>上游与AI硬件链继续占优</td></tr>
+                    </tbody>
+                </table>
+                <p>概率给得偏向“回落”，理由只有一个：<strong>0.63个百分点这个最大的单项贡献，其上游变量（油价）已经在11月9日晚上掉头了。</strong>这不是预测，是既成事实的机械传导——国内成品油调价跟随国际原油，时滞通常一到两个调价窗口。<strong>而支撑10月的另一个0.26个百分点（AI硬件），其持续性取决于芯片供给，不在国内政策手里。</strong>两项外生贡献同时松动，CPI的下行压力是结构性的，不是情绪性的。</p>
+                <p>基于这个判断，各类资产的位置与动作可以列成这样：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>对象</th><th>当前位置</th><th>动作</th><th>理由</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A股整体</td><td>11月9日缩量至1.49万亿、超3100只下跌；11月10日高开、逾4800只上涨</td><td>维持持仓，不为单日高开追高</td><td>量能未回，涨的是指数不是个股；昨日“赚指数不赚钱”与今日普涨只隔一夜</td></tr>
+                        <tr><td>上游资源（煤炭、油气、化工）</td><td>10月PPI涨幅榜前列，昨日领涨、今日调整</td><td>兑现优于追涨，只保留低估值底仓</td><td>涨价逻辑是真的，但斜率已经掉头——油价一夜跌5%，而PPI环比涨幅已回落0.5pct</td></tr>
+                        <tr><td>AI硬件（光模块、存储、半导体设备）</td><td>今日高开，中际旭创与新易盛涨超6%</td><td>可参与修复，不追高、不加杠杆</td><td>隔夜费半+6.85%是燃料；但英伟达同日跌4.22%，说明龙头与板块已分离，反弹的持续性取决于后者</td></tr>
+                        <tr><td>生猪养殖</td><td>11月2日至9日累计涨8.39%，牧原月内涨10.27%</td><td>不追高，等出栏同比转负再谈</td><td>股价交易的是去化预期，不是利润；猪肉产量还在增3.2%，“减母猪不减肉”未破</td></tr>
+                        <tr><td>美股（已配置）</td><td>纳指从27000点回落至25253点，费半单日+6.85%</td><td>维持配置，遇指数级大跌小幅加，不打光子弹</td><td>分母端没有放松（12月加息概率84.2%）；但结构口径下科技板块已不贵</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里，最容易做错的是第二行与第四行，因为它们的共同点是<strong>“逻辑是对的，但价格已经先走了”</strong>。</p>
+                <p>上游资源的问题是斜率。<strong>10月煤炭开采涨36.6%、油气开采涨35.0%，这两个数字是过去十二个月累积出来的年度同比，不是这个月的边际变化。</strong>而这个月的边际变化写在同一份数据里：PPI环比涨幅从上月的1.2%回落到0.7%。<strong>同比告诉你它涨了很多，环比告诉你它涨得慢了。买资源股应该看环比，因为股价定价的是“接下来还涨不涨”。</strong></p>
+                <p>生猪养殖的问题是节奏。<strong>能繁母猪3602万头确实是历史级去化，但10个月的传导时滞意味着，明年的供给收缩不能解决今年的出栏压力。</strong>更关键的是，<strong>三家龙头月内已经涨了8%到10%，这部分涨幅交易的是预期；而预期已经在数据里了——三季报的存栏数字10月底就公布了。</strong>换句话说，<strong>利好在被交易之前就已经公开，现在买的是“别人也相信”而不是“我知道得早”。</strong></p>
+                <p>相对清晰的只有两条：<strong>一是红利底仓的逻辑没有变</strong>——CPI贴着零轴、十年期国债收益率处于低位，股息率的相对价值反而在上升，这也是昨日煤炭与银行领涨的原因；<strong>二是AI硬件链的方向没有变，但载体变了</strong>——从“最贵的龙头”转向“跌得多的同类”，英伟达跌4.22%与费半涨6.85%同一天发生，已经把这件事说得非常明白。</p>
+                <p>最后把这一期的三个判断固定下来，它们是可复用的，不依赖具体月份：</p>
+                <p><strong>其一，看物价，先问“这个涨幅是谁给的”。</strong>CPI的0.7%与扣掉两项之后的-0.2%，是同一份数据的两张面孔。凡遇到“同比温和上涨”的表述，都应该先做一次贡献度减法——<strong>减完之后如果接近零或为负，说明涨价不是需求带来的，那就不该按“需求复苏”去配置。</strong></p>
+                <p><strong>其二，看PPI，先看生活资料与购进出厂剪刀差。</strong>生产资料+7.4%、生活资料-0.1%，说明涨价停在产业链上游；购进+7.9%、出厂+5.7%，说明中游在垫钱。<strong>这两个数字一起看，就能判断“涨价是利润转移还是利润创造”——前者只能做交易，后者才能做持有。</strong></p>
+                <p><strong>其三，看外生变量，分清“已定价”与“未兑现”。</strong>油价掉头是已发生的事实，会在下个月的CPI里机械体现；猪价去化是尚未传导的预期，要等10个月才兑现。<strong>前者可以据此调整仓位，后者只能据此调整观察名单——把两者混用，就会出现“拿明年的逻辑买今年的股票”。</strong></p>
+                <div class="quote-block">
+                    <p>“同一个月里，汽油给了CPI 0.63个点，芯片给了0.26个点，两项相加比总涨幅还高。这不叫物价回升，这叫国内需求还没有开始定价。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月10日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
