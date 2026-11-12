@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月12日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">存储端：11月10日闪存龙头将11月NAND闪存合约价上调50%、为年内至少第三次涨价（此前4月全系上涨10%、9月对全部渠道与消费类产品执行10%普涨），而业内对四季度NAND合约价涨幅的平均预估仅5%至10%；部分头部原厂已向渠道商口头告知企业级颗粒涨价意向，正式提价函尚未下发，渠道价格已先行启动。价格预期被再度上修：机构将2026年DRAM涨幅预期由约150%上调至250%至280%、NAND由约100%上调至200%至250%，并预计DRAM供需缺口达-4.9%、为十五年来最严重短缺、紧缺延续至2028年；三季度企业级SSD合约价预计续涨15%至20%，四季度常规DRAM合约价环比涨10%至15%、NAND涨15%至20%；10月DDR 8Gb平均合约价27.5美元、较9月的26美元上涨5.77%；11月12日DDR5 16Gb现货报60.65美元、近30日涨6.31%、同比涨484%。产能结构上，三大原厂HBM晶圆投片占DRAM总投片比重由2025年底约18%升至2026年底约22%，但HBM位元供给占总DRAM位元供给仅由8%升至9%；机构预计2026年全球AI服务器出货同比增长超28%、单台AI服务器内存需求约为传统服务器的8倍 · 反向信号：10月通用型MLC NAND（128Gb）均价环比持平、结束此前长达21个月的上行；512Gb TLC晶圆现货近两周分别下跌9.19%与4.33%；渠道16G DDR5内存条门店报价约1600元、低于同期消费级模组约2000元的平均合约出厂价、出现价格倒挂；有渠道反馈10月门店销量下滑30%。涨价主要集中在DRAM合约端与企业级SSD原厂及渠道端，消费级NAND并未全面跟涨 · 美股：11月11日道指涨0.49%报52486.49点、标普500涨1.31%报7619.38点、纳指涨1.60%报25466.19点，费城半导体指数大涨5.66%、盘中一度涨近8%；存储板块闪迪涨超13%、美光涨超11%、SK海力士涨超9%、西部数据涨超8%；光通信应用光电涨超15%、Lumentum涨超10%、Coherent涨超9%、康宁涨超7%、迈威尔涨超9%；半导体ARM涨超12%、AMD与英特尔涨超7%、博通涨超3%；AI云服务CoreWeave涨超24%、Nebius涨超15%、甲骨文涨超8%；大型科技股分化，特斯拉、英伟达、苹果涨超2%，微软跌超2%、Meta与亚马逊跌超1%；英伟达收报173.73美元、涨2.87%、总市值4.19万亿美元 · CoreWeave三季报：营收36.61亿美元、同比增长168%（市场预期约35.5亿），净亏损7.09亿美元（去年同期净亏损1.10亿），调整后营业利润3.79亿美元，调整后营业利润率由一季度的1%、二季度的5%提升至三季度的10%、提前一个季度达标；合同收入储备1325亿美元、较6月底增加约280亿；2026年营收指引由124亿至132亿上调至130亿至133亿美元，调整后营业利润指引由9.6亿至11.5亿上调至12.75亿至13.75亿美元，资本开支指引由350亿至390亿调整为370亿至390亿；上一代GPU租赁价格环比上涨30%至50%且高于原始合同价，7月提价约25%、三季度末再提约10%；加权平均债务成本降至7.9%，资产负债率95.60% · 11月11日盘后：外媒报道英伟达董事会正准备罢免创始人兼CEO、并已与外部机构合作遴选新任CEO候选人、考虑先任命过渡期CEO，董事会最早于11月12日开会决定去留；英伟达盘后一度跌超9%、随后收窄至跌逾7%至8%，纳斯达克100指数期货下挫1%；盘后CoreWeave跌逾7%、Nebius与IREN跌逾4%、超微电脑与戴尔跌逾4%、Marvell跌3.4%、KLA跌2.9%、美光跌3%、英特尔跌3%，而博通与AMD逆势涨超3% · 中国资产：11月11日沪指涨0.46%报3680.64点、深成指涨1.32%报11389.74点、创业板指涨3.11%报2572.07点，沪深京三市成交1.69万亿元、放量约1715亿元，3538只个股上涨、85只涨停，元器件、通信设备、半导体、CPO与PCB领涨，酿酒、机场航运、保险走低；新易盛涨16.97%、中际旭创涨15.07%报542元、成交312亿元居全市场首位、天孚通信涨13.96%、源杰科技20%涨停；融资盘净流入213.6亿元、深股通净流入141.9亿元；11月12日早盘三大指数集体低开，沪指低开0.21%报3673.06点、创业板指低开0.50%报2559.16点，存储与GPU板块逆势走强、半导体指数盘中涨3.41% · 政策端：微软等科技企业与行业组织正游说美方搁置限制中国新型号光收发器进口的计划，理由是禁令将给美国数据中心带来供应链风险；中国占全球光收发器市场约三分之二，美国本土厂商产能规模不足以替代；传出的限制门槛为3.2Tbps、该速率产品预计2028年才开始放量、2029年或全面铺开 · 商品：WTI 12月合约收86.53美元、涨0.57%，布伦特1月合约收92.76美元、涨1.39%；现货黄金跌1.10%报3987.86美元、重回4000美元下方；美元指数涨0.66%报102.908</p>
+            <p class="header-date">2026年11月12日 · 周四 · 涨价是真的，但不是全面的 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">💾</div>
+                    <div class="summary-text">
+                        <strong>一份50%的涨价函，点燃了整条算力链</strong>
+                        闪迪把11月NAND合约价直接上调50%，而业内对四季度涨幅的预估只有5%至10%——<strong>超预期近10倍</strong>。机构随即把2026年DRAM涨幅预期从150%上调到250%至280%，并给出-4.9%的供需缺口、称是十五年来最严重短缺、延续至2028年
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">⚖️</div>
+                    <div class="summary-text">
+                        <strong>但合约价在飙，现货价在跌，这是两个不同的市场</strong>
+                        512Gb TLC晶圆现货两周分别跌9.19%与4.33%，通用型MLC NAND均价环比持平、结束21个月上行；渠道16G DDR5门店报1600元、低于2000元的合约出厂价、出现倒挂，10月门店销量还下滑30%。<strong>涨价集中在DRAM合约与企业级SSD，消费级没跟</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏗️</div>
+                    <div class="summary-text">
+                        <strong>CoreWeave证明了“涨价能转嫁”，也暴露了杠杆有多重</strong>
+                        调整后营业利润率从1%到5%再到10%、提前一个季度达标，旧GPU租金环比涨30%至50%、7月提价25%、三季度再提10%——<strong>它把上游涨价成功传给了下游</strong>。但资产负债率95.60%、自由现金流-74.66亿美元，这个结构没变
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🚨</div>
+                    <div class="summary-text">
+                        <strong>盘后那颗雷：董事会拟罢免，而对手在涨</strong>
+                        英伟达盘后一度跌超9%，因外媒报道董事会正准备罢免创始人、并已开始遴选继任者。<strong>最值得读的不是跌幅，是博通与AMD同时逆势涨超3%</strong>——市场已经在给“后时代”定价，把份额转移当成利好而不是风险
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">一份50%的涨价函，把预期差撕开了十倍</h3>
+                <span class="section-tag">存储周期</span>
+            </div>
+            <div class="content">
+                <p>引爆这一夜的不是财报，是一张涨价函。<strong>11月10日，闪存龙头把11月NAND闪存合约价直接上调50%，这是年内至少第三次涨价——此前4月全系上涨10%，9月又对全部渠道与消费类产品执行10%普涨。</strong></p>
+                <p>真正让市场跳起来的不是“涨”，是“涨了多少对不上”。<strong>业内此前对四季度NAND合约价涨幅的平均预估只有5%至10%。</strong>50%相当于把预期差拉开了五到十倍。<strong>在一份已经被充分研究的行业里，出现这种量级的预期偏离，通常只意味着一件事：供给端的真实紧张程度，比公开数据能看到的更严重。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>环节</th><th>此前预期</th><th>最新口径</th><th>变化性质</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>NAND 合约价（单月）</td><td>+5% 至 +10%（四季度均值）</td><td class="trend-up">+50%（11月，闪迪口径）</td><td>预期差 5~10 倍</td></tr>
+                        <tr><td>2026 全年 DRAM 涨幅</td><td>约 +150%</td><td class="trend-up">+250% 至 +280%</td><td>上调约七成</td></tr>
+                        <tr><td>2026 全年 NAND 涨幅</td><td>约 +100%</td><td class="trend-up">+200% 至 +250%</td><td>上调一倍以上</td></tr>
+                        <tr><td>DRAM 供需缺口</td><td>偏紧</td><td class="trend-down">-4.9%，十五年最严重</td><td>定性转为定量</td></tr>
+                        <tr><td>紧缺持续时间</td><td>至2027年</td><td class="trend-up">延续至2028年</td><td>延长一年</td></tr>
+                        <tr><td>企业级 SSD（四季度）</td><td>—</td><td class="trend-up">+15% 至 +20%</td><td>北美客户接受涨价</td></tr>
+                        <tr><td>DDR 8Gb 合约价（10月）</td><td>—</td><td class="trend-up">27.5 美元（9月26美元，+5.77%）</td><td>已在落地</td></tr>
+                        <tr><td>DDR5 16Gb 现货（11月12日）</td><td>—</td><td class="trend-up">60.65 美元，近30日+6.31%、同比+484%</td><td>同比近五倍</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里最值得记住的是最后一行：<strong>DDR5 16Gb 现货同比上涨484%。</strong>这不是“周期回暖”的量级，这是“缺货”的量级。<strong>而缺货的成因，写在同一份数据里——不是需求暴涨，是产能被搬走了。</strong></p>
+                <p>机制可以量化：<strong>三大原厂HBM晶圆投片占DRAM总投片的比重，从2025年底约18%升到2026年底约22%；但HBM位元供给占总DRAM位元供给的比重，只从8%升到9%。</strong>这两个数字的落差是关键——<strong>投片增加了4个百分点，产出的位元只增加了1个百分点。</strong>因为HBM的耗片量远高于普通DRAM，同样一片晶圆，做成HBM只能得到更少的位元。<strong>于是“先进产能转向HBM”这件事，对通用DRAM的挤压效果，是投片占比数字的五到六倍。</strong></p>
+                <p>叠加需求端：<strong>机构预计2026年全球AI服务器出货同比增长超28%，而单台AI服务器的内存需求约为传统服务器的8倍。</strong>一边是通用位元被虹吸，一边是单机需求放大八倍——<strong>这个缺口不是靠“扩产”能在一个季度内解决的，因为新建产能的落地周期以年计。</strong></p>
+                <p>传导路径在盘面上非常清晰，而且是从上游往下游一路点的：<strong>费城半导体指数涨5.66%（盘中一度涨近8%）→ 存储端闪迪涨超13%、美光涨超11%、SK海力士涨超9%、西部数据涨超8% → 光通信应用光电涨超15%、Lumentum涨超10%、Coherent涨超9% → 半导体设备拉姆研究与应用材料涨超6%。</strong></p>
+                <p>第二天（11月12日）这个链条原样搬到了A股：<strong>三大指数集体低开，沪指低开0.21%、创业板指低开0.50%，但存储与GPU板块逆势走强，半导体指数盘中涨3.41%。</strong><strong>指数低开、板块高走，是很典型的“存量资金换方向”形态——没有增量资金托指数，但钱在往同一个地方挤。</strong></p>
+                <div class="quote-block">
+                    <p>“投片增加了4个百分点，产出的位元只增加了1个百分点。这中间的差额，就是通用内存缺货的全部原因。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">合约价在飙，现货价在跌：这不是同一个市场</h3>
+                <span class="section-tag">真伪辨析</span>
+            </div>
+            <div class="content">
+                <p>如果只看涨价函和研报上调，结论会是“存储全面紧缺”。但同一周的价格数据里，有一组完全反向的信号。<strong>把它们并排放，才是这一轮涨价真正的形状。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>信号方向</th><th>具体读数</th><th>对应的客户群</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="trend-up">合约端在涨</td><td>闪迪11月NAND合约价+50%；四季度DRAM合约+10%~15%、NAND+15%~20%；企业级SSD+15%~20%</td><td>原厂与云厂商、大客户的长协</td></tr>
+                        <tr><td class="trend-up">原厂在控货</td><td>头部原厂口头告知企业级颗粒涨价意向，正式提价函尚未下发，渠道价先行</td><td>省代与大型模组厂</td></tr>
+                        <tr><td class="trend-down">现货在跌</td><td>512Gb TLC晶圆现货近两周分别跌9.19%与4.33%</td><td>现货市场与中小模组厂</td></tr>
+                        <tr><td class="trend-down">通用料已滞涨</td><td>10月通用型MLC NAND（128Gb）均价环比持平，结束此前长达21个月的上行</td><td>存量通用需求</td></tr>
+                        <tr><td class="trend-down">渠道在倒挂</td><td>16G DDR5内存条门店报价约1600元，低于约2000元的平均合约出厂价</td><td>零售与渠道商</td></tr>
+                        <tr><td class="trend-down">销量在下滑</td><td>渠道反馈10月门店销量下滑30%，前期备货多的商户主动降价出货</td><td>消费级终端</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表左右两栏指的其实是两个市场。<strong>合约价是“和算力中心谈的价格”，现货价是“和渠道谈的价格”——客户不同、期限不同、供需结构也不同。</strong>把它们混在一起说“存储紧张”，就会得出一个错误的结论：终端需求很旺。</p>
+                <p>而产业侧的原话恰好相反。<strong>有原厂代理商的表述很直接：本轮涨价主要集中在DRAM合约端和企业级SSD原厂、渠道端，并非消费级NAND的全面跟涨，需求的大头是算力中心，基层反馈的需求其实一般。</strong></p>
+                <p>这就解释了现货为什么在跌。<strong>渠道手里还有货、终端卖不动、现金要周转，于是主动降价——门店报1600元、比合约出厂价2000元还低，这个倒挂不是“让利促销”，是“库存变现”。</strong>倒挂本身是一个明确的信号：<strong>下游没能把上游的涨价接住。</strong></p>
+                <p>所以这一轮涨价的正确定性是：<strong>它是“算力中心的结构性短缺”，不是“存储需求的全面复苏”。</strong>两者的区别决定了它能走多远——<strong>结构性短缺靠的是产能配置（HBM挤占），只要AI资本开支不减，它就能持续；但也正因为它是配置问题，一旦AI资本开支放缓，通用产能会迅速回流，价格修复也会同样快。</strong></p>
+                <p>有一处时点上的印证值得注意。<strong>10月通用型MLC NAND均价环比持平，结束了长达21个月的上行。</strong>21个月是很长的一段趋势，它的结束通常意味着“通用料的涨价周期已经走完”。<strong>而闪迪的50%涨价函发生在通用料滞涨之后——这说明涨价的驱动力已经从“全行业补库存”，切换到了“高端料挤占产能”。</strong></p>
+                <p>把这层分清，操作上的含义就完全不同：<strong>如果按“全面复苏”去买，会买错标的（通用料、消费级模组、渠道商都不受益）；如果按“结构性短缺”去买，标的只在高端的三个环节——HBM与服务器DRAM、企业级SSD、以及为算力中心配套的光互连与设备。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">CoreWeave：证明了涨价能转嫁，也暴露了杠杆有多重</h3>
+                <span class="section-tag">算力经济性</span>
+            </div>
+            <div class="content">
+                <p>在存储和GPU两头涨价的环境里，最该被检验的不是原厂，是中间商。<strong>CoreWeave就是那个中间商——它买别人的卡、建算力中心、再把算力按token或按小时卖出去。</strong>两头受挤的角色，历史上最容易先出问题。</p>
+                <p>而这份财报给出的答案，比预期好得多：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>指标</th><th>2026年三季度</th><th>对比</th><th>含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>营业收入</td><td class="trend-up">36.61 亿美元</td><td>同比 +168%，市场预期约35.5亿</td><td>超预期</td></tr>
+                        <tr><td>净亏损</td><td class="trend-down">7.09 亿美元</td><td>去年同期净亏损1.10亿</td><td>亏损扩大，但源于折旧</td></tr>
+                        <tr><td><strong>调整后营业利润率</strong></td><td class="trend-up"><strong>10%（三季度）</strong></td><td>一季度1% → 二季度5% → 三季度10%</td><td><strong>提前一个季度达标</strong></td></tr>
+                        <tr><td>合同收入储备</td><td class="trend-up">1325 亿美元</td><td>6月底约1040亿，增加约280亿</td><td>订单在加速签</td></tr>
+                        <tr><td>2026 营收指引</td><td class="trend-up">130 亿至 133 亿美元</td><td>此前 124 亿至 132 亿</td><td>上调</td></tr>
+                        <tr><td>调整后营业利润指引</td><td class="trend-up">12.75 亿至 13.75 亿美元</td><td>此前 9.6 亿至 11.5 亿</td><td>上调约三成</td></tr>
+                        <tr><td>资本开支指引</td><td>370 亿至 390 亿美元</td><td>此前 350 亿至 390 亿</td><td>下限抬高</td></tr>
+                        <tr><td>资产负债率</td><td class="trend-down">95.60%</td><td>—</td><td>结构性问题未改</td></tr>
+                        <tr><td>自由现金流</td><td class="trend-down">-74.66 亿美元</td><td>—</td><td>仍在净流出</td></tr>
+                        <tr><td>资本开支/销售收入</td><td class="trend-down">257.88%</td><td>—</td><td>每赚1元要投2.58元</td></tr>
+                    </tbody>
+                </table>
+                <p>最能说明问题的是利润率那条线：<strong>1% → 5% → 10%，三个季度翻十倍，而且提前一个季度达到了两位数的既定目标。</strong>在一个上游全面涨价的环境里，中间商的利润率还能扩张，只有一种解释：<strong>它把成本原样甚至超额转嫁给了下游。</strong></p>
+                <p>转嫁的方式可以从定价动作里读出来。<strong>公司在7月将不同产品规格的价格平均上调约25%，三季度末再上调约10%，进入四季度后价格仍在涨、且涨幅超过成本增加。</strong>更关键的是存量资产：<strong>基于上一代架构的GPU租赁价格环比上涨30%至50%，且高于原始合同价格，部分设备正在签订超过其会计折旧年限的多年期合同。</strong></p>
+                <p>这一条的价值被低估了。<strong>它同时回答了两个悬了很久的问题：第一，旧卡没有贬值，反而在涨价——说明算力的经济寿命比会计折旧年限更长；第二，如果旧卡能签超过折旧年限的合同，那么“折旧到期即减值”的担忧就被推后了。</strong>对于一家资产负债率95.6%、资本开支占收入257.88%的重资产公司，<strong>“资产不贬值”这一条，比任何一季的利润都重要。</strong></p>
+                <p>需求端的数字同样够硬：<strong>公司称2027年已规划并推向市场的算力基本售罄，合格客户需求约为同期可用容量的10倍；2028年尚未将全部规划产能推向市场，但已推出的产能均已售出。</strong>支付条件也在改善——<strong>今年70%的交易已收到预付款，部分客户甚至提前支付了高达合同总额100%的款项。</strong></p>
+                <p>但有一处必须纠正，因为它关系到风险定价。<strong>关于融资成本，流传的说法是“高收益债达到10%左右”，而公司披露的口径是加权平均债务成本已降至7.9%。</strong>两者不矛盾——单笔高收益债可能确实在10%附近，但加权平均被更便宜的融资摊薄了。<strong>写报告时用哪个数，决定了你判断它“能不能扛住”的答案完全不同，所以必须用加权口径。</strong></p>
+                <p>真正没变的是结构。<strong>95.60%的资产负债率、-74.66亿美元的自由现金流、257.88%的资本开支收入比——这三件事说明它依然是一个“靠融资驱动增长”的模型，而盈利能力的改善只是让它跑得更稳、不是让它不再需要钱。</strong>所以正确的结论是两句并列表述：<strong>它证明了“上游涨价可以转嫁给下游”，这个结论对整个AI算力链都是利好；但它没有证明“重资产+高杠杆”的模式已经安全，这个结论需要自由现金流转正才能成立。</strong></p>
+                <div class="quote-block">
+                    <p>“旧卡不但没贬值，租金还涨了30%到50%，并且签到了折旧年限之外。这一条对重资产公司的意义，比一季利润大得多。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">盘后那颗雷：董事会拟罢免，而对手在涨</h3>
+                <span class="section-tag">治理风险</span>
+            </div>
+            <div class="content">
+                <p>白天的一切都是好消息：英伟达涨2.87%收于173.73美元、总市值4.19万亿美元，结束了此前连续两个交易日的下跌；费半涨5.66%，整个AI链在修复。<strong>然后盘后，消息来了。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>时点</th><th>事件</th><th>性质</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11月8日</td><td>创始人向全体员工发信承认对配偶不忠并致歉；董事会宣布由独立董事在外部法律顾问协助下启动调查，同时表态调查期间继续履职</td><td>已确认的事实</td></tr>
+                        <tr><td>11月10日至11日</td><td>两个交易日累计下跌约9.5%</td><td>已发生的定价</td></tr>
+                        <tr><td>11月11日盘后</td><td>外媒报道董事会正准备罢免创始人兼CEO，并已与外部机构合作遴选新任CEO候选人、考虑先任命过渡期CEO；董事会最早于11月12日开会决定去留</td><td>据报道，公司未正式公告</td></tr>
+                        <tr><td>盘后交易</td><td>股价一度跌超9%、随后收窄至跌逾7%至8%；纳斯达克100指数期货下挫1%</td><td>情绪即时反应</td></tr>
+                    </tbody>
+                </table>
+                <p>连锁反应比单只股票的跌幅更值得看：<strong>盘后CoreWeave跌逾7%、Nebius与IREN跌逾4%、超微电脑与戴尔跌逾4%、Marvell跌3.4%、KLA跌2.9%、美光跌3%、英特尔跌3%，范达半导体ETF跌逾3%。</strong>这条链的逻辑很清楚——<strong>英伟达是CoreWeave这类新云的主要供应商和投资人，龙头的治理风险会顺着供应链与投资关系往外传。</strong></p>
+                <p>但这份名单里有两个例外，而它们才是真正的信息：<strong>博通和AMD在盘后逆势涨超3%。</strong></p>
+                <p>这个反应不能用“情绪错杀”来解释。<strong>如果市场把这读成“AI出问题了”，竞争对手应该一起跌；它们反而涨，说明市场把它读成“不是行业性利空”，而是“份额可能重新分配”。</strong>换句话说，<strong>盘后交易在给“后创始人时代”定价——买博通和AMD的人，买的是“英伟达可能分心”这个假设。</strong></p>
+                <p>这里必须把三层分清，否则很容易把传闻当结论：<strong>第一层是已确认的事实</strong>——致歉信、独立调查已经发生；<strong>第二层是报道中的信息</strong>——董事会拟罢免、遴选继任者，这些都还是“据报道”，公司没有正式公告；<strong>第三层是市场推论</strong>——份额转移、估值重构。<strong>目前只有第一层是确定的，第二层待证，第三层不能当结论用。</strong></p>
+                <p>更具体的约束条件也摆在桌面上：<strong>创始人持股约3.6%、没有控股权，掌舵已33年、有60多人直接向其汇报，公司没有公开的继任计划。</strong>最棘手的地方不是“换不换”，而是<strong>“换谁”</strong>——一家4万亿美元市值公司的技术路线、大客户关系、高管分工都绑定在一个人身上，<strong>过渡期CEO能不能被市场接受，本身就是一次定价事件。</strong></p>
+                <p>时间点也很关键：<strong>公司将于11月17日盘后发布季报。</strong>这意味着接下来五个交易日里，市场要在“财报验证基本面”和“治理消化不确定性”两件事上同时定价。<strong>财报能解决的是数字问题，解决不了的是“谁来说这些数字”的问题。</strong></p>
+                <p>所以对这件事的判断应该这样落：<strong>它不是基本面转向，是“核心人物风险”的集中定价。</strong>基本面在这一天甚至变好了（存储涨价、CoreWeave超预期），<strong>但估值里有一块溢价，本来就是给“这个人还在”付的。这块溢价现在被重新审视，与业绩无关，与折现率也无关。</strong>这类风险的处置方式和利率风险、需求风险都不同——<strong>它不需要等数据验证，只需要等公告。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">光模块：门槛画在三年后，反弹画在今天</h3>
+                <span class="section-tag">政策与操作</span>
+            </div>
+            <div class="content">
+                <p>11月11日A股这条线涨得最猛，而驱动它的不是业绩、不是存储，是一则游说新闻。<strong>据报道，微软等科技企业与行业组织正向美方游说，希望搁置限制中国新型号光收发器进口的计划，理由是禁令将给美国数据中心市场带来供应链风险。</strong></p>
+                <p>它站得住的理由是产能：<strong>中国占全球光收发器市场约三分之二，中际旭创与新易盛主导全球供应；美国本土的Coherent与Lumentum有竞争技术，但产能规模不足以替代。</strong>更硬的支撑是买方自己的建设盘子——<strong>微软在美国有35座数据中心在建、另有134座规划中。</strong>行业组织的表述说得很直白：<strong>云公司已经把AI芯片买回来了，没有光收发器把这些芯片连起来，它们只能闲置。</strong></p>
+                <p>但这里有一处必须讲清楚的细节，因为它决定了这波反弹的性质——<strong>传出的限制门槛是 3.2Tbps，而不是 1.6T。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>速率代际</th><th>当前状态</th><th>是否在限制射程内</th><th>对业绩的影响</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>800G</td><td>当前出货主力</td><td>低于门槛</td><td>无直接冲击</td></tr>
+                        <tr><td>1.6T</td><td>现役主力、2027年交付主力</td><td>低于门槛</td><td>无直接冲击</td></tr>
+                        <tr><td><strong>3.2T</strong></td><td><strong>2028年才开始放量、2029年或全面铺开</strong></td><td><strong>传出的门槛就在这一代</strong></td><td><strong>2026至2027年为零</strong></td></tr>
+                    </tbody>
+                </table>
+                <p>这张表把一件事说透了：<strong>传出的门槛画在三年后才量产的那一代产品上，对2026年和2027年的订单，影响是零。</strong>所以“政策折价修复”这句话是对的，但它的含义不是“利空取消了”，而是<strong>“一个本来就不该压当下业绩的利空，被市场当成当下业绩的压制因素用了几个月”</strong>。</p>
+                <p>立法这条线的节奏也印证这一点。<strong>相关的参议院提案于9月24日提出，限制的是联邦政府采购，且生效期写在颁布五年之后；配套要求包括商务部在180天内完成产能分析、联邦采购规则在三年内完成修订。</strong>180天、三年、五年这套时间表，本身就说明提案者没有把它当成可以立即执行的采购替换措施。</p>
+                <p>所以要区分两件事：<strong>“政策折价修复”是真的，它解释了11月11日那根大阳线；“基本面改善”也是真的，但它的来源不是政策，是存储涨价与CoreWeave的超预期。</strong>把两者混在一起，就会把一次情绪修复当成一轮新周期的起点。</p>
+                <p>11月11日A股的盘面数据足以说明这次修复的力度，也足以说明它的性质：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>维度</th><th>11月11日读数</th><th>读数含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>指数</td><td class="trend-up">沪指+0.46%报3680.64点、深成指+1.32%、创业板指+3.11%报2572.07点</td><td>成长强于价值，创业板独强</td></tr>
+                        <tr><td>成交</td><td class="trend-up">沪深京三市1.69万亿元、放量约1715亿元</td><td>放量，但未破2万亿</td></tr>
+                        <tr><td>广度</td><td class="trend-up">3538只上涨、1827只下跌、85只涨停</td><td>普涨而非单点拉升</td></tr>
+                        <tr><td>领涨个股</td><td class="trend-up">新易盛+16.97%、中际旭创+15.07%报542元（成交312亿元居首）、天孚通信+13.96%、源杰科技20%涨停</td><td>光模块与光芯片双轮</td></tr>
+                        <tr><td>资金</td><td class="trend-up">融资盘净流入213.6亿元、深股通净流入141.9亿元</td><td>杠杆钱与外资同向</td></tr>
+                        <tr><td>次日（11月12日）</td><td class="trend-down">三大指数集体低开，沪指-0.21%、创业板指-0.50%</td><td>隔夜外盘扰动，但存储与GPU逆势走强、半导体指数盘中+3.41%</td></tr>
+                    </tbody>
+                </table>
+                <p>最后一行是今天最该注意的：<strong>指数低开、但半导体指数盘中涨3.41%——这说明资金没有离场，只是在从“昨天涨多的”换到“今天有产业催化的”。</strong>这种结构比普涨更健康，但也更脆弱，因为<strong>它的前提是“每天都有新催化”，而催化是会用完的。</strong></p>
+                <p>基于以上，各类资产的动作可以列成这样：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>对象</th><th>当前位置</th><th>动作</th><th>理由</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A股整体</td><td>11月11日放量至1.69万亿、3538只上涨；11月12日低开</td><td>维持持仓，不追高；指数大涨减、大跌加</td><td>存量换方向而非增量入场，成交未破2万亿，持续性依赖催化供给</td></tr>
+                        <tr><td>存储（高端）</td><td>合约价+50%涨价函、DRAM涨幅预期上调至250%至280%</td><td>可参与，但只买高端三环节</td><td>涨价集中在HBM/服务器DRAM/企业级SSD，通用料已滞涨、现货在跌</td></tr>
+                        <tr><td>存储（通用料、消费级模组）</td><td>渠道倒挂、10月门店销量-30%</td><td>回避</td><td>它们是这轮涨价的成本承受方，不是受益方</td></tr>
+                        <tr><td>光模块</td><td>单日+15%至+17%，政策折价修复</td><td>持有不追，等回调；看1.6T出货而非禁令新闻</td><td>门槛在3.2T、2028年才放量，对当下业绩影响为零；真变量是交付斜率与上游物料分配权</td></tr>
+                        <tr><td>美股AI（已配置）</td><td>费半+5.66%、CoreWeave+24%；英伟达盘后跌逾7%</td><td>维持，不在治理消息发酵期加仓</td><td>基本面在改善、治理在恶化，两件事同时发生；11月17日财报是分水岭</td></tr>
+                        <tr><td>黄金</td><td>现货跌破4000美元、跌1.10%</td><td>不加仓</td><td>加息预期与美元走强同时压制，利率冲击下它是受损方</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里第二行与第三行的对照，是本期最实用的一条：<strong>同一个“存储涨价”的故事，对高端是利好、对通用是利空。</strong>涨价从来不是全行业普涨，<strong>它在产业链里一定有一端收钱、一端付钱——而付钱的那一端，通常就在“受益于涨价”这个标签下面被误买。</strong></p>
+                <p>最后把三个判断固定下来：</p>
+                <p><strong>其一，看涨价，先分清是“合约”还是“现货”。</strong>合约价反映的是大客户锁量的价格，现货价反映的是渠道清库存的价格。<strong>本期两者方向相反——合约端+50%、现货端两周跌9%，这不是数据矛盾，而是“算力中心紧缺、消费端过剩”这一件事的两面。</strong>只看合约会高估需求，只看现货会低估景气，必须并排放。</p>
+                <p><strong>其二，看产能转移，要算“投片占比”与“位元占比”的差。</strong>HBM投片从18%升到22%，只涨4个百分点；但位元供给从8%升到9%，只涨1个百分点。<strong>这个落差就是通用内存缺货的根因，也是判断这轮紧缺能持续多久的核心指标——只要两个数字的差距还在扩大，紧缺就还没到顶。</strong></p>
+                <p><strong>其三，看治理风险，别用基本面的方法去应对。</strong>英伟达这件事最值得记的不是跌幅，是<strong>博通和AMD在盘后逆势涨超3%</strong>——市场把“龙头可能分心”定价成了“份额可能重分”。<strong>这类风险不需要等数据验证，只需要等公告；用“业绩没变所以不用管”的逻辑去应对，会错过它的定价方式。</strong></p>
+                <div class="quote-block">
+                    <p>“同一个存储涨价，对高端是利好、对通用是利空。涨价从来不是普涨，它一定有一端收钱、一端付钱。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月12日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
