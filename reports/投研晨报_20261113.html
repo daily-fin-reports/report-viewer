@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月13日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">事件端：美东时间11月12日，英伟达董事会批准公司联合创始人辞去总裁、CEO及董事会成员职务、即刻生效；公司执行副总裁兼CFO出任临时CEO并在正式继任者确定前继续兼任原职，董事会同时任命首任董事长（该人士曾任新思科技CEO及执行董事长），并启动正式CEO遴选程序、同时考虑公司内部与外部候选人。公告未披露辞任的具体原因，也未公布独立调查的最终结果；公司称将按原计划于11月17日太平洋时间下午1时20分公布2027财年第三季度业绩、当日下午2时举行财报电话会议。事件时间线为：11月8日创始人向全体员工发信承认对配偶不忠并承诺将配合调查、董事会同日宣布由独立董事组成委员会并聘请外部法律顾问启动独立调查、当时明确表达对管理层的信心；11月9日股价收跌4.27%、创七个月新低、市值一夜缩水约1930亿美元，收盘后五分钟内遭股东集体诉讼；11月10日独立董事聘请纽约南区前代理联邦检察官及律所开展全面独立调查，美国国会部分议员公开呼吁辞职；11月11日外媒报道董事会正准备解除职务、董事会当晚开会讨论去留；11月12日正式宣布辞任 · 市场反应：11月12日英伟达盘前一度跌超13%至14%、开盘重挫约14%后收窄，收盘跌4.34%报166.19美元、单日市值蒸发约1820亿美元，本周累计跌近11%、市值蒸发超4900亿美元；而博通涨5.54%、AMD涨5.86%（AMD连涨五日累计约44%），费城半导体指数仅跌0.54%报10506.67点 · 美股大盘：道指跌0.36%报52297.09点、纳指跌0.39%报25366.09点、标普500跌0.35%报7592.40点，万得美国科技七巨头指数跌0.39%；特斯拉涨1.69%、谷歌涨1.62%、亚马逊涨0.48%、微软涨0.36%、苹果跌0.14%；存储普跌，美光跌超1%、闪迪跌超4%、SK海力士跌超3%、希捷跌超1%；光通信多数下跌，应用光电跌超5%、Lumentum跌超3%、迈威尔跌超2%；AI云重挫，Nebius跌近17%、创7月以来最差单日，CoreWeave跌超6%；纳斯达克中国金龙指数跌3.09%，BOSS直聘跌超25%、万国数据跌超11%、金山云跌超7%、阿里巴巴跌超7%、蔚来跌超6% · 商品与利率：COMEX 12月黄金跌2.88%报3885.30美元、失守3900关口，白银跌3.72%报50.065美元；WTI 12月原油涨2.55%报88.74美元、布伦特1月涨3.30%报95.82美元（霍尔木兹海峡两艘油轮爆炸停航）；美元指数涨0.26%报103.174；2年期美债收益率升至一个月高点4.892%、10年期升至5.11%附近 · 中国资产：11月12日沪指跌0.67%报3655.83点、深成指跌1.68%报11197.98点、创业板指跌2.44%报2509.43点，仅科创50涨0.73%报1309.84点（盘中最高1364.88、冲高回落），沪深京三市成交1.95万亿元、放量2571亿元，上涨875家、下跌4635家、涨停37家、跌停5家、封板率51%；农林牧渔、地面兵装、油气开采、银行与国产GPU领涨，贵金属、影视传媒、游戏、人形机器人、消费电子、通信领跌，中际旭创跌超6%、新易盛尾盘遭主力净流出超1亿元；资金呈镜像流动，通信净流出54亿元、有色与计算机净流出均超40亿元，而GPU概念净流入48亿元、大基金与先进封装及半导体净流入均超20亿元；港股恒生指数跌1.26%报24008.55点、恒生科技跌2.36%报3931.93点 · 今日早盘：日经225高开0.66%报61223.41点，韩国KOSPI开盘涨2.05%、盘中扩大至约3%，三星电子与SK海力士涨逾3%，纳指期货涨约0.6%，富时A50夜盘基本走平 · 产业链融资结构：2026年8月10日英伟达联合阿波罗、贝莱德、黑石、博枫、高盛与KKR签署谅解备忘录，拟撬动超5000亿美元第三方资本，英伟达为牵头方但非主要出资方，仅提供最高25%的设备残值兜底、不就项目债务承担全额担保；博通已于6月与阿波罗、黑石建立名为AI XPV的合作平台，5月为一笔350亿美元债务融资中的300亿美元提供兜底、对应客户租赁谷歌设计的张量处理单元，10月下旬又敲定630亿美元融资（优先层435亿美元、贷款价值比69%、投资级；次级层180亿美元、评级BB+、收益率10%以上），博通最高潜在责任约430亿美元、约占72.5%；11月1日黑石将该客户的信用评级预期由投资级下调至BB；截至2026年二季度英伟达对外股权投资总额已达956亿美元，而2023年末仅约15亿美元；超大规模云厂商与英伟达、博通、SpaceX等披露的表外承诺总规模已达4.11万亿美元，较8月末统计的3.12万亿在约90天内增加近1万亿美元</p>
+            <p class="header-date">2026年11月13日 · 周五 · 人走了，兜底还在 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">⚡</div>
+                    <div class="summary-text">
+                        <strong>四天：从“董事会抱有信心”到“即刻辞任”</strong>
+                        11月8日启动独立调查、明确表态支持；11月9日跌4.27%并遭集体诉讼；11月10日聘请外部律所、议员公开呼吁辞职；11月11日外媒报出罢免在即；11月12日正式辞任。<strong>公告没有披露原因，也没有公布调查结论</strong>——事情结束在人事层面，没结束在事实层面
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>跌的是英伟达，涨的是它的对手</strong>
+                        英伟达收跌4.34%、单日市值蒸发1820亿美元，而博通涨5.54%、AMD涨5.86%（连涨五日累计约44%），<strong>费半只跌0.54%</strong>。这个组合说明资金在做切割：卖的是“英伟达这家公司”，不是“AI这条产业”
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🏦</div>
+                    <div class="summary-text">
+                        <strong>真正的悬念不在人事，在5000亿融资平台的信任支点</strong>
+                        8月那个平台，英伟达只提供<strong>最高25%的设备残值兜底</strong>——它靠的是自身AA评级和“创始人还在”的信用。<strong>人走了，这个支点就松了</strong>：拒绝提高兜底比例，客户更难借钱；提高兜底，风险回到自己身上
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🔀</div>
+                    <div class="summary-text">
+                        <strong>A股做的不是离场，是“弃链上、换链内”</strong>
+                        11月12日4635只下跌、成交却放到1.95万亿，通信净流出54亿而同一天GPU概念净流入48亿、半导体净流入超20亿。<strong>科创50逆势涨0.73%</strong>——钱没有走，只是从“英伟达映射”搬到了“自主可控”
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">四天：从“抱有信心”到“即刻辞任”</h3>
+                <span class="section-tag">事件时间线</span>
+            </div>
+            <div class="content">
+                <p>这场危机的速度值得单独记一笔：<strong>从董事会公开表态支持，到创始人辞去全部职务，只用了四天。</strong>四天里每一天都在升级，而且升级的推力逐日从“公司治理”转向“外部压力”。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>日期</th><th>发生了什么</th><th>谁在推动</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11月8日</td><td>创始人向全体员工发信承认对配偶不忠、承诺将配合调查；董事会同日宣布由独立董事组成委员会、聘请外部法律顾问启动独立调查，并明确表达对管理层的信心</td><td>公司内部</td></tr>
+                        <tr><td>11月9日</td><td>股价收跌4.27%、创七个月新低，市值一夜缩水约1930亿美元；收盘后五分钟内遭股东集体诉讼</td><td>市场与股东</td></tr>
+                        <tr><td>11月10日</td><td>独立董事聘请纽约南区前代理联邦检察官及律所开展全面独立调查；美国国会部分议员公开呼吁辞职</td><td>法律与政治</td></tr>
+                        <tr><td>11月11日</td><td>外媒报道董事会正准备解除CEO职务；董事会当晚开会讨论去留；盘后一度跌超9%</td><td>媒体与董事会</td></tr>
+                        <tr><td><strong>11月12日</strong></td><td><strong>董事会批准辞去总裁、CEO及董事会成员职务，即刻生效</strong></td><td>董事会</td></tr>
+                    </tbody>
+                </table>
+                <p>把人事安排单独列出来，因为它是判断“公司还能不能正常运转”的直接依据：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>职位</th><th>安排</th><th>关键背景</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>临时CEO</td><td>由现任执行副总裁兼CFO出任，在正式继任者确定前继续兼任原职</td><td>2013年9月加入，此前在思科、微软、得州仪器从事财务工作近25年</td></tr>
+                        <tr><td>董事长</td><td>任命公司史上首任董事长</td><td>曾任新思科技CEO及执行董事长，有30余年科技企业管理与风投经验</td></tr>
+                        <tr><td>正式CEO</td><td>启动遴选程序，同时考虑内部与外部候选人</td><td>尚无明确时间表</td></tr>
+                        <tr><td>财报</td><td>按原计划于11月17日太平洋时间下午1时20分公布2027财年第三季度业绩、下午2时电话会</td><td>时间表未变，这是最重要的稳定性信号</td></tr>
+                    </tbody>
+                </table>
+                <p>这里有两个容易被忽略的细节，都比“谁接任”更重要。</p>
+                <p><strong>第一，公告没有披露辞任的具体原因，也没有公布独立调查的最终结果。</strong>这意味着事件在“人事层面”画上了句号，但在“事实层面”没有。<strong>对市场来说，人事落定消除的是不确定性的一部分，不是全部——调查结论、股东诉讼、国会听证这些都还在路上。</strong></p>
+                <p><strong>第二，公司同时任命了历史上第一位董事长，并把财报日期原样保留。</strong>这两个动作合起来是一个信号：<strong>它试图告诉市场“这是治理结构的补强，不是经营的中断”。</strong>成立33年、六十多人直接向创始人汇报的公司，第一次设立董事长这个位置，本质上是把“个人权威”换成“制度权威”。<strong>能不能换成，要看11月17日那场电话会——数字由CFO出，但市场要听的是“谁在为这些数字负责”。</strong></p>
+                <p>还有一个必须写明的判断边界。<strong>这件事的起点是一桩私人事件，但它的演化路径已经明显超出私人范畴</strong>——从独立董事调查，到聘请联邦检察官背景的外部律师，到国会议员公开表态，再到参议院银行委员会要求下月出席听证会。<strong>三步走完，性质就从“公司治理”变成了“国家安全审查的入口”。</strong>这才是四天走完全程的真正原因，而不是单纯因为舆论压力。</p>
+                <div class="quote-block">
+                    <p>“公告没有披露原因，也没有公布调查结论。事件在人事层面结束了，在事实层面还没有。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">跌的是英伟达，涨的是它的对手</h3>
+                <span class="section-tag">市场切割</span>
+            </div>
+            <div class="content">
+                <p>11月12日的美股给出的答案，比事件本身更有信息量。<strong>如果这是一次行业性利空，所有AI资产应该一起跌；实际发生的是一次精准的切割。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>环节</th><th>11月12日表现</th><th>切割方向</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>英伟达</td><td class="trend-down">跌4.34%报166.19美元，盘前一度跌13%至14%，单日市值蒸发约1820亿美元</td><td>公司层面被卖</td></tr>
+                        <tr><td><strong>博通</strong></td><td class="trend-up"><strong>涨5.54%</strong></td><td>对手被买，份额预期</td></tr>
+                        <tr><td><strong>AMD</strong></td><td class="trend-up"><strong>涨5.86%，连涨五日累计约44%</strong></td><td>对手被买，份额预期</td></tr>
+                        <tr><td>费城半导体指数</td><td class="trend-down">仅跌0.54%报10506.67点</td><td>产业层面没崩</td></tr>
+                        <tr><td>存储</td><td class="trend-down">美光跌超1%、闪迪跌超4%、SK海力士跌超3%、希捷跌超1%</td><td>前日涨幅回吐</td></tr>
+                        <tr><td>光通信</td><td class="trend-down">应用光电跌超5%、Lumentum跌超3%、迈威尔跌超2%</td><td>映射链受伤</td></tr>
+                        <tr><td>AI云</td><td class="trend-down">Nebius跌近17%、CoreWeave跌超6%</td><td>依赖型资产重定价</td></tr>
+                        <tr><td>科技七巨头</td><td class="trend-down">指数跌0.39%；特斯拉涨1.69%、谷歌涨1.62%、微软涨0.36%</td><td>非AI硬件端未受波及</td></tr>
+                        <tr><td>中概</td><td class="trend-down">金龙指数跌3.09%，阿里跌超7%、万国数据跌超11%</td><td>算力获取路径被质疑</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里最关键的一组对比是：<strong>英伟达跌4.34%，而费半只跌0.54%，博通和AMD还涨了5%以上。</strong>如果看指数，这件事几乎没发生；如果看个股，这是一次剧烈重估。<strong>两个数字的差额，就是“公司风险”与“产业风险”的分界线。</strong></p>
+                <p>而AMD连涨五日、累计约44%这个数字，性质需要说清楚。<strong>它不是超跌反弹——超跌反弹的特征是“跌得多的涨得多、跌得少的跟不上”，而AMD是在英伟达持续下跌的五天里连续上涨。</strong>这是<strong>份额预期</strong>，不是估值修复。<strong>市场在用真金白银假设：如果龙头的组织稳定性出现问题，订单会分流。</strong></p>
+                <p>同样的逻辑也解释了博通。<strong>它涨的不只是“竞争对手”这一层身份，还有一层更实的：它是ASIC路线的代表。</strong>当GPU的供应确定性下降时，把算力押在定制芯片上的客户会更有动力推进第二条路线。<strong>所以这两只票涨的不是“英伟达不行了”，而是“不能只押一家了”。</strong></p>
+                <p>但有一条界线必须划出来，否则会过度解读。<strong>盘中英伟达一度跌14%、收盘只跌4.34%——这个收敛本身就是市场给出的判断：他们在卖“这个人不在了”的折价，同时也在买“这家公司的产品还在”的价值。</strong>10个百分点的收复，等于给“CUDA生态与产品路线不受人事影响”投了一票。</p>
+                <p>真正受伤最重的不是英伟达，是那些“依赖型”资产。<strong>Nebius跌近17%、CoreWeave跌超6%、闪迪跌超4%、应用光电跌超5%，中概里万国数据跌超11%、阿里跌超7%。</strong>这条链的共同点是：<strong>它们的估值里，有一部分是“英伟达供给确定性”给的。当这个确定性动摇时，它们的折价幅度比龙头更大。</strong></p>
+                <p>所以11月12日这场切割可以归纳成三层：<strong>第一层，卖公司、不卖产业；第二层，卖GPU独家路线、买ASIC与二供；第三层，卖依赖型资产、买有自主供给能力的资产。</strong>三层指向的是同一件事——<strong>市场在为“集中度下降”定价，而不是在为“需求下降”定价。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">A股：不是离场，是弃链上、换链内</h3>
+                <span class="section-tag">本土传导</span>
+            </div>
+            <div class="content">
+                <p>11月12日A股的盘面，第一眼看上去是恐慌：<strong>沪指跌0.67%、深成指跌1.68%、创业板指跌2.44%，全市场4635只个股下跌、仅875只上涨，涨停37家、跌停5家，封板率只有51%。</strong>但如果只看跌幅，会完全错过这一天的结构。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>维度</th><th>11月12日读数</th><th>说明什么</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>成交额</td><td class="trend-up">1.95万亿元，放量2571亿元</td><td>不是流动性危机，是剧烈调仓</td></tr>
+                        <tr><td><strong>科创50</strong></td><td class="trend-up"><strong>涨0.73%报1309.84点，主要指数中唯一收红</strong></td><td>半导体链在午后拉升</td></tr>
+                        <tr><td>科创50盘中</td><td>最高1364.88点后冲高回落</td><td>早盘抢筹、午后兑现</td></tr>
+                        <tr><td>领涨</td><td class="trend-up">农林牧渔（渔业涨5%创8个月新高）、地面兵装、油气开采、银行、国产GPU</td><td>防御＋自主可控</td></tr>
+                        <tr><td>领跌</td><td class="trend-down">贵金属、影视传媒、游戏、人形机器人、消费电子、通信</td><td>高弹性成长被卖</td></tr>
+                        <tr><td>通信板块资金</td><td class="trend-down">净流出54亿元；有色与计算机净流出均超40亿元</td><td>海外映射链被减</td></tr>
+                        <tr><td><strong>GPU概念资金</strong></td><td class="trend-up"><strong>净流入48亿元；大基金、先进封装、半导体净流入均超20亿元</strong></td><td><strong>自主可控被加</strong></td></tr>
+                        <tr><td>个股</td><td class="trend-down">中际旭创跌超6%；新易盛尾盘遭主力净流出超1亿元</td><td>前期强势股被兑现</td></tr>
+                    </tbody>
+                </table>
+                <p>把资金两栏并排看，答案就出来了：<strong>通信净流出54亿，GPU概念净流入48亿，半导体净流入20亿以上。</strong>这不是“钱跑了”，是“钱换了个方向站着”。<strong>成交额从1.69万亿放到1.95万亿，同时4635只下跌——放量下跌配合板块内部一进一出，是典型的调仓特征，不是恐慌特征。</strong>真正的恐慌是缩量阴跌或者无差别跌停，而这一天有明确的承接方向。</p>
+                <p>这个方向为什么是GPU？<strong>逻辑链条很短：如果最先进算力的获取路径变得更不确定，那么“能用国产的就用国产”这件事的紧迫性会上升，而不是下降。</strong>产业侧的底子也已经在了——<strong>国产GPU 2025年国内市场份额已突破41%，形成“一超多强”的格局；中芯国际三季度营收219.83亿元、同比增长28.1%，归母净利润28.47亿元、同比增长87.6%。</strong>前者说明替代有供给，后者说明代工有产能。<strong>两件事合起来，才让“替代叙事”在情绪冲击下反而走强。</strong></p>
+                <p>至于中际旭创跌超6%、新易盛净流出，原因也很直接：<strong>这两家是“英伟达映射链”最纯的标的——它们的订单来自北美云厂商，而北美云厂商的资本开支节奏与英伟达的产品周期高度绑定。</strong>当龙头的组织稳定性出现问题时，这条链的确定性下降得最快。<strong>注意这里有个容易误判的地方：需求没有消失，是“需求的确定性”被重新定价了。</strong></p>
+                <p>今晨的亚太早盘进一步印证了“切换而非崩坏”这个判断：<strong>日经225高开0.66%报61223.41点，韩国KOSPI开盘涨2.05%、盘中扩大至约3%，三星电子与SK海力士涨逾3%，纳指期货涨约0.6%，富时A50夜盘基本走平。</strong></p>
+                <p>这组数据放在一起有一个很值得琢磨的对比：<strong>昨夜美股存储股在跌（闪迪跌超4%、SK海力士跌超3%），今晨韩国的SK海力士却涨逾3%。同一家公司在两个市场、相隔几小时，方向相反。</strong>原因不复杂——<strong>美股那一场卖的是“AI叙事受挫”，亚太这一场买的是“跌出来的价格”。</strong>亚太市场对美股的跟跌通常在开盘体现、对错杀通常在盘中修复，这个节奏差异本身就是可以利用的信息。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">真正的悬念不在人事，在5000亿融资平台的信任支点</h3>
+                <span class="section-tag">信用结构</span>
+            </div>
+            <div class="content">
+                <p>如果这件事只关乎一家公司的管理层更替，它的影响会止于几只股票。<strong>但它撞上了一个正在快速膨胀的结构：芯片厂商用自己的信用，为客户借钱买自己的芯片做担保。</strong>而这个结构的关键支点，恰恰是“创始人还在”。</p>
+                <p>先看这个结构的规模。<strong>2026年8月10日，英伟达联合阿波罗、贝莱德、黑石、博枫、高盛与KKR签署谅解备忘录，计划撬动超过5000亿美元第三方资本投向算力建设。</strong>英伟达是牵头方，但<strong>不是主要出资方</strong>——它向各项目公司供应软硬件、确认销售收入，<strong>仅提供最高25%的设备残值兜底，不就项目债务承担全额担保。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>结构要素</th><th>英伟达口径</th><th>博通口径</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>平台</td><td>2026年8月与六家机构，目标撬动超5000亿美元</td><td>2026年6月与阿波罗、黑石建立AI XPV平台，初始350亿美元</td></tr>
+                        <tr><td>兜底性质</td><td>设备<strong>残值</strong>担保</td><td>设备<strong>残值</strong>担保</td></tr>
+                        <tr><td>兜底比例</td><td class="trend-down"><strong>最高25%</strong></td><td class="trend-up"><strong>约72.5%（630亿中的430亿）</strong></td></tr>
+                        <tr><td>历史单笔</td><td>为俄亥俄州某数据中心项目提供最高1050亿美元剩余价值担保（原希望约2500亿，因股价与投资者压力缩减）</td><td>350亿美元融资中为300亿提供兜底；另630亿中430亿</td></tr>
+                        <tr><td>对应客户</td><td>以租赁方为主</td><td>租赁谷歌设计的张量处理单元</td></tr>
+                        <tr><td>自身信用</td><td>AA（稳定）</td><td>A-（展望正面）</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表最刺眼的一行是兜底比例：<strong>25% 对 72.5%。</strong>这个差距不是保守与激进的区别，而是两种资产属性的区别——<strong>标准GPU有人接盘，为单一客户定制的加速器没有；东西卖不掉，就只能由造它的人兜底。</strong>所以博通必须兜七成，英伟达只需兜四分之一。<strong>过去这个差异被解释为“英伟达的产品更通用、残值更可靠”，而支撑这个解释的，很大程度上是创始人本人的信用。</strong></p>
+                <p>再往下看一层，兜底的钱从哪来、风险落在谁头上，这套分层做得非常清楚：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>层级</th><th>规模</th><th>谁出钱、谁增信</th><th>评级与定价</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>优先层</td><td>435亿美元</td><td>大型银行承销，芯片厂商做残值担保</td><td class="trend-up">投资级；贷款价值比69%</td></tr>
+                        <tr><td>次级层</td><td>180亿美元</td><td>私募机构承诺约90亿打底</td><td class="trend-down">BB+；收益率10%以上</td></tr>
+                        <tr><td>违约顺序</td><td>—</td><td>先设备处置，再次级层吸收，最后才轮到芯片厂商按残值担保补足</td><td>—</td></tr>
+                    </tbody>
+                </table>
+                <p>这套设计的精妙之处在于：<strong>同一批芯片装成两层债，上面那层拿投资级的价、下面那层拿高收益的价，分层的位置决定了这笔钱到底算谁的信用。</strong>优先层能拿到投资级，靠两样东西——<strong>芯片厂商的评级，和69%的贷款价值比（意味着芯片价格跌三成，抵押物还盖得住债）。</strong></p>
+                <p>但支点已经开始松。有两个数字必须放在一起看：</p>
+                <p><strong>第一，11月1日，黑石把该客户的信用评级预期从投资级下调到了BB</strong>——BB是高收益级的顶端。<strong>也就是说，在创始人辞职之前，最了解这笔交易的出资方，已经先给它降了一档。</strong></p>
+                <p><strong>第二，这家客户的算力成本已经占到收入的55%。</strong>上半年收入162.9亿美元、算力和基础设施费用89.5亿美元——<strong>它现在租的这批芯片，租金就从这55%里出，而租金是还债的唯一来源。</strong>与此同时它的账上现金1120亿美元、净亏损807亿（其中约724亿是可转换票据与衍生负债的公允价值变动，并非现金流出）。<strong>现金很厚、亏损是账面、但租金是刚性的——这三件事同时成立，才是这个结构真实的脆弱点。</strong></p>
+                <p>所以创始人辞职对这套结构的冲击，不在“谁签的字”，而在<strong>“谁来提供那份隐性信用”</strong>。摆在接任者面前的是一道两难题：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>选择</th><th>后果</th><th>对谁不利</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>维持25%的兜底比例不动</td><td>客户更难负担芯片，交易对贷款方吸引力下降，尤其在同一时期还有条款更优的同类交易在推介</td><td>客户与销售</td></tr>
+                        <tr><td>提高兜底比例</td><td>风险回到自己身上，也违背了“用第三方资金撬动算力”的初衷</td><td>自身资产负债表</td></tr>
+                        <tr><td>暂时搁置或放慢平台节奏</td><td>短期AI基建速度放慢，但系统性传染风险下降</td><td>短期增长，长期安全</td></tr>
+                    </tbody>
+                </table>
+                <p>第三条路，恰恰是这件事里唯一可以被称作“好消息”的部分。<strong>因为如果这个结构继续按原速度膨胀，风险就不再是单点的。</strong>把它摊开看：<strong>超大规模云厂商与几家芯片公司披露的表外承诺总规模已达4.11万亿美元，较8月末统计的3.12万亿在约90天内增加了近1万亿美元；同期英伟达的对外股权投资从2023年末的约15亿美元膨胀到2026年二季度的956亿美元。</strong></p>
+                <p><strong>九十天新增近一万亿美元的表外承诺，这个速度本身就是风险。</strong>因为它的传导方式不是线性的：<strong>如果某一家租赁方付不出租金，第一步是设备被处置，第二步是次级层吸收，第三步才轮到芯片厂商兜底；但在这个过程里，为这些交易提供融资的机构资产质量会同时恶化。</strong>过去是“一家公司还不上钱，它自己死”；现在是“它死，供应商跟着计提，资管机构的资产跟着减值”。<strong>这就是传染性与单点风险的区别——它的损失边界不可计算。</strong></p>
+                <p>所以对这件事的完整判断应该是三句话，缺一不可：<strong>第一，短期看，AI基建的投资节奏会放慢</strong>——资产负债表在变差、自由现金流在变差、审批节奏在变慢，这三条同时作用；<strong>第二，短期看，这反而降低了系统性风险</strong>——把节奏放慢，比继续加杠杆要安全；<strong>第三，中期看，决定AI叙事的仍然是应用端和模型迭代端</strong>——能不能拿出新的、亮眼的东西，这件事与谁当CEO无关。</p>
+                <div class="quote-block">
+                    <p>“九十天新增近一万亿美元的表外承诺。这个速度本身就是风险，因为它的损失边界算不出来。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">三条影响与三种处置：把“人”的问题和“链”的问题分开</h3>
+                <span class="section-tag">影响与操作</span>
+            </div>
+            <div class="content">
+                <p>这件事的影响可以拆成三条，而它们的时间尺度完全不同——<strong>一条是几天的情绪，一条是几个季度的经营，一条是几年的格局。</strong>混在一起谈，就会把短期波动当成长期转折。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>影响</th><th>机制</th><th>时间尺度</th><th>可验证的观察点</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>算力获取路径收紧</td><td>经第三地转口或建算力中心供使用的芯片会变少；依赖这些路径做采购的公司受约束，<strong>模型追赶的算力支撑会被放慢</strong></td><td>数个季度</td><td>相关云厂商与大模型公司的算力成本、交付延迟</td></tr>
+                        <tr><td>份额可能重分</td><td>龙头的市场统治地位受撼动，资源更倾斜到ASIC路线与二供；<strong>AMD连涨五日累计约44%就是这条的定价</strong></td><td>数个季度至一年</td><td>11月17日财报与下季指引；ASIC客户的转单公告</td></tr>
+                        <tr><td>国产替代加速</td><td>若最先进算力彻底不可得，需求会更彻底地转向国内产品</td><td>一年以上</td><td>国产GPU份额能否在41%之上继续抬升；代工产能利用率</td></tr>
+                    </tbody>
+                </table>
+                <p>第一条与第三条其实是一枚硬币的两面，这也是音频里最值得记下的那个判断：<strong>同一个变化，对“拿不到卡的人”是限制，对“能造卡的人”是机会。</strong>而这两件事同时发生时，市场的反应会极其分化——<strong>11月12日A股通信净流出54亿、GPU净流入48亿，就是这枚硬币的两面在同一天被分别定价。</strong></p>
+                <p>第二条则取决于一个尚未验证的前提。<strong>市场现在给AMD的44%涨幅，押的是“订单会分流”；但订单分流需要客户重新做验证、重新写软件栈、重新爬产能坡。</strong>这不是一个季度能完成的事。<strong>所以这条影响更可能是“估值先到、业绩后到”——如果11月17日的财报和明年初的订单公告没有证实分流，这部分估值会回吐。</strong></p>
+                <p>至于国产替代，它已经不是纯叙事了。<strong>41%的国内份额和在特定场景对标国际主流水平的产品，说明“能用”这一关过了；中芯国际三季度归母净利润同比增长87.6%，说明“产能与盈利”这一关也在过。</strong>缺的是“好用”那一关——<strong>软件生态、集群规模、以及大客户在真实业务上的验证深度。</strong>所以对这一条的正确预期是：<strong>方向确定、速度不确定，它是一条以年计的线，不是一个以天计的题材。</strong></p>
+                <p>基于以上，各类资产的动作可以列成这样：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>对象</th><th>当前位置</th><th>动作</th><th>理由</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A股整体</td><td>11月12日跌0.67%、4635只下跌、成交放量至1.95万亿；今晨亚太回暖</td><td>维持持仓，不追高；指数大涨减、大跌加</td><td>放量下跌配合板块一进一出，是调仓不是出逃；今日美国10月PPI与周末外汇存准率上调落地前，仓位留有余地</td></tr>
+                        <tr><td>国产算力、GPU、半导体设备</td><td>11月12日逆势走强，GPU概念净流入48亿、半导体净流入超20亿</td><td>作为核心方向，回踩低吸，不追涨停</td><td>41%份额＋代工净利增87.6%说明供给端已就位；替代逻辑因外部约束强化而被提前</td></tr>
+                        <tr><td>海外光模块、英伟达映射链</td><td>中际旭创跌超6%、新易盛遭净流出、通信净流出54亿</td><td>反抽即减，不抄底</td><td>需求没消失，但“需求确定性”被重定价；11月17日财报是下一个风险点</td></tr>
+                        <tr><td>贵金属</td><td>COMEX黄金跌2.88%失守3900，白银跌3.72%</td><td>回避，不接反包</td><td>加息预期＋美元升至103.174＋10年期美债5.11%，三压在利率端同时作用</td></tr>
+                        <tr><td>油气</td><td>布伦特涨3.30%报95.82美元，因霍尔木兹海峡油轮爆炸停航</td><td>只做一日游，不追高</td><td>这是地缘溢价不是供需定价；同期国内成品油价格已下调</td></tr>
+                        <tr><td>美股AI（已配置）</td><td>费半仅跌0.54%、博通与AMD涨超5%</td><td>维持，不在财报前加仓</td><td>产业层面没崩，但个股定价锚正在迁移；等11月17日的数字与指引再定</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里最容易做错的是第二行与第三行，因为它们是同一条产业链的两端，而这一天的走势恰好相反。<strong>很多人的本能是“跌得多的更便宜”，但在这种“定价锚迁移”的行情里，跌得多的往往是被迁移掉的那一端，涨得多的才是被迁移去的那一端。</strong>便宜与贵，在这里不是估值问题，是方向问题。</p>
+                <p>最后把三个判断固定下来：</p>
+                <p><strong>其一，看人事风险，别只看谁接任，要看“谁在提供隐性信用”。</strong>这家公司过去被称为“AI的中央银行”——它在整个生态里持股、提供兜底，用自身信用为一个尚处早期的行业增信。<strong>当这个信用的来源被动摇时，受影响的不是它的股价，而是它背后那一整套依赖这份信用的融资结构。</strong>所以判断的重点应该从“新管理层行不行”，转到“兜底比例会不会被要求提高”。</p>
+                <p><strong>其二，看传导，先分清跌的是公司还是产业。</strong>本期最干净的两个数字是：<strong>英伟达跌4.34%，费城半导体指数只跌0.54%。</strong>如果只有前者大幅波动，说明市场在卖一家公司；如果两者同跌，才是产业出问题。<strong>这个“个股跌幅减指数跌幅”的差值，是判断事件性质的第一个工具，比看新闻标题可靠得多。</strong></p>
+                <p><strong>其三，看替代，先看供给有没有准备好。</strong>“国产替代加速”这句话已经被说了很多年，判断它是否真的开始，不看政策文件、看两个数：<strong>国产产品的国内份额，和代工厂的产能与盈利。</strong>本期这两个数分别是41%和净利同比增长87.6%——<strong>两个都动了，才说明这次不一样；只有一个动，那还是叙事。</strong></p>
+                <div class="quote-block">
+                    <p>“这家公司过去被称作AI的中央银行——它用自己的信用，给一个还在早期的行业增信。人走了，被重新审视的不是股价，是那份信用。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月13日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
