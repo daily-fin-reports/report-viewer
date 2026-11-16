@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月16日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">医保端：11月14日，国家医疗保障局、人力资源和社会保障部在苏州发布《国家基本医疗保险、生育保险和工伤保险药品目录》与《商业健康保险创新药品目录》（2026年），为医保局成立以来第9次目录常态化调整。本次共新增107种药品，其中51个为1类创新药、两项均创历史新高；同时调出34种临床价值有限、有更好替代方案或说明书信息项缺失且无法供应的药品；综合调入调出与剂型合并，目录净增78个编号、药品总数达3331个（西药1935个、中成药1396个），中药饮片调整后885个。新增结构为肿瘤用药31种、慢性病用药24种、罕见病用药18种、中成药11种、抗感染用药7种、精神疾病用药5种，并首次新增长效辅助生殖用药与慢性偏头痛治疗药物；3个血友病非因子类治疗药物弥补了重组类凝血因子成人常规替代治疗的空白。最受关注的是CAR-T首次进入基本医保：药明巨诺的瑞基奥仑赛注射液（倍诺达）原定价129万元/支，纳入后定价降至30万元/支以下，据估算患者自付有望降至10万元以内，为目前唯一进入国家基本医保目录的CAR-T类药物，其路径是"去年先入商保目录、今年经谈判转入基本医保"。商保创新药目录同步新增12种、总数达28种，含全球首个实体瘤CAR-T、国内首个血友病基因治疗药物与全球首款渐冻症对因治疗药物；现场参与价格协商的12款产品全部纳入；首版商保目录18种药品截至10月底已在1710家医疗机构和定点零售药店配备、用药近3万人次、拉动销售约6亿元、配备机构数量增长约140%。2026年前10个月协议期内谈判药品基金支出超1200亿元、月均逾百亿。新版目录自2027年1月1日起执行，4个未成功续约被调出的品种给予6个月过渡期 · 航天端：11月13日美中时间16时48分，SpaceX星舰实施第15次试飞，用超重型助推器与"飞船42号"在得克萨斯州星港发射，原计划首次实现助推器与飞船双双返回发射场由发射塔机械臂捕获。一二级分离后超重型助推器出现低燃料警报、改道并在墨西哥湾海域溅落（有报道称翻转后在海面爆炸），捕获尝试取消；飞船则进入约275公里轨道、部署26颗星链V3卫星（其中3颗改装搭载摄像系统用于拍摄隔热罩状态），在轨飞行20余小时后重新点火、脱离轨道再入、翻转并以垂直姿态被发射塔机械臂"筷子"捕获——这是SpaceX首次成功回收星舰飞船（此前助推器已三次被捕获、飞船从未）。星舰总长约120米、直径约9米，设计目标是将人与货物送至地球轨道、月球乃至火星；CEO称此次助推器发动机表现低于预期导致燃料不足，将通过提升发动机性能与稳定性、调整飞行软件解决，并称现役箭体已落后于在产改进型、此次损失不影响高频次完全可复用飞行的时间表。后续仍需解决单次任务回收两级、隔热罩完全复用、在轨加注燃料等课题 · 市场端：11月13日A股沪指跌0.59%报3634.35点、深成指跌2.05%报10968.79点、创业板指跌3.32%报2426.08点，两市成交1.66万亿元、超4700只个股下跌；周线上证跌0.41%、科创50涨2.11%。港股恒生指数跌1.55%报23637.60点、恒生科技跌3.02%。美股11月13日道指涨0.10%报52347.55点、标普500跌0.40%报7561.67点、纳指跌0.91%报25136.27点、费城半导体指数跌3.43%；英伟达跌2.0%报162.85美元、本周累跌12.7%、创2025年4月以来最大单周跌幅并连续第六周下跌（2012年以来最长连跌）、本周市值蒸发逾5730亿美元；周线道指涨2.07%、标普涨2.51%、纳指涨2.27%、费半涨8.05%、纳斯达克金龙跌5.49%。美国10月PPI同比涨6.5%（预期6.6%、前值6.3%）、环比涨0.3%（预期0.4%）。美元指数涨0.25%报103.423、为2025年4月以来最高；10年期美债收益率5.1413%；COMEX黄金报3879.70美元、本周跌4.55%为6月初以来最大周跌幅，白银跌1.88%报49.031美元；WTI 88.56美元、布伦特95.84美元、两油连续第二周收跌 · 政策与资金：11月15日央行上调金融机构外汇存款准备金率2个百分点（由4%提高至6%）正式生效，为2021年12月以来首次上调；国家发改委、国家能源局印发《"十五五"新型储能实施方案》，提出2030年全国新型储能装机达3亿千瓦、平均储能时长3小时左右，首次明确建立电网侧独立新型储能容量电价机制；10月末社会融资规模存量469.16万亿元、同比增7.2%，10月社融增量1.15万亿元、前十个月累计28.61万亿元（同比少2.29万亿元），M2同比增7.1%、M1增4.4%、M0增10.7%；美联储半年度《金融稳定报告》显示87%受访者将AI列为显著风险（5月为50%），先进计算相关债券发行已达6800亿美元、数据中心相关债务与担保合计可能超3万亿美元 · 今日早盘：日经225高开0.34%、韩国KOSPI开盘涨0.28%；A股商业航天板块10时01分报1554.44点、跌3.25%、主力净流出约26亿元，多只卫星ETF跌4%至6%</p>
+            <p class="header-date">2026年11月16日 · 周一 · 129万降到30万，与一次没夹住的助推器 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">💊</div>
+                    <div class="summary-text">
+                        <strong>129万降到30万以下，CAR-T首次进医保</strong>
+                        药明巨诺的瑞基奥仑赛从129万元/支降至30万元/支以下，患者自付有望进入10万元以内——<strong>这是支付机制从“单一自费”转向“基金与患者共付”的根本性改变</strong>，不是一次简单降价。它的入径方式同样关键：去年先进商保目录、今年经谈判转入基本医保
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📊</div>
+                    <div class="summary-text">
+                        <strong>107个新增、51个1类新药，两项都创历史新高</strong>
+                        但重点不在数量，在结构：调出34个临床价值有限的品种，从“只进不出”变成“有进有出”。<strong>新增里肿瘤31、慢病24、罕见病18</strong>——这是一次补短板式的结构性扩容，不是简单放量
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🚀</div>
+                    <div class="summary-text">
+                        <strong>飞船被“筷子”夹住了，助推器没有</strong>
+                        首次回收星舰飞船、在轨20余小时后垂直落回发射塔，是人类航天史的里程碑；<strong>但计划中的“两级同时回收”没有实现</strong>——助推器因低燃料警报改道，最终在海面溅落。一次成功、一次失败，恰好说明了完全复用的难点在哪
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🔍</div>
+                    <div class="summary-text">
+                        <strong>历史性突破的同一天，商业航天板块跌了3.25%</strong>
+                        今早10时商业航天板块报1554.44点、跌3.25%、主力净流出约26亿元，卫星ETF跌4%至6%。<strong>利好兑现与“别人的突破不是我的订单”这两件事，同时在定价</strong>——这是判断主题投资最该分清的一层
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">129万到30万以下：第一个进医保的CAR-T</h3>
+                <span class="section-tag">支付机制</span>
+            </div>
+            <div class="content">
+                <p>这份目录里最受关注的是一个数字：<strong>129万降到30万以下。</strong>药明巨诺的瑞基奥仑赛注射液（倍诺达）成为首个、也是目前唯一进入国家基本医保目录的CAR-T类药物，原定价129万元/支，纳入后降至30万元/支以下，据估算患者自付有望进入10万元以内。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>环节</th><th>数字</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>进入医保前定价</td><td class="trend-down">129 万元/支</td><td>国内已上市 CAR-T 普遍在 90 万至 130 万区间</td></tr>
+                        <tr><td>纳入后定价</td><td class="trend-up">30 万元/支以下</td><td>市场消息为 30 万元/支，最终以官方发布为准</td></tr>
+                        <tr><td><strong>患者自付</strong></td><td class="trend-up"><strong>有望 10 万元以内</strong></td><td>因各地医保政策与个人情况有差异</td></tr>
+                        <tr><td>降幅</td><td class="trend-up">约 77%</td><td>以 129 万降至 30 万测算</td></tr>
+                        <tr><td>行业隐形门槛</td><td>“50 万不谈、30 万不进”</td><td>本次被视为对这条门槛的突破</td></tr>
+                        <tr><td>覆盖患者比例</td><td class="trend-down">每年不足 4%</td><td>符合适应症、但能实际接受治疗的比例</td></tr>
+                        <tr><td>国内市场规模</td><td>2025 年约 38.2 亿元</td><td>降价换量后的空间取决于渗透率提升</td></tr>
+                    </tbody>
+                </table>
+                <p>为什么能降到这个位置？<strong>不是企业让利，是成本结构变了。</strong>慢病毒载体是CAR-T生产的核心原材料、也是成本占比最高的环节，长期依赖高成本进口；这一次的关键是这一环节实现了国产化突破，把成本压了下来。<strong>这解释了为什么过去多次申报都因定价过高止步于形式审查，而今年能过——门槛不是被谈判技巧攻破的，是被成本曲线推倒的。</strong></p>
+                <p>而它进入目录的<strong>路径</strong>，比降价本身更值得记：<strong>去年它先进入首版商保创新药目录，今年通过谈判由商保目录转入基本医保。</strong>这是一条被设计好的通道——<strong>高值前沿疗法先由商业保险承接、跑出真实世界数据与支付经验，成熟后再纳入普惠层。</strong>本期商保目录里还有2个品种走了同样的路。<strong>这个“先商保、后医保”的接力机制，是这次调整在制度层面真正的增量。</strong></p>
+                <p>所以对这件事的定性，应该落在支付结构而不是价格上。<strong>此前是“患者全额自费或靠商业保险”，此后是“医保基金与患者共付”——这是机制的切换，不是折扣的加深。</strong>它的意义在于：<strong>一旦高值疗法有了共付通道，这条通道就可以被复制到下一个CAR-T、下一个基因治疗、下一个双抗。</strong></p>
+                <p>但有三条限制必须同时写出来，否则会把好事说过头。</p>
+                <p><strong>第一，适应症很窄。</strong>该药获批三项适应症全部聚焦血液肿瘤——复发或难治性大B细胞淋巴瘤、滤泡性淋巴瘤、套细胞淋巴瘤，<strong>对实体瘤仍有局限。</strong>它不是“抗癌神药”，超适应症使用既无效也挤占基金。</p>
+                <p><strong>第二，自付10万不等于总花费10万。</strong>CAR-T治疗还包含住院、副作用管理（高热、低血压、神经系统症状）与长期随访，这些费用另计。<strong>把“10万”当成全部成本，会低估患者实际负担，也会高估可及性改善的速度。</strong></p>
+                <p><strong>第三，进目录不等于用得上。</strong>这类药需要多科室评估、需要具备救治能力的中心、需要长期跟踪。<strong>“进得了目录”和“开得出处方”之间，还隔着医院配备、医生培训与考核机制。</strong>这一点在下一节会展开。</p>
+                <div class="quote-block">
+                    <p>“这不是简单降价，是支付机制从单一自费转向医保基金与患者共付。价格降了77%，但改变的是一整条通道。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">五个方向：这次调整真正改的是什么</h3>
+                <span class="section-tag">制度拆解</span>
+            </div>
+            <div class="content">
+                <p>107个新增、51个1类新药，两个数字都创了历史新高。但如果只记住“创新高”，就会错过这次调整真正的变化——<strong>它在五个层面上同时动了手，而且每一层都有一处“不只是加法”的设计。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>层面</th><th>做了什么</th><th>“不只是加法”的地方</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>患者端</td><td>把天价创新药从天价区间拉进可覆盖区间</td><td>CAR-T、血友病非因子类药物首次进入基本保障</td></tr>
+                        <tr><td>临床端</td><td>新增覆盖肿瘤31、慢病24、罕见病18、中成药11、抗感染7、精神疾病5</td><td><strong>同时调出34个临床价值有限的品种</strong>，从“只进不出”转为“有进有出”</td></tr>
+                        <tr><td>基金端</td><td>用谈判换规模，把价格压到基金可承受区间</td><td><strong>不是越低越好</strong>——价格过低伤及企业质量与可持续性，模式同样不成立</td></tr>
+                        <tr><td>产业端</td><td>预申报机制让临近获批的新药提前排队，纳入周期明显缩短</td><td>放量提前＝回报提前；但形式审查通过者众、最终入选者少，门槛更严</td></tr>
+                        <tr><td>制度端</td><td>基本医保与商保分工接力，商保新增12种、总数28种</td><td><strong>2个商保品种转入基本医保</strong>，通道被打通</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里最容易被忽略的是第二行。<strong>新增107个、调出34个——很多人只看到前者。</strong>但“调出”这个动作的意义在于：<strong>它把目录从一个只增不减的清单，变成了一个有新陈代谢的清单。</strong>一个只能进不能出的目录，长期必然被低效品种占满，最后挤压真正需要的创新药。<strong>34个的规模不大，但机制的方向变了。</strong></p>
+                <p>第三行则是最容易被说反的一处。<strong>市场习惯把“降价”当成纯粹的好事，但从支付方的角度看，价格压得过低会产生两个后果：一是企业为了活下去而在质量上找空间，二是企业干脆放弃这个市场。</strong>两种结果对患者都不是好事。<strong>真正可持续的平衡是“价格降下来、企业还能持续投入研发”——这也是这次把“支持真创新、支持源头创新、支持差异化创新”写进原则的原因。</strong></p>
+                <p>第四行的机制值得单独说。<strong>预申报让临近获批的药品可以提前进入排队流程，把“获批—谈判—纳入—放量”这条链条整体前移。</strong>对创新药企业来说，这意味着销售爬坡的起点提前了几个月到一年；<strong>而对支付方来说，它同时意味着必须更早做基金测算。</strong>通道变快，双方的准备时间都变短了。</p>
+                <p>第五行则是本期最值得长期跟踪的。<strong>商保目录不是“次等目录”，它是高值疗法的实验场。</strong>看数据：<strong>首版商保目录18种药品，截至10月底已在1710家医疗机构和定点零售药店配备、用药近3万人次、拉动销售约6亿元，配备机构数量较纳入前增长约140%。</strong>这个增速说明一旦支付通道打开，放量是可以很快的。<strong>而“2个商保品种转入基本医保”则把这条路径闭合了——先试、再转、然后普惠。</strong></p>
+                <p>最后还有一层，是所有政策文件都不会写、但决定成败的一层：<strong>落地。</strong></p>
+                <p><strong>进了目录，还要过五道关：医院绩效考核是否允许配备、集采控费压力下是否有动力开、双通道药店能否买到、各地区报销口径是否一致、以及医保限定支付范围划得多宽。</strong>这五道关里任何一道卡住，患者都拿不到药。<strong>所以新版目录2027年1月1日执行之后，真正要看的是三个指标：新增品种的到位配备速度、报销的实际口径、以及1月份的实际使用量。</strong></p>
+                <p>把这五点合起来，这次调整的定性就清楚了：<strong>它是一次“结构＋通道”的调整，而不只是一次“数量”的扩容。</strong>数量创新高是结果，结构有进有出、通道先商保后医保，才是原因。<strong>对产业的长期含义是：真创新的回报周期在缩短，而低效品种的生存空间在收窄——这两件事同时发生，才是“支持创新”的完整含义。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">飞船被“筷子”夹住了，助推器没有</h3>
+                <span class="section-tag">商业航天</span>
+            </div>
+            <div class="content">
+                <p>11月13日美中时间16时48分，星舰实施第15次试飞。这次的目标写得很清楚：<strong>首次尝试让助推器与飞船双双返回发射场、由发射塔机械臂同时捕获。</strong>结果是一半成功、一半失败，而这个“一半”恰好把完全复用的难点暴露得清清楚楚。</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>阶段</th><th>结果</th><th>关键细节</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>发射与分离</td><td class="trend-up">成功</td><td>得州星港，超重型助推器与飞船一二级热分离</td></tr>
+                        <tr><td>助推器返回</td><td class="trend-down"><strong>失败</strong></td><td><strong>出现低燃料警报后改道</strong>，在墨西哥湾海域溅落；有报道称翻转后在海面爆炸，也有报道表述为受控溅落。原定的发射塔捕获取消</td></tr>
+                        <tr><td>飞船入轨</td><td class="trend-up">成功</td><td>进入约275公里轨道，部署26颗星链V3卫星（其中3颗改装搭载摄像系统，用于拍摄隔热罩状态）</td></tr>
+                        <tr><td>在轨飞行</td><td class="trend-up">成功</td><td>在轨20余小时后重新点火、脱离轨道再入</td></tr>
+                        <tr><td><strong>飞船回收</strong></td><td class="trend-up"><strong>成功</strong></td><td><strong>翻转后以垂直姿态被发射塔机械臂“筷子”捕获——SpaceX 首次成功回收星舰飞船</strong></td></tr>
+                        <tr><td>两级同时回收</td><td class="trend-down">未实现</td><td>这是本次的原定目标，也是完全复用的最后一步</td></tr>
+                    </tbody>
+                </table>
+                <p>先说清一处与流传说法不一致的地方。<strong>助推器失败的原因是“低燃料警报”，不是“姿态不对”。</strong>公司CEO给出的解释是：<strong>此次助推器发动机表现低于预期，导致燃料不足，后续将通过提升发动机性能与稳定性、调整飞行软件来解决。</strong>这两种归因的差别很大——<strong>“姿态不对”指向控制算法，“燃料不足”指向发动机性能与推进剂管理。</strong>前者的修复在软件，后者的修复在硬件，时间尺度完全不同。</p>
+                <p>而“溅落”与“爆炸”两种表述并存，也需要说清楚。<strong>官方的口径是受控溅落到指定海域，部分媒体报道为翻转后在海面爆炸。</strong>两者未必矛盾——<strong>受控溅落指的是落点可控，不等于箭体完好；一艘本就要报废的箭体在触海后解体，与“失控爆炸”是两件事。</strong>写报告时把两种表述并列，比选一个更准确。</p>
+                <p>至于飞船被“筷子”夹住这件事，它的意义要放在历史里看才准确。<strong>一级回收是十年前就完成的事——猎鹰系列的第一级早已熟练回收。而这一次突破的是“上面级”的回收：那个每次都要么溅落海面、要么在上升中爆炸、要么再入时解体的部分，第一次以垂直姿态落回了发射塔。</strong></p>
+                <p>为什么这件事重要？因为<strong>只有两级都能回收，“整支火箭”才成为可复用资产。而一旦整支火箭可复用，成本结构就变了。</strong>行业里的远景描述是这样的：<strong>发射成本可以降到每次千万美元以下（含推进剂等边际成本与运营开销），发射频次从“月”走向“天”甚至“小时”，最终像民航一样——从一地起飞、在另一地降落。</strong>这也是“从中国到美国20分钟”这类说法的来源。<strong>它现在还是远景，但“两级都回收过”是这个远景的第一个硬前提。</strong></p>
+                <p>不过剩下的难题还有四个，一个都不轻：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>待解难题</th><th>当前状态</th><th>为什么关键</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>单次任务回收两级</td><td>本次未实现（助推器失败）</td><td>完全复用的定义就是“同一次飞行两级都回来”</td></tr>
+                        <tr><td>隔热罩完全复用</td><td>尚未做到</td><td>再入热防护是消耗品的话，复用只省了一半</td></tr>
+                        <tr><td>在轨加注燃料</td><td>未解决</td><td>去月球与火星的前提，没有它就走不远</td></tr>
+                        <tr><td>助推器性能与稳定性</td><td>本次暴露短板</td><td>发动机表现低于预期，需要硬件迭代</td></tr>
+                    </tbody>
+                </table>
+                <p>最后要说清中国的位置，因为这是最容易被情绪化表达的部分。<strong>今年国内已有民营企业和国家队分别实现了火箭回收，但实现的是“一级回收”——与十年前那一步对应，整体上大约有十年的代差。而这一次对方完成了“两级回收”中的上面级那一半，意味着差距在原有基础上又多了一段。</strong></p>
+                <p>但也要看到另一面：<strong>路径已经被验证过了。</strong>一级回收从“不可能”到“常规操作”用了十年，上面级回收的技术路线现在也已经被走通一次。<strong>国内已有创业公司在研究飞船回收，追赶的起点比当年高得多——当年是不知道能不能成，现在是知道能成、只是要解决工程问题。</strong>这两件事的难度不在一个量级上。</p>
+                <div class="quote-block">
+                    <p>“一级回收是十年前的事，上面级回收是这一次的事。前者证明可行，后者证明完整——而完整，才是成本曲线的拐点。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">一个反差：历史性突破的同一天，板块跌了3.25%</h3>
+                <span class="section-tag">预期与现实</span>
+            </div>
+            <div class="content">
+                <p>这是本期最值得琢磨的一组对照。<strong>周末最大的科技新闻是“星舰首次被筷子夹住飞船”，而今天早盘10时01分，A股商业航天板块报1554.44点、跌3.25%，主力净流出约26亿元，多只卫星ETF跌4%至6%。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>维度</th><th>读数</th><th>含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>事件</td><td class="trend-up">星舰首次回收上面级飞船，人类航天史里程碑</td><td>产业层面的真实突破</td></tr>
+                        <tr><td>板块当日</td><td class="trend-down">商业航天指数 -3.25%（10时01分）</td><td>情绪没有跟随事件</td></tr>
+                        <tr><td>资金</td><td class="trend-down">主力净流出约26亿元，市场排名靠后</td><td>不是散户在卖</td></tr>
+                        <tr><td>ETF</td><td class="trend-down">多只卫星ETF跌4%至6%</td><td>宽基化产品同步回落</td></tr>
+                        <tr><td>板块上周</td><td class="trend-down">商业航天指数周跌约2.20%</td><td>事件之前就在调整</td></tr>
+                        <tr><td>板块内分化</td><td>个别标的逆势上涨，已有公司被实施退市风险警示</td><td>分化远大于同涨同跌</td></tr>
+                    </tbody>
+                </table>
+                <p>为什么“好消息”没有换来上涨？三个原因，层层递进。</p>
+                <p><strong>第一层，也是最根本的一层：别人的突破不是自己的订单。</strong>星舰回收成功，直接受益的是SpaceX自己的发射成本与发射频次。对A股产业链来说，它带来的是“主题联想”，不是“收入确认”。<strong>这两者在股价上的传导速度完全不同——联想是当天的，订单是几个季度后的。当市场开始要求后者时，前者就会失效。</strong></p>
+                <p><strong>第二层：这是“预期内”的好事。</strong>发射与回收的时间表在数周前就已公开，市场有充分时间提前布局。<strong>而当一个事件被提前定价，落地那一天就变成了兑现日，而不是启动日。</strong>上周板块的调整，某种程度上就是提前消化的一部分。</p>
+                <p><strong>第三层：本次任务本身是“一半成功”。</strong>原定目标是两级同时回收，助推器失败意味着“完全复用”这个叙事还差最后一步。<strong>市场定价的是“叙事完成度”，不是“里程碑数量”。</strong>夹住飞船是里程碑，但叙事要的是两级都回来。</p>
+                <p>把这三层合起来，可以得到一条对主题投资很实用的判据：<strong>一个产业事件对股价的作用，取决于它落在哪一层——事件层、产业链层、还是订单层。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>层次</th><th>典型事件</th><th>股价反应</th><th>持续性</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>事件层</td><td>试飞成功/失败、发布会、纪录突破</td><td>当天反应最猛</td><td class="trend-down">最短，通常1至3天</td></tr>
+                        <tr><td>产业链层</td><td>某环节国产化突破、产能落地、进入供应体系</td><td>中等，需要验证</td><td>数周至数月</td></tr>
+                        <tr><td><strong>订单层</strong></td><td><strong>中标、长协、预付款、交付确认</strong></td><td>最慢，但最实</td><td class="trend-up"><strong>最长，可跨季度</strong></td></tr>
+                    </tbody>
+                </table>
+                <p>本期两个主题恰好各占一层：<strong>星舰回收属于事件层，所以“新闻最大、股价最冷”；医保目录属于产业链层偏订单层——因为它直接改变了相关药品的放量节奏与支付通道，所以它能落到业绩上。</strong></p>
+                <p>这也是为什么同样在周末落地，医药和商业航天今天的走势很可能分化。<strong>判断标准不是“哪个新闻更大”，而是“哪个能更快变成报表上的收入”。</strong>医保目录的落地时间是明确的——<strong>2027年1月1日执行，之后每个季度的销售额都可以被跟踪</strong>；而星舰回收什么时候变成A股某家公司的订单，目前没有时间表。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">周末还有四个变量，其中一个是定价框架的改变</h3>
+                <span class="section-tag">宏观与操作</span>
+            </div>
+            <div class="content">
+                <p>医保与星舰之外，这个周末还有四件事，重要性依次递增——<strong>但排在最后的那个，可能是最重要的。</strong></p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>变量</th><th>内容</th><th>性质</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>外汇存款准备金率</td><td>11月15日起由4%上调至6%正式生效，为2021年12月以来首次上调</td><td>汇率端防波堤，落地即完成</td></tr>
+                        <tr><td>新型储能实施方案</td><td>2030年全国新型储能装机达3亿千瓦、平均时长3小时左右，首次明确建立电网侧独立新型储能容量电价机制</td><td>顶层设计，收益模式被写进制度</td></tr>
+                        <tr><td>10月金融数据</td><td>社融存量469.16万亿元、同比增7.2%；10月社融增量1.15万亿元，前十个月累计28.61万亿元、同比少2.29万亿元；M2增7.1%、M1增4.4%、M0增10.7%</td><td>总量平稳，结构待观察</td></tr>
+                        <tr><td><strong>美联储金融稳定报告</strong></td><td><strong>87%的受访者将AI列为显著风险（5月为50%）；先进计算相关债券发行已达6800亿美元；数据中心相关债务与担保合计可能超3万亿美元</strong></td><td class="trend-down"><strong>定价框架的改变</strong></td></tr>
+                    </tbody>
+                </table>
+                <p>为什么最后一条最重要？因为它把AI从“产业叙事”挪进了“金融稳定”这个框里。<strong>两件事的区别在于：讨论产业叙事时，市场问的是“需求还在不在”；讨论金融稳定时，监管问的是“杠杆会不会传导”。</strong>前一个问题由企业回答，后一个问题由央行回答。</p>
+                <p>而且这次不是抽象的担忧，是带数字的：<strong>87%的受访者把AI列为显著风险，半年前这个比例只有50%——半年翻了近一倍；同时给出了6800亿美元的先进计算相关债券、以及可能超过3万亿美元的数据中心债务与担保。</strong></p>
+                <p>这组数字与上周那份报告的结论接上了。<strong>上周我们拆过芯片厂商的“设备残值兜底”结构：5000亿融资平台里牵头方只兜25%、表外承诺总额已达4.11万亿美元、90天新增近1万亿。当时那是市场层面的观察；而现在，央行层面的报告用“6800亿债券、超3万亿债务与担保、87%受访者”给同一个现象做了官方背书。</strong></p>
+                <p><strong>当同一件事同时出现在市场观察与央行报告里，它的定价方式就会变——从“估值问题”变成“监管变量”。</strong>后者不改变当期盈利，但会改变折现率与风险偏好，而且往往以“不经意的一次表态”作为起点。<strong>这是接下来一个季度里，比任何单个财报都更值得盯的线索。</strong></p>
+                <p>其余三条则是各有各的时间尺度。<strong>外汇存款准备金率上调在11月15日已经生效，属于“已定价”的变量，对市场的影响主要落在人民币汇率的双向波动上，不构成新的冲击。</strong>储能方案的价值在于<strong>把“容量电价＋电能量套利＋辅助服务”三项收益写进了制度</strong>——这解决的是储能项目最难的“钱从哪来”问题，利好是长的、但落地要等项目逐个核准。<strong>10月金融数据总量平稳，社融前十个月同比少2.29万亿，说明信用扩张的力度仍需观察，M1增4.4%与M0增10.7%的差距也提示资金活化程度有限。</strong></p>
+                <p>把上周的市场回顾列出来，可以看出这一周开局处在什么位置：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>市场</th><th>上周表现</th><th>结构特征</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A股（11月13日单日）</td><td class="trend-down">沪指跌0.59%报3634.35点、深成指跌2.05%、创业板指跌3.32%，成交1.66万亿元、超4700只下跌</td><td>科技硬件承压，低位板块轮动</td></tr>
+                        <tr><td>A股（周线）</td><td>上证跌0.41%、科创50涨2.11%</td><td>指数跌幅有限、内部剧烈分化</td></tr>
+                        <tr><td>港股</td><td class="trend-down">恒生指数跌1.55%报23637.60点、恒生科技跌3.02%</td><td>AI硬件链同步承压</td></tr>
+                        <tr><td>美股（11月13日）</td><td class="trend-down">道指涨0.10%、标普500跌0.40%、纳指跌0.91%、费半跌3.43%</td><td>芯片是主要拖累</td></tr>
+                        <tr><td>美股（周线）</td><td class="trend-up">道指涨2.07%、标普涨2.51%、纳指涨2.27%、费半涨8.05%</td><td>周线仍是上涨，与单日方向相反</td></tr>
+                        <tr><td>英伟达</td><td class="trend-down">跌2.0%报162.85美元，本周累跌12.7%、连续第六周下跌（2012年以来最长）、市值蒸发逾5730亿美元</td><td>个股与板块彻底分离</td></tr>
+                        <tr><td>中概</td><td class="trend-down">纳斯达克金龙周跌5.49%</td><td>承压最重的一类资产</td></tr>
+                        <tr><td>商品</td><td class="trend-down">COMEX黄金周跌4.55%（6月初以来最大周跌幅）、两油连续第二周收跌</td><td>强美元＋高利率压制</td></tr>
+                        <tr><td>美元与美债</td><td class="trend-down">美元指数103.423（2025年4月以来最高）、10年期美债5.1413%</td><td>分母端仍在收紧</td></tr>
+                    </tbody>
+                </table>
+                <p>这张表里有一处非常值得注意的反差：<strong>美股周线是涨的（标普涨2.51%、费半涨8.05%），但单日是大跌的（费半跌3.43%）。</strong>这说明<strong>下跌集中在周五一天，前四天是上涨的。</strong>结合“英伟达连续第六周下跌、本周跌12.7%”来看，<strong>这一轮的杀跌不是普跌，而是在一周之内把涨幅还回去、并且把筹码从最贵的票里赶出来。</strong></p>
+                <p>基于以上，各类资产的动作可以列成这样：</p>
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>对象</th><th>当前位置</th><th>动作</th><th>理由</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>创新药（有品种进目录）</td><td>医保目录落地、2027年1月执行</td><td>作为本周主线之一，逢回调分批，不追涨停</td><td>目录属“产业链偏订单层”，放量节奏可被季度跟踪；但“谈判前跌、落地后补涨”的规律意味着兑现日也常有分歧</td></tr>
+                        <tr><td>CAR-T 与细胞治疗链</td><td>首个CAR-T进医保，降价约77%</td><td>关注“以价换量”能否兑现，不按“涨价逻辑”买</td><td>降价是确定的、放量是待验证的；且需注意企业产品收入高度集中带来的波动</td></tr>
+                        <tr><td>商业航天</td><td>事件层催化，今早板块跌3.25%、主力净流出约26亿</td><td>只做情绪博弈、不追高；等产业链或订单层信号</td><td>“别人的突破不是自己的订单”，事件层反应通常1至3天</td></tr>
+                        <tr><td>储能</td><td>“十五五”方案落地，容量电价机制首次明确</td><td>中期配置方向，但需等项目核准逐步兑现</td><td>解决了收益模式问题，但短期业绩弹性有限</td></tr>
+                        <tr><td>AI算力硬件</td><td>费半周涨8.05%但单日跌3.43%；英伟达六连跌</td><td>不追反弹、等11月18日财报；结构上偏向非龙头</td><td>定价框架正从“产业叙事”转向“金融稳定”，个股与板块已彻底分离</td></tr>
+                        <tr><td>黄金与贵金属</td><td>周跌4.55%、创6月初以来最大周跌幅</td><td>回避，不接反包</td><td>强美元＋高名义利率的组合下，无息资产缺乏持有理由；但央行购金需求仍提供长期支撑</td></tr>
+                    </tbody>
+                </table>
+                <p>最后把三个判断固定下来：</p>
+                <p><strong>其一，看政策落地，先分清“数量型”还是“通道型”。</strong>新增107个是数量，商保目录转基本医保是通道。<strong>数量型政策的受益是分散的、一次性的；通道型政策的受益是结构的、可持续的。</strong>本期最有价值的不是51个创新药这个数字，而是“先商保、后医保”这条接力路径被打通了——<strong>它意味着未来每一个高值疗法都有了一条可预期的准入路线。</strong></p>
+                <p><strong>其二，看产业突破，先分清“事件层、产业链层、订单层”。</strong>星舰夹住飞船是事件层，反应最猛但最短；医保目录是产业链层偏订单层，反应慢但持续时间长。<strong>判断依据很简单：这个事件在多长时间内能变成报表上的收入？答案是“几天”的，就按几天做；答案是“几个季度”的，才配得上中期仓位。</strong></p>
+                <p><strong>其三，看AI风险，注意官方口径已经从“增长故事”变成了“金融稳定议题”。</strong>87%的受访者把AI列为显著风险（半年前50%）、6800亿先进计算债券、超3万亿数据中心债务与担保——这些数字指向的不是需求问题，是杠杆问题。<strong>当讨论从“需求还在不在”变成“杠杆会不会传导”，定价权就从企业手里交到了央行手里。这个转变不需要任何一份财报来证明，但它会改变未来一年的折现率。</strong></p>
+                <div class="quote-block">
+                    <p>“新增107个是数量，商保转医保是通道。数量型政策一次性，通道型政策可复制——这次真正给出来的，是那条路。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月16日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
