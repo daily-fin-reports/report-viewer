@@ -715,7 +715,19 @@ body {
   
   .main { height: auto; overflow: visible; }
   
-  .viewer { flex: none; height: auto; min-height: 60vh; }
+  /* 关键修复：iframe 的 height:100% 在父元素 height:auto 下无法解析、会退化为
+     浏览器默认的 150px，手机端表现为「只能看到报告顶部一条缝」。
+     这里给容器与 iframe 双重确定高度兜底，即使 JS 未生效也能满屏显示。 */
+  .viewer {
+    flex: none;
+    height: auto;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .viewer iframe {
+    height: 100%;
+    min-height: calc(100vh - 200px);
+  }
   
   .sidebar {
     position: fixed;
@@ -750,7 +762,21 @@ body {
   
   .mobile-calendar-bar { display: block; }
   
-  .toolbar { display: none; }
+  /* 原来这里整行隐藏 toolbar，导致手机端既看不到报告标题、也没有「新窗口打开」
+     这一唯一兜底入口。改为保留一行精简按钮（标题区隐藏，按钮均分整行）。 */
+  .toolbar {
+    display: flex;
+    padding: 0 10px 0 48px;
+  }
+  
+  .toolbar .report-title { display: none; }
+  
+  .toolbar .nav-btns {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .toolbar button { padding: 0 12px; }
 }
 
 /* Scrollbar */
@@ -1277,12 +1303,17 @@ function loadReport(idx) {
   loadingOverlay.classList.add('active');
   
   // Load iframe
-  frame.src = 'reports/' + encodeURIComponent(r.filename);
-  
+  // 注意顺序：必须先绑定 onload / onerror，最后再赋 src。
+  // 否则在手机端（缓存命中、报告体量小）加载可能在绑定完成前就结束，
+  // onload 回调丢失 → adjustIframeHeight 永不执行 → iframe 停在默认 150px。
   frame.onload = () => {
     loadingOverlay.classList.remove('active');
     frame.style.display = 'block';
     adjustIframeHeight();
+    if (isMobile) {
+      // 报告内的字体、表格、图片会改变文档高度，需分阶段重算
+      [80, 250, 600, 1200].forEach(ms => setTimeout(adjustIframeHeight, ms));
+    }
   };
   
   frame.onerror = () => {
@@ -1290,6 +1321,8 @@ function loadReport(idx) {
     emptyState.style.display = 'flex';
     emptyState.innerHTML = '<div class="empty-icon">⚠️</div><h2>加载失败</h2><p>无法加载该研报，请检查文件是否存在</p>';
   };
+  
+  frame.src = 'reports/' + encodeURIComponent(r.filename);
   
   // Update hash
   history.replaceState(null, null, '#' + encodeURIComponent(r.filename));
@@ -1412,8 +1445,21 @@ document.addEventListener('keyup', (e) => {
 });
 
 function adjustIframeHeight() {
-  if (!isMobile || !frame.contentDocument || !frame.contentDocument.body) return;
-  frame.style.height = frame.contentDocument.body.scrollHeight + 'px';
+  if (!isMobile) return;
+  // 兜底高度：一屏可视区（头部工具栏 56 + 移动日历条约 101 + 面包屑约 35）
+  const fallback = Math.max(window.innerHeight - 200, 400);
+  try {
+    const doc = frame.contentDocument;
+    if (doc && doc.body) {
+      const h = Math.max(doc.body.scrollHeight || 0, doc.documentElement.scrollHeight || 0);
+      // 读到 0 或异常小值时不要采信，否则 iframe 会被压成一条缝
+      frame.style.height = (h > 200 ? h : fallback) + 'px';
+      return;
+    }
+  } catch (err) {
+    // 跨域策略或文档尚未就绪时读取会抛错，落回兜底高度
+  }
+  frame.style.height = fallback + 'px';
 }
 
 // ===== Responsive =====
