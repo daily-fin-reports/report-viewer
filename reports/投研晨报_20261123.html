@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月23日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美股（11月20日）：三大指数大幅下挫并全部进入技术回调区间——道指跌1.93%（跌949.73点）报48147.33点，标普500跌3.70%（跌265.44点）报6910.39点，纳斯达克跌5.28%（跌1261.47点）报22617.73点；纳指已全部回吐今年以来涨幅、年内累计下跌约2.69%，较10月6日历史最高收盘价下跌逾18%；标普500与道指较各自历史高点分别下跌11.62%和11.41%。纳指本周累跌10.02%，为2020年3月以来表现最差的一周，成分股市值一周蒸发逾4万亿美元。个股方面，英伟达重挫约14%，博通、超威半导体与美光科技跌幅均超12%，闪迪跌超10%，11月19日刚上市的Anthropic跌8.5%；标普500十一大板块十跌一涨，科技板块跌7.11%、非必需消费品跌3.50%领跌，必需消费品逆势涨0.68%。避险需求推动下，10年期美债收益率盘中最大跌幅接近14个基点、收盘跌10.4个基点至4.944%；VIX恐慌指数盘中最高升至40.03、收于35.89、涨26.2%，为2025年4月以来最高 · 周末稳市：11月22日经中国证监会批准，沪深北交易所发布通知将融资保证金比例下限由100%下调至80%，自11月30日起实施，同等保证金最多可融规模抬升25%、理论上可释放约4000亿元融资空间，这是继今年1月14日由80%上调至100%之后的再次调回；截至11月19日A股融资融券余额22222.85亿元、为近一年最低（融资余额21927.43亿元、融券余额295.42亿元），较6月末约3万亿元明显回落。同日深交所就《创业板股票做市交易业务细则》公开征求意见，推进创业板引入做市商制度；沪深交易所推出新一批降费措施，上交所新增让利预计13.68亿元、2026年度整体降费超24亿元，深交所新增让利预计13.9亿元、2026年度整体降费超22亿元，两所年初已发布的免收上市费与债券交易经手费措施有效期延长两年至2028年，中国结算继续暂免部分债券登记结算费用 · 亚太应对：中国台湾地区自11月23日起全面禁止平盘以下放空，此前已于11月19日扩大限制卖空，融券保证金成数同步上调，并鼓励上市公司回购，其加权指数上周录得1990年8月以来最差单周表现；韩国11月22日召开金融市场紧急会议，宣布证券市场稳定基金已做好准备、可视情况即刻启用（2008年金融危机以来首次），自11月24日起放宽上市公司股票回购申报单日限额、为期三个月，并对非法卖空开展三个月专项集中监控，KOSPI上周五单日跌超5%、较6月高点回撤近47%；日本股市11月23日因公共假期休市，日本央行此前明确目前没有进一步加快出售所持ETF的计划；印度为亚太主要市场中唯一未见救市举措者 · A股与亚太（11月23日）：三大指数集体低开，沪指开盘跌0.86%报3503.52点、深证成指跌0.98%报10155.60点、创业板指跌0.75%报2195.52点；沪指盘中最低下探3477点后迅速反弹，至11时10分沪指跌1.21%报3491.06点（最低3476.65点），而创业板指已翻红涨0.21%报2216.79点（最低2188.45点、最高2231.25点）；板块分化明显，券商涨0.39%、贵金属涨0.25%、锑涨0.23%、黄金概念涨0.15%领涨，洁净室概念跌2.93%、园林工程跌2.75%领跌，人形机器人方向领涨、宇树科技盘中一度涨9.32%，真视通5连板；纳指期货盘中涨幅扩大至2.5%；上证50ETF上周五成交额突破240亿元刷新历史天量，12家上市公司发布不低于2亿元的回购计划；韩国KOSPI开盘跌2.77%报4734.90点、盘中跌幅扩大至4.1%，三星电子跌超4%、SK海力士跌超3%，市场预期韩国央行本周加息25个基点至3.25%</p>
+            <p class="header-date">2026年11月23日 · 周一 · 跌的不是需求，是折现率；救的不是指数，是流动性 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>纳指单日跌5.28%，一周跌10.02%创2020年3月以来最差</strong>
+                        三大指数全部进入技术回调区间，纳指回吐全年涨幅、较10月高点跌逾18%；英伟达单日跌约14%、博通与AMD及美光跌超12%。<strong>VIX冲至40.03、收35.89涨26.2%</strong>，为2025年4月以来最高
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon gold">🔍</div>
+                    <div class="summary-text">
+                        <strong>这一次和前三轮不一样：跌的是资本开支预期</strong>
+                        今年3月是美伊冲突、去年4月是中美贸易战、2024年8月是日元套息交易逆流——<strong>都是宏观事件冲击</strong>。这一次的核心是“AI资本开支与数据中心建设节奏变慢”，指向2028至2029年业绩，<strong>有基本面支撑，所以更难修复</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">⚖️</div>
+                    <div class="summary-text">
+                        <strong>关键判据：股跌金跌商品跌，但美债在涨</strong>
+                        10年期美债收益率单日下行10.4个基点至4.944%、盘中最大跌近14个基点。<strong>任何一轮金融危机，债券市场都是最重要的风险表征</strong>——债在涨，说明这是流动性在“换资产”，不是信用在崩塌
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🏛️</div>
+                    <div class="summary-text">
+                        <strong>亚洲在救市，欧美在静默</strong>
+                        A股三箭齐发（保证金100%降至80%释放约4000亿空间、创业板做市商、一揽子降费），中国台湾地区禁平盘下放空，韩国稳定基金待命并放宽回购。<strong>而美联储与欧洲央行上周没有任何实质救市动作</strong>，信号甚至偏鹰
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">纳指单日跌5.28%，一周回吐今年全部涨幅</h3>
+                <span class="section-tag">上周五美股</span>
+            </div>
+            <div class="content">
+                <p>11月20日的美股不是普通回调，是<strong>三大指数同时跌进技术回调区间</strong>，而且纳指把今年以来的涨幅全部吐了回去。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>指数</th><th>收盘</th><th>单日</th><th>较历史高点</th><th>备注</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>纳斯达克</strong></td><td>22617.73点</td><td class="trend-down">-5.28%（-1261.47点）</td><td class="trend-down">-18.05%</td><td><strong>回吐今年全部涨幅，年内累跌2.69%</strong></td></tr>
+                        <tr><td><strong>标普500</strong></td><td>6910.39点</td><td class="trend-down">-3.70%（-265.44点）</td><td class="trend-down">-11.62%</td><td>十一大板块十跌一涨</td></tr>
+                        <tr><td><strong>道琼斯</strong></td><td>48147.33点</td><td class="trend-down">-1.93%（-949.73点）</td><td class="trend-down">-11.41%</td><td>—</td></tr>
+                        <tr><td><strong>纳指周线</strong></td><td>—</td><td class="trend-down">-10.02%</td><td>—</td><td><strong>2020年3月以来最差一周</strong>，成分股市值一周蒸发逾4万亿美元</td></tr>
+                        <tr><td><strong>VIX恐慌指数</strong></td><td>35.89</td><td class="trend-up">+26.2%（盘中最高40.03）</td><td>—</td><td>2025年4月以来最高</td></tr>
+                        <tr><td><strong>10年期美债收益率</strong></td><td>4.944%</td><td class="trend-up">下行10.4个基点<br>（盘中最大近14个基点）</td><td>—</td><td><strong>避险需求推动，收益率下行即债券价格上涨</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p>个股层面的集中度极端：<strong>英伟达单日跌约 14%</strong>，博通、超威半导体、美光科技跌幅均超 12%，闪迪跌超 10%，连 11 月 19 日刚上市的 Anthropic 也跌了 8.5%。板块上，科技板块跌 7.11%、非必需消费跌 3.50%，而<strong>必需消费品逆势涨 0.68%</strong>——这是典型的“从长久期资产撤向短久期资产”。</p>
+
+                <p>把一周放在一起看更能说明问题：纳指一周跌 10.02%、成分股市值蒸发逾 4 万亿美元，创 2020 年 3 月以来最差单周。<strong>4 万亿美元这个数字，接近一个中等国家的年度 GDP。</strong></p>
+
+                <p>但真正需要辨别的不是跌幅，是<strong>这一次跌的东西和以前不一样</strong>。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">这一次和前三轮不一样：跌的是资本开支的预期</h3>
+                <span class="section-tag">下跌性质</span>
+            </div>
+            <div class="content">
+                <p>过去两年里，美股经历过四次幅度相近的大跌，但<strong>驱动它们的东西完全不同</strong>——这决定了修复的方式与所需时间。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>时点</th><th>触发因素</th><th>性质</th><th>修复方式</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>2024年8月</strong></td><td>日元套息交易逆流</td><td>技术性、流动性</td><td class="trend-up">快：头寸平完即止</td></tr>
+                        <tr><td><strong>2025年4月</strong></td><td>中美贸易战</td><td>政策事件</td><td class="trend-up">快：谈判出现转机即修复</td></tr>
+                        <tr><td><strong>2026年3月</strong></td><td>美伊冲突</td><td>地缘事件</td><td class="trend-up">较快：事件降温即修复</td></tr>
+                        <tr><td><strong>2026年11月</strong></td><td><strong>AI资本开支与数据中心建设节奏变慢的预期</strong></td><td><strong>产业基本面预期</strong></td><td class="trend-down">慢：需要业绩验证，无法靠消息修复</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>前三轮都是“外部冲击”，冲击过去就结束；这一轮是“内部预期”，必须靠数据来证明或证伪。</strong>这就是为什么同样是跌 5%，这一次的复杂程度高得多——它指向的是 2028 至 2029 年的业绩，而不是下个季度的订单。</p>
+
+                <p>把市场正在重新定价的三件事按顺序摆出来，会发现它们都指向同一个方向：</p>
+
+                <ul>
+                    <li><strong>数据中心建设放缓的预期</strong>——这直接决定算力订单的斜率；</li>
+                    <li><strong>AI 相关项目融资渠道减少</strong>——这决定了谁能继续建；</li>
+                    <li><strong>技术相关企业盈利增长曲线放缓</strong>——这是前两件事在报表上的结果。</li>
+                </ul>
+
+                <p>此外还有三个放大器：Anthropic 上市从其他 AI 标的中抽走了资金；美元走强导致金融条件收紧；民主党在中期选举中夺回国会控制权并赢得多个州长席位，让“AI 监管趋严 → 数据中心建设放缓”这条传导链变得可信。<strong>把它们叠起来，才有“完美风暴”这个说法。</strong></p>
+
+                <p>但也要把位置讲清楚：<strong>纳指较高点跌 18%，仍在这个指数“每年挖一个 20% 至 30% 的坑”的常规区间内</strong>——今年上半年已经挖过一次，现在这一轮的深度与 3 月那次大致相当。<strong>这是判断“该不该恐慌”的一个客观参照：从指数本身看，现在不在需要盲目杀跌的位置。</strong></p>
+
+                <p>不过这句话有一个重要限定：<strong>指数是平均数，个股不是。</strong>如果持有的是单一标的，必须单独回答“它的基本面有没有发生变化”——因为这一轮跌的是预期，而预期对不同公司的影响完全不同。</p>
+
+                <div class="quote-block">
+                    <p>一条区分“该不该怕”的判据：<strong>问这一次跌的是“外部事件”还是“内部预期”。</strong>外部事件的修复只需要时间，内部预期的修复需要证据。前者可以等，后者必须看数据——而数据要到下一个财报季才来。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">关键判据：股跌、金跌、商品跌，但美债在涨</h3>
+                <span class="section-tag">性质鉴别</span>
+            </div>
+            <div class="content">
+                <p>这段时间的盘面确实很像危机：<strong>美股、黄金、白银、铜、各国股市、虚拟货币、亚太市场几乎同步下跌</strong>。当所有资产一起跌的时候，人的本能反应是“金融危机来了”。</p>
+
+                <p>但有一项资产给出了相反的答案——<strong>债券在涨。</strong>11月20日，10年期美债收益率盘中最大下行接近 14 个基点、收盘下行 10.4 个基点至 4.944%。<strong>收益率下行，就是债券价格上涨。</strong></p>
+
+                <p>这一条足以改变对整件事的定性。<strong>任何一轮金融危机，债券市场都是最重要的风险表征地</strong>——因为危机的本质是信用链条断裂，而信用链条最先断在债上。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>观察项</th><th>真正的金融危机</th><th>本期实际情况</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>债券市场</strong></td><td>无序波动、流动性枯竭、买卖价差异常扩大</td><td class="trend-up"><strong>价格上涨、收益率下行，避险资金流入</strong></td></tr>
+                        <tr><td><strong>货币基金</strong></td><td>2020年3月曾出现连续负收益、大额回撤</td><td>未见异常</td></tr>
+                        <tr><td><strong>黄金</strong></td><td>危机初期因流动性变现被抛售，随后快速反弹</td><td class="trend-down">持续下跌，未见避险买盘</td></tr>
+                        <tr><td><strong>资金流向</strong></td><td>无差别抛售一切、只要现金</td><td><strong>有明确方向：从高波动资产流向债券类与货币类</strong></td></tr>
+                        <tr><td><strong>定性</strong></td><td>信用收缩</td><td><strong>有序的资产再配置</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p>所以更准确的描述是：<strong>这是一次资金从“高波动资产”向“稳定资产”的搬家，不是一次信用体系的崩塌。</strong>过去几年美股涨得太多，投资者开始觉得“该进入调整了”，于是把美股、黄金这些高波动资产换成债券类、货币类产品——<strong>这是主动选择，不是被迫清算。</strong></p>
+
+                <p>这个区别的实践含义非常大：<strong>被迫清算会自我强化（越跌越卖、越卖越跌），主动换仓不会。</strong>前者需要外力（政策、央行）才能停止，后者在换仓完成后自己就会停止。</p>
+
+                <p>也正因为如此，才需要盯住两个真正的变量：<strong>12月8日至9日的议息会议</strong>（加息本身已被定价 92.7%，真正的信息是会议声明与点阵图对明年节奏的表述——如果没有超预期的鹰派措辞，市场就能得到一个阶段的平静），以及<strong>政策层面是否还有新的意外</strong>。</p>
+
+                <div class="quote-block">
+                    <p>把这条判据记牢：<strong>看到“所有资产一起跌”，先去查债券。</strong>债也在跌，那是信用问题；债在涨，那是资金在换座位。前者需要救，后者只需要等。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">周末三箭：4000亿是“空间”，不是“资金”</h3>
+                <span class="section-tag">稳市政策</span>
+            </div>
+            <div class="content">
+                <p>11月22日，监管层连夜推出一揽子稳市举措。三条工具的分工非常清晰，而且各自解决的是不同的问题。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>工具</th><th>具体内容</th><th>生效时间</th><th>解决什么</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>第一箭·补弹药</strong></td><td>融资保证金比例下限由100%下调至80%，同等保证金最多可融规模抬升25%</td><td><strong>11月30日</strong>（并非立即）</td><td>降低开仓成本、盘活存量合约，理论上释放约<strong>4000亿元</strong>融资空间</td></tr>
+                        <tr><td><strong>第二箭·补深度</strong></td><td>深交所就《创业板股票做市交易业务细则》公开征求意见，推进创业板引入做市商制度</td><td>征求意见阶段</td><td>提供双边报价、收窄买卖价差、增加订单深度</td></tr>
+                        <tr><td><strong>第三箭·降成本</strong></td><td>上交所新增让利13.68亿元（2026年整体降费超24亿）；深交所新增让利13.9亿元（整体超22亿）；两所免收上市费与债券经手费延长至2028年；中国结算继续暂免部分债券费用</td><td>已发布</td><td>降低交易与融资成本</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>第一条是三条里当期影响最大的，但它的算法需要说清楚。</strong>保证金比例从 100% 降到 80%，意思是原来 100 元保证金最多融 100 元（杠杆 1 倍），现在 80 元保证金就能融 100 元（杠杆 1.25 倍）——<strong>同等保证金能撬动的规模提升了 25%</strong>，全市场理论上对应约 4000 亿元的融资空间。</p>
+
+                <p><strong>但“空间”不等于“资金”。</strong>这 4000 亿要真正变成买盘，前提是有人愿意在这个位置加杠杆。<strong>而现实是：股票下跌的过程中，使用融资融券的人本来就很少</strong>——两融余额已从 6 月末约 3 万亿元回落到 11 月 19 日的 22222.85 亿元，为近一年最低。</p>
+
+                <p>所以这条政策的真实作用，不是“投放 4000 亿”，而是<strong>发出一个信号：政策端愿意在市场调整时适度改善场内信用条件</strong>。它的目标不是推涨，而是<strong>掐断“下跌 → 追保 → 卖出 → 再下跌”这个负反馈环</strong>。</p>
+
+                <p>这里有一个容易被忽略的细节：<strong>这是同一套逆周期工具箱的第二次切换。</strong>今年 1 月 14 日，融资保证金比例刚从 80% 上调到 100%，用来抑制当时的过热与杠杆扩张；十个月后，又从 100% 调回 80%。<strong>同一个工具、半年多时间里两个方向各用一次，说明它的目标从来不是“推涨”，而是“防止极端”。</strong></p>
+
+                <p>第二条做市商制度，是一条<strong>中性制度</strong>，不直接创造买盘，但改变交易质量：做市商持续提供双边报价，能收窄买卖价差、增加订单深度。对流动性薄的小市值公司意义最大——原来一只日成交几十万元的股票，看着报价 3.5 元，真要买可能得 3.8 至 3.9 元才成交；有了做市商，这个冲击成本会明显下降。<strong>它同时能抑制“打板”类策略：成交稀薄的公司原本容易被几千万资金连续拉出两个涨停，做市商的反向报价会让这件事变难。</strong></p>
+
+                <p>第三条降费，两家交易所合计让利 40 多亿元——<strong>摊到每个投资者头上其实感知不强</strong>。但它和另外两条同时发出，<strong>传递的信号意义远大于金额本身</strong>：三个不同维度的工具在同一天落地，说明这是一次有准备的组合行动，而不是单点救急。</p>
+
+                <p>今天的盘面给出了一个很精确的验证：<strong>沪指盘中最低下探 3477 点、至 11 时 10 分仍跌 1.21% 报 3491.06 点，而创业板指已经翻红涨 0.21%。</strong>权重弱、创业板强，差出 1.4 个百分点——这正好对应三条政策的落点差异：<strong>做市商制度落在创业板，而保证金与降费是全局性的。</strong>政策没有承诺指数上涨，但确实给特定板块垫了一层缓冲。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">亚洲在救市，欧美在静默：同一次下跌，两种判断</h3>
+                <span class="section-tag">全球应对</span>
+            </div>
+            <div class="content">
+                <p>这个周末最值得看的一件事，不是某一条政策本身，而是<strong>各地出手的方式完全不同，而欧美几乎没有出手。</strong></p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>市场</th><th>主要工具</th><th>工具的性质</th><th>目标</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>A股</strong></td><td>保证金比例100%降至80%（释放约4000亿空间）、创业板做市商、两所降费</td><td><strong>补弹药+补深度+降成本</strong></td><td>掐断负反馈、改善流动性</td></tr>
+                        <tr><td><strong>中国台湾地区</strong></td><td>11月23日起全面禁止平盘以下放空，融券保证金成数上调，鼓励回购，国安基金进场（市场口径规模约150亿美元）</td><td><strong>改规则</strong>（行政限制）</td><td>切断恐慌性做空对价格的额外压制</td></tr>
+                        <tr><td><strong>韩国</strong></td><td>证券市场稳定基金准备就绪、可即刻启用（2008年以来首次）；11月24日起放宽回购申报单日限额三个月；非法卖空三个月专项监控</td><td><strong>改供需</strong>（真金白银）</td><td>给杠杆资金一个“最后买方”的可信信号</td></tr>
+                        <tr><td><strong>日本</strong></td><td>11月23日因公共假期休市；央行此前明确目前没有加快出售所持ETF的计划</td><td><strong>搬石头</strong>（消除预期）</td><td>移除一项被暗中定价的潜在抛压</td></tr>
+                        <tr><td><strong>印度</strong></td><td>无（主要市场中唯一未见救市举措）</td><td>—</td><td>不依赖AI叙事，靠城市化与人口结构，是这轮下跌的天然对冲</td></tr>
+                        <tr><td><strong>美国/欧洲</strong></td><td>上周无任何针对股市下跌的实质措施，美联储信号偏鹰（继续讨论12月加息幅度）</td><td><strong>不干预</strong></td><td>将其视为AI板块的合理重定价</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这张表最关键的一列是“工具的性质”。</strong>同样的目标（稳市场），四种做法在机制上完全不同：</p>
+
+                <ul>
+                    <li><strong>改规则</strong>（中国台湾地区的禁空令）见效最快，但会扭曲价格发现——当下跌本身被禁止，价格就不再有信息量；</li>
+                    <li><strong>改供需</strong>（韩国的稳定基金）见效慢一些，但更根本，因为它真的提供了一个买方；</li>
+                    <li><strong>补流动性</strong>（A股的三箭）既不直接买也不禁止卖，而是降低交易摩擦、增加市场深度，是最“中性”的一种；</li>
+                    <li><strong>搬石头</strong>（日本央行明确不加速卖 ETF）成本最低——<strong>不花一分钱，只消除一个“谁会卖”的预期。</strong>而市场最怕的恰恰不是“有人卖”，是“不知道谁会卖”。</li>
+                </ul>
+
+                <p>然后是那个更大的对照：<strong>亚洲在连夜出手，欧美一动不动。</strong></p>
+
+                <p>这不是能力差异，是<strong>归因差异</strong>。美国市场把这次下跌理解为“AI 板块的合理重定价”——既然估值本来就太高，跌下来是修复，不需要救；而亚洲市场把它理解为“输入型风险”——本国基本面没有变化，是外部情绪传染过来的，所以要用政策隔断。<strong>同一次下跌，两种归因，两套政策。</strong></p>
+
+                <p><strong>这也解释了一个更实用的问题：为什么中韩可能比美股先企稳。</strong>答案不在政策力度，在杠杆出清的时点。</p>
+
+                <p>韩国是“在太平的时候主动给自己降杠杆”最典型的案例：今年 3 月 KOSPI 跌到 5000 点附近时被提示过机会，随后快速涨到接近 9000 点，而当时的卖出建议，一个重要理由就是<strong>韩国开始主动管控股市热度、给市场降杠杆</strong>。中国则是今年 1 月 14 日把融资保证金比例从 80% 上调到 100%，同样是一次主动降杠杆。</p>
+
+                <p><strong>换句话说：中国和韩国股市已经把杠杆降完了。</strong>杠杆降完的意义在于——当外部冲击到来时，<strong>不会再出现“下跌 → 追保 → 卖出 → 再下跌”的共振</strong>。而没有降完杠杆的市场，输入型冲击会被本地杠杆放大成内生性下跌。</p>
+
+                <p>这可以固化成一句判据：<strong>面对输入型冲击，先看本地杠杆是否已经出清——先降杠杆的，先企稳。</strong></p>
+
+                <p>今天的盘面已经开始验证这个判断。A 股低开后沪指一度跌破 3500 点（最低 3477 点），但创业板指已经翻红；韩国 KOSPI 虽开盘跌 2.77%、盘中扩大到 4.1%，但三星电子与 SK 海力士的跌幅都在 3% 至 4% 量级，没有出现流动性踩踏。<strong>而印度这个“不搞 AI”的市场，这段时间反而在连续上涨——它是这轮全球 AI 交易里唯一的天然对冲。</strong></p>
+
+                <p>据此给各方向的操作口径：</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>方向</th><th>当前位置</th><th>建议动作</th><th>依据</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>美股（已有配置）</strong></td><td>纳指较高点跌18%，仍在常规回撤区间</td><td><strong>保留基本配置，不盲目杀跌</strong>；等12月8至9日议息会议后再判断</td><td>跌的是资本开支预期而非宏观事件，需要数据验证；但指数位置本身已接近常规坑底</td></tr>
+                        <tr><td><strong>美股（想加仓）</strong></td><td>VIX 35.89，恐慌未完全释放</td><td>分批、不一次打光；优先宽基而非单一标的</td><td>个股要单独回答“基本面有没有变”，指数只要回答“位置贵不贵”</td></tr>
+                        <tr><td><strong>A股（大盘权重）</strong></td><td>沪指跌破3500，权重承压</td><td>不追当日反弹；等缩量与情绪企稳</td><td>政策针对流动性而非盈利，权重修复需要资金面实质改善</td></tr>
+                        <tr><td><strong>A股（创业板/科技）</strong></td><td>今日已翻红，做市商制度直接受益</td><td>可关注，但只买有业绩支撑的；不追主题</td><td>做市商改善的是流动性不是盈利，对流动性差的小市值公司意义最大</td></tr>
+                        <tr><td><strong>券商</strong></td><td>今日涨0.39%领涨</td><td>作为政策直接受益方向关注，但不作为主仓</td><td>保证金下调对两融利息与经纪业务是边际催化，弹性有限</td></tr>
+                        <tr><td><strong>债券与现金</strong></td><td>10年期美债4.944%，价格已上涨</td><td>已有配置的继续持有；这里是这轮资金的“目的地”</td><td>资金正在从高波动资产搬到债券类，这个方向短期不会逆转</td></tr>
+                    </tbody>
+                </table>
+
+                <p>最后把三个判断固定下来：</p>
+
+                <p><strong>其一，所有资产同时下跌时，先查债券。</strong>债也在跌，是信用问题；债在涨，是资金在换座位。前者需要救，后者只需要等。<strong>本期美债收益率单日下行 10.4 个基点，这是“换座位”最直接的证据。</strong></p>
+
+                <p><strong>其二，读救市政策，先分清它是“改规则”还是“改供需”。</strong>禁空令改规则、见效快但扭曲价格；稳定基金改供需、见效慢但更根本；降保证金与做市商改的是摩擦与深度，最中性也最不承诺方向。<strong>三类工具不能互相替代，也不该用同一个标准评价。</strong></p>
+
+                <p><strong>其三，面对输入型冲击，看本地杠杆出清到什么程度。</strong>外部冲击的杀伤力 = 冲击强度 × 本地杠杆倍数。中国与韩国在太平时期就主动降了杠杆，所以这一轮只需要承受“冲击”本身，不需要叠加“去杠杆”的内生下跌。<strong>先降杠杆的，先企稳——这是本轮最值得记住的一条。</strong></p>
+
+                <div class="quote-block">
+                    <p>“同样是跌 5%，外部事件跌出来的是坑，内部预期跌出来的是坡。坑可以爬，坡要等雪停。”</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月23日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
