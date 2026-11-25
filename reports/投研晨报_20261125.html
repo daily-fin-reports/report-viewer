@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月25日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">美股（11月24日）：三大指数走势分化，道指涨0.85%（涨423.39点）报50018.70点，标普500跌0.50%（跌36.08点）报7201.09点，纳斯达克跌1.48%（跌356.02点）报23733.54点；费城半导体指数重挫7.88%报8832.50点，按点数回吐周一约64%的涨幅；英伟达跌5.86%报155.38美元（周一涨31.48%），超威半导体跌8.86%、ARM跌8.55%、英特尔跌8.15%、博通跌3.98%、台积电跌3.83%、阿斯麦跌3.45%、高通跌0.25%；存储芯片跌幅更深，闪迪跌11.13%、美光跌10.97%、SK海力士跌9.90%、西部数据跌7.85%、希捷跌7.23%；大型科技股多数下跌，Meta、亚马逊、谷歌跌超1%，特斯拉跌0.20%，苹果涨1.43%、微软涨0.74%；防御与价值板块逆势走强，标普500十一大板块八涨三跌，医疗涨2.88%、必需消费涨1.73%领涨，科技跌2.77%、工业跌0.51%领跌，Moderna涨7.21%、安进涨5.54%、礼来涨3.34%、强生涨2.91%；消费者信心超预期回升，11月世界大型企业联合会消费者信心指数升至103.3、较10月跃升11.4点，远高于预期的92.2，为近两年最高；Anthropic收跌6.54%报81.905美元、跌破83美元发行价；纳斯达克中国金龙指数涨0.12%；国际油价大涨，WTI 1月合约涨2.35%报82.05美元、布伦特涨2.27%报91.40美元；欧洲三大股指全线下跌，德国DAX跌1.26%、法国CAC40跌0.05%、英国富时100跌0.13% · A股（11月24日）：三大指数高开低走，沪指开盘涨0.82%报3567.84点、收涨0.27%报3548.37点（最高3585.22点、最低3539.01点），深证成指跌0.29%、创业板指开盘涨逾4%后收跌0.05%报2278.99点，科创50涨1.81%；成交放大至1.67万亿元、较前一日增加1038亿元，1952只上涨、64只涨停、3498只下跌、4只跌停；大小盘分化，上证50涨0.45%、沪深300涨0.14%、中证2000涨0.23%，而中证1000跌0.23%、万得微盘股跌0.67%；申万一级行业中国防军工涨1.52%、电子涨1.51%、机械设备涨0.49%居前，有色金属跌2.53%、石油石化跌1.94%、环保跌1.34%居后；主力资金净流入近60亿元、连续两个交易日净流入 · A股（11月25日开盘）：沪指平开报3548.10点（昨收3548.37点）、微跌0.01% · 国内政策面：央行11月25日开展8000亿元1年期MLF操作，因当月到期1万亿元、实现净回笼2000亿元（连续第二个月净回笼），同日开展5000亿元7天期逆回购操作对冲5160亿元隔夜逆回购与800亿元国库现金定存到期；叠加3个月期与6个月期买断式逆回购合计净回笼3000亿元，11月中期流动性净回笼5000亿元；商务部公告自2026年11月28日起至2027年1月27日暂停实施2024年第46号公告第二款；工信部在上海启动6G创新发展部省协同试点，北京、河北、上海、江苏、浙江、安徽、湖北、广东八省市获批 · 待公布：11月25日21时30分美国10月核心PCE物价指数（同比预期由3.1%升至3.2%、环比预期持平于0.3%）、整体PCE（同比预期由3.6%升至3.8%）、三季度实际GDP年化修正值（预期3.5%、初值3.4%）与10月耐用品订单</p>
+            <p class="header-date">2026年11月25日 · 周三 · 利率的重定价已经完成，剩下的是「加几次」与「加到哪」 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🧭</div>
+                    <div class="summary-text">
+                        <strong>道指涨、纳指跌：这不是资金离场，是资金换位置</strong>
+                        道指涨0.85%报50018.70点，纳指跌1.48%报23733.54点，<strong>两个指数差出2.33个百分点</strong>。板块内部更直白：医疗涨2.88%、必需消费涨1.73%，而科技跌2.77%——<strong>相差5.65个百分点</strong>。若真是离场，防御板块该一起跌
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">📉</div>
+                    <div class="summary-text">
+                        <strong>费半跌7.88%，两天净涨只剩5.05%</strong>
+                        周一费半涨14.03%，周二跌7.88%，<strong>按点数回吐约64%</strong>；英伟达周一涨31.48%、周二跌5.86%。这条曲线本身就是答案：<strong>一条人事新闻能改变价格，改变不了盈利节奏</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏛️</div>
+                    <div class="summary-text">
+                        <strong>97%：12月加息已经没有信息量，变量移到了1月的66%</strong>
+                        12月加息概率约97%、2027年1月再加一次约66%。<strong>一个接近100%的概率不是风险，是既定事实</strong>；真正的分歧在终端利率——高盛与摩根士丹利看4.25%至4.50%，德银看到4.50%至4.75%
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">🧱</div>
+                    <div class="summary-text">
+                        <strong>结构市：银行的市场底在7月，科技的市场顶也在7月</strong>
+                        同一个7月，对银行是见底、对科技是见顶。<strong>所以「市场什么时候见底」这个问题本身没有答案</strong>——要问的是「我手里这个板块的底在哪」。物理AI的底出现在10月14日至16日，比指数早一个多月
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">一次分化，不是一次下跌</h3>
+                <span class="section-tag">美股结构</span>
+            </div>
+            <div class="content">
+                <p>11月24日的美股，如果只看纳指跌1.48%，会误判成「反弹结束、继续下跌」。但把三个指数并列看，看到的是另一件事：<strong>道指涨0.85%报50018.70点、纳指跌1.48%报23733.54点、标普500跌0.50%报7201.09点</strong>——道指与纳指之间差出2.33个百分点。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>指数</th><th>收盘点位</th><th>单日涨跌</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>道琼斯工业平均</strong></td><td>50018.70</td><td class="trend-up"><strong>+0.85%</strong>（+423.39点）</td><td>蓝筹与价值股支撑，重回5万点上方</td></tr>
+                        <tr><td><strong>标普500</strong></td><td>7201.09</td><td class="trend-down"><strong>-0.50%</strong>（-36.08点）</td><td>十一大板块八涨三跌，被科技拖累</td></tr>
+                        <tr><td><strong>纳斯达克综合</strong></td><td>23733.54</td><td class="trend-down"><strong>-1.48%</strong>（-356.02点）</td><td>周一涨6.51%后回吐约两成</td></tr>
+                        <tr><td><strong>费城半导体</strong></td><td>8832.50</td><td class="trend-down"><strong>-7.88%</strong></td><td>按点数回吐周一14.03%涨幅的约64%</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>制造业数据与消费者信心同日给了一组反向支撑</strong>：11月世界大型企业联合会消费者信心指数升至103.3，较10月的91.9跃升11.4点，远高于市场预期的92.2，为近两年最高水平。这条数据解释了道指为什么不跌——<strong>当市场开始担心「AI资本开支放缓会传导到实体」时，消费者信心用跳升否掉了这个担忧的一半</strong>。</p>
+
+                <p>费城半导体指数是最能说明问题的一项。周一它涨14.03%、30只成分股全线收涨；周二跌7.88%，<strong>按点数算回吐了周一涨幅的约64%</strong>。两天合起来仍是净涨约5.05%，但过程中把追高的人全部套在了高位。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>标的</th><th>11月24日</th><th>11月23日</th><th>两天合计</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>费城半导体指数</strong></td><td class="trend-down">-7.88%</td><td class="trend-up">+14.03%</td><td class="trend-up">约+5.05%</td></tr>
+                        <tr><td><strong>英伟达</strong></td><td class="trend-down">-5.86%（155.38美元）</td><td class="trend-up">+31.48%（165.05美元）</td><td class="trend-up">约+23.77%</td></tr>
+                        <tr><td>闪迪</td><td class="trend-down">-11.13%</td><td class="trend-up">+10.69%</td><td class="trend-down">约-1.63%</td></tr>
+                        <tr><td>美光科技</td><td class="trend-down">-10.97%</td><td class="trend-up">+19.04%</td><td class="trend-up">约+5.99%</td></tr>
+                        <tr><td>SK海力士</td><td class="trend-down">-9.90%</td><td class="trend-up">+20.00%</td><td class="trend-up">约+8.12%</td></tr>
+                        <tr><td>西部数据</td><td class="trend-down">-7.85%</td><td class="trend-up">+13.84%</td><td class="trend-up">约+4.90%</td></tr>
+                        <tr><td>希捷科技</td><td class="trend-down">-7.23%</td><td class="trend-up">+13.80%</td><td class="trend-up">约+5.57%</td></tr>
+                        <tr><td>超威半导体</td><td class="trend-down">-8.86%</td><td class="trend-up">+6.85%</td><td class="trend-down">约-2.61%</td></tr>
+                        <tr><td>ARM</td><td class="trend-down">-8.55%</td><td class="trend-up">+16.08%</td><td class="trend-up">约+6.16%</td></tr>
+                        <tr><td>英特尔</td><td class="trend-down">-8.15%</td><td class="trend-up">+16.34%</td><td class="trend-up">约+6.86%</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这张表里最值得注意的是闪迪与超威半导体</strong>：闪迪周一涨10.69%、周二跌11.13%，两天合计净跌1.63%；超威半导体周一涨6.85%、周二跌8.86%，两天净跌2.61%。<strong>涨得比别人少、跌得比别人多的标的，两天下来是亏的</strong>——这类标的的特征是「涨幅靠情绪、跌幅靠基本面」，与英伟达两天净涨23.77%形成鲜明对照。</p>
+
+                <p>板块层面的轮动更直白。标普500十一大板块八涨三跌：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>方向</th><th>板块</th><th>涨跌幅</th><th>代表性个股</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>领涨</td><td>医疗保健</td><td class="trend-up">+2.88%</td><td>Moderna +7.21%、安进 +5.54%、礼来 +3.34%、强生 +2.91%</td></tr>
+                        <tr><td>领涨</td><td>必需消费</td><td class="trend-up">+1.73%</td><td>可口可乐约 +2%、联合健康近 +2%</td></tr>
+                        <tr><td>领跌</td><td>科技</td><td class="trend-down">-2.77%</td><td>英伟达 -5.86%、Meta与亚马逊与谷歌跌超1%</td></tr>
+                        <tr><td>领跌</td><td>工业</td><td class="trend-down">-0.51%</td><td>—</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>医疗与科技之间差出5.65个百分点，这是判断「钱走了还是钱换了位置」的关键数字。</strong>如果是对AI叙事的全面否定，医疗和必需消费没有理由涨——它们与算力需求没有直接关系，反而会因整体风险偏好下降而被一起卖。它们涨，说明<strong>钱没有离开股票，只是从「靠未来现金流折现的资产」搬到了「靠当期现金流分红的资产」</strong>。</p>
+
+                <p>顺带一个细节：Anthropic收跌6.54%报81.905美元，<strong>跌破83美元的IPO发行价</strong>。上市第四个交易日破发，与11月20日那期写的「关联认购占比约四成、独立定价成分不足」形成闭环——当关联方不再护盘，价格就回到了纯多空博弈的位置。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">焦点从「加不加」变成「加几次」</h3>
+                <span class="section-tag">利率定价</span>
+            </div>
+            <div class="content">
+                <p>11月24日最容易被忽略的一份文件，是美联储的贴现率会议纪要：<strong>12家地区联储中有8家在10月建议上调贴现率</strong>。同一天，CME利率期货显示12月加息概率约97%、2027年1月再加一次约66%。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>期限</th><th>市场定价</th><th>信息含量</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>12月加息25个基点</td><td><strong>约97%</strong></td><td><strong>接近于零</strong>：既成事实，不再提供方向</td></tr>
+                        <tr><td>12月加息50个基点</td><td>低个位数</td><td>尾部风险，不在基准情形内</td></tr>
+                        <tr><td><strong>2027年1月再加一次</strong></td><td><strong>约66%</strong></td><td><strong>真正的分歧点</strong></td></tr>
+                        <tr><td>本轮终端利率</td><td>4.25%至4.75%</td><td>决定「高位维持多久」</td></tr>
+                    </tbody>
+                </table>
+
+                <p>这张表的读法很简单：<strong>当一个事件被定价到97%，它就不再是风险，而是既定事实</strong>。此时再去讨论「12月会不会加」，等于讨论已经发生的事。真正在变的边际变量，是「1月会不会紧接着再加一次」和「终端利率停在哪个位置」。</p>
+
+                <p>贴现率纪要里还藏着一个容易读错的细节。8票支持上调，看起来是「压倒性的鹰派」，但这8票来自<strong>地区联储的委员会</strong>，而贴现率本身由美联储决策层决定、并与FOMC的决议相配合。同期有两位地区联储负责人在FOMC上支持<strong>维持</strong>政策利率不变，一位决策成员支持加息、同时支持把贴现率维持在4.00%。</p>
+
+                <p><strong>换句话说：这张8比4的票，衡量的是「地区联储的收紧倾向」，不是「FOMC票委的加息意愿」。</strong>把它直接读成「美联储内部八成要加息」，是把两个不同的表决主体混成了一个。这类制度层面的区分，在解读任何一份会议文件时都要先做一遍。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>机构</th><th>12月</th><th>2027年1月</th><th>2027年3月</th><th>终端利率</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>市场定价（CME）</strong></td><td>加息25bp（约97%）</td><td>再加一次（约66%）</td><td>—</td><td>—</td></tr>
+                        <tr><td>高盛</td><td>加息25bp</td><td>—</td><td>加息25bp</td><td><strong>4.25%至4.50%</strong></td></tr>
+                        <tr><td>摩根士丹利</td><td>加息25bp</td><td>—</td><td>加息25bp</td><td>随后停止加息</td></tr>
+                        <tr><td>德意志银行</td><td>加息25bp</td><td><strong>加息25bp</strong></td><td>加息25bp</td><td><strong>4.50%至4.75%</strong></td></tr>
+                        <tr><td>贝莱德投资研究院</td><td>加息25bp</td><td>未给明确路径</td><td>判断市场对「明年最多再加两次」的预期偏高</td><td>加息幅度可能小于市场预期</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>分歧全部集中在「1月加不加」这一格。</strong>高盛与摩根士丹利跳过1月、把第二次放在3月；德银三步连着走，终端利率因此高出一档25个基点。这个差别看起来不大，但对长久期资产（AI算力、创新药、成长股）的估值影响是数量级的——<strong>终端利率高25个基点，等于把折现率永久抬高25个基点</strong>。</p>
+
+                <p>还有一条时间线上的硬约束，比任何预测都重要：<strong>12月FOMC在8日至9日召开、9日公布决议并附经济预测摘要（含点阵图），而11月CPI要到12月10日才公布</strong>——比决议晚一天。也就是说，<strong>决策者手上最新的通胀数据是11月10日发布的10月CPI，他们看不到11月的</strong>。</p>
+
+                <p>这个安排的含义是：<strong>12月的加息决定，本质上是对「10月之前的信息」做反应</strong>。如果11月CPI在10日出人意料地热或冷，市场会立刻开始为1月重新定价，而这次定价会发生在点阵图已经公布之后——<strong>点阵图会给一个锚，CPI会去撞这个锚，撞出偏差就是波动</strong>。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">国家队不在场的一天</h3>
+                <span class="section-tag">A股结构</span>
+            </div>
+            <div class="content">
+                <p>把11月23日与11月24日连起来看，A股这两天像是在做一个对照实验：<strong>同一条消息（美股大跌）、同一批筹码、同一个市场，唯一的变量是「有没有外力在场」。</strong></p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>项目</th><th>11月23日（周一）</th><th>11月24日（周二）</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>隔夜背景</strong></td><td>美股11月20日纳指跌5.28%</td><td>美股11月23日纳指涨6.51%</td></tr>
+                        <tr><td><strong>开盘</strong></td><td>低开</td><td>高开：沪指+0.82%（3567.84）</td></tr>
+                        <tr><td><strong>收盘</strong></td><td class="trend-up">沪指+0.15%、深成指+1.93%、创业板指+3.08%</td><td class="trend-up">沪指+0.27%、深成指-0.29%、创业板指-0.05%</td></tr>
+                        <tr><td><strong>形态</strong></td><td><strong>低开高走</strong></td><td><strong>高开低走</strong></td></tr>
+                        <tr><td><strong>成交</strong></td><td>1.56万亿元（+1328亿）</td><td>1.67万亿元（+1038亿）</td></tr>
+                        <tr><td><strong>涨跌家数</strong></td><td>4658涨 / 151涨停 / 783跌</td><td>1952涨 / 64涨停 / 3498跌</td></tr>
+                        <tr><td><strong>盘中区间</strong></td><td>—</td><td>最高3585.22 / 最低3539.01</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>周一那根阳线的成因是清楚的</strong>：11月21日（周五）美股纳指跌5.28%，A股周一低开后一路走高，沪指收涨0.15%、创业板指涨3.08%、北证50涨4.67%，4658只上涨、151只涨停。当天传媒涨4.43%、通信涨4.34%、机械设备涨4.04%，机器人板块涨9.54%。<strong>这是在外围最差的背景下走出的独立行情，靠的是11月21日晚间的稳市组合拳（融资保证金比例下限降至80%、创业板拟引入做市商、一揽子降费）。</strong></p>
+
+                <p><strong>周二则是对「没有外力」的一次真实测试</strong>：沪指开盘涨0.82%，随后一路回落到收涨0.27%；创业板指开盘涨逾4%，收盘跌0.05%。上证50涨0.45%、沪深300涨0.14%，而中证1000跌0.23%、万得微盘股跌0.67%。</p>
+
+                <p><strong>这里面最关键的一组数是成交与指数的关系：成交增加1038亿元到1.67万亿元，而沪深300只涨0.14%、创业板指还微跌。</strong>这叫放量滞涨——<strong>钱确实回来了，价格没跟上去</strong>。它说明增量资金进了场，但被高开时的兑现盘吃掉了。一个更细的证据是：中际旭创开盘涨逾10%、新易盛开盘涨逾8%，<strong>收盘双双转跌</strong>。开盘那一刻的定价，是隔夜情绪的映射；收盘的定价，才是资金真实意愿。</p>
+
+                <p>分歧的程度也能量化：11月24日非ST涨停55家、跌停不多，但<strong>封板率只有45%、炸板68只、最高连板仅4板</strong>。封板率低于五成意味着「涨停的股票有一半以上守不住」——这不算恐慌，但也远谈不上共识。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>维度</th><th>11月24日读数</th><th>含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>成交额</td><td>1.67万亿元（+1038亿）</td><td>量回来了</td></tr>
+                        <tr><td>指数</td><td>沪指+0.27%、创业板指-0.05%</td><td>价没跟</td></tr>
+                        <tr><td>大小盘</td><td>上证50 +0.45% vs 万得微盘 -0.67%</td><td>资金偏大市值与权重</td></tr>
+                        <tr><td>行业</td><td>国防军工+1.52%、电子+1.51%；有色-2.53%、石油石化-1.94%</td><td>科技内部走国产链、资源走弱</td></tr>
+                        <tr><td>主力资金</td><td>净流入近60亿元，连续两日</td><td>不是撤退</td></tr>
+                        <tr><td>封板率</td><td><strong>45%</strong>（炸板68只）</td><td>分歧大，赚钱效应集中</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>科技内部的搬家方向值得单独记一笔</strong>：11月24日华虹宏力早盘只高开0.43%、收盘涨10.36%，中芯国际低开后被拉到涨4.04%，寒武纪涨6.03%；而前一天领涨的光模块方向（中际旭创、新易盛）高开后转跌。<strong>钱在同一批科技股里，从「海外算力链」搬到了「国产制造链」</strong>——这个方向的切换与11月18日那期的判断一致，当天资金买的不是超预期，是「可能进不来」。</p>
+
+                <p>今日（11月25日）沪指平开报3548.10点、较昨收3548.37点微跌0.01%，<strong>基本是一次「不做表态」的开盘</strong>。在隔夜费半跌7.88%的背景下，平开本身已经比预期好——说明周二那根滞涨的阴线，把该消化的情绪提前消化掉了一部分。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">结构市：市场没有统一的底</h3>
+                <span class="section-tag">结构判据</span>
+            </div>
+            <div class="content">
+                <p>这一期音频里最值得记下来的一句话，不是关于指数涨跌的，而是关于「怎么问问题」的：</p>
+
+                <div class="quote-block">
+                    <p>对银行来说，市场的底是7月；对拿着科技的人来说，7月就是顶。所以天天盯着「整个市场什么时候见底」，这件事本身没有意义。</p>
+                    <div class="quote-author">投研核心观点</div>
+                </div>
+
+                <p><strong>这句话把一个常见的思维误区指了出来：把「市场」当成一个整体。</strong>实际上从今年7月到现在，A股从来没有出现过「统一见底」或「统一见顶」，只有板块之间的轮换。银行在7月见底、科技在7月见顶，二者同月发生、方向相反——如果只看上证指数，这两个事实会互相抵消成一个「横盘」。</p>
+
+                <p><strong>物理AI提供了一个更精细的时间坐标。</strong>按这一期的复盘，物理AI板块的底部出现在10月14日至16日，比指数的低点早了一个多月。11月23日机器人板块涨9.54%、11月24日物理AI指数涨约3%、凡拓数创涨逾16%、汉威科技涨逾10%，安培龙、横河精密、亿嘉和、福莱新材、柯力传感涨停——<strong>这条线是科技内部最早见底、也是最早形成共识的</strong>。</p>
+
+                <p>另一端是稳健型资金。11月24日银行、保险、白酒同步走强，11月23日食品饮料却跌1.32%——<strong>同一条「红利」线索，在两天里方向相反</strong>。合理的解释是：周一风险偏好回升时资金从防御搬到进攻，周二风险偏好回落时又搬回来。<strong>这不是「红利好」或「红利不好」，而是它在组合里承担的功能：风险偏好的对冲项。</strong></p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>另一端</th><th>代表方向</th><th>近期表现</th><th>承担的功能</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>进攻端</strong></td><td>物理AI、人形机器人、国产算力链</td><td>11/23 机器人+9.54%；11/24 物理AI约+3%</td><td>弹性，靠产业催化与超跌修复</td></tr>
+                        <tr><td><strong>稳健端</strong></td><td>银行、保险、白酒、高股息</td><td>11/24 银行保险白酒同步走强</td><td>风险偏好的对冲项，不是收益来源</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>由此得到的配置结论不是「选一边」，而是「两端都留」</strong>：进攻端放那些能讲清产业逻辑、且有催化时间表的方向；稳健端放那些不依赖叙事、靠当期现金流定价的资产。<strong>两端同时持有的意义，是让组合在「风险偏好来回切换」时不至于被迫在最低点做选择</strong>。</p>
+
+                <p>估值位置给了这个结论一个支撑：截至11月23日，沪深300滚动市盈率13.43倍、万得全A为19.12倍；10月以来股票型ETF累计净流入7304.95亿元（11月20日单日净流入超910亿元、创年内单日新高），今年以来1329家上市公司回购合计1568.81亿元。<strong>低估值 + 持续申购 + 回购，这三件事同时成立时，指数层面继续大幅下探的空间有限——但它只保证「底不深」，不保证「涨得快」。</strong></p>
+
+                <p>顺带一个需要避开的陷阱：<strong>题材弹性大不等于能赚钱</strong>。这一期明确不看好AI短剧这类方向，理由是「公司本身很难赚到钱、概念的持续性也有问题」。<strong>判断一个题材值不值得参与，先问「这条产业链上谁在收钱」，再问「这个故事能讲几个季度」</strong>——两个问题都答不上来的，弹性再大也只是交易筹码。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">等12月9日，不要猜</h3>
+                <span class="section-tag">操作纪律</span>
+            </div>
+            <div class="content">
+                <p>这一期给的操作建议，核心不是「买什么」，而是「什么时候不再观望」——<strong>把观察窗口明确写在一个日期上：12月8日至9日的议息会议，9日公布决议与点阵图。</strong></p>
+
+                <p>支撑这个窗口的是一张「解决了什么、没解决什么」的清单。11月23日那次复职，消掉的是清单上的第一项，其余五项原封不动：</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>不确定性</th><th>状态</th><th>消失的条件</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>融资链断裂、口头订单失效</strong></td><td class="trend-up"><strong>已消除</strong></td><td>人物复位，信用链连续性恢复</td></tr>
+                        <tr><td>加息的节奏与终端利率</td><td class="trend-down">未消除</td><td>12月9日点阵图 + 后续通胀数据</td></tr>
+                        <tr><td>地缘冲突与油价</td><td class="trend-down">未消除</td><td>无可预期的时间表</td></tr>
+                        <tr><td>中期选举后的政策走向</td><td class="trend-down">未消除</td><td>国会动作、监管提案落地</td></tr>
+                        <tr><td>数据中心审批与电价约束</td><td class="trend-down">未消除</td><td>州级审批与电价核定</td></tr>
+                        <tr><td>以国家安全名义的持续关注</td><td class="trend-down">未消除</td><td>听证会与调查结论</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>「解决了一半」这个表述的价值，在于它同时表达了两件事：确实变好了，但没有好到可以追。</strong>把这份清单和11月24日的盘面放在一起看就很清楚——<strong>费半回吐64%、防御板块领涨，市场其实已经在按「只解决了一半」来定价了</strong>。</p>
+
+                <p>今晚21时30分的美国10月核心PCE，是这个窗口之前最后一道关卡：<strong>核心PCE同比预期由3.1%升至3.2%、环比持平于0.3%；整体PCE同比预期由3.6%升至3.8%；三季度实际GDP年化修正值预期3.5%（初值3.4%）</strong>。这三个数同一天公布，会给出一个组合判断——<strong>如果GDP上修而核心PCE也走高，那是「经济韧性 + 通胀黏性」双确认，短端利率会被再往上推一档；如果GDP上修而核心PCE低于0.3%，则更像「增长没问题、通胀在缓慢降温」，对长久期资产是缓和。</strong></p>
+
+                <p><strong>国内这一侧，同一天给出的信号是「数量呵护、价格中性」。</strong>央行11月25日开展8000亿元1年期MLF操作，但当月到期1万亿元，<strong>实际净回笼2000亿元、为连续第二个月净回笼</strong>；同日开展5000亿元7天期逆回购，对冲5160亿元隔夜逆回购与800亿元国库现金定存到期。把买断式逆回购也算进来，11月中期流动性合计净回笼5000亿元。</p>
+
+                <p><strong>「名义投放8000亿、实际净回笼2000亿」这个反差，是这组操作最容易被读错的地方。</strong>它的真实含义是：在缴准、MLF到期、国库现金定存到期、政府债缴款四重压力叠加的那一天，用期限刚好覆盖跨月的7天逆回购去「补位」，而不是在资金面平稳时主动加码。<strong>给定数量、由市场定价——既补上缺口，又不释放额外的价格宽松信号。</strong></p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>本周关键时点</th><th>内容</th><th>为什么重要</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>11月25日 21:30</strong></td><td>美国10月核心PCE、整体PCE、三季度GDP修正值、耐用品订单</td><td>决定1月加息概率从66%往上还是往下</td></tr>
+                        <tr><td>11月26日至28日</td><td>第二十八届高交会（深圳）</td><td>人工智能、机器人、商业航天、低空经济的事件催化</td></tr>
+                        <tr><td>11月28日</td><td>两用物项出口管制公告第二款暂停实施（至2027年1月27日）</td><td>双边经贸的边际缓和信号</td></tr>
+                        <tr><td>11月30日</td><td>融资保证金比例下限由100%降至80%正式实施</td><td>杠杆空间的实质打开</td></tr>
+                        <tr><td><strong>12月8日至9日</strong></td><td>FOMC会议，9日决议 + 点阵图</td><td><strong>本轮不确定性的集中解锁点</strong></td></tr>
+                        <tr><td>12月10日</td><td>美国11月CPI</td><td>决议之后公布，会去撞点阵图给的锚</td></tr>
+                    </tbody>
+                </table>
+
+                <p>还有一组历史统计值得摆在桌上：<strong>自1985年纳斯达克指数成立以来，单日暴跌5%之后次日反弹5%或以上的情形共出现12次，其后全部出现回撤。</strong>本期周一纳指涨6.51%、周二跌1.48%，正好落在第13次的位置上。<strong>这不能作为预测，但它提供了一个基准率——「暴跌次日的暴涨」在历史上从来不是行情的起点。</strong></p>
+
+                <p>所以操作纪律可以写成一句很朴素的话：<strong>你不可能在暴涨那天参与（因为事前没人知道会是那个结果），那就不要在别人已经获利三成的时候冲进去。</strong>这不是看空，而是把「参与成本」算清楚——<strong>在情绪最高点买入的人，承担的不是「判断错了」的风险，而是「即使判断对了也赚不到钱」的风险</strong>。</p>
+
+                <div class="quote-block">
+                    <p>"利率的重定价已经完成：97% 的 12 月加息不再是风险，而是既定事实。剩下的问题不是「加不加」，而是「加几次、加到哪」——而这两个问题，12 月 9 日的点阵图会一次回答。"</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月25日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
