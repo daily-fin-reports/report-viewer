@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月26日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">11月25日美国10月核心PCE同比涨3.3%（前值3.1%、预期3.2%）、创2023年11月以来最高，环比0.3%持平预期；三季度实际GDP年化由3.4%上修至4.3%。美股盘中道指一度跌千点、纳指跌超4.6%，收盘道指涨0.33%报50182.95点、纳指跌0.62%报23585.80点，费半盘中跌近8%、收跌0.65%；现货黄金盘中跌超3.5%失守3500美元，收盘涨0.78%报3583.10美元 · A股11月25日收盘沪指跌2.03%报3476.47点、深证成指跌3.24%、创业板指跌4.19%、科创综指跌5.93%，两市成交缩至1.38万亿元 · 11月26日A股高开，沪指涨0.39%报3490.14点、创业板指涨1.35%报2213.12点，超4400只上涨，贵金属、太空算力、卫星互联网、6G领涨</p>
+            <p class="header-date">2026年11月26日 · 周四 · 同一天里，黄金先当抵押品，再当避险资产 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🎯</div>
+                    <div class="summary-text">
+                        <strong>超预期的是同比，完全符合的是环比</strong>
+                        核心PCE同比3.3%、比预期高0.1个百分点、创2023年11月以来最高；<strong>但环比0.3%与预期、前值完全一致</strong>。真正改变结论的不是通胀本身，而是同一天公布的三季度GDP由3.4%上修至4.3%——<strong>「经济更强、通胀更黏」被同时确认，这才是12月加息概率回到100%的原因</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🔄</div>
+                    <div class="summary-text">
+                        <strong>盘中道指跌千点、收盘翻红：无差别抛售与分化定价是两件事</strong>
+                        盘中纳指跌超4.6%、费半跌近8%、黄金跌3.5%、白银跌6.5%，<strong>所有资产同向下跌</strong>；收盘道指涨0.33%、黄金涨0.78%、美债收益率降至4.84%。<strong>判「清算」还是「重定价」，看收盘不看盘中</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🥇</div>
+                    <div class="summary-text">
+                        <strong>黄金一天里扮演了两个角色</strong>
+                        加息预期强化本该压金价，它却在盘中跌破3500美元（跌超3.5%、创2025年9月以来新低）后<strong>收盘反涨0.78%</strong>。盘中卖的是「补保证金的抵押品」，收盘买的是「抗贬值的避险资产」——<strong>同一个资产，同一天，两种定价逻辑</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📉</div>
+                    <div class="summary-text">
+                        <strong>A股用了两天把「承接不足」演示了两遍</strong>
+                        11月24日放量滞涨（成交增1038亿元、指数不动），11月25日<strong>缩量跌2.03%</strong>（成交降到1.38万亿元）；今日高开0.39%，半小时后回落到0.07%。<strong>前者是兑现盘吃掉增量，后者是无人承接——两种形态，同一种结论</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">超预期的是同比，完全符合的是环比</h3>
+                <span class="section-tag">PCE拆解</span>
+            </div>
+            <div class="content">
+                <p>11月25日晚公布的美国10月PCE，是三组数据同时给了一个方向：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>指标</th><th>实际</th><th>预期</th><th>前值</th><th>读数性质</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>核心PCE 同比</strong></td><td class="trend-down"><strong>3.3%</strong></td><td>3.2%</td><td>3.1%</td><td><strong>超预期0.1pct</strong>，创2023年11月以来最高</td></tr>
+                        <tr><td>核心PCE 环比</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td><strong>完全符合，连续持平</strong></td></tr>
+                        <tr><td>整体PCE 同比</td><td class="trend-down">3.8%</td><td>3.8%</td><td>3.6%</td><td>符合预期，创2023年5月以来最高</td></tr>
+                        <tr><td><strong>三季度GDP 年化修正</strong></td><td class="trend-up"><strong>4.3%</strong></td><td>3.5%</td><td>3.4%（初值）</td><td><strong>大幅上修0.9pct</strong>，较二季度2.2%接近翻倍</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这张表最容易被读错的地方，是把「3.3% 超预期」当成「通胀在加速」。</strong>拆开看：同比从 3.1% 升到 3.3%，比预期高 0.1 个百分点；但<strong>环比 0.3% 与预期、与前值完全一致，连续三个月没有变化</strong>。同比的抬升主要来自基数效应，而不是当月新增的价格压力。</p>
+
+                <p><strong>真正改变结论的是第四行。</strong>三季度 GDP 年化增速由初值 3.4% 上修到 4.3%、上调 0.9 个百分点，较二季度的 2.2% 接近翻倍，上修主要来自投资与消费者支出的向上修正。这一条把「通胀黏性」从单一变量变成了组合变量——</p>
+
+                <div class="quote-block">
+                    <p>如果只有通胀超预期，市场可以说「经济在放缓、通胀是暂时的」；但如果经济同时被上修到4.3%，那句辩解就失效了。经济更强 + 通胀更黏，是加息最难受的组合。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p>褐皮书给了第三个佐证：12 个辖区中有 8 个呈现轻微至温和增长、其余 4 个基本持平；消费总体持平、家庭对价格敏感度较高；住宅销售与建筑活动走弱；<strong>最关键的变化是薪资与福利涨幅从此前的「轻微」升至「温和」、涨幅明显扩大</strong>。薪资是服务通胀的成本端，它从「轻微」变「温和」，意味着通胀的黏性有了工资支撑，不再只是能源与关税的临时冲击。</p>
+
+                <p>三条合起来，12月加息概率从前期一度回落的 88% 重新回到 100%。<strong>但要注意：这个 100% 说的是「加不加」，不是「加多少、之后还加不加」。</strong></p>
+
+                <p>还有一个值得记下的观察，解释了为什么官方 3.3% 与民众体感差距那么大。按这一期的拆解，普通家庭对通胀的直观感受可能达到 5% 至 8%，因为<strong>日常生活中最高频的两项支出恰好被同时冲击：加油（油价）与电费（数据中心用电）</strong>。这也解释了为什么「不希望油价高」和「不喜欢数据中心」会成为民意里最集中的两点情绪——<strong>它们不是抽象的政策议题，是每次加油和每次交电费时被重复提醒的具体数字</strong>。</p>
+
+                <p><strong>对投资的含义是：通胀预期一旦由「加油与电费」这种高频支出锚定，它的回落速度会比统计口径慢。</strong>即使核心PCE明年回到 2.5%，民众体感仍可能在 4% 以上，政策就很难快速转向宽松。这是判断降息时点时常被忽略的一层。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">盘中跌千点、收盘翻红：无差别抛售与分化定价是两件事</h3>
+                <span class="section-tag">盘中与收盘</span>
+            </div>
+            <div class="content">
+                <p>11月25日的美股，是今年少见的「日内两副面孔」。把盘中最低点与收盘价并列，能看到一个完整的演化过程：</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>资产</th><th>盘中极值</th><th>收盘</th><th>修复幅度</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>道琼斯</strong></td><td>一度跌超千点（约-2%）</td><td class="trend-up"><strong>+0.33%</strong>（50182.95）</td><td>由跌2%转涨0.33%</td></tr>
+                        <tr><td>标普500</td><td>一度跌超3%</td><td class="trend-down">-0.25%（7182.78）</td><td>收复约九成跌幅</td></tr>
+                        <tr><td><strong>纳斯达克</strong></td><td>一度跌超4.6%</td><td class="trend-down"><strong>-0.62%</strong>（23585.80）</td><td>收复约八成半跌幅</td></tr>
+                        <tr><td><strong>费城半导体</strong></td><td>一度跌近8%</td><td class="trend-down"><strong>-0.65%</strong></td><td><strong>收复近九成跌幅</strong></td></tr>
+                        <tr><td>英伟达</td><td>一度跌近9%</td><td class="trend-down">跌近4%</td><td>收复约六成</td></tr>
+                        <tr><td>Anthropic</td><td>一度跌超9%</td><td class="trend-up">涨超1%</td><td><strong>由跌转涨</strong></td></tr>
+                        <tr><td><strong>现货黄金</strong></td><td>跌超3.5%（最低约3453）</td><td class="trend-up"><strong>+0.78%</strong>（3583.10）</td><td><strong>由跌转涨</strong></td></tr>
+                        <tr><td>现货白银</td><td>跌超6.5%</td><td class="trend-up">+1.16%（41.38）</td><td>由跌转涨</td></tr>
+                        <tr><td>10年期美债收益率</td><td>—</td><td class="trend-up">4.84%（11月9日以来最低）</td><td>收益率下行、价格上行</td></tr>
+                        <tr><td>美元指数</td><td>—</td><td class="trend-down">103.666（-0.14%）</td><td>距周一20个月高点104.59不远</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>盘中的形态是「所有资产一起跌」</strong>——股票、黄金、白银、加密资产同向下跌，这是流动性挤兑的典型特征：投资者不计价格地换取现金，因为需要补保证金或应对赎回。</p>
+
+                <p><strong>收盘的形态是「分化」</strong>：道指转涨、黄金转涨、美债价格上涨，而纳指、费半仍小幅收跌。<strong>分化说明抛售停止了，但选择开始了</strong>——钱没有离场，它在重新挑拣。</p>
+
+                <div class="quote-block">
+                    <p>判断一次暴跌是「清算」还是「重定价」，不要看盘中最低点，要看收盘的分化程度。盘中同跌只说明有人必须卖；收盘分化才说明有人愿意买。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p>这条判据与 11 月 23 日那期的「先去查债券」是同一套逻辑的延伸。当天美债收益率下行至 4.84%、为 11 月 9 日以来最低，<strong>整条收益率曲线同步下行</strong>——债券在涨。而按历史经验，真正的危机会看到债市无序波动、买卖价差异常扩大，而不是收益率有序下行。</p>
+
+                <p><strong>这里有一处需要单独讲清的矛盾：加息预期强化，为什么美债收益率反而下行？</strong>因为收益率里有两个成分——<strong>政策路径预期</strong>（加息推高短端）与<strong>增长与风险溢价</strong>（避险需求压低长端）。当天是后者占了上风：股市暴跌引发的避险买盘，压过了加息预期对短端的推力。<strong>这也解释了为什么收益率曲线会「同步下行」而不是「短端上、长端下」——如果是纯粹的政策重定价，曲线应该走平而不是平行下移。</strong></p>
+
+                <p>欧洲与中概同日给出了两个方向的对照：欧洲三大股指全线下跌（德国DAX跌1.26%、法国CAC40跌0.75%、英国富时100跌0.38%），而<strong>纳斯达克中国金龙指数涨1.87%</strong>，BOSS直聘涨12.56%、理想汽车涨11.03%、京东涨2.53%、阿里涨1.63%。<strong>同一个风险事件，欧美资产在跌、中国资产在涨——这不是偶然，是资金在挑选「受AI叙事影响更小」的市场。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">黄金：一天之内先当抵押品，再当避险资产</h3>
+                <span class="section-tag">贵金属</span>
+            </div>
+            <div class="content">
+                <p>11月25日的黄金，是这一期最值得逐分钟看的一段。它先跌到 2025 年 9 月以来的新低，再收出一根阳线：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>品种</th><th>盘中</th><th>收盘</th><th>日内摆幅</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>现货黄金</strong></td><td class="trend-down">跌超3.5%，最低约3453美元（2025年9月以来新低）</td><td class="trend-up"><strong>+0.78%</strong> 报3583.10美元</td><td><strong>约4.3个百分点</strong></td></tr>
+                        <tr><td>现货白银</td><td class="trend-down">跌超6.5%</td><td class="trend-up">+1.16% 报41.38美元</td><td><strong>约7.7个百分点</strong></td></tr>
+                        <tr><td>COMEX黄金</td><td class="trend-down">跌近4%</td><td class="trend-up">+0.47%</td><td>约4.5个百分点</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这两段走势的驱动完全不同，只是发生在同一个交易日。</strong></p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>时段</th><th>黄金的角色</th><th>卖出/买入的理由</th><th>决定性变量</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>盘中下跌段</strong></td><td><strong>抵押品</strong></td><td>股市暴跌触发追保与赎回，卖出流动性最好、仍有浮盈的资产换取现金</td><td>组合的流动性需求</td></tr>
+                        <tr><td><strong>尾盘回升段</strong></td><td><strong>避险资产</strong></td><td>美债收益率下行、美元走弱，无息资产的机会成本下降</td><td>实际利率与美元</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这就是「黄金抗风险」这个说法经常失灵的原因：它抗的是某一类风险，不是所有风险。</strong>按这一期的表述，黄金真正对冲的是<strong>美债的风险</strong>——每次美债出现大幅波动时，黄金通常表现较好；但在历次危机或股市暴跌中，<strong>尤其是在下跌的第一阶段，黄金几乎无一幸免地跟着股票一起跌</strong>。</p>
+
+                <p>这个判断与 11 月 19 日那期的结论是同一条线：<strong>黄金不对冲股票风险，它防的是美债波动与美元信用。</strong>本期又多了一层证据——<strong>当「卖黄金」的理由是补保证金时，那个理由与金价本身无关；一旦保证金压力解除（股市企稳），金价就回到了它自己的定价逻辑上。</strong></p>
+
+                <p>更值得注意的是它与加息预期的关系。当天核心PCE超预期、12月加息概率回到100%，<strong>这对黄金是明确利空</strong>——黄金不产生利息，借贷成本走高会压制金价。但金价收盘还是涨了。<strong>说明当天的定价主力不是「加息」，而是「被动抛售结束后的仓位回补」。</strong></p>
+
+                <p>观点层面，这一期给了一个清晰的修正路径：<strong>此前在 5000 美元上方明确说过「逢高兑现利润」，现在转为「中性偏乐观」——不是看它还能涨多高，而是 3500 美元以下，作为中长期配置资金可以逢低增加配置</strong>；此前没有黄金仓位、现在想买的，这个位置也可以。但同时要<strong>降低收益预期</strong>：不是「3500 买了马上回 5000」。</p>
+
+                <p>其中有一句话值得单独抄下来：<strong>在5000美元时敢继续加码、到了3500美元反而失去信心，这件事本身是有问题的。</strong>因为如果配置的理由是「美元长期信用走弱」，那么金价跌 30% 恰恰让这个理由更便宜地兑现；<strong>如果理由变成了「它还会涨」，那理由从一开始就错了</strong>。</p>
+
+                <p>两个支撑性事实：<strong>一是央行增持尚未结束</strong>（三季度全球央行净购金仍在高位、中国连续增持），这类买盘对价格不敏感；<strong>二是白银的跌幅比黄金大一倍</strong>（盘中-6.5% vs -3.5%），说明这轮抛售里工业属性的资产被卖得更狠——<strong>这是流动性驱动的特征，不是避险需求消失的特征。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">A股用两天演示了同一件事的两面</h3>
+                <span class="section-tag">A股结构</span>
+            </div>
+            <div class="content">
+                <p>11月24日与11月25日，A股连续两天「承接不足」，但形态完全相反：</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>项目</th><th>11月24日</th><th>11月25日</th><th>11月26日（早盘）</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>形态</strong></td><td><strong>高开低走</strong></td><td><strong>低开低走</strong></td><td>高开、半小时后回落</td></tr>
+                        <tr><td>沪指</td><td class="trend-up">+0.27%（3548.37）</td><td class="trend-down"><strong>-2.03%</strong>（3476.47）</td><td class="trend-up">+0.39%开盘→+0.07%</td></tr>
+                        <tr><td>深证成指</td><td class="trend-down">-0.29%</td><td class="trend-down">-3.24%（10086.36）</td><td>+0.98%开盘</td></tr>
+                        <tr><td>创业板指</td><td class="trend-down">-0.05%（2278.99）</td><td class="trend-down"><strong>-4.19%</strong>（2183.58）</td><td>+1.35%开盘→+0.66%</td></tr>
+                        <tr><td>科创综指</td><td>—</td><td class="trend-down"><strong>-5.93%</strong>（1317.53）</td><td>—</td></tr>
+                        <tr><td>北证50</td><td>—</td><td class="trend-down">-4.75%</td><td>—</td></tr>
+                        <tr><td><strong>成交额</strong></td><td><strong>1.67万亿（+1038亿）</strong></td><td><strong>1.38万亿（缩量）</strong></td><td>—</td></tr>
+                        <tr><td><strong>性质</strong></td><td><strong>放量滞涨</strong></td><td><strong>缩量下跌</strong></td><td>高开后的兑现</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>放量滞涨与缩量下跌，都是「承接不足」，但成因不同，对应的后续也不一样。</strong></p>
+
+                <p>11月24日是<strong>放量滞涨</strong>：成交增加 1038 亿元到 1.67 万亿，指数几乎不动。这说明增量资金进了场，但被高开时的兑现盘全部吃掉——<strong>买盘是有的，只是对手盘更大</strong>。这种形态的后续通常是「等兑现盘出完」，不需要新的资金。</p>
+
+                <p>11月25日则是<strong>缩量下跌</strong>：成交萎缩到 1.38 万亿，沪指跌 2.03%、创业板跌 4.19%、科创综指跌 5.93%。<strong>缩量下跌意味着没有承接盘——不是卖的人特别多，是买的人不在。</strong></p>
+
+                <div class="quote-block">
+                    <p>放量滞涨是「有人买、但卖得更多」；缩量下跌是「没人买」。前者等一等就能好，后者要先有愿意买的人出现。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p>板块层面，11月25日的下跌高度集中在科技链：光刻机、存储芯片、半导体、先进封装、MLCC 概念跌幅靠前，而<strong>医药商业、旅游及酒店、中药、零售逆势上涨</strong>，康芝药业、拓新药业、亨迪药业 20CM 涨停，杭州解百 3 连板。<strong>这是典型的防御与消费接力——钱从高估值成长搬到低估值消费，与美股当天的医疗、必需消费领涨是同一个动作。</strong></p>
+
+                <p>港股同日的跌幅更集中：恒生指数跌 1.14%、恒生科技跌 2.56%，而<strong>华虹宏力跌超 17%、天数智芯跌超 18%、智谱跌超 15%、MINIMAX-W 跌超 13%、宁德时代跌超 12%、联想集团跌超 11%</strong>。<strong>上海本地的半导体与算力标的跌幅显著大于板块平均</strong>，除了承接美股半导体的情绪，还叠加了这些标的自身的估值与筹码因素。</p>
+
+                <p>尾盘有两个动作值得记：<strong>一是多只红利股脉冲式拉升</strong>（交通银行、中国神华、贵州茅台、长江电力冲高）；<strong>二是多只宽基ETF集中放量</strong>，沪深300ETF华夏 20 分钟成交超 90 亿元、沪深300ETF易方达超 80 亿元。<strong>这两个动作同时出现在尾盘，通常意味着有稳定性质的资金在收盘前承接——它不改变趋势，但会改变收盘价的位置。</strong></p>
+
+                <p>11月26日的开盘是对隔夜 V 型修复的映射：沪指高开 0.39% 报 3490.14 点、深证成指高开 0.98%、创业板指高开 1.35% 报 2213.12 点、科创50 涨 1.26%，<strong>超 4400 只个股上涨</strong>，贵金属、太空算力、卫星互联网、6G、商业航天、半导体涨幅居前，教育、酒类、银行下跌。富时A50期指夜盘涨 0.56%、恒生科技指数主连夜盘涨 1.75%，方向一致。</p>
+
+                <p><strong>但到 9 时 36 分，沪指已回落到涨 0.07%、创业板指回落到涨 0.66%。</strong>半小时内回吐了约三分之二的涨幅——<strong>这已经是连续第三天出现「高开之后承接不住」，前两次分别是 11月24日与 11月25日早盘。</strong>这个重复本身就是信息：<strong>在外围修复的日子里都涨不上去，说明压制来自内部，不是来自外部。</strong></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">三条新增变量：关税、算力纪律、存储的股东回报</h3>
+                <span class="section-tag">新增变量</span>
+            </div>
+            <div class="content">
+                <p><strong>第一条是关税。</strong>美国贸易代表办公室公布了对欧盟、日本、韩国、印度等 14 个经济体的产能过剩调查报告，并建议加征 15% 至 20% 的关税：</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>对象</th><th>建议税率</th><th>备注</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>日本、韩国</td><td>15%（最惠国待遇关税）</td><td>当天日韩股市下跌的另一重原因</td></tr>
+                        <tr><td>欧盟</td><td>最高20%</td><td>遵守现有贸易协议15%上限的部分除外</td></tr>
+                        <tr><td>泰国</td><td>至少18%</td><td>—</td></tr>
+                        <tr><td>越南</td><td>20%</td><td>—</td></tr>
+                        <tr><td>中国</td><td>20%</td><td>已历经两轮贸易摩擦，冲击已被评估</td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这条要按「程序」而不是按「结果」来读。</strong>按规则，此类加征需要经过数月的公示与评议程序；上一轮加征曾因国会方面的对抗而基本停滞，这一轮换了新的法律依据重新启动。<strong>对市场的含义是：它是一个持续数月的「背景噪音」，不是一次性的冲击。</strong>但对亚太市场的影响会更直接——因为它直接打在出口链上，这解释了为什么当天日韩股市下跌幅度大于欧洲。</p>
+
+                <p><strong>第二条是算力纪律。</strong>《学习时报》发文提出算力供给要避免「一哄而上」，其中有一组区分非常具体：<strong>通用数据中心的传统低功率机柜面临过剩风险，而高端智能算力供不应求</strong>；地方平台企业投建的智算中心采购中低端算力芯片，无法适配大模型参数迭代需求，而头部互联网厂商抢购先进芯片、依托模型训练与智能应用实现满负荷运转，已形成正向循环。</p>
+
+                <p><strong>这段话的价值在于它把「算力」这个词拆成了两半。</strong>过去两年市场把「算力」当成一个整体来买，于是低端机柜与高端智算拿到同样的估值；而官方的表述已经明确：<strong>低功率机柜是过剩风险，高端智算是供不应求。</strong>这意味着「算力总量扩张」的叙事要向「算力结构分化」切换——<strong>买「算力概念」的做法会失效，必须落到具体环节。</strong></p>
+
+                <p><strong>第三条最有反直觉的含义——存储龙头的股东回报。</strong>SK海力士 11月25日提交 2026 财年企业价值提升计划：<strong>股东回报约 100 万亿韩元</strong>（约 5000 亿元人民币），其中现金分红不低于 30 万亿、回购并注销不低于 60 万亿。</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>项目</th><th>读数</th><th>含义</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2026财年股东回报</td><td><strong>约100万亿韩元</strong></td><td>分红30万亿 + 回购注销60万亿</td></tr>
+                        <tr><td>2025年全年净利润</td><td>14.3万亿韩元</td><td><strong>回报额是全年净利的约7倍</strong></td></tr>
+                        <tr><td>2026年前三季营收</td><td>237万亿韩元</td><td>2025全年为97万亿</td></tr>
+                        <tr><td>净现金（9月末）</td><td>99万亿韩元</td><td>2025年末仅12.7万亿</td></tr>
+                        <tr><td>三季度分红</td><td>14.1万亿韩元（每股2万韩元）</td><td><strong>其中一半来自Kioxia投资收益，属一次性</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>这里有两个判断要分开说。</strong></p>
+
+                <p><strong>先说要打折扣的部分：</strong>100 万亿的回报里，三季度分红的一半来自日本闪存厂商的投资收益——<strong>这是资产变现，不是可持续的盈利</strong>。把一次性收益算进「股东回报率」会高估这家公司的持续分红能力。<strong>判据很简单：看分红来源是「经营现金流」还是「投资收益」。</strong></p>
+
+                <p><strong>再说真正重要的部分：一家处在景气顶点的周期公司，选择把超额利润还给股东，而不是全部投入扩产。</strong>这有两个后果——<strong>对股东是好事，对下游是坏事</strong>。因为这意味着<strong>供给端的产能扩张会比历史周期更慢，缺货的持续时间会更长</strong>。</p>
+
+                <div class="quote-block">
+                    <p>存储龙头的钱流向哪里，决定了下一轮缺货有多久。投向产能，两年后价格下来；投向回购，价格就得多撑两年。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p><strong>这条推论与 11 月 12 日那期的判断接上了。</strong>当时拆的是「结构性短缺而非全面复苏」——合约价大涨、现货价在跌，HBM 投片占比升 4 个百分点而位元占比只升 1 个百分点。当时留了一个悬念：<strong>这种短缺能持续多久，取决于供给端什么时候补上来。</strong>今天这个答案更清楚了一分：<strong>龙头把 100 万亿韩元用于回购注销而不是扩产，短缺的持续时间被拉长了。</strong></p>
+
+                <p>操作层面，这一期给的纪律与前几天一致，没有转向：<strong>保持基本仓位、不在下跌中盲目割肉；以 12 月 8 日至 9 日的议息会议作为观察窗口；没有必要现在就把美股仓位加到最高比例。</strong></p>
+
+                <p>把观察窗口的逻辑拆开看，它其实只有两个变量：<strong>一是加息 25 个基点落地（这已被完全定价，没有信息量）；二是会议同时发布的对未来利率的展望——是偏鹰派还是偏鸽派的表述。</strong>如果只是加 25 个基点、且对明年没有特别鹰派的指引，那么 12 月 9 日之后美股受到的冲击不大；如果明确指向明年还要加两到三次，那市场还需要再消化一轮。<strong>换句话说，12 月 9 日真正要看的不是「加多少」，而是「点阵图怎么说」。</strong></p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>时间</th><th>事件</th><th>观察什么</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>12月8日至9日</strong></td><td>FOMC会议，9日决议 + 点阵图</td><td><strong>25bp 已定价；看明年的利率路径指引</strong></td></tr>
+                        <tr><td>12月10日</td><td>美国11月CPI</td><td>决议之后公布，会去撞点阵图给的锚</td></tr>
+                        <tr><td>持续数周</td><td>关税公示与评议程序</td><td>是否真的落地、覆盖范围是否扩大</td></tr>
+                        <tr><td>待定</td><td>韩国、中国台湾地区的稳市措施</td><td>两家在海外市场里被列为优先看好方向</td></tr>
+                    </tbody>
+                </table>
+
+                <p>海外配置的排序这一期没有变化：<strong>韩国仍是海外市场中最被看好的方向之一</strong>，理由是存储周期的位置与股东回报的力度；韩国与中国台湾地区预计都会在近期出手维护股市。<strong>而美股则要再等十来天，看国会方面在中期选举之后还有什么新的动作。</strong></p>
+
+                <p>最后留一句判据，它把这一期的三件事串在了一起：<strong>关税、算力纪律、股东回报，看起来是三个独立的消息，实际上都在回答同一个问题——「增量从哪里来」。</strong>关税削掉出口的增量、算力纪律削掉低端产能的增量、股东回报把利润从产能投资里抽走。<strong>三条都指向「增量变少」时，市场的定价方式会从「买增长」切换到「买确定」。</strong>这也解释了为什么同一天里，医药、必需消费、红利股在涨，而半导体、算力硬件在跌。</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月26日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
