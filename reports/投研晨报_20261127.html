@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投研晨报 · 2026年11月27日</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-elevated: #1c2128;
+            --border: #30363d;
+            --gold: #d4a853;
+            --gold-light: #e8c87a;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #58a6ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .header-date {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: "SF Mono", Monaco, monospace;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, rgba(212,168,83,0.08), rgba(39,174,96,0.05));
+            border: 1px solid rgba(212,168,83,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .executive-summary h2 {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .executive-summary h2::before { content: "◆"; font-size: 10px; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .summary-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .summary-icon.gold { background: rgba(212,168,83,0.15); }
+        .summary-icon.red { background: rgba(192,57,43,0.15); }
+        .summary-icon.green { background: rgba(39,174,96,0.15); }
+        .summary-icon.blue { background: rgba(52,152,219,0.15); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .summary-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), #b8943a);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-title { font-size: 22px; font-weight: 600; }
+
+        .section-tag {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: rgba(212,168,83,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212,168,83,0.2);
+        }
+
+        .content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .content strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .highlight-box.alert { border-left-color: var(--red); }
+        .highlight-box.success { border-left-color: var(--green); }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .impact-card {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .impact-card h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .impact-card.positive h4 { color: var(--green); }
+        .impact-card.negative h4 { color: var(--red); }
+        .impact-card.neutral h4 { color: var(--gold); }
+
+        .impact-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .impact-card ul li {
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .impact-card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        .quote-block {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: "\201C";
+            font-size: 48px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .quote-block p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+            padding-left: 24px;
+            font-size: 16px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-left: 24px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 14px;
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .data-table.wide { font-size: 14px; }
+        .data-table.wide th { padding: 10px 10px; }
+        .data-table.wide td { padding: 11px 10px; }
+
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .data-table .trend-up { color: var(--green); font-weight: 600; }
+        .data-table .trend-down { color: var(--red); font-weight: 600; }
+        .data-table .highlight { color: var(--gold); font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .footer .disclaimer {
+            font-size: 13px;
+            color: #484f58;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 20px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">VIP Research Brief</div>
+            <h1>投研晨报</h1>
+            <p class="header-sub">11月25日SpaceX宣布向每个有效的美国儿童储蓄账户赠一股新发行A类普通股，公司创始人个人等额追加一股；按当日收盘价127.44美元（低于135美元IPO发行价约5.6%）、约7000万个账户估算，总额约178亿至186亿美元；公司那股12月划转，个人那股要等2027年6月锁定期结束 · 同日FCC附条件批准至多100万颗Starmind轨道数据中心卫星，要求2033年11月前首颗投运、2040年11月前完成，射频权限仅限光链路故障时的备份遥测 · 11月26日A股沪指涨0.01%报3476.88点、创业板指涨0.29%，成交1.32万亿元缩量657亿元，超3600只下跌；PCB与光模块反弹、通信主力净流入超41亿元，银行、煤炭、石油石化走强 · 太空算力当前成本仍高于地面：国内入轨约2.5万元每公斤，而算力项目盈亏平衡上限约2461美元每公斤</p>
+            <p class="header-date">2026年11月27日 · 周五 · 把下一代写进股东名册，把算力搬上轨道 · 音频纪要整理</p>
+        </header>
+
+        <div class="executive-summary">
+            <h2>核心摘要</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-icon gold">🎯</div>
+                    <div class="summary-text">
+                        <strong>赠股的价值，取决于用哪个价格、哪个账户数</strong>
+                        127.44美元是<strong>11月25日</strong>收盘价（11月26日感恩节美股休市），低于135美元IPO发行价约5.6%；按7000万或7300万账户算，总额在178亿至186亿美元之间。<strong>三个口径混用，就会把「史上最大赠与」读成两个不同的故事</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon blue">🏦</div>
+                    <div class="summary-text">
+                        <strong>真正的新东西不是送股，是送进哪个账户</strong>
+                        一家AI公司10月设公共利益基金、承诺5%股权并随估值追加2%；公司创始人的回应是「直接把股份交给公众」。一个月后方案落地——<strong>股票直接进儿童储蓄账户，不经基金会</strong>，这是可复制性最强的一步
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon red">🛰️</div>
+                    <div class="summary-text">
+                        <strong>FCC批的是准入证，不是100万颗卫星</strong>
+                        授权上限100万颗，但首颗须在2033年11月前投运、2040年前才完成；射频仅限光链路故障时的备份遥测，600公里以上轨道的碎片处置方案被推迟。<strong>「赛道合法」与「工程可行」是两件事</strong>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon green">📉</div>
+                    <div class="summary-text">
+                        <strong>太空算力现在比地面贵，贵在三个硬约束</strong>
+                        发射成本、散热方式、迭代周期——<strong>没有一项被许可证解决</strong>。国内发射成本约2.5万至2.8万元每公斤，而太空项目的盈亏平衡上限约2461美元每公斤。11月26日A股缩量分化，资金买的是PCB与光模块这些「地面确定项」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h3 class="section-title">186亿美元的赠股，先拆成三个数字</h3>
+                <span class="section-tag">赠股拆解</span>
+            </div>
+            <div class="content">
+                <p>11月25日晚，SpaceX官网宣布向每个当前有效的美国儿童储蓄账户赠予一股新发行的A类普通股；公司创始人随后在社交平台宣布个人等额追加一股。公司那部分于12月划转，个人那部分要等到2027年6月锁定期届满。这是同一天里的两笔承诺，到账时间差了半年。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>口径</th><th>读数</th><th>它决定了什么</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>股价</td><td>127.44美元（11月25日收盘）</td><td>计算赠与总值；不是11月26日价，当天美股休市</td></tr>
+                        <tr><td>发行价</td><td>135美元（6月12日IPO）</td><td>127.44低于发行价约5.6%，属破发状态</td></tr>
+                        <tr><td>上市初期峰值</td><td>市值一度超2万亿美元，股价最高225.64美元</td><td>口述中的「上市时估值2万亿」指的是这个时点，不是发行定价</td></tr>
+                        <tr><td>账户数量</td><td>约7000万个已开设；另有7300万未成年人口径</td><td>两个分母差约4%，对应总值差约8亿美元</td></tr>
+                        <tr><td>赠与总值</td><td>约178亿至186亿美元</td><td>按7000万账户与1.4亿股算约178亿；按7300万算约186亿</td></tr>
+                        <tr><td>分摊</td><td>公司与创始人各约89亿美元</td><td>1比1等额，这是与此前方案最大的差别</td></tr>
+                    </tbody>
+                </table>
+
+                <p>这里最需要纠正的一处是<strong>日期</strong>。口述把127.44美元说成「11月26日收盘」，但11月26日是感恩节，美股全天休市，127.44是<strong>11月25日</strong>的收盘价。这不是小数点问题：如果按「最新交易日」写，本期报告发布时最近的交易数据仍是11月25日，而11月27日美股虽然开盘，却提前于美东下午1点收盘。</p>
+
+                <p>第二个要拆的是<strong>「跌破发行价」的参照物</strong>。SpaceX在6月12日以每股135美元IPO、募资约860亿美元，7月15日盘中首次破发；上市初期股价一度冲到225.64美元、市值超过2万亿美元。所以「上市时估值2万亿」与「跌破发行价」两句都成立，但说的是两个时点——<strong>前者是情绪顶，后者是发行底</strong>。把两者压成一句，会得出「首富在股价高点送股」的错误印象；实际送股时的股价比发行价还低。</p>
+
+                <div class="quote-block">
+                    <p>一笔赠与的规模从来不是由「送多少股」决定，而是由「按哪天价格、乘哪个账户数」决定。三个口径都写清楚，186亿才是一个可核对的数字，而不是一个修辞。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h3 class="section-title">真正的新东西不是送股，是送进哪个账户</h3>
+                <span class="section-tag">制度通道</span>
+            </div>
+            <div class="content">
+                <p>这件事的起点在10月中旬。当时一家AI公司宣布把5%股权投入新设的公共利益基金，并约定公司估值每上涨50%，董事会可酌情再追加2%；叠加创始人与员工的既有捐赠承诺，约20%股权将用于公共事业。公司创始人在社交平台的回应很短：<strong>建议直接把股份交给公众</strong>。一个月后，方案落地——不是再设一个基金，而是把股票直接记到每个孩子的账户名下。</p>
+
+                <p>这个差别是本期最值得记的一点。<strong>基金解决的是「谁来管」，账户解决的是「谁拥有」。</strong>前者的钱少了一笔、花在哪里外界未必知道；后者每一股都落在可查询的个人账户里。口述里那个比方很贴切：想给全国人民每人捐十块钱，难点从来不是十块钱，而是「全国人民账号」——现在这个账号存在了。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>要素</th><th>美国儿童储蓄账户</th><th>传统公益基金</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>受益权归属</td><td>直接记入每个孩子的账户</td><td>归基金，受益人由基金确定</td></tr>
+                        <tr><td>初始资金</td><td>联邦政府为2025至2028年出生的符合条件儿童一次性提供1000美元</td><td>无统一初始资金</td></tr>
+                        <tr><td>账户规模</td><td>截至10月已开设近7000万个，超6000万名儿童自动注册</td><td>不便横向比较</td></tr>
+                        <tr><td>可注入资产</td><td>今年6月起允许以股票而非现金捐赠</td><td>通常接受现金与股权，视章程而定</td></tr>
+                        <tr><td>资金用途</td><td>主要投向跟踪美国宽基指数的低成本基金</td><td>由基金自行决定</td></tr>
+                        <tr><td>退出安排</td><td>存在锁定期，不是到账即可变现；口述口径约五年内不能出售</td><td>由捐赠条款约定</td></tr>
+                    </tbody>
+                </table>
+
+                <p>把它类比成「从娃娃抓起的401(k)」是准确的：401(k)解决的是养老，儿童账户解决的是教育与成长阶段的保障支出，两者都靠税收优惠和长期复利，而不是一次性给付。<strong>这类账户真正的制度价值，是把「下一代的个人命运」与「资本市场的长期回报」绑在同一条曲线上。</strong></p>
+
+                <p>同一条通道上还有两笔更早的承诺，规模与覆盖面正好构成一组尺子：一家个人电脑公司的创始人夫妇承诺捐赠62.5亿美元，覆盖约2500万名中低收入社区儿童，每账户250美元；一家大型对冲基金的创始人限定在本国一个州，面向30万名儿童每人250美元。<strong>单账户金额几乎一样，差别全在覆盖面——而覆盖面由创始人的资产规模决定，不由善意决定。</strong>口述里那句「根据你的能力圈」，说的就是这个约束。</p>
+
+                <div class="quote-block">
+                    <p>慈善的透明度不取决于捐了多少，取决于有没有一个可查询的账户。把股票直接记到孩子名下，基金会那一层的信息不对称就被绕过去了——这一步比186亿美元本身更可能被复制。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h3 class="section-title">FCC批的是准入证，不是100万颗卫星</h3>
+                <span class="section-tag">太空算力</span>
+            </div>
+            <div class="content">
+                <p>11月25日，美国联邦通信委员会附条件批准SpaceX部署至多100万颗名为Starmind的轨道数据中心卫星，这是美国首次为「太空数据中心星座」发放许可。监管方给出的定性是「计算基础设施开辟全新领域」，但许可文件本身是一张<strong>带期限、带条件、带驳回事项</strong>的准入证。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>条款</th><th>批复内容</th><th>应如何读</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>数量上限</td><td>至多100万颗，非承诺数量</td><td>「至多」是授权天花板，不是采购计划</td></tr>
+                        <tr><td>部署里程碑</td><td>2033年11月前至少1颗、2035年10%、2038年50%、2040年11月前全部</td><td>跨度十四年，首颗与创新型公司自身的2027年三季度发射目标并不一致</td></tr>
+                        <tr><td>轨道</td><td>500至1002公里，约30度与太阳同步倾角，每层跨度50公里</td><td>600公里以上须另交碎片减缓方案</td></tr>
+                        <tr><td>通信</td><td>以星间激光链路为主；18.8至19.3GHz下行、28.6至29.1GHz上行仅作光链路故障时的备份遥测</td><td>不是用这两段频率承载常规算力业务</td></tr>
+                        <tr><td>授权期限</td><td>15年，自首颗卫星入轨并报备起算</td><td>里程碑未按期完成，授权可能失效</td></tr>
+                        <tr><td>被推迟事项</td><td>任务结束后转入日心轨道等非再入处置方式的豁免请求</td><td>未获批前不得部署不采用大气再入处置的卫星</td></tr>
+                    </tbody>
+                </table>
+
+                <p>反对意见也值得单独列一层：公示期收到逾1500条公众意见，美国天文学会、一家卫星运营商与一家电商旗下卫星部门均要求驳回，理由集中在轨道拥挤、空间碎片、光污染与射频干扰。监管方以「非频谱影响超出本次授权范围」为由未采纳天文方面的关切。目前全球在轨卫星约1.69万颗，获批上限相当于这个数字的约60倍；星链用七年部署约1.1万颗，若要在十四年内冲刺百万颗，测算需每年约5000次重型火箭发射，而2025年全球入轨发射总量约330次。</p>
+
+                <p>所以这件事的正确定性是<strong>「赛道合法性确立」，不是「工程可行性被验证」</strong>。它的直接后果是后来者——另一家商业航天公司的5.16万颗「日出计划」、谷歌与多家太空计算初创的申请——都有了可援引的审批先例。竞争的问题从「能不能做」变成了「谁做得更快、更便宜」，这才是许可真正的价值。</p>
+
+                <div class="quote-block">
+                    <p>许可证改变的是「能不能开始」，不改变「能不能做完」。当时间跨度拉到2040年，任何以「百万颗卫星即将上天」为前提的估值推演，都需要先回答中间那十四年的工程账。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h3 class="section-title">太空算力现在比地面贵，贵在三个硬约束</h3>
+                <span class="section-tag">成本账</span>
+            </div>
+            <div class="content">
+                <p>口述里有一处自我修正值得保留：先说「成本上肯定比地上低」，紧接着改口「现在肯定还是比地上高」。后一句才是对的。把太空算力的账拆开，会看到它便宜的部分和贵的部分完全不重叠。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>约束</th><th>当前读数</th><th>变化条件</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>发射成本</td><td>该公司约1000美元每公斤；国内约2.5万至2.8万元人民币每公斤</td><td>可回收重型火箭把成本压到每公斤100至200美元的量级</td></tr>
+                        <tr><td>盈亏平衡线</td><td>算力供不应求时上限约2461美元每公斤；要与地面同盈利需降至约361美元每公斤</td><td>即按乐观情形，当前成本距平衡线仍有距离</td></tr>
+                        <tr><td>散热</td><td>真空无对流，只能辐射排热；单星仍配可展开液体散热系统与大面积散热板</td><td>「不用水冷」不等于「不用散热」，结构反而更大</td></tr>
+                        <tr><td>卫星寿命</td><td>约七年，轨道衰减后需补打或维修</td><td>在轨加注与在轨更换模块若成立，寿命可延长</td></tr>
+                        <tr><td>算力迭代</td><td>GPU代际更替快于卫星寿命，模块可能在卫星仍在轨时就已落后</td><td>需要在轨更换计算模块，而非只换整星</td></tr>
+                        <tr><td>成本结构</td><td>发射约占30%至40%、卫星制造20%至30%，抗辐照与散热等核心组件占卫星成本七成以上</td><td>「天上比地上贵一个数量级」是当前状态</td></tr>
+                    </tbody>
+                </table>
+
+                <p>这里最容易被误读的是<strong>「太空有免费太阳能和天然低温」</strong>。太阳能确实近乎连续——太阳同步轨道可以实现长期日照；但真空没有空气对流，热量只能以辐射形式排出，效率远低于地面的水冷与风冷。单颗卫星的设计里，太阳能帆板展开翼展约70至75米，同时还要配百平方米级的可展开液体散热系统。<strong>省下的是电费和用水，付出的是结构重量与发射成本</strong>——而发射成本恰好按重量计费。</p>
+
+                <p>口述里最有价值的一段，是对「七年后怎么办」的追问。卫星会掉轨，算力模块会过时，两条时间线不同步：前者以年计，后者以代计。给出的解法是把在轨回收的飞船二级当作<strong>太空里的维修与补给节点</strong>——既能给卫星补充推进剂与能源模块延寿，也能替换计算模块。这个设想如果成立，改变的不是发射成本，而是<strong>整条曲线从「一次性部署」变成「可维护资产」</strong>；只有进入后一种形态，太空算力才可能像地面数据中心一样按折旧摊薄。</p>
+
+                <div class="quote-block">
+                    <p>判断太空算力有没有到拐点，不要看许可证批了多少颗，要看两件事：发射成本能否进入每公斤几百美元，以及在轨维护能否从设想变成常态。前者决定能不能建，后者决定建完能不能一直用。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+
+                <p>对A股的映射要分清「事件层」和「订单层」。星舰发射时间表、首颗卫星入轨都属于事件层，刺激集中在几天内；真正可跨季度验证的是星载芯片、星间激光终端、太空光伏与热控材料这些环节的实际交付。11月26日A股的表现已经给出了市场的取舍：<strong>PCB、光模块与先进封装反弹，通信行业主力净流入超41亿元，而卫星相关方向并未同步走强</strong>——资金买的是地面已经能确认订单的那一端。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h3 class="section-title">两件事是一条链：把未来变成可持有的东西</h3>
+                <span class="section-tag">落地与操作</span>
+            </div>
+            <div class="content">
+                <p>把今天这两件看似不相干的新闻放在一起，会看到同一个动作：<strong>一件把公司的未来股权直接写到下一代的账户里，另一件把未来的算力基础设施写成可发放的许可</strong>。前者解决「谁拥有」，后者解决「谁可以建」。两件事都不是当期收入，却都在改变长期的资产归属与产业准入。</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>维度</th><th>赠股</th><th>太空算力许可</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>改变的是什么</td><td>股东名册与财富归属</td><td>赛道合法性与频谱准入</td></tr>
+                        <tr><td>兑现时点</td><td>公司股12月、个人股2027年6月</td><td>首颗2033年11月前、全部2040年前</td></tr>
+                        <tr><td>确定性</td><td>高：股份与账户都已明确，估值随股价波动</td><td>低：许可附条件，工程与经济账未验证</td></tr>
+                        <tr><td>真正受益方</td><td>7000万个账户的家庭，以及公司的公众基础</td><td>卫星制造、发射、星间激光、太空能源与热控</td></tr>
+                        <tr><td>可跟踪指标</td><td>12月划转是否按期、账户是否可查询</td><td>重型火箭年发射次数、单公斤入轨成本</td></tr>
+                    </tbody>
+                </table>
+
+                <p>11月26日的A股没有跟着这条叙事走，而是回到了缩量分化的老剧本：</p>
+
+                <table class="data-table wide">
+                    <thead>
+                        <tr><th>指数</th><th>收盘</th><th>涨跌</th><th>结构特征</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>上证指数</td><td>3476.88点</td><td>+0.01%</td><td>尾盘翻红，最低下探3455.04点</td></tr>
+                        <tr><td>深证成指</td><td>10084.04点</td><td>-0.02%</td><td>收在万点关口上方</td></tr>
+                        <tr><td>创业板指</td><td>2189.82点</td><td>+0.29%</td><td>盘中最低2155.01点，创年内新低后收回</td></tr>
+                        <tr><td>科创综指</td><td>—</td><td>-1.00%</td><td>算力硬件内部分化</td></tr>
+                        <tr><td>两市成交</td><td>1.32万亿元</td><td>缩量657亿元</td><td>连续两个交易日缩量，超3600只下跌</td></tr>
+                    </tbody>
+                </table>
+
+                <p>盘面上，PCB、光模块与先进封装走强，中际旭创获主力净流入16.9亿元、新易盛9.6亿元；贵金属、石油石化、煤炭、银行同步走强，多只银行股盘中创新高。一头是地面算力链的核心标的，一头是当期现金流定价的稳健端——<strong>这与上期「结构市没有统一的底」是同一张地图：钱在两端之间来回搬，而不是整体离场。</strong></p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr><th>操作项</th><th>判断</th><th>触发条件</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>太空算力主题</td><td>按事件层对待，只做短线节奏</td><td>首颗卫星入轨或发射合同落地才升级为产业链层</td></tr>
+                        <tr><td>地面算力核心</td><td>仍是主要配置方向</td><td>通信行业主力净流入连续、订单可被季报验证</td></tr>
+                        <tr><td>稳健端</td><td>承担对冲功能，不当收益来源评价</td><td>风险偏好回落时自然生效，不必追高</td></tr>
+                        <tr><td>海外变量</td><td>11月27日美股提前收盘，流动性偏薄</td><td>关注出口管制对东南亚服务器发货的影响是否扩大</td></tr>
+                        <tr><td>国内变量</td><td>成品油价每吨下调440元与425元；氢氧化锂期货上市首日跌超7%</td><td>成本端缓和与锂价新合约定价需要分开看</td></tr>
+                    </tbody>
+                </table>
+
+                <p>最后留三条判据。第一，<strong>看一笔赠与的性质，看它进的是谁的账户</strong>——直接进个人账户与进基金会，是可复制性完全不同的两件事。第二，<strong>看一张许可证的分量，看它的时间表而不是标题</strong>——首颗在2033年、全部在2040年，跨度本身就是答案。第三，<strong>看一个主题能不能买，看它落在事件层还是订单层</strong>——今天A股买PCB而不买卫星，说明市场已经先做了一次筛选。</p>
+
+                <div class="quote-block">
+                    <p>把未来写成可以持有的股份，和把未来写成可以申请的许可，都是把不确定变成可交易对象的办法。但可交易不等于已兑现——中间隔着的，恰恰是那些最需要时间验证的工程与制度细节。</p>
+                    <div class="quote-author">— 投研核心观点</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>投研晨报 · 2026年11月27日</p>
+            <p>本报告基于公开信息与音频纪要整理，所有数据均经公开来源交叉核对</p>
+            <p class="disclaimer">本报告仅供内部研究参考，不构成任何投资建议。市场有风险，决策需独立判断。文中观点随市场变化可能调整，不另行通知。</p>
+        </footer>
+    </div>
+</body>
+</html>
